@@ -124,7 +124,7 @@ int main(void)
 			if (lastPinState)
 			{
 				trigger = TRUE;
-				speedLowHigh = speed*16/10/2;
+				speedLowHigh = (speed<<3)/10; // *16/10/2
 				speed=0;
 			}
 			lastPinState = FALSE;
