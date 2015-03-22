@@ -667,8 +667,8 @@
     <bitFields name="PSIV" URI="http://www.infineon.com/0.10.0/peripheral/ccu4/0/cc4/0/psc/psiv" maxValue="15" minValue="0" startPos="0" stopPos="3" accessPermission="rw">
       <defaultValue xsi:type="ResourceModel:IntegerValue" value="0"/>
       <upWardMappingList xsi:type="ResourceModel:ProxyResource" href="../PWMSP001/1.0.34/pwmsp001_0.app#//@consumed.58"/>
-      <localValue xsi:type="ResourceModel:IntegerValue" value="0"/>
-      <globalValue xsi:type="ResourceModel:IntegerValue" value="0"/>
+      <localValue xsi:type="ResourceModel:IntegerValue" value="a"/>
+      <globalValue xsi:type="ResourceModel:IntegerValue" value="a"/>
       <toolTipHelpDescription>Prescaler Initial Value</toolTipHelpDescription>
     </bitFields>
   </provided>

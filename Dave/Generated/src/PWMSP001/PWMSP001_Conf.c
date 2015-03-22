@@ -104,13 +104,13 @@ const PWMSP001_HandleType PWMSP001_Handle0 =
   .kTrapExitControl= 0U,
   .kTrapLevel= 1U,
   
-  .kResolution = (float)31.25,
-  .kCCUPrescalar= 0U,
+  .kResolution = (float)16000.0,
+  .kCCUPrescalar= 9U,
   .kTimerConcatenation = 0U,
    /*During timer concatenation, 32-bit period and compare values from UI are 
    taken. From this value lower 16-bit is loaded into the lower timer and higer 16-bit to higher timer.*/
-  .kCompareValue = 10666U,
-  .kPeriodVal = 21332U,
+  .kCompareValue = 20U,
+  .kPeriodVal = 40U,
   .kMaxPeriodVal= 65535U,
   .kDitherSetting= 0U,
   .kDitherCompare = 0U,  

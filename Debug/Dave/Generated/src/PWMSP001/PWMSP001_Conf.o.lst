@@ -26,8 +26,8 @@
   30 0000 01       		.byte	1
   31 0001 00       		.byte	0
   32 0002 0000     		.space	2
-  33 0004 0000FA41 		.word	1106903040
-  34 0008 AA290000 		.word	10666
+  33 0004 00007A46 		.word	1182400512
+  34 0008 14000000 		.word	20
   35 000c 00       		.byte	0
   36 000d 00       		.byte	0
   37 000e 00       		.byte	0
@@ -41,11 +41,11 @@
   45 001c 00010448 		.word	1208221952
   46 0020 00       		.byte	0
   47 0021 00       		.byte	0
-  48 0022 00       		.byte	0
+  48 0022 09       		.byte	9
   49 0023 00       		.byte	0
   50 0024 00       		.byte	0
   51 0025 000000   		.space	3
-  52 0028 54530000 		.word	21332
+  52 0028 28000000 		.word	40
   53 002c FFFF0000 		.word	65535
   54 0030 01000000 		.word	1
   55 0034 00       		.byte	0
@@ -65,10 +65,10 @@
   69              		.file 4 "../Dave/Generated/src/PWMSP001/PWMSP001_Conf.c"
 DEFINED SYMBOLS
                             *ABS*:00000000 PWMSP001_Conf.c
-C:\Users\Patrick\AppData\Local\Temp\ccbZfJeU.s:22     .bss:00000000 PWMSP001_DynamicData0
-C:\Users\Patrick\AppData\Local\Temp\ccbZfJeU.s:19     .bss:00000000 $d
-C:\Users\Patrick\AppData\Local\Temp\ccbZfJeU.s:29     .rodata:00000000 PWMSP001_Handle0
-C:\Users\Patrick\AppData\Local\Temp\ccbZfJeU.s:26     .rodata:00000000 $d
+C:\Users\Patrick\AppData\Local\Temp\ccFm4Tcc.s:22     .bss:00000000 PWMSP001_DynamicData0
+C:\Users\Patrick\AppData\Local\Temp\ccFm4Tcc.s:19     .bss:00000000 $d
+C:\Users\Patrick\AppData\Local\Temp\ccFm4Tcc.s:29     .rodata:00000000 PWMSP001_Handle0
+C:\Users\Patrick\AppData\Local\Temp\ccFm4Tcc.s:26     .rodata:00000000 $d
                            .group:00000000 wm4.1.63d3e0297d6e9004e0e37a0840833abd
                            .group:00000000 wm4.XMC1100.h.45.7a7cd799d7738130fcda8b83b0aa37d4
                            .group:00000000 wm4.core_cm0.h.47.022e66414e77714da7c4b30b3ad99fe8

@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<Project MotherSystem_Version="" Name="PWMSP001_Example1_XMC11" Path="C:\DAVE3_workspace\ws3.1.10\examples\XMC11\PWMSP001_Example1_XMC11">
+<Project MotherSystem_Version="" Name="boschSpeedUp" Path="C:\DAVE3_workspace\ws3.1.10\boschSpeedUp">
     <COMPILER>
         <Name>ARM-GCC</Name>
         <Version/>

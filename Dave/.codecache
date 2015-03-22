@@ -14,9 +14,9 @@
         <File genName="CLKVAL_SSW.h" genPath="Dave\Generated\inc\CLK002\CLKVAL_SSW.h" jetPath="CLK002/1.0.8/Templates/CLKVAL_SSWh.jet" location="bin\CodeGenerator\clkval_sswh_template.class"/>
         <File genName="PWMSP001.c" genPath="Dave\Generated\src\PWMSP001\PWMSP001.c" jetPath="PWMSP001/1.0.34/Templates/PWMSP001c.jet" location="bin\CodeGenerator\pwmsp001c_template.class"/>
         <File genName="CCU4GLOBAL_Conf.h" genPath="Dave\Generated\inc\CCU4GLOBAL\CCU4GLOBAL_Conf.h" jetPath="CCU4GLOBAL/1.0.20/Templates/CCU4Global_Confh.jet" location="bin\CodeGenerator\ccu4global_confh_template.class"/>
-        <File genName="CCU4GLOBAL_Extern.h" genPath="Dave\Generated\inc\CCU4GLOBAL\CCU4GLOBAL_Extern.h" jetPath="CCU4GLOBAL/1.0.20/Templates/CCU4Global_Externh.jet" location="bin\CodeGenerator\ccu4global_externh_template.class"/>
-        <File genName="CLK002.c" genPath="Dave\Generated\src\CLK002\CLK002.c" jetPath="CLK002/1.0.8/Templates/CLK002c.jet" location="bin\CodeGenerator\clk002c_template.class"/>
         <File genName="LIBS.h" genPath="Dave\Generated\inc\LIBS\LIBS.h" jetPath="LIBS/1.0.28/Templates/LIBSh.jet" location="bin\CodeGenerator\libsh_template.class"/>
         <File genName="PWMSP001_Conf.h" genPath="Dave\Generated\inc\PWMSP001\PWMSP001_Conf.h" jetPath="PWMSP001/1.0.34/Templates/PWMSP001Confh.jet" location="bin\CodeGenerator\pwmsp001confh_template.class"/>
+    <File genName="CLK002.c" genPath="Dave\Generated\src\CLK002\CLK002.c" jetPath="CLK002/1.0.8/Templates/CLK002c.jet" location="bin\CodeGenerator\clk002c_template.class"/>
+        <File genName="CCU4GLOBAL_Extern.h" genPath="Dave\Generated\inc\CCU4GLOBAL\CCU4GLOBAL_Extern.h" jetPath="CCU4GLOBAL/1.0.20/Templates/CCU4Global_Externh.jet" location="bin\CodeGenerator\ccu4global_externh_template.class"/>
     </TemplateCaches>
 </Cache>
