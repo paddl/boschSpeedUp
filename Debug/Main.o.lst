@@ -510,14 +510,15 @@
  202              		.cfi_endproc
  203              	.LFE104:
  205              		.global	__aeabi_idiv
- 206              		.section	.text.main,"ax",%progbits
- 207              		.align	2
- 208              		.global	main
- 209              		.code	16
- 210              		.thumb_func
- 212              	main:
- 213              	.LFB402:
- 214              		.file 2 "../Main.c"
+ 206              		.global	__aeabi_idivmod
+ 207              		.section	.text.main,"ax",%progbits
+ 208              		.align	2
+ 209              		.global	main
+ 210              		.code	16
+ 211              		.thumb_func
+ 213              	main:
+ 214              	.LFB402:
+ 215              		.file 2 "../Main.c"
    1:../Main.c     **** /*=========================================================================== *
    2:../Main.c     ****  * Copyright (c) 2014, Infineon Technologies AG                                *
    3:../Main.c     ****  * All rights reserved.                                                        *
@@ -595,512 +596,596 @@
   75:../Main.c     **** 
   76:../Main.c     **** 
   77:../Main.c     **** 
-  78:../Main.c     **** int main(void)
-  79:../Main.c     **** {
- 215              		.loc 2 79 0
- 216              		.cfi_startproc
- 217 0000 80B5     		push	{r7, lr}
- 218              	.LCFI11:
- 219              		.cfi_def_cfa_offset 8
- 220              		.cfi_offset 7, -8
- 221              		.cfi_offset 14, -4
- 222 0002 8AB0     		sub	sp, sp, #40
- 223              	.LCFI12:
- 224              		.cfi_def_cfa_offset 48
- 225 0004 00AF     		add	r7, sp, #0
- 226              	.LCFI13:
- 227              		.cfi_def_cfa_register 7
-  80:../Main.c     **** 	status_t status;		// Declaration of return variable for DAVE3 APIs
-  81:../Main.c     **** 
-  82:../Main.c     **** 
-  83:../Main.c     **** 	DAVE_Init();			// Initialization of DAVE Apps
- 228              		.loc 2 83 0
- 229 0006 FFF7FEFF 		bl	DAVE_Init
+  78:../Main.c     **** 
+  79:../Main.c     **** 
+  80:../Main.c     **** int main(void)
+  81:../Main.c     **** {
+ 216              		.loc 2 81 0
+ 217              		.cfi_startproc
+ 218 0000 80B5     		push	{r7, lr}
+ 219              	.LCFI11:
+ 220              		.cfi_def_cfa_offset 8
+ 221              		.cfi_offset 7, -8
+ 222              		.cfi_offset 14, -4
+ 223 0002 8AB0     		sub	sp, sp, #40
+ 224              	.LCFI12:
+ 225              		.cfi_def_cfa_offset 48
+ 226 0004 00AF     		add	r7, sp, #0
+ 227              	.LCFI13:
+ 228              		.cfi_def_cfa_register 7
+  82:../Main.c     **** 	status_t status;		// Declaration of return variable for DAVE3 APIs
+  83:../Main.c     **** 
   84:../Main.c     **** 
-  85:../Main.c     **** 	
-  86:../Main.c     **** 	/* Starts the PWMSP001 App (LED) */
-  87:../Main.c     **** 	status = PWMSP001_Start((PWMSP001_HandleType*)&PWMSP001_Handle0);
- 230              		.loc 2 87 0
- 231 000a 464B     		ldr	r3, .L32
- 232 000c 181C     		mov	r0, r3
- 233 000e FFF7FEFF 		bl	PWMSP001_Start
- 234 0012 031C     		mov	r3, r0
- 235 0014 7B60     		str	r3, [r7, #4]
-  88:../Main.c     **** 	if(status != DAVEApp_SUCCESS)
- 236              		.loc 2 88 0
- 237 0016 7B68     		ldr	r3, [r7, #4]
- 238 0018 002B     		cmp	r3, #0
- 239 001a 03D0     		beq	.L18
-  89:../Main.c     **** 	{
-  90:../Main.c     **** 		PWMSP001_Stop((PWMSP001_HandleType*)&PWMSP001_Handle0);
- 240              		.loc 2 90 0
- 241 001c 414B     		ldr	r3, .L32
- 242 001e 181C     		mov	r0, r3
- 243 0020 FFF7FEFF 		bl	PWMSP001_Stop
- 244              	.L18:
-  91:../Main.c     **** 	}
-  92:../Main.c     **** 
-  93:../Main.c     **** 	PIN_LOW_INIT();
- 245              		.loc 2 93 0
- 246 0024 C020     		mov	r0, #192
- 247 0026 FFF7FEFF 		bl	P0_6_set_mode
- 248 002a FFF7FEFF 		bl	P0_6_set
-  94:../Main.c     **** 	PIN_IS_INIT();
- 249              		.loc 2 94 0
- 250 002e FFF7FEFF 		bl	P0_5_set_large_hysteresis
- 251 0032 FFF7FEFF 		bl	P0_5_read
-  95:../Main.c     **** 
-  96:../Main.c     **** 
+  85:../Main.c     **** 	DAVE_Init();			// Initialization of DAVE Apps
+ 229              		.loc 2 85 0
+ 230 0006 FFF7FEFF 		bl	DAVE_Init
+  86:../Main.c     **** 
+  87:../Main.c     **** 	
+  88:../Main.c     **** 	/* Starts the PWMSP001 App (LED) */
+  89:../Main.c     **** 	status = PWMSP001_Start((PWMSP001_HandleType*)&PWMSP001_Handle0);
+ 231              		.loc 2 89 0
+ 232 000a 584B     		ldr	r3, .L32
+ 233 000c 181C     		mov	r0, r3
+ 234 000e FFF7FEFF 		bl	PWMSP001_Start
+ 235 0012 031C     		mov	r3, r0
+ 236 0014 7B60     		str	r3, [r7, #4]
+  90:../Main.c     **** 	if(status != DAVEApp_SUCCESS)
+ 237              		.loc 2 90 0
+ 238 0016 7B68     		ldr	r3, [r7, #4]
+ 239 0018 002B     		cmp	r3, #0
+ 240 001a 03D0     		beq	.L18
+  91:../Main.c     **** 	{
+  92:../Main.c     **** 		PWMSP001_Stop((PWMSP001_HandleType*)&PWMSP001_Handle0);
+ 241              		.loc 2 92 0
+ 242 001c 534B     		ldr	r3, .L32
+ 243 001e 181C     		mov	r0, r3
+ 244 0020 FFF7FEFF 		bl	PWMSP001_Stop
+ 245              	.L18:
+  93:../Main.c     **** 	}
+  94:../Main.c     **** 
+  95:../Main.c     **** 	PIN_LOW_INIT();
+ 246              		.loc 2 95 0
+ 247 0024 C020     		mov	r0, #192
+ 248 0026 FFF7FEFF 		bl	P0_6_set_mode
+ 249 002a FFF7FEFF 		bl	P0_6_set
+  96:../Main.c     **** 	PIN_IS_INIT();
+ 250              		.loc 2 96 0
+ 251 002e FFF7FEFF 		bl	P0_5_set_large_hysteresis
+ 252 0032 FFF7FEFF 		bl	P0_5_read
   97:../Main.c     **** 
-  98:../Main.c     **** 	bool lastPinState = PIN_IS_HIGH();
- 252              		.loc 2 98 0
- 253 0036 FFF7FEFF 		bl	P0_5_read
- 254 003a 021C     		mov	r2, r0
- 255 003c 3B1C     		mov	r3, r7
- 256 003e 2733     		add	r3, r3, #39
- 257 0040 1A70     		strb	r2, [r3]
-  99:../Main.c     **** 	bool trigger = FALSE;
- 258              		.loc 2 99 0
- 259 0042 3B1C     		mov	r3, r7
- 260 0044 2633     		add	r3, r3, #38
- 261 0046 0022     		mov	r2, #0
- 262 0048 1A70     		strb	r2, [r3]
- 100:../Main.c     **** 	int noTriggerCnt=0;
- 263              		.loc 2 100 0
- 264 004a 0023     		mov	r3, #0
- 265 004c 3B62     		str	r3, [r7, #32]
- 101:../Main.c     **** 	int speed=0;
- 266              		.loc 2 101 0
- 267 004e 0023     		mov	r3, #0
- 268 0050 FB61     		str	r3, [r7, #28]
- 102:../Main.c     **** 	int speedLow=0;
- 269              		.loc 2 102 0
- 270 0052 0023     		mov	r3, #0
- 271 0054 BB61     		str	r3, [r7, #24]
- 103:../Main.c     **** 	int speedLowHigh=0;
- 272              		.loc 2 103 0
- 273 0056 0023     		mov	r3, #0
- 274 0058 7B61     		str	r3, [r7, #20]
- 275 005a 00E0     		b	.L30
- 276              	.L31:
- 104:../Main.c     **** 
- 105:../Main.c     **** 
- 106:../Main.c     **** 	while(1)
- 107:../Main.c     **** 	{
- 108:../Main.c     **** 		speed++;
- 109:../Main.c     **** 		speedLow++;
- 110:../Main.c     **** 		
- 111:../Main.c     **** 		int cnt_high=0;
- 112:../Main.c     **** 		int cnt_low=0;
- 113:../Main.c     **** 		for (int i = 0; i < 0x1FF; i++)
- 114:../Main.c     **** 		{
- 115:../Main.c     **** 			if (PIN_IS_HIGH())
- 116:../Main.c     **** 				cnt_high++;
- 117:../Main.c     **** 			else
- 118:../Main.c     **** 				cnt_low++;
- 119:../Main.c     **** 		}
- 120:../Main.c     **** 		
+  98:../Main.c     **** 
+  99:../Main.c     **** 
+ 100:../Main.c     **** 	bool lastPinState = PIN_IS_HIGH();
+ 253              		.loc 2 100 0
+ 254 0036 FFF7FEFF 		bl	P0_5_read
+ 255 003a 021C     		mov	r2, r0
+ 256 003c 3B1C     		mov	r3, r7
+ 257 003e 2733     		add	r3, r3, #39
+ 258 0040 1A70     		strb	r2, [r3]
+ 101:../Main.c     **** 	bool trigger = FALSE;
+ 259              		.loc 2 101 0
+ 260 0042 3B1C     		mov	r3, r7
+ 261 0044 2633     		add	r3, r3, #38
+ 262 0046 0022     		mov	r2, #0
+ 263 0048 1A70     		strb	r2, [r3]
+ 102:../Main.c     **** 	int noTriggerCnt=0;
+ 264              		.loc 2 102 0
+ 265 004a 0023     		mov	r3, #0
+ 266 004c 3B62     		str	r3, [r7, #32]
+ 103:../Main.c     **** 	int speed=0;
+ 267              		.loc 2 103 0
+ 268 004e 0023     		mov	r3, #0
+ 269 0050 FB61     		str	r3, [r7, #28]
+ 104:../Main.c     **** 	int speedLow=0;
+ 270              		.loc 2 104 0
+ 271 0052 0023     		mov	r3, #0
+ 272 0054 BB61     		str	r3, [r7, #24]
+ 105:../Main.c     **** 	int speedLowHigh=0;
+ 273              		.loc 2 105 0
+ 274 0056 0023     		mov	r3, #0
+ 275 0058 7B61     		str	r3, [r7, #20]
+ 106:../Main.c     **** 
+ 107:../Main.c     **** 	int pinCheckCycles = 100;
+ 276              		.loc 2 107 0
+ 277 005a 6423     		mov	r3, #100
+ 278 005c 3B60     		str	r3, [r7]
+ 279 005e 00E0     		b	.L30
+ 280              	.L31:
+ 108:../Main.c     **** 
+ 109:../Main.c     **** #define DEBUG_CNT_BUFFER_SIZE 100
+ 110:../Main.c     **** 	static int debugCount = 0;
+ 111:../Main.c     **** 	static int debugSpeedBuffer[DEBUG_CNT_BUFFER_SIZE];
+ 112:../Main.c     **** 
+ 113:../Main.c     **** 
+ 114:../Main.c     **** 
+ 115:../Main.c     **** 
+ 116:../Main.c     **** 
+ 117:../Main.c     **** 	while(1)
+ 118:../Main.c     **** 	{
+ 119:../Main.c     **** 		speed++;
+ 120:../Main.c     **** 		speedLow++;
  121:../Main.c     **** 		
- 122:../Main.c     **** 		if (cnt_low > 0)
- 123:../Main.c     **** 		{
- 124:../Main.c     **** 			if (lastPinState)
- 125:../Main.c     **** 			{
- 126:../Main.c     **** 				trigger = TRUE;
- 127:../Main.c     **** 				speedLowHigh = (speed<<3)/10; // *16/10/2
- 128:../Main.c     **** 				speed=0;
- 129:../Main.c     **** 			}
- 130:../Main.c     **** 			lastPinState = FALSE;
+ 122:../Main.c     **** 
+ 123:../Main.c     **** 		int cnt_high=0;
+ 124:../Main.c     **** 		int cnt_low=0;
+ 125:../Main.c     **** 		for (int i = 0; i < pinCheckCycles; i++)
+ 126:../Main.c     **** 		{
+ 127:../Main.c     **** 			if (PIN_IS_HIGH())
+ 128:../Main.c     **** 				cnt_high++;
+ 129:../Main.c     **** 			else
+ 130:../Main.c     **** 				cnt_low++;
  131:../Main.c     **** 		}
- 132:../Main.c     **** 		else if (cnt_high > 0)
- 133:../Main.c     **** 		{
- 134:../Main.c     **** 			lastPinState = TRUE;
- 135:../Main.c     **** 		}
- 136:../Main.c     **** 		
- 137:../Main.c     **** 		if (speedLow >= speedLowHigh)
- 138:../Main.c     **** 		{
- 139:../Main.c     **** 			speedLow = 0;
- 140:../Main.c     **** 			
- 141:../Main.c     **** 			if (!trigger)
- 142:../Main.c     **** 				noTriggerCnt++;
- 143:../Main.c     **** 			else
- 144:../Main.c     **** 				noTriggerCnt=0;
- 145:../Main.c     **** 			trigger = FALSE;
- 146:../Main.c     **** 			
- 147:../Main.c     **** 			if (noTriggerCnt > 1)
- 148:../Main.c     **** 			{
- 149:../Main.c     **** 				noTriggerCnt=1;
- 150:../Main.c     **** 				PIN_LOW_DEASSERT();
- 151:../Main.c     **** 			}
- 152:../Main.c     **** 			else
- 153:../Main.c     **** 			{
- 154:../Main.c     **** 				PIN_LOW_TOGGLE();
- 155:../Main.c     **** 			}
- 156:../Main.c     **** 		}
- 157:../Main.c     **** 				
- 158:../Main.c     **** 		
- 159:../Main.c     **** 
- 160:../Main.c     **** 	}
- 277              		.loc 2 160 0
- 278 005c C046     		mov	r8, r8
- 279              	.L30:
- 280              	.LBB2:
- 108:../Main.c     **** 		speed++;
- 281              		.loc 2 108 0
- 282 005e FB69     		ldr	r3, [r7, #28]
- 283 0060 0133     		add	r3, r3, #1
- 284 0062 FB61     		str	r3, [r7, #28]
- 109:../Main.c     **** 		speedLow++;
- 285              		.loc 2 109 0
- 286 0064 BB69     		ldr	r3, [r7, #24]
- 287 0066 0133     		add	r3, r3, #1
- 288 0068 BB61     		str	r3, [r7, #24]
- 111:../Main.c     **** 		int cnt_high=0;
- 289              		.loc 2 111 0
- 290 006a 0023     		mov	r3, #0
- 291 006c 3B61     		str	r3, [r7, #16]
- 112:../Main.c     **** 		int cnt_low=0;
- 292              		.loc 2 112 0
- 293 006e 0023     		mov	r3, #0
- 294 0070 FB60     		str	r3, [r7, #12]
- 295              	.LBB3:
- 113:../Main.c     **** 		for (int i = 0; i < 0x1FF; i++)
- 296              		.loc 2 113 0
+ 132:../Main.c     **** 		
+ 133:../Main.c     **** 		
+ 134:../Main.c     **** 		if (cnt_low > 0)
+ 135:../Main.c     **** 		{
+ 136:../Main.c     **** 			if (lastPinState)
+ 137:../Main.c     **** 			{
+ 138:../Main.c     **** 				trigger = TRUE;
+ 139:../Main.c     **** 				speedLowHigh = (speed<<3)/10; // *16/10/2
+ 140:../Main.c     **** 				debugSpeedBuffer[debugCount%DEBUG_CNT_BUFFER_SIZE] = speed;
+ 141:../Main.c     **** 				debugCount++;
+ 142:../Main.c     **** 				debugSpeedBuffer[debugCount%DEBUG_CNT_BUFFER_SIZE] = speedLowHigh;
+ 143:../Main.c     **** 				debugCount++;
+ 144:../Main.c     **** 				speed=0;
+ 145:../Main.c     **** 
+ 146:../Main.c     **** 			}
+ 147:../Main.c     **** 			lastPinState = FALSE;
+ 148:../Main.c     **** 		}
+ 149:../Main.c     **** 		else if (cnt_high > 0)
+ 150:../Main.c     **** 		{
+ 151:../Main.c     **** 			lastPinState = TRUE;
+ 152:../Main.c     **** 		}
+ 153:../Main.c     **** 		
+ 154:../Main.c     **** 		if (speedLow >= speedLowHigh)
+ 155:../Main.c     **** 		{
+ 156:../Main.c     **** 			speedLow = 0;
+ 157:../Main.c     **** 			
+ 158:../Main.c     **** 			if (!trigger)
+ 159:../Main.c     **** 				noTriggerCnt++;
+ 160:../Main.c     **** 			else
+ 161:../Main.c     **** 				noTriggerCnt=0;
+ 162:../Main.c     **** 			trigger = FALSE;
+ 163:../Main.c     **** 			
+ 164:../Main.c     **** 			if (noTriggerCnt > 1)
+ 165:../Main.c     **** 			{
+ 166:../Main.c     **** 				noTriggerCnt=1;
+ 167:../Main.c     **** 				PIN_LOW_DEASSERT();
+ 168:../Main.c     **** 			}
+ 169:../Main.c     **** 			else
+ 170:../Main.c     **** 			{
+ 171:../Main.c     **** 				PIN_LOW_TOGGLE();
+ 172:../Main.c     **** 			}
+ 173:../Main.c     **** 		}
+ 174:../Main.c     **** 
+ 175:../Main.c     **** 	}
+ 281              		.loc 2 175 0
+ 282 0060 C046     		mov	r8, r8
+ 283              	.L30:
+ 284              	.LBB2:
+ 119:../Main.c     **** 		speed++;
+ 285              		.loc 2 119 0
+ 286 0062 FB69     		ldr	r3, [r7, #28]
+ 287 0064 0133     		add	r3, r3, #1
+ 288 0066 FB61     		str	r3, [r7, #28]
+ 120:../Main.c     **** 		speedLow++;
+ 289              		.loc 2 120 0
+ 290 0068 BB69     		ldr	r3, [r7, #24]
+ 291 006a 0133     		add	r3, r3, #1
+ 292 006c BB61     		str	r3, [r7, #24]
+ 123:../Main.c     **** 		int cnt_high=0;
+ 293              		.loc 2 123 0
+ 294 006e 0023     		mov	r3, #0
+ 295 0070 3B61     		str	r3, [r7, #16]
+ 124:../Main.c     **** 		int cnt_low=0;
+ 296              		.loc 2 124 0
  297 0072 0023     		mov	r3, #0
- 298 0074 BB60     		str	r3, [r7, #8]
- 299 0076 0EE0     		b	.L19
- 300              	.L22:
- 115:../Main.c     **** 			if (PIN_IS_HIGH())
- 301              		.loc 2 115 0
- 302 0078 FFF7FEFF 		bl	P0_5_read
- 303 007c 031C     		mov	r3, r0
- 304 007e 002B     		cmp	r3, #0
- 305 0080 03D0     		beq	.L20
- 116:../Main.c     **** 				cnt_high++;
- 306              		.loc 2 116 0
- 307 0082 3B69     		ldr	r3, [r7, #16]
- 308 0084 0133     		add	r3, r3, #1
- 309 0086 3B61     		str	r3, [r7, #16]
- 310 0088 02E0     		b	.L21
- 311              	.L20:
- 118:../Main.c     **** 				cnt_low++;
- 312              		.loc 2 118 0
- 313 008a FB68     		ldr	r3, [r7, #12]
- 314 008c 0133     		add	r3, r3, #1
- 315 008e FB60     		str	r3, [r7, #12]
- 316              	.L21:
- 113:../Main.c     **** 		for (int i = 0; i < 0x1FF; i++)
- 317              		.loc 2 113 0
- 318 0090 BB68     		ldr	r3, [r7, #8]
- 319 0092 0133     		add	r3, r3, #1
- 320 0094 BB60     		str	r3, [r7, #8]
- 321              	.L19:
- 113:../Main.c     **** 		for (int i = 0; i < 0x1FF; i++)
- 322              		.loc 2 113 0 is_stmt 0 discriminator 1
- 323 0096 BA68     		ldr	r2, [r7, #8]
- 324 0098 FF23     		mov	r3, #255
- 325 009a 5B00     		lsl	r3, r3, #1
- 326 009c 9A42     		cmp	r2, r3
- 327 009e EBDD     		ble	.L22
- 328              	.LBE3:
- 122:../Main.c     **** 		if (cnt_low > 0)
- 329              		.loc 2 122 0 is_stmt 1
- 330 00a0 FB68     		ldr	r3, [r7, #12]
- 331 00a2 002B     		cmp	r3, #0
- 332 00a4 17DD     		ble	.L23
- 124:../Main.c     **** 			if (lastPinState)
- 333              		.loc 2 124 0
- 334 00a6 3B1C     		mov	r3, r7
- 335 00a8 2733     		add	r3, r3, #39
- 336 00aa 1B78     		ldrb	r3, [r3]
- 337 00ac 002B     		cmp	r3, #0
- 338 00ae 0DD0     		beq	.L24
- 126:../Main.c     **** 				trigger = TRUE;
- 339              		.loc 2 126 0
- 340 00b0 3B1C     		mov	r3, r7
- 341 00b2 2633     		add	r3, r3, #38
- 342 00b4 0122     		mov	r2, #1
- 343 00b6 1A70     		strb	r2, [r3]
- 127:../Main.c     **** 				speedLowHigh = (speed<<3)/10; // *16/10/2
- 344              		.loc 2 127 0
- 345 00b8 FB69     		ldr	r3, [r7, #28]
- 346 00ba DB00     		lsl	r3, r3, #3
- 347 00bc 181C     		mov	r0, r3
- 348 00be 0A21     		mov	r1, #10
- 349 00c0 FFF7FEFF 		bl	__aeabi_idiv
- 350 00c4 031C     		mov	r3, r0
- 351 00c6 7B61     		str	r3, [r7, #20]
- 128:../Main.c     **** 				speed=0;
- 352              		.loc 2 128 0
- 353 00c8 0023     		mov	r3, #0
- 354 00ca FB61     		str	r3, [r7, #28]
- 355              	.L24:
- 130:../Main.c     **** 			lastPinState = FALSE;
- 356              		.loc 2 130 0
- 357 00cc 3B1C     		mov	r3, r7
- 358 00ce 2733     		add	r3, r3, #39
- 359 00d0 0022     		mov	r2, #0
- 360 00d2 1A70     		strb	r2, [r3]
- 361 00d4 06E0     		b	.L25
- 362              	.L23:
- 132:../Main.c     **** 		else if (cnt_high > 0)
- 363              		.loc 2 132 0
- 364 00d6 3B69     		ldr	r3, [r7, #16]
- 365 00d8 002B     		cmp	r3, #0
- 366 00da 03DD     		ble	.L25
- 134:../Main.c     **** 			lastPinState = TRUE;
- 367              		.loc 2 134 0
- 368 00dc 3B1C     		mov	r3, r7
- 369 00de 2733     		add	r3, r3, #39
- 370 00e0 0122     		mov	r2, #1
- 371 00e2 1A70     		strb	r2, [r3]
- 372              	.L25:
- 137:../Main.c     **** 		if (speedLow >= speedLowHigh)
- 373              		.loc 2 137 0
- 374 00e4 BA69     		ldr	r2, [r7, #24]
- 375 00e6 7B69     		ldr	r3, [r7, #20]
- 376 00e8 9A42     		cmp	r2, r3
- 377 00ea B7DB     		blt	.L31
- 139:../Main.c     **** 			speedLow = 0;
- 378              		.loc 2 139 0
- 379 00ec 0023     		mov	r3, #0
- 380 00ee BB61     		str	r3, [r7, #24]
- 141:../Main.c     **** 			if (!trigger)
- 381              		.loc 2 141 0
- 382 00f0 3B1C     		mov	r3, r7
- 383 00f2 2633     		add	r3, r3, #38
- 384 00f4 1B78     		ldrb	r3, [r3]
- 385 00f6 002B     		cmp	r3, #0
- 386 00f8 03D1     		bne	.L27
- 142:../Main.c     **** 				noTriggerCnt++;
- 387              		.loc 2 142 0
- 388 00fa 3B6A     		ldr	r3, [r7, #32]
- 389 00fc 0133     		add	r3, r3, #1
- 390 00fe 3B62     		str	r3, [r7, #32]
- 391 0100 01E0     		b	.L28
- 392              	.L27:
- 144:../Main.c     **** 				noTriggerCnt=0;
- 393              		.loc 2 144 0
- 394 0102 0023     		mov	r3, #0
- 395 0104 3B62     		str	r3, [r7, #32]
- 396              	.L28:
- 145:../Main.c     **** 			trigger = FALSE;
- 397              		.loc 2 145 0
- 398 0106 3B1C     		mov	r3, r7
- 399 0108 2633     		add	r3, r3, #38
- 400 010a 0022     		mov	r2, #0
- 401 010c 1A70     		strb	r2, [r3]
- 147:../Main.c     **** 			if (noTriggerCnt > 1)
- 402              		.loc 2 147 0
- 403 010e 3B6A     		ldr	r3, [r7, #32]
- 404 0110 012B     		cmp	r3, #1
- 405 0112 04DD     		ble	.L29
- 149:../Main.c     **** 				noTriggerCnt=1;
- 406              		.loc 2 149 0
- 407 0114 0123     		mov	r3, #1
- 408 0116 3B62     		str	r3, [r7, #32]
- 150:../Main.c     **** 				PIN_LOW_DEASSERT();
- 409              		.loc 2 150 0
- 410 0118 FFF7FEFF 		bl	P0_6_set
- 411              	.LBE2:
- 412              		.loc 2 160 0
- 413 011c 9EE7     		b	.L31
- 414              	.L29:
- 415              	.LBB4:
- 154:../Main.c     **** 				PIN_LOW_TOGGLE();
- 416              		.loc 2 154 0
- 417 011e FFF7FEFF 		bl	P0_6_toggle
- 418              	.LBE4:
- 419              		.loc 2 160 0
- 420 0122 9BE7     		b	.L31
- 421              	.L33:
- 422              		.align	2
- 423              	.L32:
- 424 0124 00000000 		.word	PWMSP001_Handle0
- 425              		.cfi_endproc
- 426              	.LFE402:
- 428              		.section	.text.CCU40_3_IRQHandler,"ax",%progbits
- 429              		.align	2
- 430              		.global	CCU40_3_IRQHandler
- 431              		.code	16
- 432              		.thumb_func
- 434              	CCU40_3_IRQHandler:
- 435              	.LFB403:
- 161:../Main.c     **** 	return 0;
- 162:../Main.c     **** }
- 163:../Main.c     **** 
- 164:../Main.c     **** 
- 165:../Main.c     **** /*
- 166:../Main.c     ****  * PWM_Period_Interrupt handler: executes every period match of PWMSP001/0.
- 167:../Main.c     ****  */
- 168:../Main.c     **** void PWM_Period_Interrupt(void)
- 169:../Main.c     **** {
- 436              		.loc 2 169 0
- 437              		.cfi_startproc
- 438 0000 80B5     		push	{r7, lr}
- 439              	.LCFI14:
- 440              		.cfi_def_cfa_offset 8
- 441              		.cfi_offset 7, -8
- 442              		.cfi_offset 14, -4
- 443 0002 82B0     		sub	sp, sp, #8
- 444              	.LCFI15:
- 445              		.cfi_def_cfa_offset 16
- 446 0004 00AF     		add	r7, sp, #0
- 447              	.LCFI16:
- 448              		.cfi_def_cfa_register 7
- 170:../Main.c     **** #define FFAST   10
- 171:../Main.c     **** #define FSLOW   5
- 172:../Main.c     **** #define PERIODE   (FFAST*4)
- 173:../Main.c     **** #define PERCHANGE (FFAST*2)
- 174:../Main.c     **** 	static uint32_t state = 0;
- 175:../Main.c     **** 	status_t status = DAVEApp_SUCCESS;
- 449              		.loc 2 175 0
- 450 0006 0023     		mov	r3, #0
- 451 0008 7B60     		str	r3, [r7, #4]
- 176:../Main.c     **** 
- 177:../Main.c     **** 	/* state machine to change the different duty cycle */
- 178:../Main.c     **** 	switch(state)
- 452              		.loc 2 178 0
- 453 000a 1A4B     		ldr	r3, .L42
- 454 000c 1B68     		ldr	r3, [r3]
- 455 000e 002B     		cmp	r3, #0
- 456 0010 02D0     		beq	.L36
- 457 0012 142B     		cmp	r3, #20
- 458 0014 0BD0     		beq	.L37
- 459 0016 15E0     		b	.L41
- 460              	.L36:
- 179:../Main.c     **** 	{
- 180:../Main.c     **** 		
- 181:../Main.c     **** 		case 0: //status =  PWMSP001_SetCompare(&PWMSP001_Handle0, 0x4AFF); /* Updating of duty cycle to 
- 182:../Main.c     **** 		    // Change PWM frequency to 20 Hz and duty cycle of 50%
- 183:../Main.c     **** 		    status = PWMSP001_SetPwmFreqAndDutyCycle((PWMSP001_HandleType*)&PWMSP001_Handle0, FFAST, 50);
- 461              		.loc 2 183 0
- 462 0018 1749     		ldr	r1, .L42+4
- 463 001a 184A     		ldr	r2, .L42+8
- 464 001c 184B     		ldr	r3, .L42+12
- 465 001e 081C     		mov	r0, r1
- 466 0020 111C     		add	r1, r2, #0
- 467 0022 1A1C     		add	r2, r3, #0
- 468 0024 FFF7FEFF 		bl	PWMSP001_SetPwmFreqAndDutyCycle
- 469 0028 031C     		mov	r3, r0
- 470 002a 7B60     		str	r3, [r7, #4]
- 184:../Main.c     **** 		    break;
- 471              		.loc 2 184 0
- 472 002c 0BE0     		b	.L38
- 473              	.L37:
- 185:../Main.c     **** 		
- 186:../Main.c     **** 		case PERCHANGE: //status =  PWMSP001_SetCompare(&PWMSP001_Handle0, 0x0855); /* Updating of duty c
- 187:../Main.c     **** 		    // Change PWM frequency to 10 Hz and duty cycle of 50%
- 188:../Main.c     **** 		    status = PWMSP001_SetPwmFreqAndDutyCycle((PWMSP001_HandleType*)&PWMSP001_Handle0, FSLOW, 50);
- 474              		.loc 2 188 0
- 475 002e 1249     		ldr	r1, .L42+4
- 476 0030 144A     		ldr	r2, .L42+16
- 477 0032 134B     		ldr	r3, .L42+12
- 478 0034 081C     		mov	r0, r1
- 479 0036 111C     		add	r1, r2, #0
- 480 0038 1A1C     		add	r2, r3, #0
- 481 003a FFF7FEFF 		bl	PWMSP001_SetPwmFreqAndDutyCycle
- 482 003e 031C     		mov	r3, r0
- 483 0040 7B60     		str	r3, [r7, #4]
- 189:../Main.c     **** 		    break;
- 484              		.loc 2 189 0
- 485 0042 00E0     		b	.L38
- 486              	.L41:
- 190:../Main.c     **** 
- 191:../Main.c     **** 		default:
- 192:../Main.c     **** 			break;
- 487              		.loc 2 192 0
- 488 0044 C046     		mov	r8, r8
- 489              	.L38:
- 193:../Main.c     **** 	}
- 194:../Main.c     **** 
- 195:../Main.c     **** 	/* Updation of the state machine */
- 196:../Main.c     **** 	state++;
- 490              		.loc 2 196 0
- 491 0046 0B4B     		ldr	r3, .L42
- 492 0048 1B68     		ldr	r3, [r3]
- 493 004a 5A1C     		add	r2, r3, #1
- 494 004c 094B     		ldr	r3, .L42
- 495 004e 1A60     		str	r2, [r3]
- 197:../Main.c     **** 	if(state>=PERIODE)
- 496              		.loc 2 197 0
- 497 0050 084B     		ldr	r3, .L42
- 498 0052 1B68     		ldr	r3, [r3]
- 499 0054 272B     		cmp	r3, #39
- 500 0056 02D9     		bls	.L39
- 198:../Main.c     **** 	{
- 199:../Main.c     **** 		state= 0;
- 501              		.loc 2 199 0
- 502 0058 064B     		ldr	r3, .L42
- 503 005a 0022     		mov	r2, #0
- 504 005c 1A60     		str	r2, [r3]
- 505              	.L39:
- 200:../Main.c     **** 	}
- 201:../Main.c     **** 
- 202:../Main.c     **** 	if(status != DAVEApp_SUCCESS)
- 506              		.loc 2 202 0
- 507 005e 7B68     		ldr	r3, [r7, #4]
- 508 0060 002B     		cmp	r3, #0
- 509 0062 03D0     		beq	.L34
- 203:../Main.c     **** 	{
- 204:../Main.c     **** 		PWMSP001_Stop((PWMSP001_HandleType*)&PWMSP001_Handle0);
- 510              		.loc 2 204 0
- 511 0064 044B     		ldr	r3, .L42+4
- 512 0066 181C     		mov	r0, r3
- 513 0068 FFF7FEFF 		bl	PWMSP001_Stop
- 514              	.L34:
- 205:../Main.c     **** 	}
- 206:../Main.c     **** }
- 515              		.loc 2 206 0
- 516 006c BD46     		mov	sp, r7
- 517 006e 02B0     		add	sp, sp, #8
- 518              		@ sp needed for prologue
- 519 0070 80BD     		pop	{r7, pc}
- 520              	.L43:
- 521 0072 C046     		.align	2
- 522              	.L42:
- 523 0074 00000000 		.word	state.5903
- 524 0078 00000000 		.word	PWMSP001_Handle0
- 525 007c 00002041 		.word	1092616192
- 526 0080 00004842 		.word	1112014848
- 527 0084 0000A040 		.word	1084227584
- 528              		.cfi_endproc
- 529              	.LFE403:
- 531              		.bss
- 532              		.align	2
- 533              	state.5903:
- 534 0000 00000000 		.space	4
- 535              		.text
- 536              	.Letext0:
- 537              		.file 3 "c:\\dave-3.1.10\\arm-gcc\\bin\\../lib/gcc/arm-none-eabi/4.7.4/../../../../arm-none-eabi/i
- 538              		.file 4 "C:\\DAVE-3.1.10\\eclipse\\/../CMSIS/Infineon/XMC1100_series/Include/XMC1100.h"
- 539              		.file 5 "C:\\DAVE3_workspace\\ws3.1.10\\boschSpeedUp\\Dave\\Generated\\inc\\DAVESupport/../../inc/
- 540              		.file 6 "C:\\DAVE3_workspace\\ws3.1.10\\boschSpeedUp\\Dave\\Generated\\inc\\DAVESupport/../../inc/
- 541              		.file 7 "C:\\DAVE3_workspace\\ws3.1.10\\boschSpeedUp\\Dave\\Generated\\inc\\DAVESupport/../../inc/
+ 298 0074 FB60     		str	r3, [r7, #12]
+ 299              	.LBB3:
+ 125:../Main.c     **** 		for (int i = 0; i < pinCheckCycles; i++)
+ 300              		.loc 2 125 0
+ 301 0076 0023     		mov	r3, #0
+ 302 0078 BB60     		str	r3, [r7, #8]
+ 303 007a 0EE0     		b	.L19
+ 304              	.L22:
+ 127:../Main.c     **** 			if (PIN_IS_HIGH())
+ 305              		.loc 2 127 0
+ 306 007c FFF7FEFF 		bl	P0_5_read
+ 307 0080 031C     		mov	r3, r0
+ 308 0082 002B     		cmp	r3, #0
+ 309 0084 03D0     		beq	.L20
+ 128:../Main.c     **** 				cnt_high++;
+ 310              		.loc 2 128 0
+ 311 0086 3B69     		ldr	r3, [r7, #16]
+ 312 0088 0133     		add	r3, r3, #1
+ 313 008a 3B61     		str	r3, [r7, #16]
+ 314 008c 02E0     		b	.L21
+ 315              	.L20:
+ 130:../Main.c     **** 				cnt_low++;
+ 316              		.loc 2 130 0
+ 317 008e FB68     		ldr	r3, [r7, #12]
+ 318 0090 0133     		add	r3, r3, #1
+ 319 0092 FB60     		str	r3, [r7, #12]
+ 320              	.L21:
+ 125:../Main.c     **** 		for (int i = 0; i < pinCheckCycles; i++)
+ 321              		.loc 2 125 0
+ 322 0094 BB68     		ldr	r3, [r7, #8]
+ 323 0096 0133     		add	r3, r3, #1
+ 324 0098 BB60     		str	r3, [r7, #8]
+ 325              	.L19:
+ 125:../Main.c     **** 		for (int i = 0; i < pinCheckCycles; i++)
+ 326              		.loc 2 125 0 is_stmt 0 discriminator 1
+ 327 009a BA68     		ldr	r2, [r7, #8]
+ 328 009c 3B68     		ldr	r3, [r7]
+ 329 009e 9A42     		cmp	r2, r3
+ 330 00a0 ECDB     		blt	.L22
+ 331              	.LBE3:
+ 134:../Main.c     **** 		if (cnt_low > 0)
+ 332              		.loc 2 134 0 is_stmt 1
+ 333 00a2 FB68     		ldr	r3, [r7, #12]
+ 334 00a4 002B     		cmp	r3, #0
+ 335 00a6 39DD     		ble	.L23
+ 136:../Main.c     **** 			if (lastPinState)
+ 336              		.loc 2 136 0
+ 337 00a8 3B1C     		mov	r3, r7
+ 338 00aa 2733     		add	r3, r3, #39
+ 339 00ac 1B78     		ldrb	r3, [r3]
+ 340 00ae 002B     		cmp	r3, #0
+ 341 00b0 2FD0     		beq	.L24
+ 138:../Main.c     **** 				trigger = TRUE;
+ 342              		.loc 2 138 0
+ 343 00b2 3B1C     		mov	r3, r7
+ 344 00b4 2633     		add	r3, r3, #38
+ 345 00b6 0122     		mov	r2, #1
+ 346 00b8 1A70     		strb	r2, [r3]
+ 139:../Main.c     **** 				speedLowHigh = (speed<<3)/10; // *16/10/2
+ 347              		.loc 2 139 0
+ 348 00ba FB69     		ldr	r3, [r7, #28]
+ 349 00bc DB00     		lsl	r3, r3, #3
+ 350 00be 181C     		mov	r0, r3
+ 351 00c0 0A21     		mov	r1, #10
+ 352 00c2 FFF7FEFF 		bl	__aeabi_idiv
+ 353 00c6 031C     		mov	r3, r0
+ 354 00c8 7B61     		str	r3, [r7, #20]
+ 140:../Main.c     **** 				debugSpeedBuffer[debugCount%DEBUG_CNT_BUFFER_SIZE] = speed;
+ 355              		.loc 2 140 0
+ 356 00ca 294B     		ldr	r3, .L32+4
+ 357 00cc 1B68     		ldr	r3, [r3]
+ 358 00ce 181C     		mov	r0, r3
+ 359 00d0 6421     		mov	r1, #100
+ 360 00d2 FFF7FEFF 		bl	__aeabi_idivmod
+ 361 00d6 0B1C     		mov	r3, r1
+ 362 00d8 1A1C     		mov	r2, r3
+ 363 00da 264B     		ldr	r3, .L32+8
+ 364 00dc 9200     		lsl	r2, r2, #2
+ 365 00de F969     		ldr	r1, [r7, #28]
+ 366 00e0 D150     		str	r1, [r2, r3]
+ 141:../Main.c     **** 				debugCount++;
+ 367              		.loc 2 141 0
+ 368 00e2 234B     		ldr	r3, .L32+4
+ 369 00e4 1B68     		ldr	r3, [r3]
+ 370 00e6 5A1C     		add	r2, r3, #1
+ 371 00e8 214B     		ldr	r3, .L32+4
+ 372 00ea 1A60     		str	r2, [r3]
+ 142:../Main.c     **** 				debugSpeedBuffer[debugCount%DEBUG_CNT_BUFFER_SIZE] = speedLowHigh;
+ 373              		.loc 2 142 0
+ 374 00ec 204B     		ldr	r3, .L32+4
+ 375 00ee 1B68     		ldr	r3, [r3]
+ 376 00f0 181C     		mov	r0, r3
+ 377 00f2 6421     		mov	r1, #100
+ 378 00f4 FFF7FEFF 		bl	__aeabi_idivmod
+ 379 00f8 0B1C     		mov	r3, r1
+ 380 00fa 1A1C     		mov	r2, r3
+ 381 00fc 1D4B     		ldr	r3, .L32+8
+ 382 00fe 9200     		lsl	r2, r2, #2
+ 383 0100 7969     		ldr	r1, [r7, #20]
+ 384 0102 D150     		str	r1, [r2, r3]
+ 143:../Main.c     **** 				debugCount++;
+ 385              		.loc 2 143 0
+ 386 0104 1A4B     		ldr	r3, .L32+4
+ 387 0106 1B68     		ldr	r3, [r3]
+ 388 0108 5A1C     		add	r2, r3, #1
+ 389 010a 194B     		ldr	r3, .L32+4
+ 390 010c 1A60     		str	r2, [r3]
+ 144:../Main.c     **** 				speed=0;
+ 391              		.loc 2 144 0
+ 392 010e 0023     		mov	r3, #0
+ 393 0110 FB61     		str	r3, [r7, #28]
+ 394              	.L24:
+ 147:../Main.c     **** 			lastPinState = FALSE;
+ 395              		.loc 2 147 0
+ 396 0112 3B1C     		mov	r3, r7
+ 397 0114 2733     		add	r3, r3, #39
+ 398 0116 0022     		mov	r2, #0
+ 399 0118 1A70     		strb	r2, [r3]
+ 400 011a 06E0     		b	.L25
+ 401              	.L23:
+ 149:../Main.c     **** 		else if (cnt_high > 0)
+ 402              		.loc 2 149 0
+ 403 011c 3B69     		ldr	r3, [r7, #16]
+ 404 011e 002B     		cmp	r3, #0
+ 405 0120 03DD     		ble	.L25
+ 151:../Main.c     **** 			lastPinState = TRUE;
+ 406              		.loc 2 151 0
+ 407 0122 3B1C     		mov	r3, r7
+ 408 0124 2733     		add	r3, r3, #39
+ 409 0126 0122     		mov	r2, #1
+ 410 0128 1A70     		strb	r2, [r3]
+ 411              	.L25:
+ 154:../Main.c     **** 		if (speedLow >= speedLowHigh)
+ 412              		.loc 2 154 0
+ 413 012a BA69     		ldr	r2, [r7, #24]
+ 414 012c 7B69     		ldr	r3, [r7, #20]
+ 415 012e 9A42     		cmp	r2, r3
+ 416 0130 96DB     		blt	.L31
+ 156:../Main.c     **** 			speedLow = 0;
+ 417              		.loc 2 156 0
+ 418 0132 0023     		mov	r3, #0
+ 419 0134 BB61     		str	r3, [r7, #24]
+ 158:../Main.c     **** 			if (!trigger)
+ 420              		.loc 2 158 0
+ 421 0136 3B1C     		mov	r3, r7
+ 422 0138 2633     		add	r3, r3, #38
+ 423 013a 1B78     		ldrb	r3, [r3]
+ 424 013c 002B     		cmp	r3, #0
+ 425 013e 03D1     		bne	.L27
+ 159:../Main.c     **** 				noTriggerCnt++;
+ 426              		.loc 2 159 0
+ 427 0140 3B6A     		ldr	r3, [r7, #32]
+ 428 0142 0133     		add	r3, r3, #1
+ 429 0144 3B62     		str	r3, [r7, #32]
+ 430 0146 01E0     		b	.L28
+ 431              	.L27:
+ 161:../Main.c     **** 				noTriggerCnt=0;
+ 432              		.loc 2 161 0
+ 433 0148 0023     		mov	r3, #0
+ 434 014a 3B62     		str	r3, [r7, #32]
+ 435              	.L28:
+ 162:../Main.c     **** 			trigger = FALSE;
+ 436              		.loc 2 162 0
+ 437 014c 3B1C     		mov	r3, r7
+ 438 014e 2633     		add	r3, r3, #38
+ 439 0150 0022     		mov	r2, #0
+ 440 0152 1A70     		strb	r2, [r3]
+ 164:../Main.c     **** 			if (noTriggerCnt > 1)
+ 441              		.loc 2 164 0
+ 442 0154 3B6A     		ldr	r3, [r7, #32]
+ 443 0156 012B     		cmp	r3, #1
+ 444 0158 04DD     		ble	.L29
+ 166:../Main.c     **** 				noTriggerCnt=1;
+ 445              		.loc 2 166 0
+ 446 015a 0123     		mov	r3, #1
+ 447 015c 3B62     		str	r3, [r7, #32]
+ 167:../Main.c     **** 				PIN_LOW_DEASSERT();
+ 448              		.loc 2 167 0
+ 449 015e FFF7FEFF 		bl	P0_6_set
+ 450              	.LBE2:
+ 451              		.loc 2 175 0
+ 452 0162 7DE7     		b	.L31
+ 453              	.L29:
+ 454              	.LBB4:
+ 171:../Main.c     **** 				PIN_LOW_TOGGLE();
+ 455              		.loc 2 171 0
+ 456 0164 FFF7FEFF 		bl	P0_6_toggle
+ 457              	.LBE4:
+ 458              		.loc 2 175 0
+ 459 0168 7AE7     		b	.L31
+ 460              	.L33:
+ 461 016a C046     		.align	2
+ 462              	.L32:
+ 463 016c 00000000 		.word	PWMSP001_Handle0
+ 464 0170 0C000000 		.word	debugCount.5894
+ 465 0174 10000000 		.word	debugSpeedBuffer.5895
+ 466              		.cfi_endproc
+ 467              	.LFE402:
+ 469              		.global	__aeabi_uidivmod
+ 470              		.global	__aeabi_ui2f
+ 471              		.section	.text.CCU40_3_IRQHandler,"ax",%progbits
+ 472              		.align	2
+ 473              		.global	CCU40_3_IRQHandler
+ 474              		.code	16
+ 475              		.thumb_func
+ 477              	CCU40_3_IRQHandler:
+ 478              	.LFB403:
+ 176:../Main.c     **** 	return 0;
+ 177:../Main.c     **** }
+ 178:../Main.c     **** 
+ 179:../Main.c     **** 
+ 180:../Main.c     **** /*
+ 181:../Main.c     ****  * PWM_Period_Interrupt handler: executes every period match of PWMSP001/0.
+ 182:../Main.c     ****  */
+ 183:../Main.c     **** void PWM_Period_Interrupt(void)
+ 184:../Main.c     **** {
+ 479              		.loc 2 184 0
+ 480              		.cfi_startproc
+ 481 0000 80B5     		push	{r7, lr}
+ 482              	.LCFI14:
+ 483              		.cfi_def_cfa_offset 8
+ 484              		.cfi_offset 7, -8
+ 485              		.cfi_offset 14, -4
+ 486 0002 00AF     		add	r7, sp, #0
+ 487              	.LCFI15:
+ 488              		.cfi_def_cfa_register 7
+ 185:../Main.c     **** //#define FFAST   10
+ 186:../Main.c     **** //#define FSLOW   1
+ 187:../Main.c     **** //#define FASTCYCLES (FFAST*6)
+ 188:../Main.c     **** //#define SLOWCYCLES (FSLOW*6)
+ 189:../Main.c     **** 
+ 190:../Main.c     **** #define MAXFREQ 7
+ 191:../Main.c     **** 
+ 192:../Main.c     **** 
+ 193:../Main.c     **** 	static uint32_t state = 0;
+ 194:../Main.c     **** 	static uint32_t cycles = 0;
+ 195:../Main.c     **** 	static status_t status = DAVEApp_SUCCESS;
+ 196:../Main.c     **** 
+ 197:../Main.c     **** 	/* state machine to change the different duty cycle */
+ 198:../Main.c     **** 	if (cycles == 0)
+ 489              		.loc 2 198 0
+ 490 0004 1B4B     		ldr	r3, .L36
+ 491 0006 1B68     		ldr	r3, [r3]
+ 492 0008 002B     		cmp	r3, #0
+ 493 000a 2BD1     		bne	.L35
+ 199:../Main.c     **** 	{
+ 200:../Main.c     **** 		cycles = (state%MAXFREQ) + 1;
+ 494              		.loc 2 200 0
+ 495 000c 1A4B     		ldr	r3, .L36+4
+ 496 000e 1B68     		ldr	r3, [r3]
+ 497 0010 181C     		mov	r0, r3
+ 498 0012 0721     		mov	r1, #7
+ 499 0014 FFF7FEFF 		bl	__aeabi_uidivmod
+ 500 0018 0B1C     		mov	r3, r1
+ 501 001a 5A1C     		add	r2, r3, #1
+ 502 001c 154B     		ldr	r3, .L36
+ 503 001e 1A60     		str	r2, [r3]
+ 201:../Main.c     **** 		status = PWMSP001_SetPwmFreqAndDutyCycle((PWMSP001_HandleType*)&PWMSP001_Handle0, cycles, 50);
+ 504              		.loc 2 201 0
+ 505 0020 144B     		ldr	r3, .L36
+ 506 0022 1B68     		ldr	r3, [r3]
+ 507 0024 181C     		mov	r0, r3
+ 508 0026 FFF7FEFF 		bl	__aeabi_ui2f
+ 509 002a 021C     		add	r2, r0, #0
+ 510 002c 1349     		ldr	r1, .L36+8
+ 511 002e 144B     		ldr	r3, .L36+12
+ 512 0030 081C     		mov	r0, r1
+ 513 0032 111C     		add	r1, r2, #0
+ 514 0034 1A1C     		add	r2, r3, #0
+ 515 0036 FFF7FEFF 		bl	PWMSP001_SetPwmFreqAndDutyCycle
+ 516 003a 021C     		mov	r2, r0
+ 517 003c 114B     		ldr	r3, .L36+16
+ 518 003e 1A60     		str	r2, [r3]
+ 202:../Main.c     **** 		cycles = cycles<<2;
+ 519              		.loc 2 202 0
+ 520 0040 0C4B     		ldr	r3, .L36
+ 521 0042 1B68     		ldr	r3, [r3]
+ 522 0044 9A00     		lsl	r2, r3, #2
+ 523 0046 0B4B     		ldr	r3, .L36
+ 524 0048 1A60     		str	r2, [r3]
+ 203:../Main.c     **** 
+ 204:../Main.c     **** 
+ 205:../Main.c     **** 
+ 206:../Main.c     **** //		switch(state&0x1)
+ 207:../Main.c     **** //		{
+ 208:../Main.c     **** //
+ 209:../Main.c     **** //			case 0: //status =  PWMSP001_SetCompare(&PWMSP001_Handle0, 0x4AFF); /* Updating of duty cycle 
+ 210:../Main.c     **** //				status = PWMSP001_SetPwmFreqAndDutyCycle((PWMSP001_HandleType*)&PWMSP001_Handle0, FFAST, 50);
+ 211:../Main.c     **** //				cycles = FASTCYCLES;
+ 212:../Main.c     **** //				break;
+ 213:../Main.c     **** //
+ 214:../Main.c     **** //			default: //status =  PWMSP001_SetCompare(&PWMSP001_Handle0, 0x0855); /* Updating of duty cycle
+ 215:../Main.c     **** //				status = PWMSP001_SetPwmFreqAndDutyCycle((PWMSP001_HandleType*)&PWMSP001_Handle0, FSLOW, 50);
+ 216:../Main.c     **** //				cycles = SLOWCYCLES;
+ 217:../Main.c     **** //				break;
+ 218:../Main.c     **** //
+ 219:../Main.c     **** //		}
+ 220:../Main.c     **** 		state++;
+ 525              		.loc 2 220 0
+ 526 004a 0B4B     		ldr	r3, .L36+4
+ 527 004c 1B68     		ldr	r3, [r3]
+ 528 004e 5A1C     		add	r2, r3, #1
+ 529 0050 094B     		ldr	r3, .L36+4
+ 530 0052 1A60     		str	r2, [r3]
+ 221:../Main.c     **** 		if(status != DAVEApp_SUCCESS)
+ 531              		.loc 2 221 0
+ 532 0054 0B4B     		ldr	r3, .L36+16
+ 533 0056 1B68     		ldr	r3, [r3]
+ 534 0058 002B     		cmp	r3, #0
+ 535 005a 03D0     		beq	.L35
+ 222:../Main.c     **** 		{
+ 223:../Main.c     **** 			PWMSP001_Stop((PWMSP001_HandleType*)&PWMSP001_Handle0);
+ 536              		.loc 2 223 0
+ 537 005c 074B     		ldr	r3, .L36+8
+ 538 005e 181C     		mov	r0, r3
+ 539 0060 FFF7FEFF 		bl	PWMSP001_Stop
+ 540              	.L35:
+ 224:../Main.c     **** 		}
+ 225:../Main.c     **** 	}
+ 226:../Main.c     **** 
+ 227:../Main.c     **** 	/* Updation of the state machine */
+ 228:../Main.c     **** 
+ 229:../Main.c     **** 	cycles--;
+ 541              		.loc 2 229 0
+ 542 0064 034B     		ldr	r3, .L36
+ 543 0066 1B68     		ldr	r3, [r3]
+ 544 0068 5A1E     		sub	r2, r3, #1
+ 545 006a 024B     		ldr	r3, .L36
+ 546 006c 1A60     		str	r2, [r3]
+ 230:../Main.c     **** //	if(state>=PERIODE)
+ 231:../Main.c     **** //	{
+ 232:../Main.c     **** //		state= 0;
+ 233:../Main.c     **** //	}
+ 234:../Main.c     **** 
+ 235:../Main.c     **** 
+ 236:../Main.c     **** }
+ 547              		.loc 2 236 0
+ 548 006e BD46     		mov	sp, r7
+ 549              		@ sp needed for prologue
+ 550 0070 80BD     		pop	{r7, pc}
+ 551              	.L37:
+ 552 0072 C046     		.align	2
+ 553              	.L36:
+ 554 0074 00000000 		.word	cycles.5907
+ 555 0078 04000000 		.word	state.5906
+ 556 007c 00000000 		.word	PWMSP001_Handle0
+ 557 0080 00004842 		.word	1112014848
+ 558 0084 08000000 		.word	status.5908
+ 559              		.cfi_endproc
+ 560              	.LFE403:
+ 562              		.bss
+ 563              		.align	2
+ 564              	cycles.5907:
+ 565 0000 00000000 		.space	4
+ 566              		.align	2
+ 567              	state.5906:
+ 568 0004 00000000 		.space	4
+ 569              		.align	2
+ 570              	status.5908:
+ 571 0008 00000000 		.space	4
+ 572              		.align	2
+ 573              	debugCount.5894:
+ 574 000c 00000000 		.space	4
+ 575              		.align	2
+ 576              	debugSpeedBuffer.5895:
+ 577 0010 00000000 		.space	400
+ 577      00000000 
+ 577      00000000 
+ 577      00000000 
+ 577      00000000 
+ 578              		.text
+ 579              	.Letext0:
+ 580              		.file 3 "c:\\dave-3.1.10\\arm-gcc\\bin\\../lib/gcc/arm-none-eabi/4.7.4/../../../../arm-none-eabi/i
+ 581              		.file 4 "C:\\DAVE-3.1.10\\eclipse\\/../CMSIS/Infineon/XMC1100_series/Include/XMC1100.h"
+ 582              		.file 5 "C:\\DAVE3_workspace\\ws3.1.10\\boschSpeedUp\\Dave\\Generated\\inc\\DAVESupport/../../inc/
+ 583              		.file 6 "C:\\DAVE3_workspace\\ws3.1.10\\boschSpeedUp\\Dave\\Generated\\inc\\DAVESupport/../../inc/
+ 584              		.file 7 "C:\\DAVE3_workspace\\ws3.1.10\\boschSpeedUp\\Dave\\Generated\\inc\\DAVESupport/../../inc/
 DEFINED SYMBOLS
                             *ABS*:00000000 Main.c
-C:\Users\Patrick\AppData\Local\Temp\ccRxjDlm.s:18     .text.P0_5_set_large_hysteresis:00000000 $t
-C:\Users\Patrick\AppData\Local\Temp\ccRxjDlm.s:22     .text.P0_5_set_large_hysteresis:00000000 P0_5_set_large_hysteresis
-C:\Users\Patrick\AppData\Local\Temp\ccRxjDlm.s:50     .text.P0_5_set_large_hysteresis:00000018 $d
-C:\Users\Patrick\AppData\Local\Temp\ccRxjDlm.s:55     .text.P0_5_read:00000000 $t
-C:\Users\Patrick\AppData\Local\Temp\ccRxjDlm.s:59     .text.P0_5_read:00000000 P0_5_read
-C:\Users\Patrick\AppData\Local\Temp\ccRxjDlm.s:84     .text.P0_5_read:00000014 $d
-C:\Users\Patrick\AppData\Local\Temp\ccRxjDlm.s:89     .text.P0_6_set_mode:00000000 $t
-C:\Users\Patrick\AppData\Local\Temp\ccRxjDlm.s:93     .text.P0_6_set_mode:00000000 P0_6_set_mode
-C:\Users\Patrick\AppData\Local\Temp\ccRxjDlm.s:135    .text.P0_6_set_mode:00000030 $d
-C:\Users\Patrick\AppData\Local\Temp\ccRxjDlm.s:141    .text.P0_6_set:00000000 $t
-C:\Users\Patrick\AppData\Local\Temp\ccRxjDlm.s:145    .text.P0_6_set:00000000 P0_6_set
-C:\Users\Patrick\AppData\Local\Temp\ccRxjDlm.s:168    .text.P0_6_set:00000010 $d
-C:\Users\Patrick\AppData\Local\Temp\ccRxjDlm.s:173    .text.P0_6_toggle:00000000 $t
-C:\Users\Patrick\AppData\Local\Temp\ccRxjDlm.s:177    .text.P0_6_toggle:00000000 P0_6_toggle
-C:\Users\Patrick\AppData\Local\Temp\ccRxjDlm.s:200    .text.P0_6_toggle:00000010 $d
-C:\Users\Patrick\AppData\Local\Temp\ccRxjDlm.s:207    .text.main:00000000 $t
-C:\Users\Patrick\AppData\Local\Temp\ccRxjDlm.s:212    .text.main:00000000 main
-C:\Users\Patrick\AppData\Local\Temp\ccRxjDlm.s:424    .text.main:00000124 $d
-C:\Users\Patrick\AppData\Local\Temp\ccRxjDlm.s:429    .text.CCU40_3_IRQHandler:00000000 $t
-C:\Users\Patrick\AppData\Local\Temp\ccRxjDlm.s:434    .text.CCU40_3_IRQHandler:00000000 CCU40_3_IRQHandler
-C:\Users\Patrick\AppData\Local\Temp\ccRxjDlm.s:523    .text.CCU40_3_IRQHandler:00000074 $d
-C:\Users\Patrick\AppData\Local\Temp\ccRxjDlm.s:533    .bss:00000000 state.5903
-C:\Users\Patrick\AppData\Local\Temp\ccRxjDlm.s:532    .bss:00000000 $d
+C:\Users\Patrick\AppData\Local\Temp\ccwraVgG.s:18     .text.P0_5_set_large_hysteresis:00000000 $t
+C:\Users\Patrick\AppData\Local\Temp\ccwraVgG.s:22     .text.P0_5_set_large_hysteresis:00000000 P0_5_set_large_hysteresis
+C:\Users\Patrick\AppData\Local\Temp\ccwraVgG.s:50     .text.P0_5_set_large_hysteresis:00000018 $d
+C:\Users\Patrick\AppData\Local\Temp\ccwraVgG.s:55     .text.P0_5_read:00000000 $t
+C:\Users\Patrick\AppData\Local\Temp\ccwraVgG.s:59     .text.P0_5_read:00000000 P0_5_read
+C:\Users\Patrick\AppData\Local\Temp\ccwraVgG.s:84     .text.P0_5_read:00000014 $d
+C:\Users\Patrick\AppData\Local\Temp\ccwraVgG.s:89     .text.P0_6_set_mode:00000000 $t
+C:\Users\Patrick\AppData\Local\Temp\ccwraVgG.s:93     .text.P0_6_set_mode:00000000 P0_6_set_mode
+C:\Users\Patrick\AppData\Local\Temp\ccwraVgG.s:135    .text.P0_6_set_mode:00000030 $d
+C:\Users\Patrick\AppData\Local\Temp\ccwraVgG.s:141    .text.P0_6_set:00000000 $t
+C:\Users\Patrick\AppData\Local\Temp\ccwraVgG.s:145    .text.P0_6_set:00000000 P0_6_set
+C:\Users\Patrick\AppData\Local\Temp\ccwraVgG.s:168    .text.P0_6_set:00000010 $d
+C:\Users\Patrick\AppData\Local\Temp\ccwraVgG.s:173    .text.P0_6_toggle:00000000 $t
+C:\Users\Patrick\AppData\Local\Temp\ccwraVgG.s:177    .text.P0_6_toggle:00000000 P0_6_toggle
+C:\Users\Patrick\AppData\Local\Temp\ccwraVgG.s:200    .text.P0_6_toggle:00000010 $d
+C:\Users\Patrick\AppData\Local\Temp\ccwraVgG.s:208    .text.main:00000000 $t
+C:\Users\Patrick\AppData\Local\Temp\ccwraVgG.s:213    .text.main:00000000 main
+C:\Users\Patrick\AppData\Local\Temp\ccwraVgG.s:463    .text.main:0000016c $d
+C:\Users\Patrick\AppData\Local\Temp\ccwraVgG.s:573    .bss:0000000c debugCount.5894
+C:\Users\Patrick\AppData\Local\Temp\ccwraVgG.s:576    .bss:00000010 debugSpeedBuffer.5895
+C:\Users\Patrick\AppData\Local\Temp\ccwraVgG.s:472    .text.CCU40_3_IRQHandler:00000000 $t
+C:\Users\Patrick\AppData\Local\Temp\ccwraVgG.s:477    .text.CCU40_3_IRQHandler:00000000 CCU40_3_IRQHandler
+C:\Users\Patrick\AppData\Local\Temp\ccwraVgG.s:554    .text.CCU40_3_IRQHandler:00000074 $d
+C:\Users\Patrick\AppData\Local\Temp\ccwraVgG.s:564    .bss:00000000 cycles.5907
+C:\Users\Patrick\AppData\Local\Temp\ccwraVgG.s:567    .bss:00000004 state.5906
+C:\Users\Patrick\AppData\Local\Temp\ccwraVgG.s:570    .bss:00000008 status.5908
+C:\Users\Patrick\AppData\Local\Temp\ccwraVgG.s:563    .bss:00000000 $d
                      .debug_frame:00000010 $d
                            .group:00000000 wm4.1.63d3e0297d6e9004e0e37a0840833abd
                            .group:00000000 wm4.XMC1100.h.45.7a7cd799d7738130fcda8b83b0aa37d4
@@ -1125,8 +1210,11 @@ C:\Users\Patrick\AppData\Local\Temp\ccRxjDlm.s:532    .bss:00000000 $d
 
 UNDEFINED SYMBOLS
 __aeabi_idiv
+__aeabi_idivmod
 DAVE_Init
 PWMSP001_Start
 PWMSP001_Stop
 PWMSP001_Handle0
+__aeabi_uidivmod
+__aeabi_ui2f
 PWMSP001_SetPwmFreqAndDutyCycle

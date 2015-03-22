@@ -75,6 +75,8 @@
 
 
 
+
+
 int main(void)
 {
 	status_t status;		// Declaration of return variable for DAVE3 APIs
@@ -102,15 +104,25 @@ int main(void)
 	int speedLow=0;
 	int speedLowHigh=0;
 
+	int pinCheckCycles = 100;
+
+#define DEBUG_CNT_BUFFER_SIZE 100
+	static int debugCount = 0;
+	static int debugSpeedBuffer[DEBUG_CNT_BUFFER_SIZE];
+
+
+
+
 
 	while(1)
 	{
 		speed++;
 		speedLow++;
 		
+
 		int cnt_high=0;
 		int cnt_low=0;
-		for (int i = 0; i < 0x1FF; i++)
+		for (int i = 0; i < pinCheckCycles; i++)
 		{
 			if (PIN_IS_HIGH())
 				cnt_high++;
@@ -125,7 +137,12 @@ int main(void)
 			{
 				trigger = TRUE;
 				speedLowHigh = (speed<<3)/10; // *16/10/2
+				debugSpeedBuffer[debugCount%DEBUG_CNT_BUFFER_SIZE] = speed;
+				debugCount++;
+				debugSpeedBuffer[debugCount%DEBUG_CNT_BUFFER_SIZE] = speedLowHigh;
+				debugCount++;
 				speed=0;
+
 			}
 			lastPinState = FALSE;
 		}
@@ -154,8 +171,6 @@ int main(void)
 				PIN_LOW_TOGGLE();
 			}
 		}
-				
-		
 
 	}
 	return 0;
@@ -167,40 +182,55 @@ int main(void)
  */
 void PWM_Period_Interrupt(void)
 {
-#define FFAST   10
-#define FSLOW   5
-#define PERIODE   (FFAST*4)
-#define PERCHANGE (FFAST*2)
+//#define FFAST   10
+//#define FSLOW   1
+//#define FASTCYCLES (FFAST*6)
+//#define SLOWCYCLES (FSLOW*6)
+
+#define MAXFREQ 7
+
+
 	static uint32_t state = 0;
-	status_t status = DAVEApp_SUCCESS;
+	static uint32_t cycles = 0;
+	static status_t status = DAVEApp_SUCCESS;
 
 	/* state machine to change the different duty cycle */
-	switch(state)
+	if (cycles == 0)
 	{
-		
-		case 0: //status =  PWMSP001_SetCompare(&PWMSP001_Handle0, 0x4AFF); /* Updating of duty cycle to 10% */
-		    // Change PWM frequency to 20 Hz and duty cycle of 50%
-		    status = PWMSP001_SetPwmFreqAndDutyCycle((PWMSP001_HandleType*)&PWMSP001_Handle0, FFAST, 50);
-		    break;
-		
-		case PERCHANGE: //status =  PWMSP001_SetCompare(&PWMSP001_Handle0, 0x0855); /* Updating of duty cycle to 90% */
-		    // Change PWM frequency to 10 Hz and duty cycle of 50%
-		    status = PWMSP001_SetPwmFreqAndDutyCycle((PWMSP001_HandleType*)&PWMSP001_Handle0, FSLOW, 50);
-		    break;
+		cycles = (state%MAXFREQ) + 1;
+		status = PWMSP001_SetPwmFreqAndDutyCycle((PWMSP001_HandleType*)&PWMSP001_Handle0, cycles, 50);
+		cycles = cycles<<2;
 
-		default:
-			break;
+
+
+//		switch(state&0x1)
+//		{
+//
+//			case 0: //status =  PWMSP001_SetCompare(&PWMSP001_Handle0, 0x4AFF); /* Updating of duty cycle to 10% */
+//				status = PWMSP001_SetPwmFreqAndDutyCycle((PWMSP001_HandleType*)&PWMSP001_Handle0, FFAST, 50);
+//				cycles = FASTCYCLES;
+//				break;
+//
+//			default: //status =  PWMSP001_SetCompare(&PWMSP001_Handle0, 0x0855); /* Updating of duty cycle to 90% */
+//				status = PWMSP001_SetPwmFreqAndDutyCycle((PWMSP001_HandleType*)&PWMSP001_Handle0, FSLOW, 50);
+//				cycles = SLOWCYCLES;
+//				break;
+//
+//		}
+		state++;
+		if(status != DAVEApp_SUCCESS)
+		{
+			PWMSP001_Stop((PWMSP001_HandleType*)&PWMSP001_Handle0);
+		}
 	}
 
 	/* Updation of the state machine */
-	state++;
-	if(state>=PERIODE)
-	{
-		state= 0;
-	}
 
-	if(status != DAVEApp_SUCCESS)
-	{
-		PWMSP001_Stop((PWMSP001_HandleType*)&PWMSP001_Handle0);
-	}
+	cycles--;
+//	if(state>=PERIODE)
+//	{
+//		state= 0;
+//	}
+
+
 }
