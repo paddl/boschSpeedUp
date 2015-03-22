@@ -20,7 +20,8 @@ Main.d Main.o: ../Main.c \
  C:\DAVE3_workspace\ws3.1.10\boschSpeedUp\Dave\Generated\inc\DAVESupport/../../inc/PWMSP001/PWMSP001_Conf.h \
  C:\DAVE3_workspace\ws3.1.10\boschSpeedUp\Dave\Generated\inc\DAVESupport/../../inc/NVIC002/NVIC002.h \
  C:\DAVE3_workspace\ws3.1.10\boschSpeedUp\Dave\Generated\inc\DAVESupport/../../inc/NVIC002/NVIC002_Conf.h \
- C:\DAVE3_workspace\ws3.1.10\boschSpeedUp\Dave\Generated\inc\DAVESupport/../../inc/NVIC002/NVIC002_Extern.h
+ C:\DAVE3_workspace\ws3.1.10\boschSpeedUp\Dave\Generated\inc\DAVESupport/../../inc/NVIC002/NVIC002_Extern.h \
+ ../GPIO.h
 
 C:\DAVE3_workspace\ws3.1.10\boschSpeedUp\Dave\Generated\inc\DAVESupport/DAVE3.h:
 
@@ -65,3 +66,5 @@ C:\DAVE3_workspace\ws3.1.10\boschSpeedUp\Dave\Generated\inc\DAVESupport/../../in
 C:\DAVE3_workspace\ws3.1.10\boschSpeedUp\Dave\Generated\inc\DAVESupport/../../inc/NVIC002/NVIC002_Conf.h:
 
 C:\DAVE3_workspace\ws3.1.10\boschSpeedUp\Dave\Generated\inc\DAVESupport/../../inc/NVIC002/NVIC002_Extern.h:
+
+../GPIO.h:

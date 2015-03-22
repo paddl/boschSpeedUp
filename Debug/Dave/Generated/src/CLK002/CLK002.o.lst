@@ -781,20 +781,20 @@
  478              		.file 3 "c:\\dave-3.1.10\\arm-gcc\\bin\\../lib/gcc/arm-none-eabi/4.7.4/../../../../arm-none-eabi/i
 DEFINED SYMBOLS
                             *ABS*:00000000 CLK002.c
-C:\Users\Patrick\AppData\Local\Temp\ccJJyAcB.s:18     .text.CLK002_Init:00000000 $t
-C:\Users\Patrick\AppData\Local\Temp\ccJJyAcB.s:23     .text.CLK002_Init:00000000 CLK002_Init
-C:\Users\Patrick\AppData\Local\Temp\ccJJyAcB.s:107    .text.CLK002_lDivUpdate:00000000 CLK002_lDivUpdate
-C:\Users\Patrick\AppData\Local\Temp\ccJJyAcB.s:69     .text.CLK002_Init:00000030 $d
-C:\Users\Patrick\AppData\Local\Temp\ccJJyAcB.s:75     .text.AllowClkInitByStartup:00000000 $t
-C:\Users\Patrick\AppData\Local\Temp\ccJJyAcB.s:80     .text.AllowClkInitByStartup:00000000 AllowClkInitByStartup
-C:\Users\Patrick\AppData\Local\Temp\ccJJyAcB.s:103    .text.CLK002_lDivUpdate:00000000 $t
-C:\Users\Patrick\AppData\Local\Temp\ccJJyAcB.s:345    .text.CLK002_lFrequencyDownScaling:00000000 CLK002_lFrequencyDownScaling
-C:\Users\Patrick\AppData\Local\Temp\ccJJyAcB.s:204    .text.CLK002_lFrequencyUpScaling:00000000 CLK002_lFrequencyUpScaling
-C:\Users\Patrick\AppData\Local\Temp\ccJJyAcB.s:194    .text.CLK002_lDivUpdate:00000070 $d
-C:\Users\Patrick\AppData\Local\Temp\ccJJyAcB.s:200    .text.CLK002_lFrequencyUpScaling:00000000 $t
-C:\Users\Patrick\AppData\Local\Temp\ccJJyAcB.s:334    .text.CLK002_lFrequencyUpScaling:000000b0 $d
-C:\Users\Patrick\AppData\Local\Temp\ccJJyAcB.s:341    .text.CLK002_lFrequencyDownScaling:00000000 $t
-C:\Users\Patrick\AppData\Local\Temp\ccJJyAcB.s:469    .text.CLK002_lFrequencyDownScaling:000000a4 $d
+C:\Users\Patrick\AppData\Local\Temp\ccwd7lws.s:18     .text.CLK002_Init:00000000 $t
+C:\Users\Patrick\AppData\Local\Temp\ccwd7lws.s:23     .text.CLK002_Init:00000000 CLK002_Init
+C:\Users\Patrick\AppData\Local\Temp\ccwd7lws.s:107    .text.CLK002_lDivUpdate:00000000 CLK002_lDivUpdate
+C:\Users\Patrick\AppData\Local\Temp\ccwd7lws.s:69     .text.CLK002_Init:00000030 $d
+C:\Users\Patrick\AppData\Local\Temp\ccwd7lws.s:75     .text.AllowClkInitByStartup:00000000 $t
+C:\Users\Patrick\AppData\Local\Temp\ccwd7lws.s:80     .text.AllowClkInitByStartup:00000000 AllowClkInitByStartup
+C:\Users\Patrick\AppData\Local\Temp\ccwd7lws.s:103    .text.CLK002_lDivUpdate:00000000 $t
+C:\Users\Patrick\AppData\Local\Temp\ccwd7lws.s:345    .text.CLK002_lFrequencyDownScaling:00000000 CLK002_lFrequencyDownScaling
+C:\Users\Patrick\AppData\Local\Temp\ccwd7lws.s:204    .text.CLK002_lFrequencyUpScaling:00000000 CLK002_lFrequencyUpScaling
+C:\Users\Patrick\AppData\Local\Temp\ccwd7lws.s:194    .text.CLK002_lDivUpdate:00000070 $d
+C:\Users\Patrick\AppData\Local\Temp\ccwd7lws.s:200    .text.CLK002_lFrequencyUpScaling:00000000 $t
+C:\Users\Patrick\AppData\Local\Temp\ccwd7lws.s:334    .text.CLK002_lFrequencyUpScaling:000000b0 $d
+C:\Users\Patrick\AppData\Local\Temp\ccwd7lws.s:341    .text.CLK002_lFrequencyDownScaling:00000000 $t
+C:\Users\Patrick\AppData\Local\Temp\ccwd7lws.s:469    .text.CLK002_lFrequencyDownScaling:000000a4 $d
                      .debug_frame:00000010 $d
                            .group:00000000 wm4.1.63d3e0297d6e9004e0e37a0840833abd
                            .group:00000000 wm4.XMC1100.h.45.7a7cd799d7738130fcda8b83b0aa37d4
