@@ -1,0 +1,58 @@
+   1              		.cpu cortex-m0
+   2              		.fpu softvfp
+   3              		.eabi_attribute 20, 1
+   4              		.eabi_attribute 21, 1
+   5              		.eabi_attribute 23, 3
+   6              		.eabi_attribute 24, 1
+   7              		.eabi_attribute 25, 1
+   8              		.eabi_attribute 26, 1
+   9              		.eabi_attribute 30, 4
+  10              		.eabi_attribute 34, 0
+  11              		.eabi_attribute 18, 4
+  12              		.code	16
+  13              		.file	"MULTIPLEXER.c"
+  14              		.section	.text.DAVE_MUX_Init,"ax",%progbits
+  15              		.align	1
+  16              		.global	DAVE_MUX_Init
+  17              		.code	16
+  18              		.thumb_func
+  20              	DAVE_MUX_Init:
+  21 0000 064B     		ldr	r3, .L2
+  22 0002 0321     		mov	r1, #3
+  23 0004 1A68     		ldr	r2, [r3]
+  24 0006 0648     		ldr	r0, .L2+4
+  25 0008 0A43     		orr	r2, r1
+  26 000a 1A60     		str	r2, [r3]
+  27 000c 4369     		ldr	r3, [r0, #20]
+  28 000e 054A     		ldr	r2, .L2+8
+  29 0010 A021     		mov	r1, #160
+  30 0012 1A40     		and	r2, r3
+  31 0014 0B02     		lsl	r3, r1, #8
+  32 0016 1A43     		orr	r2, r3
+  33 0018 4261     		str	r2, [r0, #20]
+  34              		@ sp needed for prologue
+  35 001a 7047     		bx	lr
+  36              	.L3:
+  37              		.align	2
+  38              	.L2:
+  39 001c A8010448 		.word	1208222120
+  40 0020 00000440 		.word	1074003968
+  41 0024 FF47FFFF 		.word	-47105
+  43              		.section	.text.DAVE_MUX_PreInit,"ax",%progbits
+  44              		.align	1
+  45              		.global	DAVE_MUX_PreInit
+  46              		.code	16
+  47              		.thumb_func
+  49              	DAVE_MUX_PreInit:
+  50              		@ sp needed for prologue
+  51 0000 7047     		bx	lr
+  53              		.ident	"GCC: (GNU Tools for ARM Embedded Processors) 4.7.4 20130913 (release) [ARM/embedded-4_7-br
+DEFINED SYMBOLS
+                            *ABS*:00000000 MULTIPLEXER.c
+C:\Users\Patrick\AppData\Local\Temp\ccA47LQC.s:15     .text.DAVE_MUX_Init:00000000 $t
+C:\Users\Patrick\AppData\Local\Temp\ccA47LQC.s:20     .text.DAVE_MUX_Init:00000000 DAVE_MUX_Init
+C:\Users\Patrick\AppData\Local\Temp\ccA47LQC.s:39     .text.DAVE_MUX_Init:0000001c $d
+C:\Users\Patrick\AppData\Local\Temp\ccA47LQC.s:44     .text.DAVE_MUX_PreInit:00000000 $t
+C:\Users\Patrick\AppData\Local\Temp\ccA47LQC.s:49     .text.DAVE_MUX_PreInit:00000000 DAVE_MUX_PreInit
+
+NO UNDEFINED SYMBOLS

@@ -172,7 +172,7 @@ void PWM_Period_Interrupt(void)
 #define PERIODE   (FFAST*4)
 #define PERCHANGE (FFAST*2)
 	static uint32_t state = 0;
-	status_t status;
+	status_t status = DAVEApp_SUCCESS;
 
 	/* state machine to change the different duty cycle */
 	switch(state)

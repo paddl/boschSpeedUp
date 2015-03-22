@@ -1,0 +1,201 @@
+   1              		.cpu cortex-m0
+   2              		.fpu softvfp
+   3              		.eabi_attribute 20, 1
+   4              		.eabi_attribute 21, 1
+   5              		.eabi_attribute 23, 3
+   6              		.eabi_attribute 24, 1
+   7              		.eabi_attribute 25, 1
+   8              		.eabi_attribute 26, 1
+   9              		.eabi_attribute 30, 4
+  10              		.eabi_attribute 34, 0
+  11              		.eabi_attribute 18, 4
+  12              		.code	16
+  13              		.file	"Main.c"
+  14              		.global	__aeabi_idiv
+  15              		.section	.text.startup.main,"ax",%progbits
+  16              		.align	1
+  17              		.global	main
+  18              		.code	16
+  19              		.thumb_func
+  21              	main:
+  22 0000 F0B5     		push	{r4, r5, r6, r7, lr}
+  23 0002 85B0     		sub	sp, sp, #20
+  24 0004 FFF7FEFF 		bl	DAVE_Init
+  25 0008 2D4C     		ldr	r4, .L27
+  26 000a 201C     		mov	r0, r4
+  27 000c FFF7FEFF 		bl	PWMSP001_Start
+  28 0010 0028     		cmp	r0, #0
+  29 0012 02D0     		beq	.L2
+  30 0014 201C     		mov	r0, r4
+  31 0016 FFF7FEFF 		bl	PWMSP001_Stop
+  32              	.L2:
+  33 001a 2A4E     		ldr	r6, .L27+4
+  34 001c 2A4B     		ldr	r3, .L27+8
+  35 001e 7269     		ldr	r2, [r6, #20]
+  36 0020 C021     		mov	r1, #192
+  37 0022 1340     		and	r3, r2
+  38 0024 7361     		str	r3, [r6, #20]
+  39 0026 7069     		ldr	r0, [r6, #20]
+  40 0028 0D04     		lsl	r5, r1, #16
+  41 002a 0543     		orr	r5, r0
+  42 002c 4027     		mov	r7, #64
+  43 002e 7561     		str	r5, [r6, #20]
+  44 0030 7760     		str	r7, [r6, #4]
+  45 0032 346C     		ldr	r4, [r6, #64]
+  46 0034 8022     		mov	r2, #128
+  47 0036 D303     		lsl	r3, r2, #15
+  48 0038 2343     		orr	r3, r4
+  49 003a 3364     		str	r3, [r6, #64]
+  50 003c 736A     		ldr	r3, [r6, #36]
+  51 003e 706A     		ldr	r0, [r6, #36]
+  52 0040 2021     		mov	r1, #32
+  53 0042 0840     		and	r0, r1
+  54 0044 8446     		mov	ip, r0
+  55 0046 0020     		mov	r0, #0
+  56 0048 041C     		mov	r4, r0
+  57 004a 031C     		mov	r3, r0
+  58 004c 0290     		str	r0, [sp, #8]
+  59 004e 021C     		mov	r2, r0
+  60              	.L24:
+  61 0050 0021     		mov	r1, #0
+  62 0052 1E4D     		ldr	r5, .L27+12
+  63 0054 0133     		add	r3, r3, #1
+  64 0056 0134     		add	r4, r4, #1
+  65 0058 0191     		str	r1, [sp, #4]
+  66              	.L6:
+  67 005a 776A     		ldr	r7, [r6, #36]
+  68 005c BF06     		lsl	r7, r7, #26
+  69 005e 03D5     		bpl	.L4
+  70 0060 019F     		ldr	r7, [sp, #4]
+  71 0062 0137     		add	r7, r7, #1
+  72 0064 0197     		str	r7, [sp, #4]
+  73 0066 00E0     		b	.L5
+  74              	.L4:
+  75 0068 0131     		add	r1, r1, #1
+  76              	.L5:
+  77 006a 013D     		sub	r5, r5, #1
+  78 006c 002D     		cmp	r5, #0
+  79 006e F4D1     		bne	.L6
+  80 0070 0029     		cmp	r1, #0
+  81 0072 0CD0     		beq	.L7
+  82 0074 6746     		mov	r7, ip
+  83 0076 002F     		cmp	r7, #0
+  84 0078 0ED0     		beq	.L8
+  85 007a D800     		lsl	r0, r3, #3
+  86 007c 0A21     		mov	r1, #10
+  87 007e FFF7FEFF 		bl	__aeabi_idiv
+  88 0082 2B1C     		mov	r3, r5
+  89 0084 AC46     		mov	ip, r5
+  90 0086 0122     		mov	r2, #1
+  91 0088 8442     		cmp	r4, r0
+  92 008a E1DB     		blt	.L24
+  93 008c 16E0     		b	.L9
+  94              	.L7:
+  95 008e 019D     		ldr	r5, [sp, #4]
+  96 0090 002D     		cmp	r5, #0
+  97 0092 01D0     		beq	.L8
+  98 0094 0121     		mov	r1, #1
+  99 0096 8C46     		mov	ip, r1
+ 100              	.L8:
+ 101 0098 8442     		cmp	r4, r0
+ 102 009a D9DB     		blt	.L24
+ 103 009c 002A     		cmp	r2, #0
+ 104 009e 0DD1     		bne	.L9
+ 105 00a0 029C     		ldr	r4, [sp, #8]
+ 106 00a2 012C     		cmp	r4, #1
+ 107 00a4 03D1     		bne	.L14
+ 108 00a6 4025     		mov	r5, #64
+ 109 00a8 7560     		str	r5, [r6, #4]
+ 110 00aa 141C     		mov	r4, r2
+ 111 00ac D0E7     		b	.L24
+ 112              	.L14:
+ 113 00ae 0122     		mov	r2, #1
+ 114              	.L25:
+ 115 00b0 0749     		ldr	r1, .L27+16
+ 116 00b2 0024     		mov	r4, #0
+ 117 00b4 0292     		str	r2, [sp, #8]
+ 118 00b6 7160     		str	r1, [r6, #4]
+ 119 00b8 221C     		mov	r2, r4
+ 120 00ba C9E7     		b	.L24
+ 121              	.L9:
+ 122 00bc 0022     		mov	r2, #0
+ 123 00be F7E7     		b	.L25
+ 124              	.L28:
+ 125              		.align	2
+ 126              	.L27:
+ 127 00c0 00000000 		.word	PWMSP001_Handle0
+ 128 00c4 00000440 		.word	1074003968
+ 129 00c8 FFFF07FF 		.word	-16252929
+ 130 00cc FF010000 		.word	511
+ 131 00d0 40004000 		.word	4194368
+ 133              		.section	.text.CCU40_3_IRQHandler,"ax",%progbits
+ 134              		.align	1
+ 135              		.global	CCU40_3_IRQHandler
+ 136              		.code	16
+ 137              		.thumb_func
+ 139              	CCU40_3_IRQHandler:
+ 140 0000 10B5     		push	{r4, lr}
+ 141 0002 0D4C     		ldr	r4, .L43
+ 142 0004 2368     		ldr	r3, [r4]
+ 143 0006 002B     		cmp	r3, #0
+ 144 0008 05D0     		beq	.L31
+ 145 000a 0020     		mov	r0, #0
+ 146 000c 142B     		cmp	r3, #20
+ 147 000e 07D1     		bne	.L30
+ 148 0010 0A48     		ldr	r0, .L43+4
+ 149 0012 0B49     		ldr	r1, .L43+8
+ 150 0014 01E0     		b	.L41
+ 151              	.L31:
+ 152 0016 0948     		ldr	r0, .L43+4
+ 153 0018 0A49     		ldr	r1, .L43+12
+ 154              	.L41:
+ 155 001a 0B4A     		ldr	r2, .L43+16
+ 156 001c FFF7FEFF 		bl	PWMSP001_SetPwmFreqAndDutyCycle
+ 157              	.L30:
+ 158 0020 2168     		ldr	r1, [r4]
+ 159 0022 0131     		add	r1, r1, #1
+ 160 0024 2729     		cmp	r1, #39
+ 161 0026 00D9     		bls	.L42
+ 162              	.L33:
+ 163 0028 0021     		mov	r1, #0
+ 164              	.L42:
+ 165 002a 2160     		str	r1, [r4]
+ 166 002c 0028     		cmp	r0, #0
+ 167 002e 02D0     		beq	.L29
+ 168 0030 0248     		ldr	r0, .L43+4
+ 169 0032 FFF7FEFF 		bl	PWMSP001_Stop
+ 170              	.L29:
+ 171              		@ sp needed for prologue
+ 172 0036 10BD     		pop	{r4, pc}
+ 173              	.L44:
+ 174              		.align	2
+ 175              	.L43:
+ 176 0038 00000000 		.word	.LANCHOR0
+ 177 003c 00000000 		.word	PWMSP001_Handle0
+ 178 0040 0000A040 		.word	1084227584
+ 179 0044 00002041 		.word	1092616192
+ 180 0048 00004842 		.word	1112014848
+ 182              		.bss
+ 183              		.align	2
+ 184              		.set	.LANCHOR0,. + 0
+ 187              	state.5903:
+ 188 0000 00000000 		.space	4
+ 189              		.ident	"GCC: (GNU Tools for ARM Embedded Processors) 4.7.4 20130913 (release) [ARM/embedded-4_7-br
+DEFINED SYMBOLS
+                            *ABS*:00000000 Main.c
+C:\Users\Patrick\AppData\Local\Temp\ccA9NjhI.s:16     .text.startup.main:00000000 $t
+C:\Users\Patrick\AppData\Local\Temp\ccA9NjhI.s:21     .text.startup.main:00000000 main
+C:\Users\Patrick\AppData\Local\Temp\ccA9NjhI.s:127    .text.startup.main:000000c0 $d
+C:\Users\Patrick\AppData\Local\Temp\ccA9NjhI.s:134    .text.CCU40_3_IRQHandler:00000000 $t
+C:\Users\Patrick\AppData\Local\Temp\ccA9NjhI.s:139    .text.CCU40_3_IRQHandler:00000000 CCU40_3_IRQHandler
+C:\Users\Patrick\AppData\Local\Temp\ccA9NjhI.s:176    .text.CCU40_3_IRQHandler:00000038 $d
+C:\Users\Patrick\AppData\Local\Temp\ccA9NjhI.s:183    .bss:00000000 $d
+C:\Users\Patrick\AppData\Local\Temp\ccA9NjhI.s:187    .bss:00000000 state.5903
+
+UNDEFINED SYMBOLS
+__aeabi_idiv
+DAVE_Init
+PWMSP001_Start
+PWMSP001_Stop
+PWMSP001_Handle0
+PWMSP001_SetPwmFreqAndDutyCycle

@@ -1,0 +1,66 @@
+   1              		.cpu cortex-m0
+   2              		.fpu softvfp
+   3              		.eabi_attribute 20, 1
+   4              		.eabi_attribute 21, 1
+   5              		.eabi_attribute 23, 3
+   6              		.eabi_attribute 24, 1
+   7              		.eabi_attribute 25, 1
+   8              		.eabi_attribute 26, 1
+   9              		.eabi_attribute 30, 4
+  10              		.eabi_attribute 34, 0
+  11              		.eabi_attribute 18, 4
+  12              		.code	16
+  13              		.file	"PWMSP001_Conf.c"
+  14              		.global	PWMSP001_Handle0
+  15              		.global	PWMSP001_DynamicData0
+  16              		.section	.rodata
+  17              		.align	2
+  20              	PWMSP001_Handle0:
+  21 0000 01       		.byte	1
+  22 0001 00       		.byte	0
+  23 0002 0000     		.space	2
+  24 0004 0000FA41 		.word	1106903040
+  25 0008 AA290000 		.word	10666
+  26 000c 00       		.byte	0
+  27 000d 00       		.byte	0
+  28 000e 00       		.byte	0
+  29 000f 00       		.byte	0
+  30 0010 00       		.byte	0
+  31 0011 00       		.byte	0
+  32 0012 01       		.byte	1
+  33 0013 00       		.byte	0
+  34 0014 00000448 		.word	1208221696
+  35 0018 00010448 		.word	1208221952
+  36 001c 00010448 		.word	1208221952
+  37 0020 00       		.byte	0
+  38 0021 00       		.byte	0
+  39 0022 00       		.byte	0
+  40 0023 00       		.byte	0
+  41 0024 00       		.byte	0
+  42 0025 000000   		.space	3
+  43 0028 54530000 		.word	21332
+  44 002c FFFF0000 		.word	65535
+  45 0030 01000000 		.word	1
+  46 0034 00       		.byte	0
+  47 0035 00       		.byte	0
+  48 0036 00       		.byte	0
+  49 0037 00       		.byte	0
+  50 0038 00       		.byte	0
+  51 0039 000000   		.space	3
+  52 003c 00000000 		.word	PWMSP001_DynamicData0
+  53 0040 00000000 		.word	PWMSP001_lSetCompareEdgeAlign
+  54 0044 00000000 		.word	PWMSP001_lSetDutyEdgeAlign
+  55              		.bss
+  58              	PWMSP001_DynamicData0:
+  59 0000 00       		.space	1
+  60              		.ident	"GCC: (GNU Tools for ARM Embedded Processors) 4.7.4 20130913 (release) [ARM/embedded-4_7-br
+DEFINED SYMBOLS
+                            *ABS*:00000000 PWMSP001_Conf.c
+C:\Users\Patrick\AppData\Local\Temp\ccaOa62w.s:20     .rodata:00000000 PWMSP001_Handle0
+C:\Users\Patrick\AppData\Local\Temp\ccaOa62w.s:58     .bss:00000000 PWMSP001_DynamicData0
+C:\Users\Patrick\AppData\Local\Temp\ccaOa62w.s:17     .rodata:00000000 $d
+C:\Users\Patrick\AppData\Local\Temp\ccaOa62w.s:59     .bss:00000000 $d
+
+UNDEFINED SYMBOLS
+PWMSP001_lSetCompareEdgeAlign
+PWMSP001_lSetDutyEdgeAlign

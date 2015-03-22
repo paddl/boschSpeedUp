@@ -1,0 +1,1857 @@
+   1              		.cpu cortex-m0
+   2              		.fpu softvfp
+   3              		.eabi_attribute 20, 1
+   4              		.eabi_attribute 21, 1
+   5              		.eabi_attribute 23, 3
+   6              		.eabi_attribute 24, 1
+   7              		.eabi_attribute 25, 1
+   8              		.eabi_attribute 26, 1
+   9              		.eabi_attribute 30, 4
+  10              		.eabi_attribute 34, 0
+  11              		.eabi_attribute 18, 4
+  12              		.code	16
+  13              		.file	"PWMSP001.c"
+  14              		.section	.text.PWMSP001_Deinit,"ax",%progbits
+  15              		.align	1
+  16              		.global	PWMSP001_Deinit
+  17              		.code	16
+  18              		.thumb_func
+  20              	PWMSP001_Deinit:
+  21 0000 F7B5     		push	{r0, r1, r2, r4, r5, r6, r7, lr}
+  22 0002 C26B     		ldr	r2, [r0, #60]
+  23 0004 011C     		mov	r1, r0
+  24 0006 0092     		str	r2, [sp]
+  25 0008 1378     		ldrb	r3, [r2]
+  26 000a 0120     		mov	r0, #1
+  27 000c 002B     		cmp	r3, #0
+  28 000e 3FD0     		beq	.L2
+  29 0010 8A69     		ldr	r2, [r1, #24]
+  30 0012 204C     		ldr	r4, .L7
+  31 0014 151C     		mov	r5, r2
+  32 0016 B035     		add	r5, r5, #176
+  33 0018 0727     		mov	r7, #7
+  34 001a 161C     		mov	r6, r2
+  35 001c 1761     		str	r7, [r2, #16]
+  36 001e 0023     		mov	r3, #0
+  37 0020 2C60     		str	r4, [r5]
+  38 0022 A436     		add	r6, r6, #164
+  39 0024 4C69     		ldr	r4, [r1, #20]
+  40 0026 3360     		str	r3, [r6]
+  41 0028 A568     		ldr	r5, [r4, #8]
+  42 002a C026     		mov	r6, #192
+  43 002c AC46     		mov	ip, r5
+  44 002e B500     		lsl	r5, r6, #2
+  45 0030 6646     		mov	r6, ip
+  46 0032 2E43     		orr	r6, r5
+  47 0034 0196     		str	r6, [sp, #4]
+  48 0036 3726     		mov	r6, #55
+  49 0038 765C     		ldrb	r6, [r6, r1]
+  50 003a B040     		lsl	r0, r0, r6
+  51 003c 019E     		ldr	r6, [sp, #4]
+  52 003e 3043     		orr	r0, r6
+  53 0040 A060     		str	r0, [r4, #8]
+  54 0042 1360     		str	r3, [r2]
+  55 0044 481C     		add	r0, r1, #1
+  56 0046 5360     		str	r3, [r2, #4]
+  57 0048 5361     		str	r3, [r2, #20]
+  58 004a 5362     		str	r3, [r2, #36]
+  59 004c 9361     		str	r3, [r2, #24]
+  60 004e 1362     		str	r3, [r2, #32]
+  61 0050 D363     		str	r3, [r2, #60]
+  62 0052 5363     		str	r3, [r2, #52]
+  63 0054 C07F     		ldrb	r0, [r0, #31]
+  64 0056 0128     		cmp	r0, #1
+  65 0058 17D1     		bne	.L3
+  66 005a CA69     		ldr	r2, [r1, #28]
+  67 005c 0D4E     		ldr	r6, .L7
+  68 005e 1761     		str	r7, [r2, #16]
+  69 0060 171C     		mov	r7, r2
+  70 0062 B037     		add	r7, r7, #176
+  71 0064 3E60     		str	r6, [r7]
+  72 0066 171C     		mov	r7, r2
+  73 0068 A437     		add	r7, r7, #164
+  74 006a 3B60     		str	r3, [r7]
+  75 006c 3831     		add	r1, r1, #56
+  76 006e A668     		ldr	r6, [r4, #8]
+  77 0070 0978     		ldrb	r1, [r1]
+  78 0072 3543     		orr	r5, r6
+  79 0074 8840     		lsl	r0, r0, r1
+  80 0076 0543     		orr	r5, r0
+  81 0078 A560     		str	r5, [r4, #8]
+  82 007a 1360     		str	r3, [r2]
+  83 007c 5360     		str	r3, [r2, #4]
+  84 007e 5361     		str	r3, [r2, #20]
+  85 0080 5362     		str	r3, [r2, #36]
+  86 0082 9361     		str	r3, [r2, #24]
+  87 0084 1362     		str	r3, [r2, #32]
+  88 0086 D363     		str	r3, [r2, #60]
+  89 0088 5363     		str	r3, [r2, #52]
+  90              	.L3:
+  91 008a 009B     		ldr	r3, [sp]
+  92 008c 0020     		mov	r0, #0
+  93 008e 1870     		strb	r0, [r3]
+  94              	.L2:
+  95              		@ sp needed for prologue
+  96 0090 FEBD     		pop	{r1, r2, r3, r4, r5, r6, r7, pc}
+  97              	.L8:
+  98 0092 C046     		.align	2
+  99              	.L7:
+ 100 0094 0F0F0000 		.word	3855
+ 102              		.section	.text.PWMSP001_Start,"ax",%progbits
+ 103              		.align	1
+ 104              		.global	PWMSP001_Start
+ 105              		.code	16
+ 106              		.thumb_func
+ 108              	PWMSP001_Start:
+ 109 0000 F0B5     		push	{r4, r5, r6, r7, lr}
+ 110 0002 C46B     		ldr	r4, [r0, #60]
+ 111 0004 2278     		ldrb	r2, [r4]
+ 112 0006 012A     		cmp	r2, #1
+ 113 0008 02D0     		beq	.L10
+ 114 000a 0125     		mov	r5, #1
+ 115 000c 032A     		cmp	r2, #3
+ 116 000e 5CD1     		bne	.L11
+ 117              	.L10:
+ 118 0010 8369     		ldr	r3, [r0, #24]
+ 119 0012 2F49     		ldr	r1, .L22
+ 120 0014 1D1C     		mov	r5, r3
+ 121 0016 B035     		add	r5, r5, #176
+ 122 0018 061C     		mov	r6, r0
+ 123 001a 2960     		str	r1, [r5]
+ 124 001c 3736     		add	r6, r6, #55
+ 125 001e 3578     		ldrb	r5, [r6]
+ 126 0020 4269     		ldr	r2, [r0, #20]
+ 127 0022 0121     		mov	r1, #1
+ 128 0024 A940     		lsl	r1, r1, r5
+ 129 0026 D768     		ldr	r7, [r2, #12]
+ 130 0028 0E1C     		mov	r6, r1
+ 131 002a 3E43     		orr	r6, r7
+ 132 002c D660     		str	r6, [r2, #12]
+ 133 002e 411C     		add	r1, r0, #1
+ 134 0030 CD7F     		ldrb	r5, [r1, #31]
+ 135 0032 012D     		cmp	r5, #1
+ 136 0034 06D1     		bne	.L12
+ 137 0036 071C     		mov	r7, r0
+ 138 0038 3837     		add	r7, r7, #56
+ 139 003a 3F78     		ldrb	r7, [r7]
+ 140 003c D668     		ldr	r6, [r2, #12]
+ 141 003e BD40     		lsl	r5, r5, r7
+ 142 0040 3543     		orr	r5, r6
+ 143 0042 D560     		str	r5, [r2, #12]
+ 144              	.L12:
+ 145 0044 827B     		ldrb	r2, [r0, #14]
+ 146 0046 002A     		cmp	r2, #0
+ 147 0048 0BD1     		bne	.L13
+ 148 004a DA68     		ldr	r2, [r3, #12]
+ 149 004c 0127     		mov	r7, #1
+ 150 004e 3A43     		orr	r2, r7
+ 151 0050 DA60     		str	r2, [r3, #12]
+ 152 0052 CE7F     		ldrb	r6, [r1, #31]
+ 153 0054 BE42     		cmp	r6, r7
+ 154 0056 35D1     		bne	.L15
+ 155 0058 C069     		ldr	r0, [r0, #28]
+ 156 005a C168     		ldr	r1, [r0, #12]
+ 157 005c 0E43     		orr	r6, r1
+ 158 005e C660     		str	r6, [r0, #12]
+ 159 0060 30E0     		b	.L15
+ 160              	.L13:
+ 161 0062 012A     		cmp	r2, #1
+ 162 0064 13D1     		bne	.L16
+ 163 0066 1E68     		ldr	r6, [r3]
+ 164 0068 1A4D     		ldr	r5, .L22+4
+ 165 006a 3540     		and	r5, r6
+ 166 006c 1D60     		str	r5, [r3]
+ 167 006e 5F68     		ldr	r7, [r3, #4]
+ 168 0070 0326     		mov	r6, #3
+ 169 0072 B743     		bic	r7, r6
+ 170 0074 5F60     		str	r7, [r3, #4]
+ 171 0076 051D     		add	r5, r0, #4
+ 172 0078 EF7F     		ldrb	r7, [r5, #31]
+ 173 007a C025     		mov	r5, #192
+ 174 007c 1E68     		ldr	r6, [r3]
+ 175 007e 3F04     		lsl	r7, r7, #16
+ 176 0080 AD02     		lsl	r5, r5, #10
+ 177 0082 3D40     		and	r5, r7
+ 178 0084 3543     		orr	r5, r6
+ 179 0086 1D60     		str	r5, [r3]
+ 180 0088 5E68     		ldr	r6, [r3, #4]
+ 181 008a 3243     		orr	r2, r6
+ 182 008c 5A60     		str	r2, [r3, #4]
+ 183              	.L16:
+ 184 008e 837B     		ldrb	r3, [r0, #14]
+ 185 0090 012B     		cmp	r3, #1
+ 186 0092 17D1     		bne	.L15
+ 187 0094 CA7F     		ldrb	r2, [r1, #31]
+ 188 0096 012A     		cmp	r2, #1
+ 189 0098 14D1     		bne	.L15
+ 190 009a C769     		ldr	r7, [r0, #28]
+ 191 009c 0D49     		ldr	r1, .L22+4
+ 192 009e 3D68     		ldr	r5, [r7]
+ 193 00a0 0323     		mov	r3, #3
+ 194 00a2 2940     		and	r1, r5
+ 195 00a4 3960     		str	r1, [r7]
+ 196 00a6 7E68     		ldr	r6, [r7, #4]
+ 197 00a8 0430     		add	r0, r0, #4
+ 198 00aa 9E43     		bic	r6, r3
+ 199 00ac 7E60     		str	r6, [r7, #4]
+ 200 00ae C07F     		ldrb	r0, [r0, #31]
+ 201 00b0 C021     		mov	r1, #192
+ 202 00b2 3D68     		ldr	r5, [r7]
+ 203 00b4 0604     		lsl	r6, r0, #16
+ 204 00b6 8B02     		lsl	r3, r1, #10
+ 205 00b8 3340     		and	r3, r6
+ 206 00ba 2B43     		orr	r3, r5
+ 207 00bc 3B60     		str	r3, [r7]
+ 208 00be 7D68     		ldr	r5, [r7, #4]
+ 209 00c0 2A43     		orr	r2, r5
+ 210 00c2 7A60     		str	r2, [r7, #4]
+ 211              	.L15:
+ 212 00c4 0223     		mov	r3, #2
+ 213 00c6 2370     		strb	r3, [r4]
+ 214 00c8 0025     		mov	r5, #0
+ 215              	.L11:
+ 216 00ca 281C     		mov	r0, r5
+ 217              		@ sp needed for prologue
+ 218 00cc F0BD     		pop	{r4, r5, r6, r7, pc}
+ 219              	.L23:
+ 220 00ce C046     		.align	2
+ 221              	.L22:
+ 222 00d0 0F0F0000 		.word	3855
+ 223 00d4 FFFFFCF9 		.word	-100859905
+ 225              		.section	.text.PWMSP001_Stop,"ax",%progbits
+ 226              		.align	1
+ 227              		.global	PWMSP001_Stop
+ 228              		.code	16
+ 229              		.thumb_func
+ 231              	PWMSP001_Stop:
+ 232 0000 F0B5     		push	{r4, r5, r6, r7, lr}
+ 233 0002 C16B     		ldr	r1, [r0, #60]
+ 234 0004 031C     		mov	r3, r0
+ 235 0006 0A78     		ldrb	r2, [r1]
+ 236 0008 0120     		mov	r0, #1
+ 237 000a 022A     		cmp	r2, #2
+ 238 000c 1DD1     		bne	.L25
+ 239 000e 9E69     		ldr	r6, [r3, #24]
+ 240 0010 1C1C     		mov	r4, r3
+ 241 0012 3734     		add	r4, r4, #55
+ 242 0014 5A69     		ldr	r2, [r3, #20]
+ 243 0016 0725     		mov	r5, #7
+ 244 0018 2778     		ldrb	r7, [r4]
+ 245 001a 3561     		str	r5, [r6, #16]
+ 246 001c 9668     		ldr	r6, [r2, #8]
+ 247 001e 8024     		mov	r4, #128
+ 248 0020 A400     		lsl	r4, r4, #2
+ 249 0022 B840     		lsl	r0, r0, r7
+ 250 0024 2643     		orr	r6, r4
+ 251 0026 3043     		orr	r0, r6
+ 252 0028 9060     		str	r0, [r2, #8]
+ 253 002a 581C     		add	r0, r3, #1
+ 254 002c C77F     		ldrb	r7, [r0, #31]
+ 255 002e 012F     		cmp	r7, #1
+ 256 0030 08D1     		bne	.L26
+ 257 0032 DE69     		ldr	r6, [r3, #28]
+ 258 0034 3833     		add	r3, r3, #56
+ 259 0036 3561     		str	r5, [r6, #16]
+ 260 0038 9568     		ldr	r5, [r2, #8]
+ 261 003a 1B78     		ldrb	r3, [r3]
+ 262 003c 2C43     		orr	r4, r5
+ 263 003e 9F40     		lsl	r7, r7, r3
+ 264 0040 3C43     		orr	r4, r7
+ 265 0042 9460     		str	r4, [r2, #8]
+ 266              	.L26:
+ 267 0044 0322     		mov	r2, #3
+ 268 0046 0A70     		strb	r2, [r1]
+ 269 0048 0020     		mov	r0, #0
+ 270              	.L25:
+ 271              		@ sp needed for prologue
+ 272 004a F0BD     		pop	{r4, r5, r6, r7, pc}
+ 274              		.section	.text.PWMSP001_SetCompare,"ax",%progbits
+ 275              		.align	1
+ 276              		.global	PWMSP001_SetCompare
+ 277              		.code	16
+ 278              		.thumb_func
+ 280              	PWMSP001_SetCompare:
+ 281 0000 38B5     		push	{r3, r4, r5, lr}
+ 282 0002 431C     		add	r3, r0, #1
+ 283 0004 DC7F     		ldrb	r4, [r3, #31]
+ 284 0006 8569     		ldr	r5, [r0, #24]
+ 285 0008 012C     		cmp	r4, #1
+ 286 000a 05D1     		bne	.L29
+ 287 000c C369     		ldr	r3, [r0, #28]
+ 288 000e 5A6B     		ldr	r2, [r3, #52]
+ 289 0010 6D6B     		ldr	r5, [r5, #52]
+ 290 0012 1204     		lsl	r2, r2, #16
+ 291 0014 2A43     		orr	r2, r5
+ 292 0016 00E0     		b	.L30
+ 293              	.L29:
+ 294 0018 6A6B     		ldr	r2, [r5, #52]
+ 295              	.L30:
+ 296 001a C36B     		ldr	r3, [r0, #60]
+ 297 001c 1D78     		ldrb	r5, [r3]
+ 298 001e 0123     		mov	r3, #1
+ 299 0020 002D     		cmp	r5, #0
+ 300 0022 0BD0     		beq	.L31
+ 301 0024 C36A     		ldr	r3, [r0, #44]
+ 302 0026 9942     		cmp	r1, r3
+ 303 0028 02D9     		bls	.L32
+ 304 002a 0223     		mov	r3, #2
+ 305 002c 002C     		cmp	r4, #0
+ 306 002e 05D0     		beq	.L31
+ 307              	.L32:
+ 308 0030 9142     		cmp	r1, r2
+ 309 0032 00D3     		bcc	.L33
+ 310 0034 511C     		add	r1, r2, #1
+ 311              	.L33:
+ 312 0036 046C     		ldr	r4, [r0, #64]
+ 313 0038 A047     		blx	r4
+ 314 003a 0023     		mov	r3, #0
+ 315              	.L31:
+ 316 003c 181C     		mov	r0, r3
+ 317              		@ sp needed for prologue
+ 318 003e 38BD     		pop	{r3, r4, r5, pc}
+ 320              		.section	.text.PWMSP001_lSetCompareEdgeAlign,"ax",%progbits
+ 321              		.align	1
+ 322              		.global	PWMSP001_lSetCompareEdgeAlign
+ 323              		.code	16
+ 324              		.thumb_func
+ 326              	PWMSP001_lSetCompareEdgeAlign:
+ 327 0000 8369     		ldr	r3, [r0, #24]
+ 328 0002 89B2     		uxth	r1, r1
+ 329 0004 D963     		str	r1, [r3, #60]
+ 330 0006 4369     		ldr	r3, [r0, #20]
+ 331 0008 3730     		add	r0, r0, #55
+ 332 000a 0278     		ldrb	r2, [r0]
+ 333 000c 0120     		mov	r0, #1
+ 334 000e 9200     		lsl	r2, r2, #2
+ 335 0010 1969     		ldr	r1, [r3, #16]
+ 336 0012 9040     		lsl	r0, r0, r2
+ 337 0014 021C     		mov	r2, r0
+ 338 0016 0A43     		orr	r2, r1
+ 339 0018 1A61     		str	r2, [r3, #16]
+ 340              		@ sp needed for prologue
+ 341 001a 7047     		bx	lr
+ 343              		.global	__aeabi_uidivmod
+ 344              		.global	__aeabi_uidiv
+ 345              		.section	.text.PWMSP001_lSetCompareEdgeAlignTimerConcat,"ax",%progbits
+ 346              		.align	1
+ 347              		.global	PWMSP001_lSetCompareEdgeAlignTimerConcat
+ 348              		.code	16
+ 349              		.thumb_func
+ 351              	PWMSP001_lSetCompareEdgeAlignTimerConcat:
+ 352 0000 F8B5     		push	{r3, r4, r5, r6, r7, lr}
+ 353 0002 8569     		ldr	r5, [r0, #24]
+ 354 0004 0E1C     		mov	r6, r1
+ 355 0006 696B     		ldr	r1, [r5, #52]
+ 356 0008 041C     		mov	r4, r0
+ 357 000a 89B2     		uxth	r1, r1
+ 358 000c 301C     		mov	r0, r6
+ 359 000e FFF7FEFF 		bl	__aeabi_uidivmod
+ 360 0012 6F6B     		ldr	r7, [r5, #52]
+ 361 0014 88B2     		uxth	r0, r1
+ 362 0016 E863     		str	r0, [r5, #60]
+ 363 0018 B9B2     		uxth	r1, r7
+ 364 001a 301C     		mov	r0, r6
+ 365 001c FFF7FEFF 		bl	__aeabi_uidiv
+ 366 0020 E569     		ldr	r5, [r4, #28]
+ 367 0022 82B2     		uxth	r2, r0
+ 368 0024 211C     		mov	r1, r4
+ 369 0026 EA63     		str	r2, [r5, #60]
+ 370 0028 6369     		ldr	r3, [r4, #20]
+ 371 002a 3731     		add	r1, r1, #55
+ 372 002c 3834     		add	r4, r4, #56
+ 373 002e 0F78     		ldrb	r7, [r1]
+ 374 0030 2478     		ldrb	r4, [r4]
+ 375 0032 0122     		mov	r2, #1
+ 376 0034 B800     		lsl	r0, r7, #2
+ 377 0036 151C     		mov	r5, r2
+ 378 0038 A700     		lsl	r7, r4, #2
+ 379 003a 1E69     		ldr	r6, [r3, #16]
+ 380 003c 8540     		lsl	r5, r5, r0
+ 381 003e BA40     		lsl	r2, r2, r7
+ 382 0040 2A43     		orr	r2, r5
+ 383 0042 3243     		orr	r2, r6
+ 384 0044 1A61     		str	r2, [r3, #16]
+ 385              		@ sp needed for prologue
+ 386 0046 F8BD     		pop	{r3, r4, r5, r6, r7, pc}
+ 388              		.section	.text.PWMSP001_lSetCompareCenterAlign,"ax",%progbits
+ 389              		.align	1
+ 390              		.global	PWMSP001_lSetCompareCenterAlign
+ 391              		.code	16
+ 392              		.thumb_func
+ 394              	PWMSP001_lSetCompareCenterAlign:
+ 395 0000 8369     		ldr	r3, [r0, #24]
+ 396 0002 89B2     		uxth	r1, r1
+ 397 0004 D963     		str	r1, [r3, #60]
+ 398 0006 4369     		ldr	r3, [r0, #20]
+ 399 0008 3730     		add	r0, r0, #55
+ 400 000a 0278     		ldrb	r2, [r0]
+ 401 000c 0120     		mov	r0, #1
+ 402 000e 9200     		lsl	r2, r2, #2
+ 403 0010 1969     		ldr	r1, [r3, #16]
+ 404 0012 9040     		lsl	r0, r0, r2
+ 405 0014 021C     		mov	r2, r0
+ 406 0016 0A43     		orr	r2, r1
+ 407 0018 1A61     		str	r2, [r3, #16]
+ 408              		@ sp needed for prologue
+ 409 001a 7047     		bx	lr
+ 411              		.global	__aeabi_fcmpgt
+ 412              		.global	__aeabi_fcmplt
+ 413              		.section	.text.PWMSP001_SetDutyCycle,"ax",%progbits
+ 414              		.align	1
+ 415              		.global	PWMSP001_SetDutyCycle
+ 416              		.code	16
+ 417              		.thumb_func
+ 419              	PWMSP001_SetDutyCycle:
+ 420 0000 70B5     		push	{r4, r5, r6, lr}
+ 421 0002 C26B     		ldr	r2, [r0, #60]
+ 422 0004 061C     		mov	r6, r0
+ 423 0006 1378     		ldrb	r3, [r2]
+ 424 0008 0D1C     		add	r5, r1, #0
+ 425 000a 0124     		mov	r4, #1
+ 426 000c 002B     		cmp	r3, #0
+ 427 000e 11D0     		beq	.L42
+ 428 0010 081C     		add	r0, r1, #0
+ 429 0012 0949     		ldr	r1, .L47
+ 430 0014 FFF7FEFF 		bl	__aeabi_fcmpgt
+ 431 0018 0224     		mov	r4, #2
+ 432 001a 0028     		cmp	r0, #0
+ 433 001c 0AD1     		bne	.L42
+ 434 001e 281C     		add	r0, r5, #0
+ 435 0020 0021     		mov	r1, #0
+ 436 0022 FFF7FEFF 		bl	__aeabi_fcmplt
+ 437 0026 0028     		cmp	r0, #0
+ 438 0028 04D1     		bne	.L42
+ 439 002a 746C     		ldr	r4, [r6, #68]
+ 440 002c 301C     		mov	r0, r6
+ 441 002e 291C     		add	r1, r5, #0
+ 442 0030 A047     		blx	r4
+ 443 0032 0024     		mov	r4, #0
+ 444              	.L42:
+ 445 0034 201C     		mov	r0, r4
+ 446              		@ sp needed for prologue
+ 447 0036 70BD     		pop	{r4, r5, r6, pc}
+ 448              	.L48:
+ 449              		.align	2
+ 450              	.L47:
+ 451 0038 0000C842 		.word	1120403456
+ 453              		.global	__aeabi_ui2f
+ 454              		.global	__aeabi_fsub
+ 455              		.global	__aeabi_fdiv
+ 456              		.global	__aeabi_fmul
+ 457              		.global	__aeabi_f2uiz
+ 458              		.section	.text.PWMSP001_lSetDutyEdgeAlign,"ax",%progbits
+ 459              		.align	1
+ 460              		.global	PWMSP001_lSetDutyEdgeAlign
+ 461              		.code	16
+ 462              		.thumb_func
+ 464              	PWMSP001_lSetDutyEdgeAlign:
+ 465 0000 F8B5     		push	{r3, r4, r5, r6, r7, lr}
+ 466 0002 8569     		ldr	r5, [r0, #24]
+ 467 0004 041C     		mov	r4, r0
+ 468 0006 686B     		ldr	r0, [r5, #52]
+ 469 0008 0F1C     		add	r7, r1, #0
+ 470 000a 0130     		add	r0, r0, #1
+ 471 000c FFF7FEFF 		bl	__aeabi_ui2f
+ 472 0010 391C     		add	r1, r7, #0
+ 473 0012 061C     		add	r6, r0, #0
+ 474 0014 0C48     		ldr	r0, .L50
+ 475 0016 FFF7FEFF 		bl	__aeabi_fsub
+ 476 001a 0B49     		ldr	r1, .L50
+ 477 001c FFF7FEFF 		bl	__aeabi_fdiv
+ 478 0020 011C     		add	r1, r0, #0
+ 479 0022 301C     		add	r0, r6, #0
+ 480 0024 FFF7FEFF 		bl	__aeabi_fmul
+ 481 0028 FFF7FEFF 		bl	__aeabi_f2uiz
+ 482 002c 80B2     		uxth	r0, r0
+ 483 002e E863     		str	r0, [r5, #60]
+ 484 0030 6369     		ldr	r3, [r4, #20]
+ 485 0032 3734     		add	r4, r4, #55
+ 486 0034 2278     		ldrb	r2, [r4]
+ 487 0036 0127     		mov	r7, #1
+ 488 0038 9400     		lsl	r4, r2, #2
+ 489 003a 1969     		ldr	r1, [r3, #16]
+ 490 003c A740     		lsl	r7, r7, r4
+ 491 003e 3D1C     		mov	r5, r7
+ 492 0040 0D43     		orr	r5, r1
+ 493 0042 1D61     		str	r5, [r3, #16]
+ 494              		@ sp needed for prologue
+ 495 0044 F8BD     		pop	{r3, r4, r5, r6, r7, pc}
+ 496              	.L51:
+ 497 0046 C046     		.align	2
+ 498              	.L50:
+ 499 0048 0000C842 		.word	1120403456
+ 501              		.section	.text.PWMSP001_lSetDutyEdgeAlignTimerConcat,"ax",%progbits
+ 502              		.align	1
+ 503              		.global	PWMSP001_lSetDutyEdgeAlignTimerConcat
+ 504              		.code	16
+ 505              		.thumb_func
+ 507              	PWMSP001_lSetDutyEdgeAlignTimerConcat:
+ 508 0000 F7B5     		push	{r0, r1, r2, r4, r5, r6, r7, lr}
+ 509 0002 041C     		mov	r4, r0
+ 510 0004 A569     		ldr	r5, [r4, #24]
+ 511 0006 C669     		ldr	r6, [r0, #28]
+ 512 0008 0191     		str	r1, [sp, #4]
+ 513 000a 706B     		ldr	r0, [r6, #52]
+ 514 000c 6B6B     		ldr	r3, [r5, #52]
+ 515 000e 0130     		add	r0, r0, #1
+ 516 0010 99B2     		uxth	r1, r3
+ 517 0012 0131     		add	r1, r1, #1
+ 518 0014 4843     		mul	r0, r1
+ 519 0016 0130     		add	r0, r0, #1
+ 520 0018 FFF7FEFF 		bl	__aeabi_ui2f
+ 521 001c 0199     		ldr	r1, [sp, #4]
+ 522 001e 071C     		add	r7, r0, #0
+ 523 0020 1548     		ldr	r0, .L53
+ 524 0022 FFF7FEFF 		bl	__aeabi_fsub
+ 525 0026 1449     		ldr	r1, .L53
+ 526 0028 FFF7FEFF 		bl	__aeabi_fdiv
+ 527 002c 011C     		add	r1, r0, #0
+ 528 002e 381C     		add	r0, r7, #0
+ 529 0030 FFF7FEFF 		bl	__aeabi_fmul
+ 530 0034 FFF7FEFF 		bl	__aeabi_f2uiz
+ 531 0038 071C     		mov	r7, r0
+ 532 003a 686B     		ldr	r0, [r5, #52]
+ 533              		@ sp needed for prologue
+ 534 003c 81B2     		uxth	r1, r0
+ 535 003e 381C     		mov	r0, r7
+ 536 0040 FFF7FEFF 		bl	__aeabi_uidivmod
+ 537 0044 8AB2     		uxth	r2, r1
+ 538 0046 EA63     		str	r2, [r5, #60]
+ 539 0048 6D6B     		ldr	r5, [r5, #52]
+ 540 004a 381C     		mov	r0, r7
+ 541 004c A9B2     		uxth	r1, r5
+ 542 004e FFF7FEFF 		bl	__aeabi_uidiv
+ 543 0052 271C     		mov	r7, r4
+ 544 0054 83B2     		uxth	r3, r0
+ 545 0056 F363     		str	r3, [r6, #60]
+ 546 0058 3737     		add	r7, r7, #55
+ 547 005a 6669     		ldr	r6, [r4, #20]
+ 548 005c 3834     		add	r4, r4, #56
+ 549 005e 3878     		ldrb	r0, [r7]
+ 550 0060 2478     		ldrb	r4, [r4]
+ 551 0062 0122     		mov	r2, #1
+ 552 0064 8300     		lsl	r3, r0, #2
+ 553 0066 151C     		mov	r5, r2
+ 554 0068 A000     		lsl	r0, r4, #2
+ 555 006a 3169     		ldr	r1, [r6, #16]
+ 556 006c 9D40     		lsl	r5, r5, r3
+ 557 006e 8240     		lsl	r2, r2, r0
+ 558 0070 2A43     		orr	r2, r5
+ 559 0072 0A43     		orr	r2, r1
+ 560 0074 3261     		str	r2, [r6, #16]
+ 561 0076 F7BD     		pop	{r0, r1, r2, r4, r5, r6, r7, pc}
+ 562              	.L54:
+ 563              		.align	2
+ 564              	.L53:
+ 565 0078 0000C842 		.word	1120403456
+ 567              		.section	.text.PWMSP001_lSetDutyCenterAlign,"ax",%progbits
+ 568              		.align	1
+ 569              		.global	PWMSP001_lSetDutyCenterAlign
+ 570              		.code	16
+ 571              		.thumb_func
+ 573              	PWMSP001_lSetDutyCenterAlign:
+ 574 0000 F8B5     		push	{r3, r4, r5, r6, r7, lr}
+ 575 0002 8569     		ldr	r5, [r0, #24]
+ 576 0004 041C     		mov	r4, r0
+ 577 0006 686B     		ldr	r0, [r5, #52]
+ 578 0008 0F1C     		add	r7, r1, #0
+ 579 000a FFF7FEFF 		bl	__aeabi_ui2f
+ 580 000e 391C     		add	r1, r7, #0
+ 581 0010 061C     		add	r6, r0, #0
+ 582 0012 0C48     		ldr	r0, .L56
+ 583 0014 FFF7FEFF 		bl	__aeabi_fsub
+ 584 0018 0A49     		ldr	r1, .L56
+ 585 001a FFF7FEFF 		bl	__aeabi_fdiv
+ 586 001e 011C     		add	r1, r0, #0
+ 587 0020 301C     		add	r0, r6, #0
+ 588 0022 FFF7FEFF 		bl	__aeabi_fmul
+ 589 0026 FFF7FEFF 		bl	__aeabi_f2uiz
+ 590 002a 80B2     		uxth	r0, r0
+ 591 002c E863     		str	r0, [r5, #60]
+ 592 002e 6369     		ldr	r3, [r4, #20]
+ 593 0030 3734     		add	r4, r4, #55
+ 594 0032 2278     		ldrb	r2, [r4]
+ 595 0034 0127     		mov	r7, #1
+ 596 0036 9400     		lsl	r4, r2, #2
+ 597 0038 1969     		ldr	r1, [r3, #16]
+ 598 003a A740     		lsl	r7, r7, r4
+ 599 003c 3D1C     		mov	r5, r7
+ 600 003e 0D43     		orr	r5, r1
+ 601 0040 1D61     		str	r5, [r3, #16]
+ 602              		@ sp needed for prologue
+ 603 0042 F8BD     		pop	{r3, r4, r5, r6, r7, pc}
+ 604              	.L57:
+ 605              		.align	2
+ 606              	.L56:
+ 607 0044 0000C842 		.word	1120403456
+ 609              		.section	.text.PWMSP001_SetPeriodAndCompare,"ax",%progbits
+ 610              		.align	1
+ 611              		.global	PWMSP001_SetPeriodAndCompare
+ 612              		.code	16
+ 613              		.thumb_func
+ 615              	PWMSP001_SetPeriodAndCompare:
+ 616 0000 70B5     		push	{r4, r5, r6, lr}
+ 617 0002 C36B     		ldr	r3, [r0, #60]
+ 618 0004 1C78     		ldrb	r4, [r3]
+ 619 0006 0123     		mov	r3, #1
+ 620 0008 002C     		cmp	r4, #0
+ 621 000a 1CD0     		beq	.L59
+ 622 000c 0223     		mov	r3, #2
+ 623 000e 0029     		cmp	r1, #0
+ 624 0010 19D0     		beq	.L59
+ 625 0012 C56A     		ldr	r5, [r0, #44]
+ 626 0014 441C     		add	r4, r0, #1
+ 627 0016 AA42     		cmp	r2, r5
+ 628 0018 02D9     		bls	.L60
+ 629 001a E67F     		ldrb	r6, [r4, #31]
+ 630 001c 002E     		cmp	r6, #0
+ 631 001e 12D0     		beq	.L59
+ 632              	.L60:
+ 633 0020 A942     		cmp	r1, r5
+ 634 0022 03D9     		bls	.L61
+ 635 0024 E57F     		ldrb	r5, [r4, #31]
+ 636 0026 0223     		mov	r3, #2
+ 637 0028 012D     		cmp	r5, #1
+ 638 002a 0CD1     		bne	.L59
+ 639              	.L61:
+ 640 002c E37F     		ldrb	r3, [r4, #31]
+ 641 002e 012B     		cmp	r3, #1
+ 642 0030 02D1     		bne	.L62
+ 643 0032 C669     		ldr	r6, [r0, #28]
+ 644 0034 0C0C     		lsr	r4, r1, #16
+ 645 0036 7463     		str	r4, [r6, #52]
+ 646              	.L62:
+ 647 0038 8569     		ldr	r5, [r0, #24]
+ 648 003a 89B2     		uxth	r1, r1
+ 649 003c 6963     		str	r1, [r5, #52]
+ 650 003e 036C     		ldr	r3, [r0, #64]
+ 651 0040 111C     		mov	r1, r2
+ 652 0042 9847     		blx	r3
+ 653 0044 0023     		mov	r3, #0
+ 654              	.L59:
+ 655 0046 181C     		mov	r0, r3
+ 656              		@ sp needed for prologue
+ 657 0048 70BD     		pop	{r4, r5, r6, pc}
+ 659              		.section	.text.PWMSP001_SetPeriod,"ax",%progbits
+ 660              		.align	1
+ 661              		.global	PWMSP001_SetPeriod
+ 662              		.code	16
+ 663              		.thumb_func
+ 665              	PWMSP001_SetPeriod:
+ 666 0000 30B5     		push	{r4, r5, lr}
+ 667 0002 C26B     		ldr	r2, [r0, #60]
+ 668 0004 1378     		ldrb	r3, [r2]
+ 669 0006 0122     		mov	r2, #1
+ 670 0008 002B     		cmp	r3, #0
+ 671 000a 28D0     		beq	.L71
+ 672 000c 0222     		mov	r2, #2
+ 673 000e 0029     		cmp	r1, #0
+ 674 0010 25D0     		beq	.L71
+ 675 0012 C56A     		ldr	r5, [r0, #44]
+ 676 0014 441C     		add	r4, r0, #1
+ 677 0016 A942     		cmp	r1, r5
+ 678 0018 02D9     		bls	.L72
+ 679 001a E37F     		ldrb	r3, [r4, #31]
+ 680 001c 012B     		cmp	r3, #1
+ 681 001e 1ED1     		bne	.L71
+ 682              	.L72:
+ 683 0020 E27F     		ldrb	r2, [r4, #31]
+ 684 0022 012A     		cmp	r2, #1
+ 685 0024 02D1     		bne	.L73
+ 686 0026 C569     		ldr	r5, [r0, #28]
+ 687 0028 0B0C     		lsr	r3, r1, #16
+ 688 002a 6B63     		str	r3, [r5, #52]
+ 689              	.L73:
+ 690 002c 8269     		ldr	r2, [r0, #24]
+ 691 002e 89B2     		uxth	r1, r1
+ 692 0030 051C     		mov	r5, r0
+ 693 0032 5163     		str	r1, [r2, #52]
+ 694 0034 3735     		add	r5, r5, #55
+ 695 0036 2A78     		ldrb	r2, [r5]
+ 696 0038 4369     		ldr	r3, [r0, #20]
+ 697 003a 9200     		lsl	r2, r2, #2
+ 698 003c 0125     		mov	r5, #1
+ 699 003e 1969     		ldr	r1, [r3, #16]
+ 700 0040 9540     		lsl	r5, r5, r2
+ 701 0042 2A1C     		mov	r2, r5
+ 702 0044 0A43     		orr	r2, r1
+ 703 0046 1A61     		str	r2, [r3, #16]
+ 704 0048 E17F     		ldrb	r1, [r4, #31]
+ 705 004a 0022     		mov	r2, #0
+ 706 004c 0129     		cmp	r1, #1
+ 707 004e 06D1     		bne	.L71
+ 708 0050 3830     		add	r0, r0, #56
+ 709 0052 0078     		ldrb	r0, [r0]
+ 710 0054 1C69     		ldr	r4, [r3, #16]
+ 711 0056 8500     		lsl	r5, r0, #2
+ 712 0058 A940     		lsl	r1, r1, r5
+ 713 005a 2143     		orr	r1, r4
+ 714 005c 1961     		str	r1, [r3, #16]
+ 715              	.L71:
+ 716 005e 101C     		mov	r0, r2
+ 717              		@ sp needed for prologue
+ 718 0060 30BD     		pop	{r4, r5, pc}
+ 720              		.section	.text.PWMSP001_lSetPwmFreqTimerConcat,"ax",%progbits
+ 721              		.align	1
+ 722              		.global	PWMSP001_lSetPwmFreqTimerConcat
+ 723              		.code	16
+ 724              		.thumb_func
+ 726              	PWMSP001_lSetPwmFreqTimerConcat:
+ 727 0000 021C     		mov	r2, r0
+ 728 0002 0220     		mov	r0, #2
+ 729 0004 4B1C     		add	r3, r1, #1
+ 730 0006 1AD0     		beq	.L81
+ 731 0008 0D48     		ldr	r0, .L89
+ 732 000a 0023     		mov	r3, #0
+ 733 000c 8142     		cmp	r1, r0
+ 734 000e 09D9     		bls	.L82
+ 735              	.L83:
+ 736 0010 0C48     		ldr	r0, .L89+4
+ 737 0012 0133     		add	r3, r3, #1
+ 738 0014 4908     		lsr	r1, r1, #1
+ 739 0016 DBB2     		uxtb	r3, r3
+ 740 0018 8142     		cmp	r1, r0
+ 741 001a F9D8     		bhi	.L83
+ 742 001c 0120     		mov	r0, #1
+ 743 001e 9840     		lsl	r0, r0, r3
+ 744 0020 031C     		mov	r3, r0
+ 745 0022 013B     		sub	r3, r3, #1
+ 746              	.L82:
+ 747 0024 101C     		mov	r0, r2
+ 748 0026 3630     		add	r0, r0, #54
+ 749 0028 0078     		ldrb	r0, [r0]
+ 750 002a 0128     		cmp	r0, #1
+ 751 002c 01D1     		bne	.L84
+ 752 002e 5B08     		lsr	r3, r3, #1
+ 753 0030 4908     		lsr	r1, r1, #1
+ 754              	.L84:
+ 755 0032 9069     		ldr	r0, [r2, #24]
+ 756 0034 4163     		str	r1, [r0, #52]
+ 757 0036 D169     		ldr	r1, [r2, #28]
+ 758 0038 9AB2     		uxth	r2, r3
+ 759 003a 4A63     		str	r2, [r1, #52]
+ 760 003c 0020     		mov	r0, #0
+ 761              	.L81:
+ 762              		@ sp needed for prologue
+ 763 003e 7047     		bx	lr
+ 764              	.L90:
+ 765              		.align	2
+ 766              	.L89:
+ 767 0040 FFFF0000 		.word	65535
+ 768 0044 FEFF0000 		.word	65534
+ 770              		.global	__aeabi_fcmpeq
+ 771              		.section	.text.PWMSP001_SetPwmFreq,"ax",%progbits
+ 772              		.align	1
+ 773              		.global	PWMSP001_SetPwmFreq
+ 774              		.code	16
+ 775              		.thumb_func
+ 777              	PWMSP001_SetPwmFreq:
+ 778 0000 70B5     		push	{r4, r5, r6, lr}
+ 779 0002 C26B     		ldr	r2, [r0, #60]
+ 780 0004 041C     		mov	r4, r0
+ 781 0006 1378     		ldrb	r3, [r2]
+ 782 0008 0E1C     		add	r6, r1, #0
+ 783 000a 0125     		mov	r5, #1
+ 784 000c 002B     		cmp	r3, #0
+ 785 000e 43D0     		beq	.L92
+ 786 0010 081C     		add	r0, r1, #0
+ 787 0012 0021     		mov	r1, #0
+ 788 0014 FFF7FEFF 		bl	__aeabi_fcmpeq
+ 789 0018 0225     		mov	r5, #2
+ 790 001a 0028     		cmp	r0, #0
+ 791 001c 3CD1     		bne	.L92
+ 792 001e 311C     		add	r1, r6, #0
+ 793 0020 6068     		ldr	r0, [r4, #4]
+ 794 0022 FFF7FEFF 		bl	__aeabi_fmul
+ 795 0026 011C     		add	r1, r0, #0
+ 796 0028 1C48     		ldr	r0, .L101
+ 797 002a FFF7FEFF 		bl	__aeabi_fdiv
+ 798 002e FFF7FEFF 		bl	__aeabi_f2uiz
+ 799 0032 011C     		mov	r1, r0
+ 800 0034 601C     		add	r0, r4, #1
+ 801 0036 C67F     		ldrb	r6, [r0, #31]
+ 802 0038 002E     		cmp	r6, #0
+ 803 003a 17D1     		bne	.L93
+ 804 003c 184B     		ldr	r3, .L101+4
+ 805 003e 9942     		cmp	r1, r3
+ 806 0040 2AD8     		bhi	.L92
+ 807 0042 251C     		mov	r5, r4
+ 808 0044 3635     		add	r5, r5, #54
+ 809 0046 2A78     		ldrb	r2, [r5]
+ 810 0048 A069     		ldr	r0, [r4, #24]
+ 811 004a 0139     		sub	r1, r1, #1
+ 812 004c 002A     		cmp	r2, #0
+ 813 004e 00D0     		beq	.L100
+ 814              	.L94:
+ 815 0050 4908     		lsr	r1, r1, #1
+ 816              	.L100:
+ 817 0052 4163     		str	r1, [r0, #52]
+ 818 0054 6669     		ldr	r6, [r4, #20]
+ 819 0056 3734     		add	r4, r4, #55
+ 820 0058 2478     		ldrb	r4, [r4]
+ 821 005a 0125     		mov	r5, #1
+ 822 005c A300     		lsl	r3, r4, #2
+ 823 005e 3169     		ldr	r1, [r6, #16]
+ 824 0060 9D40     		lsl	r5, r5, r3
+ 825 0062 2A1C     		mov	r2, r5
+ 826 0064 0A43     		orr	r2, r1
+ 827 0066 3261     		str	r2, [r6, #16]
+ 828 0068 0025     		mov	r5, #0
+ 829 006a 15E0     		b	.L92
+ 830              	.L93:
+ 831 006c 201C     		mov	r0, r4
+ 832 006e FFF7FEFF 		bl	PWMSP001_lSetPwmFreqTimerConcat
+ 833 0072 051E     		sub	r5, r0, #0
+ 834 0074 10D1     		bne	.L92
+ 835 0076 221C     		mov	r2, r4
+ 836 0078 3732     		add	r2, r2, #55
+ 837 007a 1078     		ldrb	r0, [r2]
+ 838 007c 6369     		ldr	r3, [r4, #20]
+ 839 007e 0122     		mov	r2, #1
+ 840 0080 3834     		add	r4, r4, #56
+ 841 0082 8000     		lsl	r0, r0, #2
+ 842 0084 161C     		mov	r6, r2
+ 843 0086 2478     		ldrb	r4, [r4]
+ 844 0088 8640     		lsl	r6, r6, r0
+ 845 008a 301C     		mov	r0, r6
+ 846 008c A600     		lsl	r6, r4, #2
+ 847 008e 1969     		ldr	r1, [r3, #16]
+ 848 0090 B240     		lsl	r2, r2, r6
+ 849 0092 0243     		orr	r2, r0
+ 850 0094 0A43     		orr	r2, r1
+ 851 0096 1A61     		str	r2, [r3, #16]
+ 852              	.L92:
+ 853 0098 281C     		mov	r0, r5
+ 854              		@ sp needed for prologue
+ 855 009a 70BD     		pop	{r4, r5, r6, pc}
+ 856              	.L102:
+ 857              		.align	2
+ 858              	.L101:
+ 859 009c 286B6E4E 		.word	1315859240
+ 860 00a0 FFFF0000 		.word	65535
+ 862              		.section	.text.PWMSP001_SetPwmFreqAndDutyCycle,"ax",%progbits
+ 863              		.align	1
+ 864              		.global	PWMSP001_SetPwmFreqAndDutyCycle
+ 865              		.code	16
+ 866              		.thumb_func
+ 868              	PWMSP001_SetPwmFreqAndDutyCycle:
+ 869 0000 F8B5     		push	{r3, r4, r5, r6, r7, lr}
+ 870 0002 161C     		add	r6, r2, #0
+ 871 0004 C26B     		ldr	r2, [r0, #60]
+ 872 0006 041C     		mov	r4, r0
+ 873 0008 1378     		ldrb	r3, [r2]
+ 874 000a 0F1C     		add	r7, r1, #0
+ 875 000c 0125     		mov	r5, #1
+ 876 000e 002B     		cmp	r3, #0
+ 877 0010 3DD0     		beq	.L104
+ 878 0012 081C     		add	r0, r1, #0
+ 879 0014 0021     		mov	r1, #0
+ 880 0016 FFF7FEFF 		bl	__aeabi_fcmpeq
+ 881 001a 0225     		mov	r5, #2
+ 882 001c 0028     		cmp	r0, #0
+ 883 001e 36D1     		bne	.L104
+ 884 0020 301C     		add	r0, r6, #0
+ 885 0022 1C49     		ldr	r1, .L118
+ 886 0024 FFF7FEFF 		bl	__aeabi_fcmpgt
+ 887 0028 0028     		cmp	r0, #0
+ 888 002a 30D1     		bne	.L104
+ 889 002c 301C     		add	r0, r6, #0
+ 890 002e 0021     		mov	r1, #0
+ 891 0030 FFF7FEFF 		bl	__aeabi_fcmplt
+ 892 0034 0028     		cmp	r0, #0
+ 893 0036 2AD1     		bne	.L104
+ 894 0038 391C     		add	r1, r7, #0
+ 895 003a 6068     		ldr	r0, [r4, #4]
+ 896 003c FFF7FEFF 		bl	__aeabi_fmul
+ 897 0040 011C     		add	r1, r0, #0
+ 898 0042 1548     		ldr	r0, .L118+4
+ 899 0044 FFF7FEFF 		bl	__aeabi_fdiv
+ 900 0048 FFF7FEFF 		bl	__aeabi_f2uiz
+ 901 004c 011C     		mov	r1, r0
+ 902 004e 601C     		add	r0, r4, #1
+ 903 0050 C77F     		ldrb	r7, [r0, #31]
+ 904 0052 002F     		cmp	r7, #0
+ 905 0054 0CD1     		bne	.L105
+ 906 0056 114B     		ldr	r3, .L118+8
+ 907 0058 9942     		cmp	r1, r3
+ 908 005a 18D8     		bhi	.L104
+ 909 005c 251C     		mov	r5, r4
+ 910 005e 3635     		add	r5, r5, #54
+ 911 0060 2878     		ldrb	r0, [r5]
+ 912 0062 A769     		ldr	r7, [r4, #24]
+ 913 0064 0139     		sub	r1, r1, #1
+ 914 0066 0028     		cmp	r0, #0
+ 915 0068 00D0     		beq	.L117
+ 916              	.L106:
+ 917 006a 4908     		lsr	r1, r1, #1
+ 918              	.L117:
+ 919 006c 7963     		str	r1, [r7, #52]
+ 920 006e 09E0     		b	.L109
+ 921              	.L105:
+ 922 0070 012F     		cmp	r7, #1
+ 923 0072 02D1     		bne	.L108
+ 924 0074 094A     		ldr	r2, .L118+8
+ 925 0076 9142     		cmp	r1, r2
+ 926 0078 09D9     		bls	.L104
+ 927              	.L108:
+ 928 007a 201C     		mov	r0, r4
+ 929 007c FFF7FEFF 		bl	PWMSP001_lSetPwmFreqTimerConcat
+ 930 0080 051E     		sub	r5, r0, #0
+ 931 0082 04D1     		bne	.L104
+ 932              	.L109:
+ 933 0084 626C     		ldr	r2, [r4, #68]
+ 934 0086 201C     		mov	r0, r4
+ 935 0088 311C     		add	r1, r6, #0
+ 936 008a 9047     		blx	r2
+ 937 008c 0025     		mov	r5, #0
+ 938              	.L104:
+ 939 008e 281C     		mov	r0, r5
+ 940              		@ sp needed for prologue
+ 941 0090 F8BD     		pop	{r3, r4, r5, r6, r7, pc}
+ 942              	.L119:
+ 943 0092 C046     		.align	2
+ 944              	.L118:
+ 945 0094 0000C842 		.word	1120403456
+ 946 0098 286B6E4E 		.word	1315859240
+ 947 009c FFFF0000 		.word	65535
+ 949              		.section	.text.PWMSP001_SetTimerVal,"ax",%progbits
+ 950              		.align	1
+ 951              		.global	PWMSP001_SetTimerVal
+ 952              		.code	16
+ 953              		.thumb_func
+ 955              	PWMSP001_SetTimerVal:
+ 956 0000 031C     		mov	r3, r0
+ 957 0002 C06B     		ldr	r0, [r0, #60]
+ 958 0004 0278     		ldrb	r2, [r0]
+ 959 0006 012A     		cmp	r2, #1
+ 960 0008 02D0     		beq	.L121
+ 961 000a 0120     		mov	r0, #1
+ 962 000c 032A     		cmp	r2, #3
+ 963 000e 0AD1     		bne	.L122
+ 964              	.L121:
+ 965 0010 9A69     		ldr	r2, [r3, #24]
+ 966 0012 88B2     		uxth	r0, r1
+ 967 0014 1067     		str	r0, [r2, #112]
+ 968 0016 5A1C     		add	r2, r3, #1
+ 969 0018 D27F     		ldrb	r2, [r2, #31]
+ 970 001a 0020     		mov	r0, #0
+ 971 001c 012A     		cmp	r2, #1
+ 972 001e 02D1     		bne	.L122
+ 973 0020 DB69     		ldr	r3, [r3, #28]
+ 974 0022 090C     		lsr	r1, r1, #16
+ 975 0024 1967     		str	r1, [r3, #112]
+ 976              	.L122:
+ 977              		@ sp needed for prologue
+ 978 0026 7047     		bx	lr
+ 980              		.section	.text.PWMSP001_GetTimerStatus,"ax",%progbits
+ 981              		.align	1
+ 982              		.global	PWMSP001_GetTimerStatus
+ 983              		.code	16
+ 984              		.thumb_func
+ 986              	PWMSP001_GetTimerStatus:
+ 987 0000 10B5     		push	{r4, lr}
+ 988 0002 C36B     		ldr	r3, [r0, #60]
+ 989 0004 1A78     		ldrb	r2, [r3]
+ 990 0006 0123     		mov	r3, #1
+ 991 0008 002A     		cmp	r2, #0
+ 992 000a 0DD0     		beq	.L129
+ 993 000c C418     		add	r4, r0, r3
+ 994 000e E47F     		ldrb	r4, [r4, #31]
+ 995 0010 8269     		ldr	r2, [r0, #24]
+ 996 0012 9C42     		cmp	r4, r3
+ 997 0014 04D1     		bne	.L130
+ 998 0016 C069     		ldr	r0, [r0, #28]
+ 999 0018 8068     		ldr	r0, [r0, #8]
+ 1000 001a 9468     		ldr	r4, [r2, #8]
+ 1001 001c 0440     		and	r4, r0
+ 1002 001e 00E0     		b	.L133
+ 1003              	.L130:
+ 1004 0020 9468     		ldr	r4, [r2, #8]
+ 1005              	.L133:
+ 1006 0022 2340     		and	r3, r4
+ 1007 0024 0B60     		str	r3, [r1]
+ 1008 0026 0023     		mov	r3, #0
+ 1009              	.L129:
+ 1010 0028 181C     		mov	r0, r3
+ 1011              		@ sp needed for prologue
+ 1012 002a 10BD     		pop	{r4, pc}
+ 1014              		.section	.text.PWMSP001_GetTimerRegsVal,"ax",%progbits
+ 1015              		.align	1
+ 1016              		.global	PWMSP001_GetTimerRegsVal
+ 1017              		.code	16
+ 1018              		.thumb_func
+ 1020              	PWMSP001_GetTimerRegsVal:
+ 1021 0000 30B5     		push	{r4, r5, lr}
+ 1022 0002 021C     		mov	r2, r0
+ 1023 0004 C06B     		ldr	r0, [r0, #60]
+ 1024 0006 0378     		ldrb	r3, [r0]
+ 1025 0008 0120     		mov	r0, #1
+ 1026 000a 002B     		cmp	r3, #0
+ 1027 000c 21D0     		beq	.L135
+ 1028 000e 1418     		add	r4, r2, r0
+ 1029 0010 E57F     		ldrb	r5, [r4, #31]
+ 1030 0012 9369     		ldr	r3, [r2, #24]
+ 1031 0014 012D     		cmp	r5, #1
+ 1032 0016 14D1     		bne	.L136
+ 1033 0018 D269     		ldr	r2, [r2, #28]
+ 1034 001a 106F     		ldr	r0, [r2, #112]
+ 1035 001c 1C6F     		ldr	r4, [r3, #112]
+ 1036 001e 0004     		lsl	r0, r0, #16
+ 1037 0020 A5B2     		uxth	r5, r4
+ 1038 0022 2843     		orr	r0, r5
+ 1039 0024 8860     		str	r0, [r1, #8]
+ 1040 0026 D56B     		ldr	r5, [r2, #60]
+ 1041 0028 586B     		ldr	r0, [r3, #52]
+ 1042 002a DC6B     		ldr	r4, [r3, #60]
+ 1043 002c 6843     		mul	r0, r5
+ 1044 002e 0519     		add	r5, r0, r4
+ 1045 0030 506B     		ldr	r0, [r2, #52]
+ 1046 0032 5B6B     		ldr	r3, [r3, #52]
+ 1047 0034 0D60     		str	r5, [r1]
+ 1048 0036 9AB2     		uxth	r2, r3
+ 1049 0038 0132     		add	r2, r2, #1
+ 1050 003a 451C     		add	r5, r0, #1
+ 1051 003c 5543     		mul	r5, r2
+ 1052 003e 0135     		add	r5, r5, #1
+ 1053 0040 05E0     		b	.L139
+ 1054              	.L136:
+ 1055 0042 1A6F     		ldr	r2, [r3, #112]
+ 1056 0044 DC6B     		ldr	r4, [r3, #60]
+ 1057 0046 90B2     		uxth	r0, r2
+ 1058 0048 5D6B     		ldr	r5, [r3, #52]
+ 1059 004a 8860     		str	r0, [r1, #8]
+ 1060 004c 0C60     		str	r4, [r1]
+ 1061              	.L139:
+ 1062 004e 4D60     		str	r5, [r1, #4]
+ 1063 0050 0020     		mov	r0, #0
+ 1064              	.L135:
+ 1065              		@ sp needed for prologue
+ 1066 0052 30BD     		pop	{r4, r5, pc}
+ 1068              		.section	.text.PWMSP001_GetPeriodReg,"ax",%progbits
+ 1069              		.align	1
+ 1070              		.global	PWMSP001_GetPeriodReg
+ 1071              		.code	16
+ 1072              		.thumb_func
+ 1074              	PWMSP001_GetPeriodReg:
+ 1075 0000 031C     		mov	r3, r0
+ 1076 0002 C06B     		ldr	r0, [r0, #60]
+ 1077 0004 0278     		ldrb	r2, [r0]
+ 1078 0006 0120     		mov	r0, #1
+ 1079 0008 002A     		cmp	r2, #0
+ 1080 000a 12D0     		beq	.L141
+ 1081 000c 1818     		add	r0, r3, r0
+ 1082 000e C07F     		ldrb	r0, [r0, #31]
+ 1083 0010 9A69     		ldr	r2, [r3, #24]
+ 1084 0012 0128     		cmp	r0, #1
+ 1085 0014 0AD1     		bne	.L142
+ 1086 0016 D869     		ldr	r0, [r3, #28]
+ 1087 0018 436B     		ldr	r3, [r0, #52]
+ 1088 001a 0133     		add	r3, r3, #1
+ 1089 001c 0B60     		str	r3, [r1]
+ 1090 001e 526B     		ldr	r2, [r2, #52]
+ 1091 0020 90B2     		uxth	r0, r2
+ 1092 0022 0130     		add	r0, r0, #1
+ 1093 0024 4343     		mul	r3, r0
+ 1094 0026 0133     		add	r3, r3, #1
+ 1095 0028 0B60     		str	r3, [r1]
+ 1096 002a 01E0     		b	.L145
+ 1097              	.L142:
+ 1098 002c 536B     		ldr	r3, [r2, #52]
+ 1099 002e 0B60     		str	r3, [r1]
+ 1100              	.L145:
+ 1101 0030 0020     		mov	r0, #0
+ 1102              	.L141:
+ 1103              		@ sp needed for prologue
+ 1104 0032 7047     		bx	lr
+ 1106              		.section	.text.PWMSP001_SWRequestShadowTransfer,"ax",%progbits
+ 1107              		.align	1
+ 1108              		.global	PWMSP001_SWRequestShadowTransfer
+ 1109              		.code	16
+ 1110              		.thumb_func
+ 1112              	PWMSP001_SWRequestShadowTransfer:
+ 1113 0000 30B5     		push	{r4, r5, lr}
+ 1114 0002 C36B     		ldr	r3, [r0, #60]
+ 1115 0004 1A78     		ldrb	r2, [r3]
+ 1116 0006 0123     		mov	r3, #1
+ 1117 0008 002A     		cmp	r2, #0
+ 1118 000a 1AD0     		beq	.L147
+ 1119 000c C118     		add	r1, r0, r3
+ 1120 000e CC7F     		ldrb	r4, [r1, #31]
+ 1121 0010 051C     		mov	r5, r0
+ 1122 0012 4269     		ldr	r2, [r0, #20]
+ 1123 0014 3735     		add	r5, r5, #55
+ 1124 0016 9C42     		cmp	r4, r3
+ 1125 0018 0CD1     		bne	.L148
+ 1126 001a 2D78     		ldrb	r5, [r5]
+ 1127 001c 3830     		add	r0, r0, #56
+ 1128 001e A900     		lsl	r1, r5, #2
+ 1129 0020 0078     		ldrb	r0, [r0]
+ 1130 0022 1D1C     		mov	r5, r3
+ 1131 0024 8D40     		lsl	r5, r5, r1
+ 1132 0026 291C     		mov	r1, r5
+ 1133 0028 8500     		lsl	r5, r0, #2
+ 1134 002a 1469     		ldr	r4, [r2, #16]
+ 1135 002c AB40     		lsl	r3, r3, r5
+ 1136 002e 0B43     		orr	r3, r1
+ 1137 0030 2343     		orr	r3, r4
+ 1138 0032 04E0     		b	.L151
+ 1139              	.L148:
+ 1140 0034 2978     		ldrb	r1, [r5]
+ 1141 0036 1069     		ldr	r0, [r2, #16]
+ 1142 0038 8C00     		lsl	r4, r1, #2
+ 1143 003a A340     		lsl	r3, r3, r4
+ 1144 003c 0343     		orr	r3, r0
+ 1145              	.L151:
+ 1146 003e 1361     		str	r3, [r2, #16]
+ 1147 0040 0023     		mov	r3, #0
+ 1148              	.L147:
+ 1149 0042 181C     		mov	r0, r3
+ 1150              		@ sp needed for prologue
+ 1151 0044 30BD     		pop	{r4, r5, pc}
+ 1153              		.section	.text.PWMSP001_ResetTrapFlag,"ax",%progbits
+ 1154              		.align	1
+ 1155              		.global	PWMSP001_ResetTrapFlag
+ 1156              		.code	16
+ 1157              		.thumb_func
+ 1159              	PWMSP001_ResetTrapFlag:
+ 1160 0000 30B5     		push	{r4, r5, lr}
+ 1161 0002 C27C     		ldrb	r2, [r0, #19]
+ 1162 0004 8169     		ldr	r1, [r0, #24]
+ 1163 0006 431C     		add	r3, r0, #1
+ 1164 0008 012A     		cmp	r2, #1
+ 1165 000a 0ED1     		bne	.L154
+ 1166 000c 0A1C     		mov	r2, r1
+ 1167 000e B032     		add	r2, r2, #176
+ 1168 0010 1568     		ldr	r5, [r2]
+ 1169 0012 8024     		mov	r4, #128
+ 1170 0014 E400     		lsl	r4, r4, #3
+ 1171 0016 2543     		orr	r5, r4
+ 1172 0018 1560     		str	r5, [r2]
+ 1173 001a DA7F     		ldrb	r2, [r3, #31]
+ 1174 001c 012A     		cmp	r2, #1
+ 1175 001e 04D1     		bne	.L154
+ 1176 0020 C269     		ldr	r2, [r0, #28]
+ 1177 0022 B032     		add	r2, r2, #176
+ 1178 0024 1568     		ldr	r5, [r2]
+ 1179 0026 2C43     		orr	r4, r5
+ 1180 0028 1460     		str	r4, [r2]
+ 1181              	.L154:
+ 1182 002a B031     		add	r1, r1, #176
+ 1183 002c 0C68     		ldr	r4, [r1]
+ 1184 002e 8022     		mov	r2, #128
+ 1185 0030 1501     		lsl	r5, r2, #4
+ 1186 0032 2C43     		orr	r4, r5
+ 1187 0034 0C60     		str	r4, [r1]
+ 1188 0036 D97F     		ldrb	r1, [r3, #31]
+ 1189 0038 0129     		cmp	r1, #1
+ 1190 003a 04D1     		bne	.L152
+ 1191 003c C069     		ldr	r0, [r0, #28]
+ 1192 003e B030     		add	r0, r0, #176
+ 1193 0040 0368     		ldr	r3, [r0]
+ 1194 0042 1D43     		orr	r5, r3
+ 1195 0044 0560     		str	r5, [r0]
+ 1196              	.L152:
+ 1197              		@ sp needed for prologue
+ 1198 0046 30BD     		pop	{r4, r5, pc}
+ 1200              		.section	.text.PWMSP001_lConfigureSecondSlice,"ax",%progbits
+ 1201              		.align	1
+ 1202              		.global	PWMSP001_lConfigureSecondSlice
+ 1203              		.code	16
+ 1204              		.thumb_func
+ 1206              	PWMSP001_lConfigureSecondSlice:
+ 1207 0000 F0B5     		push	{r4, r5, r6, r7, lr}
+ 1208 0002 C369     		ldr	r3, [r0, #28]
+ 1209 0004 418D     		ldrh	r1, [r0, #42]
+ 1210 0006 4489     		ldrh	r4, [r0, #10]
+ 1211 0008 0722     		mov	r2, #7
+ 1212 000a 1A61     		str	r2, [r3, #16]
+ 1213 000c 5963     		str	r1, [r3, #52]
+ 1214 000e DC63     		str	r4, [r3, #60]
+ 1215 0010 5D68     		ldr	r5, [r3, #4]
+ 1216 0012 8026     		mov	r6, #128
+ 1217 0014 7703     		lsl	r7, r6, #13
+ 1218 0016 2F43     		orr	r7, r5
+ 1219 0018 5F60     		str	r7, [r3, #4]
+ 1220 001a C27B     		ldrb	r2, [r0, #15]
+ 1221 001c 012A     		cmp	r2, #1
+ 1222 001e 14D1     		bne	.L158
+ 1223 0020 1968     		ldr	r1, [r3]
+ 1224 0022 4A4C     		ldr	r4, .L160
+ 1225 0024 0C26     		mov	r6, #12
+ 1226 0026 0C40     		and	r4, r1
+ 1227 0028 1C60     		str	r4, [r3]
+ 1228 002a 5D68     		ldr	r5, [r3, #4]
+ 1229 002c 421D     		add	r2, r0, #5
+ 1230 002e B543     		bic	r5, r6
+ 1231 0030 5D60     		str	r5, [r3, #4]
+ 1232 0032 D17F     		ldrb	r1, [r2, #31]
+ 1233 0034 C025     		mov	r5, #192
+ 1234 0036 1F68     		ldr	r7, [r3]
+ 1235 0038 8C04     		lsl	r4, r1, #18
+ 1236 003a 2E03     		lsl	r6, r5, #12
+ 1237 003c 2640     		and	r6, r4
+ 1238 003e 3E43     		orr	r6, r7
+ 1239 0040 1E60     		str	r6, [r3]
+ 1240 0042 5F68     		ldr	r7, [r3, #4]
+ 1241 0044 0822     		mov	r2, #8
+ 1242 0046 1743     		orr	r7, r2
+ 1243 0048 5F60     		str	r7, [r3, #4]
+ 1244              	.L158:
+ 1245 004a 417C     		ldrb	r1, [r0, #17]
+ 1246 004c 404C     		ldr	r4, .L160+4
+ 1247 004e 0129     		cmp	r1, #1
+ 1248 0050 13D1     		bne	.L159
+ 1249 0052 1D68     		ldr	r5, [r3]
+ 1250 0054 3F4E     		ldr	r6, .L160+8
+ 1251 0056 2E40     		and	r6, r5
+ 1252 0058 1E60     		str	r6, [r3]
+ 1253 005a 5F68     		ldr	r7, [r3, #4]
+ 1254 005c 8026     		mov	r6, #128
+ 1255 005e 2740     		and	r7, r4
+ 1256 0060 5F60     		str	r7, [r3, #4]
+ 1257 0062 0278     		ldrb	r2, [r0]
+ 1258 0064 1968     		ldr	r1, [r3]
+ 1259 0066 1506     		lsl	r5, r2, #24
+ 1260 0068 7704     		lsl	r7, r6, #17
+ 1261 006a 2F40     		and	r7, r5
+ 1262 006c 0F43     		orr	r7, r1
+ 1263 006e 1F60     		str	r7, [r3]
+ 1264 0070 5968     		ldr	r1, [r3, #4]
+ 1265 0072 8022     		mov	r2, #128
+ 1266 0074 9502     		lsl	r5, r2, #10
+ 1267 0076 0D43     		orr	r5, r1
+ 1268 0078 5D60     		str	r5, [r3, #4]
+ 1269              	.L159:
+ 1270 007a 5E69     		ldr	r6, [r3, #20]
+ 1271 007c 364F     		ldr	r7, .L160+12
+ 1272 007e 0225     		mov	r5, #2
+ 1273 0080 3740     		and	r7, r6
+ 1274 0082 5F61     		str	r7, [r3, #20]
+ 1275 0084 061C     		mov	r6, r0
+ 1276 0086 017B     		ldrb	r1, [r0, #12]
+ 1277 0088 3436     		add	r6, r6, #52
+ 1278 008a 3778     		ldrb	r7, [r6]
+ 1279 008c 4A00     		lsl	r2, r1, #1
+ 1280 008e 8021     		mov	r1, #128
+ 1281 0090 2A40     		and	r2, r5
+ 1282 0092 BD02     		lsl	r5, r7, #10
+ 1283 0094 CF00     		lsl	r7, r1, #3
+ 1284 0096 2F40     		and	r7, r5
+ 1285 0098 1743     		orr	r7, r2
+ 1286 009a 021C     		mov	r2, r0
+ 1287 009c 3632     		add	r2, r2, #54
+ 1288 009e 051C     		mov	r5, r0
+ 1289 00a0 1678     		ldrb	r6, [r2]
+ 1290 00a2 3535     		add	r5, r5, #53
+ 1291 00a4 2978     		ldrb	r1, [r5]
+ 1292 00a6 0122     		mov	r2, #1
+ 1293 00a8 1640     		and	r6, r2
+ 1294 00aa C025     		mov	r5, #192
+ 1295 00ac 3743     		orr	r7, r6
+ 1296 00ae 0E02     		lsl	r6, r1, #8
+ 1297 00b0 A900     		lsl	r1, r5, #2
+ 1298 00b2 3140     		and	r1, r6
+ 1299 00b4 0F43     		orr	r7, r1
+ 1300 00b6 5F61     		str	r7, [r3, #20]
+ 1301 00b8 861C     		add	r6, r0, #2
+ 1302 00ba F57F     		ldrb	r5, [r6, #31]
+ 1303 00bc C021     		mov	r1, #192
+ 1304 00be 5F69     		ldr	r7, [r3, #20]
+ 1305 00c0 6E03     		lsl	r6, r5, #13
+ 1306 00c2 CD01     		lsl	r5, r1, #7
+ 1307 00c4 3540     		and	r5, r6
+ 1308 00c6 3D43     		orr	r5, r7
+ 1309 00c8 5D61     		str	r5, [r3, #20]
+ 1310 00ca 1F6A     		ldr	r7, [r3, #32]
+ 1311 00cc 467B     		ldrb	r6, [r0, #13]
+ 1312 00ce 0F21     		mov	r1, #15
+ 1313 00d0 0E40     		and	r6, r1
+ 1314 00d2 8F43     		bic	r7, r1
+ 1315 00d4 3743     		orr	r7, r6
+ 1316 00d6 1F62     		str	r7, [r3, #32]
+ 1317 00d8 857C     		ldrb	r5, [r0, #18]
+ 1318 00da 5F69     		ldr	r7, [r3, #20]
+ 1319 00dc 6E05     		lsl	r6, r5, #21
+ 1320 00de 8025     		mov	r5, #128
+ 1321 00e0 AD03     		lsl	r5, r5, #14
+ 1322 00e2 2E40     		and	r6, r5
+ 1323 00e4 1D4D     		ldr	r5, .L160+16
+ 1324              		@ sp needed for prologue
+ 1325 00e6 3D40     		and	r5, r7
+ 1326 00e8 3543     		orr	r5, r6
+ 1327 00ea 5D61     		str	r5, [r3, #20]
+ 1328 00ec C67C     		ldrb	r6, [r0, #19]
+ 1329 00ee 8025     		mov	r5, #128
+ 1330 00f0 8D40     		lsl	r5, r5, r1
+ 1331 00f2 B605     		lsl	r6, r6, #22
+ 1332 00f4 5F69     		ldr	r7, [r3, #20]
+ 1333 00f6 2E40     		and	r6, r5
+ 1334 00f8 194D     		ldr	r5, .L160+20
+ 1335 00fa 3D40     		and	r5, r7
+ 1336 00fc 3543     		orr	r5, r6
+ 1337 00fe 5D61     		str	r5, [r3, #20]
+ 1338 0100 477C     		ldrb	r7, [r0, #17]
+ 1339 0102 5E69     		ldr	r6, [r3, #20]
+ 1340 0104 8025     		mov	r5, #128
+ 1341 0106 7F04     		lsl	r7, r7, #17
+ 1342 0108 AD02     		lsl	r5, r5, #10
+ 1343 010a 3D40     		and	r5, r7
+ 1344 010c 3440     		and	r4, r6
+ 1345 010e 2C43     		orr	r4, r5
+ 1346 0110 5C61     		str	r4, [r3, #20]
+ 1347 0112 5E6A     		ldr	r6, [r3, #36]
+ 1348 0114 C41C     		add	r4, r0, #3
+ 1349 0116 E77F     		ldrb	r7, [r4, #31]
+ 1350 0118 8E43     		bic	r6, r1
+ 1351 011a 0F40     		and	r7, r1
+ 1352 011c 311C     		mov	r1, r6
+ 1353 011e 3943     		orr	r1, r7
+ 1354 0120 5962     		str	r1, [r3, #36]
+ 1355 0122 057C     		ldrb	r5, [r0, #16]
+ 1356 0124 4669     		ldr	r6, [r0, #20]
+ 1357 0126 9D61     		str	r5, [r3, #24]
+ 1358 0128 3830     		add	r0, r0, #56
+ 1359 012a 0078     		ldrb	r0, [r0]
+ 1360 012c 3469     		ldr	r4, [r6, #16]
+ 1361 012e 8300     		lsl	r3, r0, #2
+ 1362 0130 171C     		mov	r7, r2
+ 1363 0132 9918     		add	r1, r3, r2
+ 1364 0134 9F40     		lsl	r7, r7, r3
+ 1365 0136 151C     		mov	r5, r2
+ 1366 0138 8D40     		lsl	r5, r5, r1
+ 1367 013a 2743     		orr	r7, r4
+ 1368 013c 0233     		add	r3, r3, #2
+ 1369 013e 2F43     		orr	r7, r5
+ 1370 0140 9A40     		lsl	r2, r2, r3
+ 1371 0142 101C     		mov	r0, r2
+ 1372 0144 3A1C     		mov	r2, r7
+ 1373 0146 0243     		orr	r2, r0
+ 1374 0148 3261     		str	r2, [r6, #16]
+ 1375 014a F0BD     		pop	{r4, r5, r6, r7, pc}
+ 1376              	.L161:
+ 1377              		.align	2
+ 1378              	.L160:
+ 1379 014c FFFFF3E7 		.word	-403439617
+ 1380 0150 FFFFFDFF 		.word	-131073
+ 1381 0154 FFFFCF9E 		.word	-1630535681
+ 1382 0158 F498FFFF 		.word	-26380
+ 1383 015c FFFFDFFF 		.word	-2097153
+ 1384 0160 FFFFBFFF 		.word	-4194305
+ 1386              		.section	.text.PWMSP001_lInit,"ax",%progbits
+ 1387              		.align	1
+ 1388              		.global	PWMSP001_lInit
+ 1389              		.code	16
+ 1390              		.thumb_func
+ 1392              	PWMSP001_lInit:
+ 1393 0000 70B5     		push	{r4, r5, r6, lr}
+ 1394 0002 C16B     		ldr	r1, [r0, #60]
+ 1395 0004 041C     		mov	r4, r0
+ 1396 0006 0B78     		ldrb	r3, [r1]
+ 1397 0008 0120     		mov	r0, #1
+ 1398 000a 002B     		cmp	r3, #0
+ 1399 000c 00D0     		beq	.LCB1555
+ 1400 000e CBE0     		b	.L163	@long jump
+ 1401              	.LCB1555:
+ 1402 0010 A369     		ldr	r3, [r4, #24]
+ 1403 0012 0722     		mov	r2, #7
+ 1404 0014 1A61     		str	r2, [r3, #16]
+ 1405 0016 E57B     		ldrb	r5, [r4, #15]
+ 1406 0018 8542     		cmp	r5, r0
+ 1407 001a 14D1     		bne	.L164
+ 1408 001c 1868     		ldr	r0, [r3]
+ 1409 001e 634E     		ldr	r6, .L181
+ 1410 0020 0C21     		mov	r1, #12
+ 1411 0022 0640     		and	r6, r0
+ 1412 0024 1E60     		str	r6, [r3]
+ 1413 0026 5A68     		ldr	r2, [r3, #4]
+ 1414 0028 601D     		add	r0, r4, #5
+ 1415 002a 8A43     		bic	r2, r1
+ 1416 002c 5A60     		str	r2, [r3, #4]
+ 1417 002e C67F     		ldrb	r6, [r0, #31]
+ 1418 0030 C022     		mov	r2, #192
+ 1419 0032 1D68     		ldr	r5, [r3]
+ 1420 0034 B104     		lsl	r1, r6, #18
+ 1421 0036 1003     		lsl	r0, r2, #12
+ 1422 0038 0840     		and	r0, r1
+ 1423 003a 2843     		orr	r0, r5
+ 1424 003c 1860     		str	r0, [r3]
+ 1425 003e 5D68     		ldr	r5, [r3, #4]
+ 1426 0040 0826     		mov	r6, #8
+ 1427 0042 3543     		orr	r5, r6
+ 1428 0044 5D60     		str	r5, [r3, #4]
+ 1429              	.L164:
+ 1430 0046 617C     		ldrb	r1, [r4, #17]
+ 1431 0048 621C     		add	r2, r4, #1
+ 1432 004a 0129     		cmp	r1, #1
+ 1433 004c 17D1     		bne	.L165
+ 1434 004e D07F     		ldrb	r0, [r2, #31]
+ 1435 0050 0128     		cmp	r0, #1
+ 1436 0052 14D0     		beq	.L165
+ 1437 0054 1D68     		ldr	r5, [r3]
+ 1438 0056 564E     		ldr	r6, .L181+4
+ 1439 0058 5649     		ldr	r1, .L181+8
+ 1440 005a 2E40     		and	r6, r5
+ 1441 005c 1E60     		str	r6, [r3]
+ 1442 005e 5868     		ldr	r0, [r3, #4]
+ 1443 0060 0140     		and	r1, r0
+ 1444 0062 5960     		str	r1, [r3, #4]
+ 1445 0064 2578     		ldrb	r5, [r4]
+ 1446 0066 8021     		mov	r1, #128
+ 1447 0068 1E68     		ldr	r6, [r3]
+ 1448 006a 2806     		lsl	r0, r5, #24
+ 1449 006c 4D04     		lsl	r5, r1, #17
+ 1450 006e 0540     		and	r5, r0
+ 1451 0070 3543     		orr	r5, r6
+ 1452 0072 1D60     		str	r5, [r3]
+ 1453 0074 5E68     		ldr	r6, [r3, #4]
+ 1454 0076 8020     		mov	r0, #128
+ 1455 0078 8102     		lsl	r1, r0, #10
+ 1456 007a 3143     		orr	r1, r6
+ 1457 007c 5960     		str	r1, [r3, #4]
+ 1458              	.L165:
+ 1459 007e 5D69     		ldr	r5, [r3, #20]
+ 1460 0080 4D4E     		ldr	r6, .L181+12
+ 1461 0082 211C     		mov	r1, r4
+ 1462 0084 2E40     		and	r6, r5
+ 1463 0086 5E61     		str	r6, [r3, #20]
+ 1464 0088 3631     		add	r1, r1, #54
+ 1465 008a 0D78     		ldrb	r5, [r1]
+ 1466 008c 5869     		ldr	r0, [r3, #20]
+ 1467 008e 0126     		mov	r6, #1
+ 1468 0090 2E40     		and	r6, r5
+ 1469 0092 0643     		orr	r6, r0
+ 1470 0094 201C     		mov	r0, r4
+ 1471 0096 3430     		add	r0, r0, #52
+ 1472 0098 0178     		ldrb	r1, [r0]
+ 1473 009a 8020     		mov	r0, #128
+ 1474 009c 8D02     		lsl	r5, r1, #10
+ 1475 009e C100     		lsl	r1, r0, #3
+ 1476 00a0 2940     		and	r1, r5
+ 1477 00a2 251C     		mov	r5, r4
+ 1478 00a4 3535     		add	r5, r5, #53
+ 1479 00a6 2878     		ldrb	r0, [r5]
+ 1480 00a8 C025     		mov	r5, #192
+ 1481 00aa 0E43     		orr	r6, r1
+ 1482 00ac 0102     		lsl	r1, r0, #8
+ 1483 00ae A800     		lsl	r0, r5, #2
+ 1484 00b0 0840     		and	r0, r1
+ 1485 00b2 0643     		orr	r6, r0
+ 1486 00b4 5E61     		str	r6, [r3, #20]
+ 1487 00b6 D67F     		ldrb	r6, [r2, #31]
+ 1488 00b8 012E     		cmp	r6, #1
+ 1489 00ba 07D0     		beq	.L166
+ 1490 00bc 217B     		ldrb	r1, [r4, #12]
+ 1491 00be 5D69     		ldr	r5, [r3, #20]
+ 1492 00c0 0226     		mov	r6, #2
+ 1493 00c2 4800     		lsl	r0, r1, #1
+ 1494 00c4 3040     		and	r0, r6
+ 1495 00c6 B543     		bic	r5, r6
+ 1496 00c8 0543     		orr	r5, r0
+ 1497 00ca 5D61     		str	r5, [r3, #20]
+ 1498              	.L166:
+ 1499 00cc A11C     		add	r1, r4, #2
+ 1500 00ce CE7F     		ldrb	r6, [r1, #31]
+ 1501 00d0 C021     		mov	r1, #192
+ 1502 00d2 5869     		ldr	r0, [r3, #20]
+ 1503 00d4 7503     		lsl	r5, r6, #13
+ 1504 00d6 CE01     		lsl	r6, r1, #7
+ 1505 00d8 2E40     		and	r6, r5
+ 1506 00da 0643     		orr	r6, r0
+ 1507 00dc 5E61     		str	r6, [r3, #20]
+ 1508 00de 1D6A     		ldr	r5, [r3, #32]
+ 1509 00e0 607B     		ldrb	r0, [r4, #13]
+ 1510 00e2 0F21     		mov	r1, #15
+ 1511 00e4 8D43     		bic	r5, r1
+ 1512 00e6 2E1C     		mov	r6, r5
+ 1513 00e8 0840     		and	r0, r1
+ 1514 00ea 0643     		orr	r6, r0
+ 1515 00ec 1E62     		str	r6, [r3, #32]
+ 1516 00ee D57F     		ldrb	r5, [r2, #31]
+ 1517 00f0 012D     		cmp	r5, #1
+ 1518 00f2 1DD0     		beq	.L167
+ 1519 00f4 A07C     		ldrb	r0, [r4, #18]
+ 1520 00f6 8021     		mov	r1, #128
+ 1521 00f8 5E69     		ldr	r6, [r3, #20]
+ 1522 00fa 4505     		lsl	r5, r0, #21
+ 1523 00fc 8803     		lsl	r0, r1, #14
+ 1524 00fe 2F49     		ldr	r1, .L181+16
+ 1525 0100 0540     		and	r5, r0
+ 1526 0102 3140     		and	r1, r6
+ 1527 0104 2943     		orr	r1, r5
+ 1528 0106 5961     		str	r1, [r3, #20]
+ 1529 0108 E57C     		ldrb	r5, [r4, #19]
+ 1530 010a 8021     		mov	r1, #128
+ 1531 010c 5E69     		ldr	r6, [r3, #20]
+ 1532 010e A805     		lsl	r0, r5, #22
+ 1533 0110 CD03     		lsl	r5, r1, #15
+ 1534 0112 2B49     		ldr	r1, .L181+20
+ 1535 0114 2840     		and	r0, r5
+ 1536 0116 3140     		and	r1, r6
+ 1537 0118 0143     		orr	r1, r0
+ 1538 011a 5961     		str	r1, [r3, #20]
+ 1539 011c 607C     		ldrb	r0, [r4, #17]
+ 1540 011e 8021     		mov	r1, #128
+ 1541 0120 5E69     		ldr	r6, [r3, #20]
+ 1542 0122 4504     		lsl	r5, r0, #17
+ 1543 0124 8802     		lsl	r0, r1, #10
+ 1544 0126 2349     		ldr	r1, .L181+8
+ 1545 0128 0540     		and	r5, r0
+ 1546 012a 3140     		and	r1, r6
+ 1547 012c 2943     		orr	r1, r5
+ 1548 012e 5961     		str	r1, [r3, #20]
+ 1549              	.L167:
+ 1550 0130 E51C     		add	r5, r4, #3
+ 1551 0132 5E6A     		ldr	r6, [r3, #36]
+ 1552 0134 E87F     		ldrb	r0, [r5, #31]
+ 1553 0136 0F21     		mov	r1, #15
+ 1554 0138 0840     		and	r0, r1
+ 1555 013a 8E43     		bic	r6, r1
+ 1556 013c 0643     		orr	r6, r0
+ 1557 013e 5E62     		str	r6, [r3, #36]
+ 1558 0140 257C     		ldrb	r5, [r4, #16]
+ 1559 0142 208D     		ldrh	r0, [r4, #40]
+ 1560 0144 2189     		ldrh	r1, [r4, #8]
+ 1561 0146 1E1C     		mov	r6, r3
+ 1562 0148 9D61     		str	r5, [r3, #24]
+ 1563 014a B036     		add	r6, r6, #176
+ 1564 014c 5863     		str	r0, [r3, #52]
+ 1565 014e D963     		str	r1, [r3, #60]
+ 1566 0150 3068     		ldr	r0, [r6]
+ 1567 0152 1C4D     		ldr	r5, .L181+24
+ 1568 0154 2843     		orr	r0, r5
+ 1569 0156 3060     		str	r0, [r6]
+ 1570 0158 D27F     		ldrb	r2, [r2, #31]
+ 1571 015a 012A     		cmp	r2, #1
+ 1572 015c 08D1     		bne	.L168
+ 1573 015e 201C     		mov	r0, r4
+ 1574 0160 FFF7FEFF 		bl	PWMSP001_lConfigureSecondSlice
+ 1575 0164 E369     		ldr	r3, [r4, #28]
+ 1576 0166 266B     		ldr	r6, [r4, #48]
+ 1577 0168 A433     		add	r3, r3, #164
+ 1578 016a 1868     		ldr	r0, [r3]
+ 1579 016c 3043     		orr	r0, r6
+ 1580 016e 03E0     		b	.L180
+ 1581              	.L168:
+ 1582 0170 A433     		add	r3, r3, #164
+ 1583 0172 1868     		ldr	r0, [r3]
+ 1584 0174 216B     		ldr	r1, [r4, #48]
+ 1585 0176 0843     		orr	r0, r1
+ 1586              	.L180:
+ 1587 0178 1860     		str	r0, [r3]
+ 1588 017a 231C     		mov	r3, r4
+ 1589 017c 3733     		add	r3, r3, #55
+ 1590 017e 1D78     		ldrb	r5, [r3]
+ 1591 0180 6169     		ldr	r1, [r4, #20]
+ 1592 0182 0123     		mov	r3, #1
+ 1593 0184 0869     		ldr	r0, [r1, #16]
+ 1594 0186 AA00     		lsl	r2, r5, #2
+ 1595 0188 1D1C     		mov	r5, r3
+ 1596 018a 9540     		lsl	r5, r5, r2
+ 1597 018c 0543     		orr	r5, r0
+ 1598 018e 1E1C     		mov	r6, r3
+ 1599 0190 D018     		add	r0, r2, r3
+ 1600 0192 8640     		lsl	r6, r6, r0
+ 1601 0194 3543     		orr	r5, r6
+ 1602 0196 0232     		add	r2, r2, #2
+ 1603 0198 1E1C     		mov	r6, r3
+ 1604 019a 9640     		lsl	r6, r6, r2
+ 1605 019c E46B     		ldr	r4, [r4, #60]
+ 1606 019e 2A1C     		mov	r2, r5
+ 1607 01a0 3243     		orr	r2, r6
+ 1608 01a2 0A61     		str	r2, [r1, #16]
+ 1609 01a4 0020     		mov	r0, #0
+ 1610 01a6 2370     		strb	r3, [r4]
+ 1611              	.L163:
+ 1612              		@ sp needed for prologue
+ 1613 01a8 70BD     		pop	{r4, r5, r6, pc}
+ 1614              	.L182:
+ 1615 01aa C046     		.align	2
+ 1616              	.L181:
+ 1617 01ac FFFFF3E7 		.word	-403439617
+ 1618 01b0 FFFFCF9E 		.word	-1630535681
+ 1619 01b4 FFFFFDFF 		.word	-131073
+ 1620 01b8 F698FFFF 		.word	-26378
+ 1621 01bc FFFFDFFF 		.word	-2097153
+ 1622 01c0 FFFFBFFF 		.word	-4194305
+ 1623 01c4 0F0F0000 		.word	3855
+ 1625              		.section	.text.PWMSP001_Init,"ax",%progbits
+ 1626              		.align	1
+ 1627              		.global	PWMSP001_Init
+ 1628              		.code	16
+ 1629              		.thumb_func
+ 1631              	PWMSP001_Init:
+ 1632 0000 10B5     		push	{r4, lr}
+ 1633 0002 FFF7FEFF 		bl	CCU4GLOBAL_Init
+ 1634 0006 0A4C     		ldr	r4, .L185
+ 1635 0008 201C     		mov	r0, r4
+ 1636 000a FFF7FEFF 		bl	PWMSP001_lInit
+ 1637 000e 0028     		cmp	r0, #0
+ 1638 0010 05D1     		bne	.L184
+ 1639 0012 6378     		ldrb	r3, [r4, #1]
+ 1640 0014 012B     		cmp	r3, #1
+ 1641 0016 02D1     		bne	.L184
+ 1642 0018 201C     		mov	r0, r4
+ 1643 001a FFF7FEFF 		bl	PWMSP001_Start
+ 1644              	.L184:
+ 1645 001e 0548     		ldr	r0, .L185+4
+ 1646 0020 054A     		ldr	r2, .L185+8
+ 1647 0022 4169     		ldr	r1, [r0, #20]
+ 1648              		@ sp needed for prologue
+ 1649 0024 0A40     		and	r2, r1
+ 1650 0026 4261     		str	r2, [r0, #20]
+ 1651 0028 4469     		ldr	r4, [r0, #20]
+ 1652 002a 4461     		str	r4, [r0, #20]
+ 1653 002c 10BD     		pop	{r4, pc}
+ 1654              	.L186:
+ 1655 002e C046     		.align	2
+ 1656              	.L185:
+ 1657 0030 00000000 		.word	PWMSP001_Handle0
+ 1658 0034 00000440 		.word	1074003968
+ 1659 0038 FFBFFFFF 		.word	-16385
+ 1661              		.section	.text.PWMSP001_EnableEvent,"ax",%progbits
+ 1662              		.align	1
+ 1663              		.global	PWMSP001_EnableEvent
+ 1664              		.code	16
+ 1665              		.thumb_func
+ 1667              	PWMSP001_EnableEvent:
+ 1668 0000 C36B     		ldr	r3, [r0, #60]
+ 1669 0002 1A78     		ldrb	r2, [r3]
+ 1670 0004 0123     		mov	r3, #1
+ 1671 0006 002A     		cmp	r2, #0
+ 1672 0008 0CD0     		beq	.L188
+ 1673 000a C218     		add	r2, r0, r3
+ 1674 000c D27F     		ldrb	r2, [r2, #31]
+ 1675 000e 9A42     		cmp	r2, r3
+ 1676 0010 01D1     		bne	.L189
+ 1677 0012 C269     		ldr	r2, [r0, #28]
+ 1678 0014 00E0     		b	.L192
+ 1679              	.L189:
+ 1680 0016 8269     		ldr	r2, [r0, #24]
+ 1681              	.L192:
+ 1682 0018 A432     		add	r2, r2, #164
+ 1683 001a 1068     		ldr	r0, [r2]
+ 1684 001c 8B40     		lsl	r3, r3, r1
+ 1685 001e 0343     		orr	r3, r0
+ 1686 0020 1360     		str	r3, [r2]
+ 1687 0022 0023     		mov	r3, #0
+ 1688              	.L188:
+ 1689 0024 181C     		mov	r0, r3
+ 1690              		@ sp needed for prologue
+ 1691 0026 7047     		bx	lr
+ 1693              		.section	.text.PWMSP001_DisableEvent,"ax",%progbits
+ 1694              		.align	1
+ 1695              		.global	PWMSP001_DisableEvent
+ 1696              		.code	16
+ 1697              		.thumb_func
+ 1699              	PWMSP001_DisableEvent:
+ 1700 0000 C36B     		ldr	r3, [r0, #60]
+ 1701 0002 1A78     		ldrb	r2, [r3]
+ 1702 0004 0123     		mov	r3, #1
+ 1703 0006 002A     		cmp	r2, #0
+ 1704 0008 0CD0     		beq	.L194
+ 1705 000a C218     		add	r2, r0, r3
+ 1706 000c D27F     		ldrb	r2, [r2, #31]
+ 1707 000e 9A42     		cmp	r2, r3
+ 1708 0010 01D1     		bne	.L195
+ 1709 0012 C269     		ldr	r2, [r0, #28]
+ 1710 0014 00E0     		b	.L198
+ 1711              	.L195:
+ 1712 0016 8269     		ldr	r2, [r0, #24]
+ 1713              	.L198:
+ 1714 0018 A432     		add	r2, r2, #164
+ 1715 001a 1068     		ldr	r0, [r2]
+ 1716 001c 8B40     		lsl	r3, r3, r1
+ 1717 001e 9843     		bic	r0, r3
+ 1718 0020 1060     		str	r0, [r2]
+ 1719 0022 0023     		mov	r3, #0
+ 1720              	.L194:
+ 1721 0024 181C     		mov	r0, r3
+ 1722              		@ sp needed for prologue
+ 1723 0026 7047     		bx	lr
+ 1725              		.section	.text.PWMSP001_ClearPendingEvent,"ax",%progbits
+ 1726              		.align	1
+ 1727              		.global	PWMSP001_ClearPendingEvent
+ 1728              		.code	16
+ 1729              		.thumb_func
+ 1731              	PWMSP001_ClearPendingEvent:
+ 1732 0000 C36B     		ldr	r3, [r0, #60]
+ 1733 0002 1A78     		ldrb	r2, [r3]
+ 1734 0004 0123     		mov	r3, #1
+ 1735 0006 002A     		cmp	r2, #0
+ 1736 0008 0CD0     		beq	.L200
+ 1737 000a C218     		add	r2, r0, r3
+ 1738 000c D27F     		ldrb	r2, [r2, #31]
+ 1739 000e 9A42     		cmp	r2, r3
+ 1740 0010 01D1     		bne	.L201
+ 1741 0012 C269     		ldr	r2, [r0, #28]
+ 1742 0014 00E0     		b	.L204
+ 1743              	.L201:
+ 1744 0016 8269     		ldr	r2, [r0, #24]
+ 1745              	.L204:
+ 1746 0018 B032     		add	r2, r2, #176
+ 1747 001a 1068     		ldr	r0, [r2]
+ 1748 001c 8B40     		lsl	r3, r3, r1
+ 1749 001e 0343     		orr	r3, r0
+ 1750 0020 1360     		str	r3, [r2]
+ 1751 0022 0023     		mov	r3, #0
+ 1752              	.L200:
+ 1753 0024 181C     		mov	r0, r3
+ 1754              		@ sp needed for prologue
+ 1755 0026 7047     		bx	lr
+ 1757              		.section	.text.PWMSP001_SetPendingEvent,"ax",%progbits
+ 1758              		.align	1
+ 1759              		.global	PWMSP001_SetPendingEvent
+ 1760              		.code	16
+ 1761              		.thumb_func
+ 1763              	PWMSP001_SetPendingEvent:
+ 1764 0000 C36B     		ldr	r3, [r0, #60]
+ 1765 0002 1A78     		ldrb	r2, [r3]
+ 1766 0004 0123     		mov	r3, #1
+ 1767 0006 002A     		cmp	r2, #0
+ 1768 0008 0CD0     		beq	.L206
+ 1769 000a C218     		add	r2, r0, r3
+ 1770 000c D27F     		ldrb	r2, [r2, #31]
+ 1771 000e 9A42     		cmp	r2, r3
+ 1772 0010 01D1     		bne	.L207
+ 1773 0012 C269     		ldr	r2, [r0, #28]
+ 1774 0014 00E0     		b	.L210
+ 1775              	.L207:
+ 1776 0016 8269     		ldr	r2, [r0, #24]
+ 1777              	.L210:
+ 1778 0018 AC32     		add	r2, r2, #172
+ 1779 001a 1068     		ldr	r0, [r2]
+ 1780 001c 8B40     		lsl	r3, r3, r1
+ 1781 001e 0343     		orr	r3, r0
+ 1782 0020 1360     		str	r3, [r2]
+ 1783 0022 0023     		mov	r3, #0
+ 1784              	.L206:
+ 1785 0024 181C     		mov	r0, r3
+ 1786              		@ sp needed for prologue
+ 1787 0026 7047     		bx	lr
+ 1789              		.section	.text.PWMSP001_GetPendingEvent,"ax",%progbits
+ 1790              		.align	1
+ 1791              		.global	PWMSP001_GetPendingEvent
+ 1792              		.code	16
+ 1793              		.thumb_func
+ 1795              	PWMSP001_GetPendingEvent:
+ 1796 0000 10B5     		push	{r4, lr}
+ 1797 0002 C36B     		ldr	r3, [r0, #60]
+ 1798 0004 1C78     		ldrb	r4, [r3]
+ 1799 0006 0123     		mov	r3, #1
+ 1800 0008 002C     		cmp	r4, #0
+ 1801 000a 12D0     		beq	.L212
+ 1802 000c C418     		add	r4, r0, r3
+ 1803 000e E47F     		ldrb	r4, [r4, #31]
+ 1804 0010 9C42     		cmp	r4, r3
+ 1805 0012 01D1     		bne	.L213
+ 1806 0014 C069     		ldr	r0, [r0, #28]
+ 1807 0016 00E0     		b	.L220
+ 1808              	.L213:
+ 1809 0018 8069     		ldr	r0, [r0, #24]
+ 1810              	.L220:
+ 1811 001a A030     		add	r0, r0, #160
+ 1812 001c 0468     		ldr	r4, [r0]
+ 1813 001e 181C     		mov	r0, r3
+ 1814 0020 8840     		lsl	r0, r0, r1
+ 1815 0022 2040     		and	r0, r4
+ 1816 0024 C840     		lsr	r0, r0, r1
+ 1817 0026 02D0     		beq	.L215
+ 1818 0028 1370     		strb	r3, [r2]
+ 1819 002a 0023     		mov	r3, #0
+ 1820 002c 01E0     		b	.L212
+ 1821              	.L215:
+ 1822 002e 1070     		strb	r0, [r2]
+ 1823 0030 031C     		mov	r3, r0
+ 1824              	.L212:
+ 1825 0032 181C     		mov	r0, r3
+ 1826              		@ sp needed for prologue
+ 1827 0034 10BD     		pop	{r4, pc}
+ 1829              		.ident	"GCC: (GNU Tools for ARM Embedded Processors) 4.7.4 20130913 (release) [ARM/embedded-4_7-br
+DEFINED SYMBOLS
+                            *ABS*:00000000 PWMSP001.c
+C:\Users\Patrick\AppData\Local\Temp\ccVUl48S.s:15     .text.PWMSP001_Deinit:00000000 $t
+C:\Users\Patrick\AppData\Local\Temp\ccVUl48S.s:20     .text.PWMSP001_Deinit:00000000 PWMSP001_Deinit
+C:\Users\Patrick\AppData\Local\Temp\ccVUl48S.s:100    .text.PWMSP001_Deinit:00000094 $d
+C:\Users\Patrick\AppData\Local\Temp\ccVUl48S.s:103    .text.PWMSP001_Start:00000000 $t
+C:\Users\Patrick\AppData\Local\Temp\ccVUl48S.s:108    .text.PWMSP001_Start:00000000 PWMSP001_Start
+C:\Users\Patrick\AppData\Local\Temp\ccVUl48S.s:222    .text.PWMSP001_Start:000000d0 $d
+C:\Users\Patrick\AppData\Local\Temp\ccVUl48S.s:226    .text.PWMSP001_Stop:00000000 $t
+C:\Users\Patrick\AppData\Local\Temp\ccVUl48S.s:231    .text.PWMSP001_Stop:00000000 PWMSP001_Stop
+C:\Users\Patrick\AppData\Local\Temp\ccVUl48S.s:275    .text.PWMSP001_SetCompare:00000000 $t
+C:\Users\Patrick\AppData\Local\Temp\ccVUl48S.s:280    .text.PWMSP001_SetCompare:00000000 PWMSP001_SetCompare
+C:\Users\Patrick\AppData\Local\Temp\ccVUl48S.s:321    .text.PWMSP001_lSetCompareEdgeAlign:00000000 $t
+C:\Users\Patrick\AppData\Local\Temp\ccVUl48S.s:326    .text.PWMSP001_lSetCompareEdgeAlign:00000000 PWMSP001_lSetCompareEdgeAlign
+C:\Users\Patrick\AppData\Local\Temp\ccVUl48S.s:346    .text.PWMSP001_lSetCompareEdgeAlignTimerConcat:00000000 $t
+C:\Users\Patrick\AppData\Local\Temp\ccVUl48S.s:351    .text.PWMSP001_lSetCompareEdgeAlignTimerConcat:00000000 PWMSP001_lSetCompareEdgeAlignTimerConcat
+C:\Users\Patrick\AppData\Local\Temp\ccVUl48S.s:389    .text.PWMSP001_lSetCompareCenterAlign:00000000 $t
+C:\Users\Patrick\AppData\Local\Temp\ccVUl48S.s:394    .text.PWMSP001_lSetCompareCenterAlign:00000000 PWMSP001_lSetCompareCenterAlign
+C:\Users\Patrick\AppData\Local\Temp\ccVUl48S.s:414    .text.PWMSP001_SetDutyCycle:00000000 $t
+C:\Users\Patrick\AppData\Local\Temp\ccVUl48S.s:419    .text.PWMSP001_SetDutyCycle:00000000 PWMSP001_SetDutyCycle
+C:\Users\Patrick\AppData\Local\Temp\ccVUl48S.s:451    .text.PWMSP001_SetDutyCycle:00000038 $d
+C:\Users\Patrick\AppData\Local\Temp\ccVUl48S.s:459    .text.PWMSP001_lSetDutyEdgeAlign:00000000 $t
+C:\Users\Patrick\AppData\Local\Temp\ccVUl48S.s:464    .text.PWMSP001_lSetDutyEdgeAlign:00000000 PWMSP001_lSetDutyEdgeAlign
+C:\Users\Patrick\AppData\Local\Temp\ccVUl48S.s:499    .text.PWMSP001_lSetDutyEdgeAlign:00000048 $d
+C:\Users\Patrick\AppData\Local\Temp\ccVUl48S.s:502    .text.PWMSP001_lSetDutyEdgeAlignTimerConcat:00000000 $t
+C:\Users\Patrick\AppData\Local\Temp\ccVUl48S.s:507    .text.PWMSP001_lSetDutyEdgeAlignTimerConcat:00000000 PWMSP001_lSetDutyEdgeAlignTimerConcat
+C:\Users\Patrick\AppData\Local\Temp\ccVUl48S.s:565    .text.PWMSP001_lSetDutyEdgeAlignTimerConcat:00000078 $d
+C:\Users\Patrick\AppData\Local\Temp\ccVUl48S.s:568    .text.PWMSP001_lSetDutyCenterAlign:00000000 $t
+C:\Users\Patrick\AppData\Local\Temp\ccVUl48S.s:573    .text.PWMSP001_lSetDutyCenterAlign:00000000 PWMSP001_lSetDutyCenterAlign
+C:\Users\Patrick\AppData\Local\Temp\ccVUl48S.s:607    .text.PWMSP001_lSetDutyCenterAlign:00000044 $d
+C:\Users\Patrick\AppData\Local\Temp\ccVUl48S.s:610    .text.PWMSP001_SetPeriodAndCompare:00000000 $t
+C:\Users\Patrick\AppData\Local\Temp\ccVUl48S.s:615    .text.PWMSP001_SetPeriodAndCompare:00000000 PWMSP001_SetPeriodAndCompare
+C:\Users\Patrick\AppData\Local\Temp\ccVUl48S.s:660    .text.PWMSP001_SetPeriod:00000000 $t
+C:\Users\Patrick\AppData\Local\Temp\ccVUl48S.s:665    .text.PWMSP001_SetPeriod:00000000 PWMSP001_SetPeriod
+C:\Users\Patrick\AppData\Local\Temp\ccVUl48S.s:721    .text.PWMSP001_lSetPwmFreqTimerConcat:00000000 $t
+C:\Users\Patrick\AppData\Local\Temp\ccVUl48S.s:726    .text.PWMSP001_lSetPwmFreqTimerConcat:00000000 PWMSP001_lSetPwmFreqTimerConcat
+C:\Users\Patrick\AppData\Local\Temp\ccVUl48S.s:767    .text.PWMSP001_lSetPwmFreqTimerConcat:00000040 $d
+C:\Users\Patrick\AppData\Local\Temp\ccVUl48S.s:772    .text.PWMSP001_SetPwmFreq:00000000 $t
+C:\Users\Patrick\AppData\Local\Temp\ccVUl48S.s:777    .text.PWMSP001_SetPwmFreq:00000000 PWMSP001_SetPwmFreq
+C:\Users\Patrick\AppData\Local\Temp\ccVUl48S.s:859    .text.PWMSP001_SetPwmFreq:0000009c $d
+C:\Users\Patrick\AppData\Local\Temp\ccVUl48S.s:863    .text.PWMSP001_SetPwmFreqAndDutyCycle:00000000 $t
+C:\Users\Patrick\AppData\Local\Temp\ccVUl48S.s:868    .text.PWMSP001_SetPwmFreqAndDutyCycle:00000000 PWMSP001_SetPwmFreqAndDutyCycle
+C:\Users\Patrick\AppData\Local\Temp\ccVUl48S.s:945    .text.PWMSP001_SetPwmFreqAndDutyCycle:00000094 $d
+C:\Users\Patrick\AppData\Local\Temp\ccVUl48S.s:950    .text.PWMSP001_SetTimerVal:00000000 $t
+C:\Users\Patrick\AppData\Local\Temp\ccVUl48S.s:955    .text.PWMSP001_SetTimerVal:00000000 PWMSP001_SetTimerVal
+C:\Users\Patrick\AppData\Local\Temp\ccVUl48S.s:981    .text.PWMSP001_GetTimerStatus:00000000 $t
+C:\Users\Patrick\AppData\Local\Temp\ccVUl48S.s:986    .text.PWMSP001_GetTimerStatus:00000000 PWMSP001_GetTimerStatus
+C:\Users\Patrick\AppData\Local\Temp\ccVUl48S.s:1015   .text.PWMSP001_GetTimerRegsVal:00000000 $t
+C:\Users\Patrick\AppData\Local\Temp\ccVUl48S.s:1020   .text.PWMSP001_GetTimerRegsVal:00000000 PWMSP001_GetTimerRegsVal
+C:\Users\Patrick\AppData\Local\Temp\ccVUl48S.s:1069   .text.PWMSP001_GetPeriodReg:00000000 $t
+C:\Users\Patrick\AppData\Local\Temp\ccVUl48S.s:1074   .text.PWMSP001_GetPeriodReg:00000000 PWMSP001_GetPeriodReg
+C:\Users\Patrick\AppData\Local\Temp\ccVUl48S.s:1107   .text.PWMSP001_SWRequestShadowTransfer:00000000 $t
+C:\Users\Patrick\AppData\Local\Temp\ccVUl48S.s:1112   .text.PWMSP001_SWRequestShadowTransfer:00000000 PWMSP001_SWRequestShadowTransfer
+C:\Users\Patrick\AppData\Local\Temp\ccVUl48S.s:1154   .text.PWMSP001_ResetTrapFlag:00000000 $t
+C:\Users\Patrick\AppData\Local\Temp\ccVUl48S.s:1159   .text.PWMSP001_ResetTrapFlag:00000000 PWMSP001_ResetTrapFlag
+C:\Users\Patrick\AppData\Local\Temp\ccVUl48S.s:1201   .text.PWMSP001_lConfigureSecondSlice:00000000 $t
+C:\Users\Patrick\AppData\Local\Temp\ccVUl48S.s:1206   .text.PWMSP001_lConfigureSecondSlice:00000000 PWMSP001_lConfigureSecondSlice
+C:\Users\Patrick\AppData\Local\Temp\ccVUl48S.s:1379   .text.PWMSP001_lConfigureSecondSlice:0000014c $d
+C:\Users\Patrick\AppData\Local\Temp\ccVUl48S.s:1387   .text.PWMSP001_lInit:00000000 $t
+C:\Users\Patrick\AppData\Local\Temp\ccVUl48S.s:1392   .text.PWMSP001_lInit:00000000 PWMSP001_lInit
+C:\Users\Patrick\AppData\Local\Temp\ccVUl48S.s:1617   .text.PWMSP001_lInit:000001ac $d
+C:\Users\Patrick\AppData\Local\Temp\ccVUl48S.s:1626   .text.PWMSP001_Init:00000000 $t
+C:\Users\Patrick\AppData\Local\Temp\ccVUl48S.s:1631   .text.PWMSP001_Init:00000000 PWMSP001_Init
+C:\Users\Patrick\AppData\Local\Temp\ccVUl48S.s:1657   .text.PWMSP001_Init:00000030 $d
+C:\Users\Patrick\AppData\Local\Temp\ccVUl48S.s:1662   .text.PWMSP001_EnableEvent:00000000 $t
+C:\Users\Patrick\AppData\Local\Temp\ccVUl48S.s:1667   .text.PWMSP001_EnableEvent:00000000 PWMSP001_EnableEvent
+C:\Users\Patrick\AppData\Local\Temp\ccVUl48S.s:1694   .text.PWMSP001_DisableEvent:00000000 $t
+C:\Users\Patrick\AppData\Local\Temp\ccVUl48S.s:1699   .text.PWMSP001_DisableEvent:00000000 PWMSP001_DisableEvent
+C:\Users\Patrick\AppData\Local\Temp\ccVUl48S.s:1726   .text.PWMSP001_ClearPendingEvent:00000000 $t
+C:\Users\Patrick\AppData\Local\Temp\ccVUl48S.s:1731   .text.PWMSP001_ClearPendingEvent:00000000 PWMSP001_ClearPendingEvent
+C:\Users\Patrick\AppData\Local\Temp\ccVUl48S.s:1758   .text.PWMSP001_SetPendingEvent:00000000 $t
+C:\Users\Patrick\AppData\Local\Temp\ccVUl48S.s:1763   .text.PWMSP001_SetPendingEvent:00000000 PWMSP001_SetPendingEvent
+C:\Users\Patrick\AppData\Local\Temp\ccVUl48S.s:1790   .text.PWMSP001_GetPendingEvent:00000000 $t
+C:\Users\Patrick\AppData\Local\Temp\ccVUl48S.s:1795   .text.PWMSP001_GetPendingEvent:00000000 PWMSP001_GetPendingEvent
+
+UNDEFINED SYMBOLS
+__aeabi_uidivmod
+__aeabi_uidiv
+__aeabi_fcmpgt
+__aeabi_fcmplt
+__aeabi_ui2f
+__aeabi_fsub
+__aeabi_fdiv
+__aeabi_fmul
+__aeabi_f2uiz
+__aeabi_fcmpeq
+CCU4GLOBAL_Init
+PWMSP001_Handle0
