@@ -1,0 +1,4 @@
+UI URI,DEFAULT VALUE,NEW VALUE
+app/pwmsp001/0/pwmsp001_erwperiodmatch,1,0
+app/nvic002/0/nvic002_erwenableint,1,0
+app/nvic002/0/nvic002_srwuserfunction,PWM_Period_Interrupt,

@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<ProjectConfig>
+    <CodeGenerate>
+        <JETFileMap/>
+    </CodeGenerate>
+    <ResourceReserve/>
+    <Solver>
+        <SolverBndMap>
+            <BindMap MUri="peripheral/scu/0/ccu/clkgating/usic/0" Proxy="app/clk002/0/clkgating_usic"/>
+            <BindMap MUri="peripheral/scu/0/ccu/clkgating/vadcshs" Proxy="app/clk002/0/clkgating_vadcshs"/>
+            <BindMap MUri="peripheral/ccu4/0/global" Proxy="app/ccu4global/0/global"/>
+            <BindMap MUri="peripheral/cpu/0/nvic/interrupt/24" Proxy="app/nvic002/0/nvicnode"/>
+            <BindMap MUri="peripheral/scu/0/dco/2" Proxy="app/clk002/0/dco_uri"/>
+            <BindMap MUri="peripheral/scu/0/ccu/clkgating/wdt" Proxy="app/clk002/0/clkgating_wdt"/>
+            <BindMap MUri="port/p/0/pad/5" Proxy="app/pwmsp001/0/pin_directoutput"/>
+            <BindMap MUri="peripheral/scu/0/ccu/clkgating/rtc" Proxy="app/clk002/0/clkgating_rtc"/>
+            <BindMap MUri="peripheral/scu/0/ccu/clkgating/ccu4/0" Proxy="app/clk002/0/clkgating_ccu4"/>
+            <BindMap MUri="peripheral/scu/0/ccu/config" Proxy="app/clk002/0/clk_uri"/>
+            <BindMap MUri="peripheral/ccu4/0/cc4/0" Proxy="app/pwmsp001/0/slice"/>
+        </SolverBndMap>
+    </Solver>
+</ProjectConfig>

@@ -1,0 +1,94 @@
+   1              		.cpu cortex-m0
+   2              		.fpu softvfp
+   3              		.eabi_attribute 20, 1
+   4              		.eabi_attribute 21, 1
+   5              		.eabi_attribute 23, 3
+   6              		.eabi_attribute 24, 1
+   7              		.eabi_attribute 25, 1
+   8              		.eabi_attribute 26, 1
+   9              		.eabi_attribute 30, 6
+  10              		.eabi_attribute 34, 0
+  11              		.eabi_attribute 18, 4
+  12              		.code	16
+  13              		.file	"PWMSP001_Conf.c"
+  14              		.text
+  15              	.Ltext0:
+  16              		.cfi_sections	.debug_frame
+  17              		.global	PWMSP001_DynamicData0
+  18              		.bss
+  19              		.align	2
+  22              	PWMSP001_DynamicData0:
+  23 0000 00       		.space	1
+  24              		.global	PWMSP001_Handle0
+  25 0001 000000   		.section	.rodata
+  26              		.align	2
+  29              	PWMSP001_Handle0:
+  30 0000 01       		.byte	1
+  31 0001 00       		.byte	0
+  32 0002 0000     		.space	2
+  33 0004 0000FA41 		.word	1106903040
+  34 0008 AA290000 		.word	10666
+  35 000c 00       		.byte	0
+  36 000d 00       		.byte	0
+  37 000e 00       		.byte	0
+  38 000f 00       		.byte	0
+  39 0010 00       		.byte	0
+  40 0011 00       		.byte	0
+  41 0012 01       		.byte	1
+  42 0013 00       		.byte	0
+  43 0014 00000448 		.word	1208221696
+  44 0018 00010448 		.word	1208221952
+  45 001c 00010448 		.word	1208221952
+  46 0020 00       		.byte	0
+  47 0021 00       		.byte	0
+  48 0022 00       		.byte	0
+  49 0023 00       		.byte	0
+  50 0024 00       		.byte	0
+  51 0025 000000   		.space	3
+  52 0028 54530000 		.word	21332
+  53 002c FFFF0000 		.word	65535
+  54 0030 01000000 		.word	1
+  55 0034 00       		.byte	0
+  56 0035 00       		.byte	0
+  57 0036 00       		.byte	0
+  58 0037 00       		.byte	0
+  59 0038 00       		.byte	0
+  60 0039 000000   		.space	3
+  61 003c 00000000 		.word	PWMSP001_DynamicData0
+  62 0040 00000000 		.word	PWMSP001_lSetCompareEdgeAlign
+  63 0044 00000000 		.word	PWMSP001_lSetDutyEdgeAlign
+  64              		.text
+  65              	.Letext0:
+  66              		.file 1 "c:\\dave-3.1.10\\arm-gcc\\bin\\../lib/gcc/arm-none-eabi/4.7.4/../../../../arm-none-eabi/i
+  67              		.file 2 "C:\\DAVE-3.1.10\\eclipse\\/../CMSIS/Infineon/XMC1100_series/Include/XMC1100.h"
+  68              		.file 3 "C:\\DAVE3_workspace\\ws3.1.10\\PWMSP001_Example1_XMC11\\Dave\\Generated\\inc\\DAVESupport
+  69              		.file 4 "../Dave/Generated/src/PWMSP001/PWMSP001_Conf.c"
+DEFINED SYMBOLS
+                            *ABS*:00000000 PWMSP001_Conf.c
+C:\Users\Patrick\AppData\Local\Temp\ccvGHqZx.s:22     .bss:00000000 PWMSP001_DynamicData0
+C:\Users\Patrick\AppData\Local\Temp\ccvGHqZx.s:19     .bss:00000000 $d
+C:\Users\Patrick\AppData\Local\Temp\ccvGHqZx.s:29     .rodata:00000000 PWMSP001_Handle0
+C:\Users\Patrick\AppData\Local\Temp\ccvGHqZx.s:26     .rodata:00000000 $d
+                           .group:00000000 wm4.1.63d3e0297d6e9004e0e37a0840833abd
+                           .group:00000000 wm4.XMC1100.h.45.7a7cd799d7738130fcda8b83b0aa37d4
+                           .group:00000000 wm4.core_cm0.h.47.022e66414e77714da7c4b30b3ad99fe8
+                           .group:00000000 wm4.newlib.h.8.a9901dc52d1357e3e94003403d43f8b5
+                           .group:00000000 wm4.features.h.22.b72b3baab2bb2eab3661375590100b6b
+                           .group:00000000 wm4.config.h.193.5fb8ef056cdff92dec3dee9552839d8c
+                           .group:00000000 wm4._ansi.h.23.7aefdac4826acebbfc9f3822a0aeb14c
+                           .group:00000000 wm4.stdint.h.20.54ad762faa59e3c05491630641c8d8bf
+                           .group:00000000 wm4.core_cmInstr.h.39.b7b6650bdd2316848d940915272d75b8
+                           .group:00000000 wm4.core_cm0.h.135.ca70469f87e143609670bb393bfa6518
+                           .group:00000000 wm4.XMC1000_RomFunctionTable.h.31.6d9a94465618f31b040dc9cea9a47ad7
+                           .group:00000000 wm4.XMC1100.h.114.be3711f71ee045884346be801053f4c0
+                           .group:00000000 wm4.stddef.h.40.50cf36416e06376af8a9dca28536f2e4
+                           .group:00000000 wm4.types.h.60.e75c47576398c648cdcf9000ace5e3d8
+                           .group:00000000 wm4.MULTIPLEXER.h.46.383e3edbb9cbf6e538f7c1532ef623c1
+                           .group:00000000 wm4.uc_id.h.35.47f40be5760de9fc3332688f9e95febc
+                           .group:00000000 wm4.CCU4Global_Conf.h.63.a52fac0daa39b5f58343578312b4eb54
+                           .group:00000000 wm4.PWMSP001.h.57.29b732b86baf3e81f49153f5f495912e
+                           .group:00000000 wm4.NVIC002_Conf.h.63.ad46cba077059ba9e39ca51279e72860
+
+UNDEFINED SYMBOLS
+PWMSP001_lSetCompareEdgeAlign
+PWMSP001_lSetDutyEdgeAlign

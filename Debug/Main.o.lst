@@ -1,0 +1,1129 @@
+   1              		.cpu cortex-m0
+   2              		.fpu softvfp
+   3              		.eabi_attribute 20, 1
+   4              		.eabi_attribute 21, 1
+   5              		.eabi_attribute 23, 3
+   6              		.eabi_attribute 24, 1
+   7              		.eabi_attribute 25, 1
+   8              		.eabi_attribute 26, 1
+   9              		.eabi_attribute 30, 6
+  10              		.eabi_attribute 34, 0
+  11              		.eabi_attribute 18, 4
+  12              		.code	16
+  13              		.file	"Main.c"
+  14              		.text
+  15              	.Ltext0:
+  16              		.cfi_sections	.debug_frame
+  17              		.section	.text.P0_5_set_large_hysteresis,"ax",%progbits
+  18              		.align	2
+  19              		.code	16
+  20              		.thumb_func
+  22              	P0_5_set_large_hysteresis:
+  23              	.LFB91:
+  24              		.file 1 "../GPIO.h"
+   1:../GPIO.h     **** #ifndef __GPIO_H__
+   2:../GPIO.h     **** #define __GPIO_H__
+   3:../GPIO.h     **** 
+   4:../GPIO.h     **** /* Generated for XMC1100_TSSOP38 on: Wed Feb 13 23:11:00 2013*/
+   5:../GPIO.h     **** 
+   6:../GPIO.h     **** #include <XMC1100.h>
+   7:../GPIO.h     **** 
+   8:../GPIO.h     **** #define INPUT           0x00U
+   9:../GPIO.h     **** #define INPUT_PD        0x08U
+  10:../GPIO.h     **** #define INPUT_PU        0x10U
+  11:../GPIO.h     **** #define INPUT_PPS       0x18U
+  12:../GPIO.h     **** #define INPUT_INV       0x20U
+  13:../GPIO.h     **** #define INPUT_INV_PD    0x28U
+  14:../GPIO.h     **** #define INPUT_INV_PU    0x30U
+  15:../GPIO.h     **** #define INPUT_INV_PPS   0x38U
+  16:../GPIO.h     **** #define OUTPUT_PP_GP    0x80U
+  17:../GPIO.h     **** #define OUTPUT_PP_AF1   0x88U
+  18:../GPIO.h     **** #define OUTPUT_PP_AF2   0x90U
+  19:../GPIO.h     **** #define OUTPUT_PP_AF3   0x98U
+  20:../GPIO.h     **** #define OUTPUT_PP_AF4   0xA0U
+  21:../GPIO.h     **** #define OUTPUT_PP_AF5   0xA8U
+  22:../GPIO.h     **** #define OUTPUT_PP_AF6   0xB0U
+  23:../GPIO.h     **** #define OUTPUT_PP_AF7   0xB8U
+  24:../GPIO.h     **** #define OUTPUT_OD_GP    0xC0U
+  25:../GPIO.h     **** #define OUTPUT_OD_AF1   0xC8U
+  26:../GPIO.h     **** #define OUTPUT_OD_AF2   0xD0U
+  27:../GPIO.h     **** #define OUTPUT_OD_AF3   0xD8U
+  28:../GPIO.h     **** #define OUTPUT_OD_AF4   0XE0U
+  29:../GPIO.h     **** #define OUTPUT_OD_AF5   0xE8U
+  30:../GPIO.h     **** #define OUTPUT_OD_AF6   0xF0U
+  31:../GPIO.h     **** #define OUTPUT_OD_AF7   0XF8U
+  32:../GPIO.h     **** 
+  33:../GPIO.h     **** #define SOFTWARE        0x0UL
+  34:../GPIO.h     **** #define HW0             0x1UL
+  35:../GPIO.h     **** #define HW1             0x2UL
+  36:../GPIO.h     **** 
+  37:../GPIO.h     **** __STATIC_INLINE void P0_0_set_mode(uint8_t mode){
+  38:../GPIO.h     ****     PORT0->IOCR0 &= ~0x000000f8UL;
+  39:../GPIO.h     ****     PORT0->IOCR0 |= mode << 0;
+  40:../GPIO.h     **** }
+  41:../GPIO.h     **** 
+  42:../GPIO.h     **** __STATIC_INLINE void P0_0_set_hwsel(uint32_t config){
+  43:../GPIO.h     ****     PORT0->HWSEL &= ~0x00000003UL;
+  44:../GPIO.h     ****     PORT0->HWSEL |= config << 0;
+  45:../GPIO.h     **** }
+  46:../GPIO.h     **** 
+  47:../GPIO.h     **** __STATIC_INLINE void P0_0_set_standard_hysteresis(){
+  48:../GPIO.h     ****     PORT0->PHCR0 &= ~0x00000004UL;
+  49:../GPIO.h     **** }
+  50:../GPIO.h     **** 
+  51:../GPIO.h     **** __STATIC_INLINE void P0_0_set_large_hysteresis(){
+  52:../GPIO.h     ****     PORT0->PHCR0 |= 0x00000004UL;
+  53:../GPIO.h     **** }
+  54:../GPIO.h     **** 
+  55:../GPIO.h     **** __STATIC_INLINE void P0_0_set(void){
+  56:../GPIO.h     ****     PORT0->OMR = 0x00000001UL;
+  57:../GPIO.h     **** }
+  58:../GPIO.h     **** 
+  59:../GPIO.h     **** __STATIC_INLINE void P0_0_reset(void){
+  60:../GPIO.h     ****     PORT0->OMR = 0x00010000UL;
+  61:../GPIO.h     **** }
+  62:../GPIO.h     **** 
+  63:../GPIO.h     **** __STATIC_INLINE void P0_0_toggle(void){
+  64:../GPIO.h     ****     PORT0->OMR = 0x00010001UL;
+  65:../GPIO.h     **** }
+  66:../GPIO.h     **** 
+  67:../GPIO.h     **** __STATIC_INLINE uint32_t P0_0_read(void){
+  68:../GPIO.h     ****     return(PORT0->IN & 0x00000001UL);
+  69:../GPIO.h     **** }
+  70:../GPIO.h     **** 
+  71:../GPIO.h     **** __STATIC_INLINE void P0_0_enable_pps(void){
+  72:../GPIO.h     ****     PORT0->PPS |= 0x00000001UL;
+  73:../GPIO.h     **** }
+  74:../GPIO.h     **** 
+  75:../GPIO.h     **** __STATIC_INLINE void P0_0_disable_pps(void){
+  76:../GPIO.h     ****     PORT0->PPS &= ~0x00000001UL;
+  77:../GPIO.h     **** }
+  78:../GPIO.h     **** 
+  79:../GPIO.h     **** __STATIC_INLINE void P0_1_set_mode(uint8_t mode){
+  80:../GPIO.h     ****     PORT0->IOCR0 &= ~0x0000f800UL;
+  81:../GPIO.h     ****     PORT0->IOCR0 |= mode << 8;
+  82:../GPIO.h     **** }
+  83:../GPIO.h     **** 
+  84:../GPIO.h     **** __STATIC_INLINE void P0_1_set_hwsel(uint32_t config){
+  85:../GPIO.h     ****     PORT0->HWSEL &= ~0x0000000cUL;
+  86:../GPIO.h     ****     PORT0->HWSEL |= config << 2;
+  87:../GPIO.h     **** }
+  88:../GPIO.h     **** 
+  89:../GPIO.h     **** __STATIC_INLINE void P0_1_set_standard_hysteresis(){
+  90:../GPIO.h     ****     PORT0->PHCR0 &= ~0x00000040UL;
+  91:../GPIO.h     **** }
+  92:../GPIO.h     **** 
+  93:../GPIO.h     **** __STATIC_INLINE void P0_1_set_large_hysteresis(){
+  94:../GPIO.h     ****     PORT0->PHCR0 |= 0x00000040UL;
+  95:../GPIO.h     **** }
+  96:../GPIO.h     **** 
+  97:../GPIO.h     **** __STATIC_INLINE void P0_1_set(void){
+  98:../GPIO.h     ****     PORT0->OMR = 0x00000002UL;
+  99:../GPIO.h     **** }
+ 100:../GPIO.h     **** 
+ 101:../GPIO.h     **** __STATIC_INLINE void P0_1_reset(void){
+ 102:../GPIO.h     ****     PORT0->OMR = 0x00020000UL;
+ 103:../GPIO.h     **** }
+ 104:../GPIO.h     **** 
+ 105:../GPIO.h     **** __STATIC_INLINE void P0_1_toggle(void){
+ 106:../GPIO.h     ****     PORT0->OMR = 0x00020002UL;
+ 107:../GPIO.h     **** }
+ 108:../GPIO.h     **** 
+ 109:../GPIO.h     **** __STATIC_INLINE uint32_t P0_1_read(void){
+ 110:../GPIO.h     ****     return(PORT0->IN & 0x00000002UL);
+ 111:../GPIO.h     **** }
+ 112:../GPIO.h     **** 
+ 113:../GPIO.h     **** __STATIC_INLINE void P0_1_enable_pps(void){
+ 114:../GPIO.h     ****     PORT0->PPS |= 0x00000002UL;
+ 115:../GPIO.h     **** }
+ 116:../GPIO.h     **** 
+ 117:../GPIO.h     **** __STATIC_INLINE void P0_1_disable_pps(void){
+ 118:../GPIO.h     ****     PORT0->PPS &= ~0x00000002UL;
+ 119:../GPIO.h     **** }
+ 120:../GPIO.h     **** 
+ 121:../GPIO.h     **** __STATIC_INLINE void P0_2_set_mode(uint8_t mode){
+ 122:../GPIO.h     ****     PORT0->IOCR0 &= ~0x00f80000UL;
+ 123:../GPIO.h     ****     PORT0->IOCR0 |= mode << 16;
+ 124:../GPIO.h     **** }
+ 125:../GPIO.h     **** 
+ 126:../GPIO.h     **** __STATIC_INLINE void P0_2_set_hwsel(uint32_t config){
+ 127:../GPIO.h     ****     PORT0->HWSEL &= ~0x00000030UL;
+ 128:../GPIO.h     ****     PORT0->HWSEL |= config << 4;
+ 129:../GPIO.h     **** }
+ 130:../GPIO.h     **** 
+ 131:../GPIO.h     **** __STATIC_INLINE void P0_2_set_standard_hysteresis(){
+ 132:../GPIO.h     ****     PORT0->PHCR0 &= ~0x00000400UL;
+ 133:../GPIO.h     **** }
+ 134:../GPIO.h     **** 
+ 135:../GPIO.h     **** __STATIC_INLINE void P0_2_set_large_hysteresis(){
+ 136:../GPIO.h     ****     PORT0->PHCR0 |= 0x00000400UL;
+ 137:../GPIO.h     **** }
+ 138:../GPIO.h     **** 
+ 139:../GPIO.h     **** __STATIC_INLINE void P0_2_set(void){
+ 140:../GPIO.h     ****     PORT0->OMR = 0x00000004UL;
+ 141:../GPIO.h     **** }
+ 142:../GPIO.h     **** 
+ 143:../GPIO.h     **** __STATIC_INLINE void P0_2_reset(void){
+ 144:../GPIO.h     ****     PORT0->OMR = 0x00040000UL;
+ 145:../GPIO.h     **** }
+ 146:../GPIO.h     **** 
+ 147:../GPIO.h     **** __STATIC_INLINE void P0_2_toggle(void){
+ 148:../GPIO.h     ****     PORT0->OMR = 0x00040004UL;
+ 149:../GPIO.h     **** }
+ 150:../GPIO.h     **** 
+ 151:../GPIO.h     **** __STATIC_INLINE uint32_t P0_2_read(void){
+ 152:../GPIO.h     ****     return(PORT0->IN & 0x00000004UL);
+ 153:../GPIO.h     **** }
+ 154:../GPIO.h     **** 
+ 155:../GPIO.h     **** __STATIC_INLINE void P0_2_enable_pps(void){
+ 156:../GPIO.h     ****     PORT0->PPS |= 0x00000004UL;
+ 157:../GPIO.h     **** }
+ 158:../GPIO.h     **** 
+ 159:../GPIO.h     **** __STATIC_INLINE void P0_2_disable_pps(void){
+ 160:../GPIO.h     ****     PORT0->PPS &= ~0x00000004UL;
+ 161:../GPIO.h     **** }
+ 162:../GPIO.h     **** 
+ 163:../GPIO.h     **** __STATIC_INLINE void P0_3_set_mode(uint8_t mode){
+ 164:../GPIO.h     ****     PORT0->IOCR0 &= ~0xf8000000UL;
+ 165:../GPIO.h     ****     PORT0->IOCR0 |= mode << 24;
+ 166:../GPIO.h     **** }
+ 167:../GPIO.h     **** 
+ 168:../GPIO.h     **** __STATIC_INLINE void P0_3_set_hwsel(uint32_t config){
+ 169:../GPIO.h     ****     PORT0->HWSEL &= ~0x000000c0UL;
+ 170:../GPIO.h     ****     PORT0->HWSEL |= config << 6;
+ 171:../GPIO.h     **** }
+ 172:../GPIO.h     **** 
+ 173:../GPIO.h     **** __STATIC_INLINE void P0_3_set_standard_hysteresis(){
+ 174:../GPIO.h     ****     PORT0->PHCR0 &= ~0x00004000UL;
+ 175:../GPIO.h     **** }
+ 176:../GPIO.h     **** 
+ 177:../GPIO.h     **** __STATIC_INLINE void P0_3_set_large_hysteresis(){
+ 178:../GPIO.h     ****     PORT0->PHCR0 |= 0x00004000UL;
+ 179:../GPIO.h     **** }
+ 180:../GPIO.h     **** 
+ 181:../GPIO.h     **** __STATIC_INLINE void P0_3_set(void){
+ 182:../GPIO.h     ****     PORT0->OMR = 0x00000008UL;
+ 183:../GPIO.h     **** }
+ 184:../GPIO.h     **** 
+ 185:../GPIO.h     **** __STATIC_INLINE void P0_3_reset(void){
+ 186:../GPIO.h     ****     PORT0->OMR = 0x00080000UL;
+ 187:../GPIO.h     **** }
+ 188:../GPIO.h     **** 
+ 189:../GPIO.h     **** __STATIC_INLINE void P0_3_toggle(void){
+ 190:../GPIO.h     ****     PORT0->OMR = 0x00080008UL;
+ 191:../GPIO.h     **** }
+ 192:../GPIO.h     **** 
+ 193:../GPIO.h     **** __STATIC_INLINE uint32_t P0_3_read(void){
+ 194:../GPIO.h     ****     return(PORT0->IN & 0x00000008UL);
+ 195:../GPIO.h     **** }
+ 196:../GPIO.h     **** 
+ 197:../GPIO.h     **** __STATIC_INLINE void P0_3_enable_pps(void){
+ 198:../GPIO.h     ****     PORT0->PPS |= 0x00000008UL;
+ 199:../GPIO.h     **** }
+ 200:../GPIO.h     **** 
+ 201:../GPIO.h     **** __STATIC_INLINE void P0_3_disable_pps(void){
+ 202:../GPIO.h     ****     PORT0->PPS &= ~0x00000008UL;
+ 203:../GPIO.h     **** }
+ 204:../GPIO.h     **** 
+ 205:../GPIO.h     **** __STATIC_INLINE void P0_4_set_mode(uint8_t mode){
+ 206:../GPIO.h     ****     PORT0->IOCR4 &= ~0x000000f8UL;
+ 207:../GPIO.h     ****     PORT0->IOCR4 |= mode << 0;
+ 208:../GPIO.h     **** }
+ 209:../GPIO.h     **** 
+ 210:../GPIO.h     **** __STATIC_INLINE void P0_4_set_hwsel(uint32_t config){
+ 211:../GPIO.h     ****     PORT0->HWSEL &= ~0x00000300UL;
+ 212:../GPIO.h     ****     PORT0->HWSEL |= config << 8;
+ 213:../GPIO.h     **** }
+ 214:../GPIO.h     **** 
+ 215:../GPIO.h     **** __STATIC_INLINE void P0_4_set_standard_hysteresis(){
+ 216:../GPIO.h     ****     PORT0->PHCR0 &= ~0x00040000UL;
+ 217:../GPIO.h     **** }
+ 218:../GPIO.h     **** 
+ 219:../GPIO.h     **** __STATIC_INLINE void P0_4_set_large_hysteresis(){
+ 220:../GPIO.h     ****     PORT0->PHCR0 |= 0x00040000UL;
+ 221:../GPIO.h     **** }
+ 222:../GPIO.h     **** 
+ 223:../GPIO.h     **** __STATIC_INLINE void P0_4_set(void){
+ 224:../GPIO.h     ****     PORT0->OMR = 0x00000010UL;
+ 225:../GPIO.h     **** }
+ 226:../GPIO.h     **** 
+ 227:../GPIO.h     **** __STATIC_INLINE void P0_4_reset(void){
+ 228:../GPIO.h     ****     PORT0->OMR = 0x00100000UL;
+ 229:../GPIO.h     **** }
+ 230:../GPIO.h     **** 
+ 231:../GPIO.h     **** __STATIC_INLINE void P0_4_toggle(void){
+ 232:../GPIO.h     ****     PORT0->OMR = 0x00100010UL;
+ 233:../GPIO.h     **** }
+ 234:../GPIO.h     **** 
+ 235:../GPIO.h     **** __STATIC_INLINE uint32_t P0_4_read(void){
+ 236:../GPIO.h     ****     return(PORT0->IN & 0x00000010UL);
+ 237:../GPIO.h     **** }
+ 238:../GPIO.h     **** 
+ 239:../GPIO.h     **** __STATIC_INLINE void P0_4_enable_pps(void){
+ 240:../GPIO.h     ****     PORT0->PPS |= 0x00000010UL;
+ 241:../GPIO.h     **** }
+ 242:../GPIO.h     **** 
+ 243:../GPIO.h     **** __STATIC_INLINE void P0_4_disable_pps(void){
+ 244:../GPIO.h     ****     PORT0->PPS &= ~0x00000010UL;
+ 245:../GPIO.h     **** }
+ 246:../GPIO.h     **** 
+ 247:../GPIO.h     **** __STATIC_INLINE void P0_5_set_mode(uint8_t mode){
+ 248:../GPIO.h     ****     PORT0->IOCR4 &= ~0x0000f800UL;
+ 249:../GPIO.h     ****     PORT0->IOCR4 |= mode << 8;
+ 250:../GPIO.h     **** }
+ 251:../GPIO.h     **** 
+ 252:../GPIO.h     **** __STATIC_INLINE void P0_5_set_hwsel(uint32_t config){
+ 253:../GPIO.h     ****     PORT0->HWSEL &= ~0x00000c00UL;
+ 254:../GPIO.h     ****     PORT0->HWSEL |= config << 10;
+ 255:../GPIO.h     **** }
+ 256:../GPIO.h     **** 
+ 257:../GPIO.h     **** __STATIC_INLINE void P0_5_set_standard_hysteresis(){
+ 258:../GPIO.h     ****     PORT0->PHCR0 &= ~0x00400000UL;
+ 259:../GPIO.h     **** }
+ 260:../GPIO.h     **** 
+ 261:../GPIO.h     **** __STATIC_INLINE void P0_5_set_large_hysteresis(){
+  25              		.loc 1 261 0
+  26              		.cfi_startproc
+  27 0000 80B5     		push	{r7, lr}
+  28              	.LCFI0:
+  29              		.cfi_def_cfa_offset 8
+  30              		.cfi_offset 7, -8
+  31              		.cfi_offset 14, -4
+  32 0002 00AF     		add	r7, sp, #0
+  33              	.LCFI1:
+  34              		.cfi_def_cfa_register 7
+ 262:../GPIO.h     ****     PORT0->PHCR0 |= 0x00400000UL;
+  35              		.loc 1 262 0
+  36 0004 044B     		ldr	r3, .L2
+  37 0006 044A     		ldr	r2, .L2
+  38 0008 126C     		ldr	r2, [r2, #64]
+  39 000a 8021     		mov	r1, #128
+  40 000c C903     		lsl	r1, r1, #15
+  41 000e 0A43     		orr	r2, r1
+  42 0010 1A64     		str	r2, [r3, #64]
+ 263:../GPIO.h     **** }
+  43              		.loc 1 263 0
+  44 0012 BD46     		mov	sp, r7
+  45              		@ sp needed for prologue
+  46 0014 80BD     		pop	{r7, pc}
+  47              	.L3:
+  48 0016 C046     		.align	2
+  49              	.L2:
+  50 0018 00000440 		.word	1074003968
+  51              		.cfi_endproc
+  52              	.LFE91:
+  54              		.section	.text.P0_5_read,"ax",%progbits
+  55              		.align	2
+  56              		.code	16
+  57              		.thumb_func
+  59              	P0_5_read:
+  60              	.LFB95:
+ 264:../GPIO.h     **** 
+ 265:../GPIO.h     **** __STATIC_INLINE void P0_5_set(void){
+ 266:../GPIO.h     ****     PORT0->OMR = 0x00000020UL;
+ 267:../GPIO.h     **** }
+ 268:../GPIO.h     **** 
+ 269:../GPIO.h     **** __STATIC_INLINE void P0_5_reset(void){
+ 270:../GPIO.h     ****     PORT0->OMR = 0x00200000UL;
+ 271:../GPIO.h     **** }
+ 272:../GPIO.h     **** 
+ 273:../GPIO.h     **** __STATIC_INLINE void P0_5_toggle(void){
+ 274:../GPIO.h     ****     PORT0->OMR = 0x00200020UL;
+ 275:../GPIO.h     **** }
+ 276:../GPIO.h     **** 
+ 277:../GPIO.h     **** __STATIC_INLINE uint32_t P0_5_read(void){
+  61              		.loc 1 277 0
+  62              		.cfi_startproc
+  63 0000 80B5     		push	{r7, lr}
+  64              	.LCFI2:
+  65              		.cfi_def_cfa_offset 8
+  66              		.cfi_offset 7, -8
+  67              		.cfi_offset 14, -4
+  68 0002 00AF     		add	r7, sp, #0
+  69              	.LCFI3:
+  70              		.cfi_def_cfa_register 7
+ 278:../GPIO.h     ****     return(PORT0->IN & 0x00000020UL);
+  71              		.loc 1 278 0
+  72 0004 034B     		ldr	r3, .L6
+  73 0006 5A6A     		ldr	r2, [r3, #36]
+  74 0008 2023     		mov	r3, #32
+  75 000a 1340     		and	r3, r2
+ 279:../GPIO.h     **** }
+  76              		.loc 1 279 0
+  77 000c 181C     		mov	r0, r3
+  78 000e BD46     		mov	sp, r7
+  79              		@ sp needed for prologue
+  80 0010 80BD     		pop	{r7, pc}
+  81              	.L7:
+  82 0012 C046     		.align	2
+  83              	.L6:
+  84 0014 00000440 		.word	1074003968
+  85              		.cfi_endproc
+  86              	.LFE95:
+  88              		.section	.text.P0_6_set_mode,"ax",%progbits
+  89              		.align	2
+  90              		.code	16
+  91              		.thumb_func
+  93              	P0_6_set_mode:
+  94              	.LFB98:
+ 280:../GPIO.h     **** 
+ 281:../GPIO.h     **** __STATIC_INLINE void P0_5_enable_pps(void){
+ 282:../GPIO.h     ****     PORT0->PPS |= 0x00000020UL;
+ 283:../GPIO.h     **** }
+ 284:../GPIO.h     **** 
+ 285:../GPIO.h     **** __STATIC_INLINE void P0_5_disable_pps(void){
+ 286:../GPIO.h     ****     PORT0->PPS &= ~0x00000020UL;
+ 287:../GPIO.h     **** }
+ 288:../GPIO.h     **** 
+ 289:../GPIO.h     **** __STATIC_INLINE void P0_6_set_mode(uint8_t mode){
+  95              		.loc 1 289 0
+  96              		.cfi_startproc
+  97 0000 80B5     		push	{r7, lr}
+  98              	.LCFI4:
+  99              		.cfi_def_cfa_offset 8
+ 100              		.cfi_offset 7, -8
+ 101              		.cfi_offset 14, -4
+ 102 0002 82B0     		sub	sp, sp, #8
+ 103              	.LCFI5:
+ 104              		.cfi_def_cfa_offset 16
+ 105 0004 00AF     		add	r7, sp, #0
+ 106              	.LCFI6:
+ 107              		.cfi_def_cfa_register 7
+ 108 0006 021C     		mov	r2, r0
+ 109 0008 FB1D     		add	r3, r7, #7
+ 110 000a 1A70     		strb	r2, [r3]
+ 290:../GPIO.h     ****     PORT0->IOCR4 &= ~0x00f80000UL;
+ 111              		.loc 1 290 0
+ 112 000c 084B     		ldr	r3, .L9
+ 113 000e 084A     		ldr	r2, .L9
+ 114 0010 5169     		ldr	r1, [r2, #20]
+ 115 0012 084A     		ldr	r2, .L9+4
+ 116 0014 0A40     		and	r2, r1
+ 117 0016 5A61     		str	r2, [r3, #20]
+ 291:../GPIO.h     ****     PORT0->IOCR4 |= mode << 16;
+ 118              		.loc 1 291 0
+ 119 0018 054B     		ldr	r3, .L9
+ 120 001a 054A     		ldr	r2, .L9
+ 121 001c 5169     		ldr	r1, [r2, #20]
+ 122 001e FA1D     		add	r2, r7, #7
+ 123 0020 1278     		ldrb	r2, [r2]
+ 124 0022 1204     		lsl	r2, r2, #16
+ 125 0024 0A43     		orr	r2, r1
+ 126 0026 5A61     		str	r2, [r3, #20]
+ 292:../GPIO.h     **** }
+ 127              		.loc 1 292 0
+ 128 0028 BD46     		mov	sp, r7
+ 129 002a 02B0     		add	sp, sp, #8
+ 130              		@ sp needed for prologue
+ 131 002c 80BD     		pop	{r7, pc}
+ 132              	.L10:
+ 133 002e C046     		.align	2
+ 134              	.L9:
+ 135 0030 00000440 		.word	1074003968
+ 136 0034 FFFF07FF 		.word	-16252929
+ 137              		.cfi_endproc
+ 138              	.LFE98:
+ 140              		.section	.text.P0_6_set,"ax",%progbits
+ 141              		.align	2
+ 142              		.code	16
+ 143              		.thumb_func
+ 145              	P0_6_set:
+ 146              	.LFB102:
+ 293:../GPIO.h     **** 
+ 294:../GPIO.h     **** __STATIC_INLINE void P0_6_set_hwsel(uint32_t config){
+ 295:../GPIO.h     ****     PORT0->HWSEL &= ~0x00003000UL;
+ 296:../GPIO.h     ****     PORT0->HWSEL |= config << 12;
+ 297:../GPIO.h     **** }
+ 298:../GPIO.h     **** 
+ 299:../GPIO.h     **** __STATIC_INLINE void P0_6_set_standard_hysteresis(){
+ 300:../GPIO.h     ****     PORT0->PHCR0 &= ~0x04000000UL;
+ 301:../GPIO.h     **** }
+ 302:../GPIO.h     **** 
+ 303:../GPIO.h     **** __STATIC_INLINE void P0_6_set_large_hysteresis(){
+ 304:../GPIO.h     ****     PORT0->PHCR0 |= 0x04000000UL;
+ 305:../GPIO.h     **** }
+ 306:../GPIO.h     **** 
+ 307:../GPIO.h     **** __STATIC_INLINE void P0_6_set(void){
+ 147              		.loc 1 307 0
+ 148              		.cfi_startproc
+ 149 0000 80B5     		push	{r7, lr}
+ 150              	.LCFI7:
+ 151              		.cfi_def_cfa_offset 8
+ 152              		.cfi_offset 7, -8
+ 153              		.cfi_offset 14, -4
+ 154 0002 00AF     		add	r7, sp, #0
+ 155              	.LCFI8:
+ 156              		.cfi_def_cfa_register 7
+ 308:../GPIO.h     ****     PORT0->OMR = 0x00000040UL;
+ 157              		.loc 1 308 0
+ 158 0004 024B     		ldr	r3, .L12
+ 159 0006 4022     		mov	r2, #64
+ 160 0008 5A60     		str	r2, [r3, #4]
+ 309:../GPIO.h     **** }
+ 161              		.loc 1 309 0
+ 162 000a BD46     		mov	sp, r7
+ 163              		@ sp needed for prologue
+ 164 000c 80BD     		pop	{r7, pc}
+ 165              	.L13:
+ 166 000e C046     		.align	2
+ 167              	.L12:
+ 168 0010 00000440 		.word	1074003968
+ 169              		.cfi_endproc
+ 170              	.LFE102:
+ 172              		.section	.text.P0_6_toggle,"ax",%progbits
+ 173              		.align	2
+ 174              		.code	16
+ 175              		.thumb_func
+ 177              	P0_6_toggle:
+ 178              	.LFB104:
+ 310:../GPIO.h     **** 
+ 311:../GPIO.h     **** __STATIC_INLINE void P0_6_reset(void){
+ 312:../GPIO.h     ****     PORT0->OMR = 0x00400000UL;
+ 313:../GPIO.h     **** }
+ 314:../GPIO.h     **** 
+ 315:../GPIO.h     **** __STATIC_INLINE void P0_6_toggle(void){
+ 179              		.loc 1 315 0
+ 180              		.cfi_startproc
+ 181 0000 80B5     		push	{r7, lr}
+ 182              	.LCFI9:
+ 183              		.cfi_def_cfa_offset 8
+ 184              		.cfi_offset 7, -8
+ 185              		.cfi_offset 14, -4
+ 186 0002 00AF     		add	r7, sp, #0
+ 187              	.LCFI10:
+ 188              		.cfi_def_cfa_register 7
+ 316:../GPIO.h     ****     PORT0->OMR = 0x00400040UL;
+ 189              		.loc 1 316 0
+ 190 0004 024B     		ldr	r3, .L15
+ 191 0006 034A     		ldr	r2, .L15+4
+ 192 0008 5A60     		str	r2, [r3, #4]
+ 317:../GPIO.h     **** }
+ 193              		.loc 1 317 0
+ 194 000a BD46     		mov	sp, r7
+ 195              		@ sp needed for prologue
+ 196 000c 80BD     		pop	{r7, pc}
+ 197              	.L16:
+ 198 000e C046     		.align	2
+ 199              	.L15:
+ 200 0010 00000440 		.word	1074003968
+ 201 0014 40004000 		.word	4194368
+ 202              		.cfi_endproc
+ 203              	.LFE104:
+ 205              		.global	__aeabi_idiv
+ 206              		.section	.text.main,"ax",%progbits
+ 207              		.align	2
+ 208              		.global	main
+ 209              		.code	16
+ 210              		.thumb_func
+ 212              	main:
+ 213              	.LFB402:
+ 214              		.file 2 "../Main.c"
+   1:../Main.c     **** /*=========================================================================== *
+   2:../Main.c     ****  * Copyright (c) 2014, Infineon Technologies AG                                *
+   3:../Main.c     ****  * All rights reserved.                                                        *
+   4:../Main.c     ****  *                                                                             *
+   5:../Main.c     ****  * Redistribution and use in source and binary forms, with or without          *
+   6:../Main.c     ****  * modification, are permitted provided that the following conditions are met: *
+   7:../Main.c     ****  * Redistributions of source code must retain the above copyright notice, this *
+   8:../Main.c     ****  * list of conditions and the following disclaimer. Redistributions in binary  *
+   9:../Main.c     ****  * form must reproduce the above copyright notice, this list of conditions and *
+  10:../Main.c     ****  * the following disclaimer in the documentation and/or other materials        *
+  11:../Main.c     ****  * provided with the distribution. Neither the name of the copyright holders   *
+  12:../Main.c     ****  * nor the names of its contributors may be used to endorse or promote         *
+  13:../Main.c     ****  * products derived from this software without specific prior written          *
+  14:../Main.c     ****  * permission.                                                                 *
+  15:../Main.c     ****  *                                                                                                 
+  16:../Main.c     ****  * THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS "AS IS" *
+  17:../Main.c     ****  * AND ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO,       *
+  18:../Main.c     ****  * THE IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR      *
+  19:../Main.c     ****  * PURPOSE ARE DISCLAIMED. IN NO EVENT SHALL THE COPYRIGHT HOLDER OR           *
+  20:../Main.c     ****  * CONTRIBUTORS BE LIABLE FOR ANY DIRECT, INDIRECT, INCIDENTAL, SPECIAL,       *
+  21:../Main.c     ****  * EXEMPLARY, OR CONSEQUENTIAL DAMAGES (INCLUDING, BUT NOT LIMITED TO,         *
+  22:../Main.c     ****  * PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES; LOSS OF USE, DATA, OR PROFITS; *
+  23:../Main.c     ****  * OR BUSINESS INTERRUPTION) HOWEVER CAUSED AND ON ANY THEORY OF LIABILITY,    *
+  24:../Main.c     ****  * WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT (INCLUDING NEGLIGENCE OR     *
+  25:../Main.c     ****  * OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN IF      *
+  26:../Main.c     ****  * ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.                                  *
+  27:../Main.c     ****  * To improve the quality of the software, users are encouraged to share       *
+  28:../Main.c     ****  * modifications, enhancements or bug fixes with                               *
+  29:../Main.c     ****  * Infineon Technologies AG (dave@infineon.com).                               *
+  30:../Main.c     ****  *                                                                             *
+  31:../Main.c     ****  * ========================================================================== */
+  32:../Main.c     **** 
+  33:../Main.c     **** /********************************************************************************
+  34:../Main.c     **** **                                                                            **
+  35:../Main.c     **** ** PLATFORM : Infineon XMC1000 Series                                         **
+  36:../Main.c     **** **                                                                            **
+  37:../Main.c     **** ** AUTHOR : Application Engineering Team                                      **
+  38:../Main.c     **** **                                                                            **
+  39:../Main.c     **** ** Project version update to v 1.0.0 (Initial version)                        **
+  40:../Main.c     **** **                           v 1.0.2 (Updated with latest Dave apps,linker and**
+  41:../Main.c     **** **                                    startup files)                          **
+  42:../Main.c     **** **                                                                            **
+  43:../Main.c     **** ** MODIFICATION DATE : May 27, 2014                                           **
+  44:../Main.c     **** **                                                                            **
+  45:../Main.c     **** *******************************************************************************/
+  46:../Main.c     **** 
+  47:../Main.c     **** 
+  48:../Main.c     **** /*
+  49:../Main.c     ****  *  Main source file for this PWMSP001 demo. This file contains the main
+  50:../Main.c     ****  *  tasks of the demo and is responsible for the initial application hardware
+  51:../Main.c     ****  *  configuration
+  52:../Main.c     ****  */
+  53:../Main.c     **** 
+  54:../Main.c     **** /*******************************************************************************
+  55:../Main.c     ****  ** INCLUDE FILES                                                             **
+  56:../Main.c     ****  ******************************************************************************/
+  57:../Main.c     **** 
+  58:../Main.c     **** #include <DAVE3.h>			//Declarations from DAVE3 Code Generation
+  59:../Main.c     **** #include "XMC1100.h"
+  60:../Main.c     **** #include "GPIO.h"
+  61:../Main.c     **** 
+  62:../Main.c     **** #define PIN_IS_HIGH()      P0_5_read()
+  63:../Main.c     **** #define PIN_LOW_DEASSERT() P0_6_set()
+  64:../Main.c     **** #define PIN_LOW_ASSERT()   P0_6_reset()
+  65:../Main.c     **** #define PIN_LOW_TOGGLE()   P0_6_toggle()
+  66:../Main.c     **** 
+  67:../Main.c     **** #define PIN_LOW_INIT() \
+  68:../Main.c     **** 	P0_6_set_mode(OUTPUT_OD_GP); \
+  69:../Main.c     **** 	P0_6_set();
+  70:../Main.c     **** 
+  71:../Main.c     **** #define PIN_IS_INIT() \
+  72:../Main.c     **** 	P0_5_set_large_hysteresis(); \
+  73:../Main.c     **** 	P0_5_read(); \
+  74:../Main.c     **** 	//P0_5_set_mode(INPUT);
+  75:../Main.c     **** 
+  76:../Main.c     **** 
+  77:../Main.c     **** 
+  78:../Main.c     **** int main(void)
+  79:../Main.c     **** {
+ 215              		.loc 2 79 0
+ 216              		.cfi_startproc
+ 217 0000 80B5     		push	{r7, lr}
+ 218              	.LCFI11:
+ 219              		.cfi_def_cfa_offset 8
+ 220              		.cfi_offset 7, -8
+ 221              		.cfi_offset 14, -4
+ 222 0002 8AB0     		sub	sp, sp, #40
+ 223              	.LCFI12:
+ 224              		.cfi_def_cfa_offset 48
+ 225 0004 00AF     		add	r7, sp, #0
+ 226              	.LCFI13:
+ 227              		.cfi_def_cfa_register 7
+  80:../Main.c     **** 	status_t status;		// Declaration of return variable for DAVE3 APIs
+  81:../Main.c     **** 
+  82:../Main.c     **** 
+  83:../Main.c     **** 	DAVE_Init();			// Initialization of DAVE Apps
+ 228              		.loc 2 83 0
+ 229 0006 FFF7FEFF 		bl	DAVE_Init
+  84:../Main.c     **** 
+  85:../Main.c     **** 	
+  86:../Main.c     **** 	/* Starts the PWMSP001 App (LED) */
+  87:../Main.c     **** 	status = PWMSP001_Start((PWMSP001_HandleType*)&PWMSP001_Handle0);
+ 230              		.loc 2 87 0
+ 231 000a 464B     		ldr	r3, .L32
+ 232 000c 181C     		mov	r0, r3
+ 233 000e FFF7FEFF 		bl	PWMSP001_Start
+ 234 0012 031C     		mov	r3, r0
+ 235 0014 7B60     		str	r3, [r7, #4]
+  88:../Main.c     **** 	if(status != DAVEApp_SUCCESS)
+ 236              		.loc 2 88 0
+ 237 0016 7B68     		ldr	r3, [r7, #4]
+ 238 0018 002B     		cmp	r3, #0
+ 239 001a 03D0     		beq	.L18
+  89:../Main.c     **** 	{
+  90:../Main.c     **** 		PWMSP001_Stop((PWMSP001_HandleType*)&PWMSP001_Handle0);
+ 240              		.loc 2 90 0
+ 241 001c 414B     		ldr	r3, .L32
+ 242 001e 181C     		mov	r0, r3
+ 243 0020 FFF7FEFF 		bl	PWMSP001_Stop
+ 244              	.L18:
+  91:../Main.c     **** 	}
+  92:../Main.c     **** 
+  93:../Main.c     **** 	PIN_LOW_INIT();
+ 245              		.loc 2 93 0
+ 246 0024 C020     		mov	r0, #192
+ 247 0026 FFF7FEFF 		bl	P0_6_set_mode
+ 248 002a FFF7FEFF 		bl	P0_6_set
+  94:../Main.c     **** 	PIN_IS_INIT();
+ 249              		.loc 2 94 0
+ 250 002e FFF7FEFF 		bl	P0_5_set_large_hysteresis
+ 251 0032 FFF7FEFF 		bl	P0_5_read
+  95:../Main.c     **** 
+  96:../Main.c     **** 
+  97:../Main.c     **** 
+  98:../Main.c     **** 	bool lastPinState = PIN_IS_HIGH();
+ 252              		.loc 2 98 0
+ 253 0036 FFF7FEFF 		bl	P0_5_read
+ 254 003a 021C     		mov	r2, r0
+ 255 003c 3B1C     		mov	r3, r7
+ 256 003e 2733     		add	r3, r3, #39
+ 257 0040 1A70     		strb	r2, [r3]
+  99:../Main.c     **** 	bool trigger = FALSE;
+ 258              		.loc 2 99 0
+ 259 0042 3B1C     		mov	r3, r7
+ 260 0044 2633     		add	r3, r3, #38
+ 261 0046 0022     		mov	r2, #0
+ 262 0048 1A70     		strb	r2, [r3]
+ 100:../Main.c     **** 	int noTriggerCnt=0;
+ 263              		.loc 2 100 0
+ 264 004a 0023     		mov	r3, #0
+ 265 004c 3B62     		str	r3, [r7, #32]
+ 101:../Main.c     **** 	int speed=0;
+ 266              		.loc 2 101 0
+ 267 004e 0023     		mov	r3, #0
+ 268 0050 FB61     		str	r3, [r7, #28]
+ 102:../Main.c     **** 	int speedLow=0;
+ 269              		.loc 2 102 0
+ 270 0052 0023     		mov	r3, #0
+ 271 0054 BB61     		str	r3, [r7, #24]
+ 103:../Main.c     **** 	int speedLowHigh=0;
+ 272              		.loc 2 103 0
+ 273 0056 0023     		mov	r3, #0
+ 274 0058 7B61     		str	r3, [r7, #20]
+ 275 005a 00E0     		b	.L30
+ 276              	.L31:
+ 104:../Main.c     **** 
+ 105:../Main.c     **** 
+ 106:../Main.c     **** 	while(1)
+ 107:../Main.c     **** 	{
+ 108:../Main.c     **** 		speed++;
+ 109:../Main.c     **** 		speedLow++;
+ 110:../Main.c     **** 		
+ 111:../Main.c     **** 		int cnt_high=0;
+ 112:../Main.c     **** 		int cnt_low=0;
+ 113:../Main.c     **** 		for (int i = 0; i < 0x1FF; i++)
+ 114:../Main.c     **** 		{
+ 115:../Main.c     **** 			if (PIN_IS_HIGH())
+ 116:../Main.c     **** 				cnt_high++;
+ 117:../Main.c     **** 			else
+ 118:../Main.c     **** 				cnt_low++;
+ 119:../Main.c     **** 		}
+ 120:../Main.c     **** 		
+ 121:../Main.c     **** 		
+ 122:../Main.c     **** 		if (cnt_low > 0)
+ 123:../Main.c     **** 		{
+ 124:../Main.c     **** 			if (lastPinState)
+ 125:../Main.c     **** 			{
+ 126:../Main.c     **** 				trigger = TRUE;
+ 127:../Main.c     **** 				speedLowHigh = speed*16/10/2;
+ 128:../Main.c     **** 				speed=0;
+ 129:../Main.c     **** 			}
+ 130:../Main.c     **** 			lastPinState = FALSE;
+ 131:../Main.c     **** 		}
+ 132:../Main.c     **** 		else if (cnt_high > 0)
+ 133:../Main.c     **** 		{
+ 134:../Main.c     **** 			lastPinState = TRUE;
+ 135:../Main.c     **** 		}
+ 136:../Main.c     **** 		
+ 137:../Main.c     **** 		if (speedLow >= speedLowHigh)
+ 138:../Main.c     **** 		{
+ 139:../Main.c     **** 			speedLow = 0;
+ 140:../Main.c     **** 			
+ 141:../Main.c     **** 			if (!trigger)
+ 142:../Main.c     **** 				noTriggerCnt++;
+ 143:../Main.c     **** 			else
+ 144:../Main.c     **** 				noTriggerCnt=0;
+ 145:../Main.c     **** 			trigger = FALSE;
+ 146:../Main.c     **** 			
+ 147:../Main.c     **** 			if (noTriggerCnt > 1)
+ 148:../Main.c     **** 			{
+ 149:../Main.c     **** 				noTriggerCnt=1;
+ 150:../Main.c     **** 				PIN_LOW_DEASSERT();
+ 151:../Main.c     **** 			}
+ 152:../Main.c     **** 			else
+ 153:../Main.c     **** 			{
+ 154:../Main.c     **** 				PIN_LOW_TOGGLE();
+ 155:../Main.c     **** 			}
+ 156:../Main.c     **** 		}
+ 157:../Main.c     **** 				
+ 158:../Main.c     **** 		
+ 159:../Main.c     **** 
+ 160:../Main.c     **** 	}
+ 277              		.loc 2 160 0
+ 278 005c C046     		mov	r8, r8
+ 279              	.L30:
+ 280              	.LBB2:
+ 108:../Main.c     **** 		speed++;
+ 281              		.loc 2 108 0
+ 282 005e FB69     		ldr	r3, [r7, #28]
+ 283 0060 0133     		add	r3, r3, #1
+ 284 0062 FB61     		str	r3, [r7, #28]
+ 109:../Main.c     **** 		speedLow++;
+ 285              		.loc 2 109 0
+ 286 0064 BB69     		ldr	r3, [r7, #24]
+ 287 0066 0133     		add	r3, r3, #1
+ 288 0068 BB61     		str	r3, [r7, #24]
+ 111:../Main.c     **** 		int cnt_high=0;
+ 289              		.loc 2 111 0
+ 290 006a 0023     		mov	r3, #0
+ 291 006c 3B61     		str	r3, [r7, #16]
+ 112:../Main.c     **** 		int cnt_low=0;
+ 292              		.loc 2 112 0
+ 293 006e 0023     		mov	r3, #0
+ 294 0070 FB60     		str	r3, [r7, #12]
+ 295              	.LBB3:
+ 113:../Main.c     **** 		for (int i = 0; i < 0x1FF; i++)
+ 296              		.loc 2 113 0
+ 297 0072 0023     		mov	r3, #0
+ 298 0074 BB60     		str	r3, [r7, #8]
+ 299 0076 0EE0     		b	.L19
+ 300              	.L22:
+ 115:../Main.c     **** 			if (PIN_IS_HIGH())
+ 301              		.loc 2 115 0
+ 302 0078 FFF7FEFF 		bl	P0_5_read
+ 303 007c 031C     		mov	r3, r0
+ 304 007e 002B     		cmp	r3, #0
+ 305 0080 03D0     		beq	.L20
+ 116:../Main.c     **** 				cnt_high++;
+ 306              		.loc 2 116 0
+ 307 0082 3B69     		ldr	r3, [r7, #16]
+ 308 0084 0133     		add	r3, r3, #1
+ 309 0086 3B61     		str	r3, [r7, #16]
+ 310 0088 02E0     		b	.L21
+ 311              	.L20:
+ 118:../Main.c     **** 				cnt_low++;
+ 312              		.loc 2 118 0
+ 313 008a FB68     		ldr	r3, [r7, #12]
+ 314 008c 0133     		add	r3, r3, #1
+ 315 008e FB60     		str	r3, [r7, #12]
+ 316              	.L21:
+ 113:../Main.c     **** 		for (int i = 0; i < 0x1FF; i++)
+ 317              		.loc 2 113 0
+ 318 0090 BB68     		ldr	r3, [r7, #8]
+ 319 0092 0133     		add	r3, r3, #1
+ 320 0094 BB60     		str	r3, [r7, #8]
+ 321              	.L19:
+ 113:../Main.c     **** 		for (int i = 0; i < 0x1FF; i++)
+ 322              		.loc 2 113 0 is_stmt 0 discriminator 1
+ 323 0096 BA68     		ldr	r2, [r7, #8]
+ 324 0098 FF23     		mov	r3, #255
+ 325 009a 5B00     		lsl	r3, r3, #1
+ 326 009c 9A42     		cmp	r2, r3
+ 327 009e EBDD     		ble	.L22
+ 328              	.LBE3:
+ 122:../Main.c     **** 		if (cnt_low > 0)
+ 329              		.loc 2 122 0 is_stmt 1
+ 330 00a0 FB68     		ldr	r3, [r7, #12]
+ 331 00a2 002B     		cmp	r3, #0
+ 332 00a4 17DD     		ble	.L23
+ 124:../Main.c     **** 			if (lastPinState)
+ 333              		.loc 2 124 0
+ 334 00a6 3B1C     		mov	r3, r7
+ 335 00a8 2733     		add	r3, r3, #39
+ 336 00aa 1B78     		ldrb	r3, [r3]
+ 337 00ac 002B     		cmp	r3, #0
+ 338 00ae 0DD0     		beq	.L24
+ 126:../Main.c     **** 				trigger = TRUE;
+ 339              		.loc 2 126 0
+ 340 00b0 3B1C     		mov	r3, r7
+ 341 00b2 2633     		add	r3, r3, #38
+ 342 00b4 0122     		mov	r2, #1
+ 343 00b6 1A70     		strb	r2, [r3]
+ 127:../Main.c     **** 				speedLowHigh = speed*16/10/2;
+ 344              		.loc 2 127 0
+ 345 00b8 FB69     		ldr	r3, [r7, #28]
+ 346 00ba 1B01     		lsl	r3, r3, #4
+ 347 00bc 181C     		mov	r0, r3
+ 348 00be 1421     		mov	r1, #20
+ 349 00c0 FFF7FEFF 		bl	__aeabi_idiv
+ 350 00c4 031C     		mov	r3, r0
+ 351 00c6 7B61     		str	r3, [r7, #20]
+ 128:../Main.c     **** 				speed=0;
+ 352              		.loc 2 128 0
+ 353 00c8 0023     		mov	r3, #0
+ 354 00ca FB61     		str	r3, [r7, #28]
+ 355              	.L24:
+ 130:../Main.c     **** 			lastPinState = FALSE;
+ 356              		.loc 2 130 0
+ 357 00cc 3B1C     		mov	r3, r7
+ 358 00ce 2733     		add	r3, r3, #39
+ 359 00d0 0022     		mov	r2, #0
+ 360 00d2 1A70     		strb	r2, [r3]
+ 361 00d4 06E0     		b	.L25
+ 362              	.L23:
+ 132:../Main.c     **** 		else if (cnt_high > 0)
+ 363              		.loc 2 132 0
+ 364 00d6 3B69     		ldr	r3, [r7, #16]
+ 365 00d8 002B     		cmp	r3, #0
+ 366 00da 03DD     		ble	.L25
+ 134:../Main.c     **** 			lastPinState = TRUE;
+ 367              		.loc 2 134 0
+ 368 00dc 3B1C     		mov	r3, r7
+ 369 00de 2733     		add	r3, r3, #39
+ 370 00e0 0122     		mov	r2, #1
+ 371 00e2 1A70     		strb	r2, [r3]
+ 372              	.L25:
+ 137:../Main.c     **** 		if (speedLow >= speedLowHigh)
+ 373              		.loc 2 137 0
+ 374 00e4 BA69     		ldr	r2, [r7, #24]
+ 375 00e6 7B69     		ldr	r3, [r7, #20]
+ 376 00e8 9A42     		cmp	r2, r3
+ 377 00ea B7DB     		blt	.L31
+ 139:../Main.c     **** 			speedLow = 0;
+ 378              		.loc 2 139 0
+ 379 00ec 0023     		mov	r3, #0
+ 380 00ee BB61     		str	r3, [r7, #24]
+ 141:../Main.c     **** 			if (!trigger)
+ 381              		.loc 2 141 0
+ 382 00f0 3B1C     		mov	r3, r7
+ 383 00f2 2633     		add	r3, r3, #38
+ 384 00f4 1B78     		ldrb	r3, [r3]
+ 385 00f6 002B     		cmp	r3, #0
+ 386 00f8 03D1     		bne	.L27
+ 142:../Main.c     **** 				noTriggerCnt++;
+ 387              		.loc 2 142 0
+ 388 00fa 3B6A     		ldr	r3, [r7, #32]
+ 389 00fc 0133     		add	r3, r3, #1
+ 390 00fe 3B62     		str	r3, [r7, #32]
+ 391 0100 01E0     		b	.L28
+ 392              	.L27:
+ 144:../Main.c     **** 				noTriggerCnt=0;
+ 393              		.loc 2 144 0
+ 394 0102 0023     		mov	r3, #0
+ 395 0104 3B62     		str	r3, [r7, #32]
+ 396              	.L28:
+ 145:../Main.c     **** 			trigger = FALSE;
+ 397              		.loc 2 145 0
+ 398 0106 3B1C     		mov	r3, r7
+ 399 0108 2633     		add	r3, r3, #38
+ 400 010a 0022     		mov	r2, #0
+ 401 010c 1A70     		strb	r2, [r3]
+ 147:../Main.c     **** 			if (noTriggerCnt > 1)
+ 402              		.loc 2 147 0
+ 403 010e 3B6A     		ldr	r3, [r7, #32]
+ 404 0110 012B     		cmp	r3, #1
+ 405 0112 04DD     		ble	.L29
+ 149:../Main.c     **** 				noTriggerCnt=1;
+ 406              		.loc 2 149 0
+ 407 0114 0123     		mov	r3, #1
+ 408 0116 3B62     		str	r3, [r7, #32]
+ 150:../Main.c     **** 				PIN_LOW_DEASSERT();
+ 409              		.loc 2 150 0
+ 410 0118 FFF7FEFF 		bl	P0_6_set
+ 411              	.LBE2:
+ 412              		.loc 2 160 0
+ 413 011c 9EE7     		b	.L31
+ 414              	.L29:
+ 415              	.LBB4:
+ 154:../Main.c     **** 				PIN_LOW_TOGGLE();
+ 416              		.loc 2 154 0
+ 417 011e FFF7FEFF 		bl	P0_6_toggle
+ 418              	.LBE4:
+ 419              		.loc 2 160 0
+ 420 0122 9BE7     		b	.L31
+ 421              	.L33:
+ 422              		.align	2
+ 423              	.L32:
+ 424 0124 00000000 		.word	PWMSP001_Handle0
+ 425              		.cfi_endproc
+ 426              	.LFE402:
+ 428              		.section	.text.CCU40_3_IRQHandler,"ax",%progbits
+ 429              		.align	2
+ 430              		.global	CCU40_3_IRQHandler
+ 431              		.code	16
+ 432              		.thumb_func
+ 434              	CCU40_3_IRQHandler:
+ 435              	.LFB403:
+ 161:../Main.c     **** 	return 0;
+ 162:../Main.c     **** }
+ 163:../Main.c     **** 
+ 164:../Main.c     **** 
+ 165:../Main.c     **** /*
+ 166:../Main.c     ****  * PWM_Period_Interrupt handler: executes every period match of PWMSP001/0.
+ 167:../Main.c     ****  */
+ 168:../Main.c     **** void PWM_Period_Interrupt(void)
+ 169:../Main.c     **** {
+ 436              		.loc 2 169 0
+ 437              		.cfi_startproc
+ 438 0000 80B5     		push	{r7, lr}
+ 439              	.LCFI14:
+ 440              		.cfi_def_cfa_offset 8
+ 441              		.cfi_offset 7, -8
+ 442              		.cfi_offset 14, -4
+ 443 0002 82B0     		sub	sp, sp, #8
+ 444              	.LCFI15:
+ 445              		.cfi_def_cfa_offset 16
+ 446 0004 00AF     		add	r7, sp, #0
+ 447              	.LCFI16:
+ 448              		.cfi_def_cfa_register 7
+ 170:../Main.c     **** #define FFAST   10
+ 171:../Main.c     **** #define FSLOW   5
+ 172:../Main.c     **** #define PERIODE   (FFAST*4)
+ 173:../Main.c     **** #define PERCHANGE (FFAST*2)
+ 174:../Main.c     **** 	static uint32_t state = 0;
+ 175:../Main.c     **** 	status_t status;
+ 176:../Main.c     **** 
+ 177:../Main.c     **** 	/* state machine to change the different duty cycle */
+ 178:../Main.c     **** 	switch(state)
+ 449              		.loc 2 178 0
+ 450 0006 1A4B     		ldr	r3, .L42
+ 451 0008 1B68     		ldr	r3, [r3]
+ 452 000a 002B     		cmp	r3, #0
+ 453 000c 02D0     		beq	.L36
+ 454 000e 142B     		cmp	r3, #20
+ 455 0010 0BD0     		beq	.L37
+ 456 0012 15E0     		b	.L41
+ 457              	.L36:
+ 179:../Main.c     **** 	{
+ 180:../Main.c     **** 		
+ 181:../Main.c     **** 		case 0: //status =  PWMSP001_SetCompare(&PWMSP001_Handle0, 0x4AFF); /* Updating of duty cycle to 
+ 182:../Main.c     **** 		    // Change PWM frequency to 20 Hz and duty cycle of 50%
+ 183:../Main.c     **** 		    status = PWMSP001_SetPwmFreqAndDutyCycle((PWMSP001_HandleType*)&PWMSP001_Handle0, FFAST, 50);
+ 458              		.loc 2 183 0
+ 459 0014 1749     		ldr	r1, .L42+4
+ 460 0016 184A     		ldr	r2, .L42+8
+ 461 0018 184B     		ldr	r3, .L42+12
+ 462 001a 081C     		mov	r0, r1
+ 463 001c 111C     		add	r1, r2, #0
+ 464 001e 1A1C     		add	r2, r3, #0
+ 465 0020 FFF7FEFF 		bl	PWMSP001_SetPwmFreqAndDutyCycle
+ 466 0024 031C     		mov	r3, r0
+ 467 0026 7B60     		str	r3, [r7, #4]
+ 184:../Main.c     **** 		    break;
+ 468              		.loc 2 184 0
+ 469 0028 0BE0     		b	.L38
+ 470              	.L37:
+ 185:../Main.c     **** 		
+ 186:../Main.c     **** 		case PERCHANGE: //status =  PWMSP001_SetCompare(&PWMSP001_Handle0, 0x0855); /* Updating of duty c
+ 187:../Main.c     **** 		    // Change PWM frequency to 10 Hz and duty cycle of 50%
+ 188:../Main.c     **** 		    status = PWMSP001_SetPwmFreqAndDutyCycle((PWMSP001_HandleType*)&PWMSP001_Handle0, FSLOW, 50);
+ 471              		.loc 2 188 0
+ 472 002a 1249     		ldr	r1, .L42+4
+ 473 002c 144A     		ldr	r2, .L42+16
+ 474 002e 134B     		ldr	r3, .L42+12
+ 475 0030 081C     		mov	r0, r1
+ 476 0032 111C     		add	r1, r2, #0
+ 477 0034 1A1C     		add	r2, r3, #0
+ 478 0036 FFF7FEFF 		bl	PWMSP001_SetPwmFreqAndDutyCycle
+ 479 003a 031C     		mov	r3, r0
+ 480 003c 7B60     		str	r3, [r7, #4]
+ 189:../Main.c     **** 		    break;
+ 481              		.loc 2 189 0
+ 482 003e 00E0     		b	.L38
+ 483              	.L41:
+ 190:../Main.c     **** 
+ 191:../Main.c     **** 		default:
+ 192:../Main.c     **** 			break;
+ 484              		.loc 2 192 0
+ 485 0040 C046     		mov	r8, r8
+ 486              	.L38:
+ 193:../Main.c     **** 	}
+ 194:../Main.c     **** 
+ 195:../Main.c     **** 	/* Updation of the state machine */
+ 196:../Main.c     **** 	state++;
+ 487              		.loc 2 196 0
+ 488 0042 0B4B     		ldr	r3, .L42
+ 489 0044 1B68     		ldr	r3, [r3]
+ 490 0046 5A1C     		add	r2, r3, #1
+ 491 0048 094B     		ldr	r3, .L42
+ 492 004a 1A60     		str	r2, [r3]
+ 197:../Main.c     **** 	if(state>=PERIODE)
+ 493              		.loc 2 197 0
+ 494 004c 084B     		ldr	r3, .L42
+ 495 004e 1B68     		ldr	r3, [r3]
+ 496 0050 272B     		cmp	r3, #39
+ 497 0052 02D9     		bls	.L39
+ 198:../Main.c     **** 	{
+ 199:../Main.c     **** 		state= 0;
+ 498              		.loc 2 199 0
+ 499 0054 064B     		ldr	r3, .L42
+ 500 0056 0022     		mov	r2, #0
+ 501 0058 1A60     		str	r2, [r3]
+ 502              	.L39:
+ 200:../Main.c     **** 	}
+ 201:../Main.c     **** 
+ 202:../Main.c     **** 	if(status != DAVEApp_SUCCESS)
+ 503              		.loc 2 202 0
+ 504 005a 7B68     		ldr	r3, [r7, #4]
+ 505 005c 002B     		cmp	r3, #0
+ 506 005e 03D0     		beq	.L34
+ 203:../Main.c     **** 	{
+ 204:../Main.c     **** 		PWMSP001_Stop((PWMSP001_HandleType*)&PWMSP001_Handle0);
+ 507              		.loc 2 204 0
+ 508 0060 044B     		ldr	r3, .L42+4
+ 509 0062 181C     		mov	r0, r3
+ 510 0064 FFF7FEFF 		bl	PWMSP001_Stop
+ 511              	.L34:
+ 205:../Main.c     **** 	}
+ 206:../Main.c     **** }
+ 512              		.loc 2 206 0
+ 513 0068 BD46     		mov	sp, r7
+ 514 006a 02B0     		add	sp, sp, #8
+ 515              		@ sp needed for prologue
+ 516 006c 80BD     		pop	{r7, pc}
+ 517              	.L43:
+ 518 006e C046     		.align	2
+ 519              	.L42:
+ 520 0070 00000000 		.word	state.5903
+ 521 0074 00000000 		.word	PWMSP001_Handle0
+ 522 0078 00002041 		.word	1092616192
+ 523 007c 00004842 		.word	1112014848
+ 524 0080 0000A040 		.word	1084227584
+ 525              		.cfi_endproc
+ 526              	.LFE403:
+ 528              		.bss
+ 529              		.align	2
+ 530              	state.5903:
+ 531 0000 00000000 		.space	4
+ 532              		.text
+ 533              	.Letext0:
+ 534              		.file 3 "c:\\dave-3.1.10\\arm-gcc\\bin\\../lib/gcc/arm-none-eabi/4.7.4/../../../../arm-none-eabi/i
+ 535              		.file 4 "C:\\DAVE-3.1.10\\eclipse\\/../CMSIS/Infineon/XMC1100_series/Include/XMC1100.h"
+ 536              		.file 5 "C:\\DAVE3_workspace\\ws3.1.10\\PWMSP001_Example1_XMC11\\Dave\\Generated\\inc\\DAVESupport
+ 537              		.file 6 "C:\\DAVE3_workspace\\ws3.1.10\\PWMSP001_Example1_XMC11\\Dave\\Generated\\inc\\DAVESupport
+ 538              		.file 7 "C:\\DAVE3_workspace\\ws3.1.10\\PWMSP001_Example1_XMC11\\Dave\\Generated\\inc\\DAVESupport
+DEFINED SYMBOLS
+                            *ABS*:00000000 Main.c
+C:\Users\Patrick\AppData\Local\Temp\ccIx6aET.s:18     .text.P0_5_set_large_hysteresis:00000000 $t
+C:\Users\Patrick\AppData\Local\Temp\ccIx6aET.s:22     .text.P0_5_set_large_hysteresis:00000000 P0_5_set_large_hysteresis
+C:\Users\Patrick\AppData\Local\Temp\ccIx6aET.s:50     .text.P0_5_set_large_hysteresis:00000018 $d
+C:\Users\Patrick\AppData\Local\Temp\ccIx6aET.s:55     .text.P0_5_read:00000000 $t
+C:\Users\Patrick\AppData\Local\Temp\ccIx6aET.s:59     .text.P0_5_read:00000000 P0_5_read
+C:\Users\Patrick\AppData\Local\Temp\ccIx6aET.s:84     .text.P0_5_read:00000014 $d
+C:\Users\Patrick\AppData\Local\Temp\ccIx6aET.s:89     .text.P0_6_set_mode:00000000 $t
+C:\Users\Patrick\AppData\Local\Temp\ccIx6aET.s:93     .text.P0_6_set_mode:00000000 P0_6_set_mode
+C:\Users\Patrick\AppData\Local\Temp\ccIx6aET.s:135    .text.P0_6_set_mode:00000030 $d
+C:\Users\Patrick\AppData\Local\Temp\ccIx6aET.s:141    .text.P0_6_set:00000000 $t
+C:\Users\Patrick\AppData\Local\Temp\ccIx6aET.s:145    .text.P0_6_set:00000000 P0_6_set
+C:\Users\Patrick\AppData\Local\Temp\ccIx6aET.s:168    .text.P0_6_set:00000010 $d
+C:\Users\Patrick\AppData\Local\Temp\ccIx6aET.s:173    .text.P0_6_toggle:00000000 $t
+C:\Users\Patrick\AppData\Local\Temp\ccIx6aET.s:177    .text.P0_6_toggle:00000000 P0_6_toggle
+C:\Users\Patrick\AppData\Local\Temp\ccIx6aET.s:200    .text.P0_6_toggle:00000010 $d
+C:\Users\Patrick\AppData\Local\Temp\ccIx6aET.s:207    .text.main:00000000 $t
+C:\Users\Patrick\AppData\Local\Temp\ccIx6aET.s:212    .text.main:00000000 main
+C:\Users\Patrick\AppData\Local\Temp\ccIx6aET.s:424    .text.main:00000124 $d
+C:\Users\Patrick\AppData\Local\Temp\ccIx6aET.s:429    .text.CCU40_3_IRQHandler:00000000 $t
+C:\Users\Patrick\AppData\Local\Temp\ccIx6aET.s:434    .text.CCU40_3_IRQHandler:00000000 CCU40_3_IRQHandler
+C:\Users\Patrick\AppData\Local\Temp\ccIx6aET.s:520    .text.CCU40_3_IRQHandler:00000070 $d
+C:\Users\Patrick\AppData\Local\Temp\ccIx6aET.s:530    .bss:00000000 state.5903
+C:\Users\Patrick\AppData\Local\Temp\ccIx6aET.s:529    .bss:00000000 $d
+                     .debug_frame:00000010 $d
+                           .group:00000000 wm4.1.63d3e0297d6e9004e0e37a0840833abd
+                           .group:00000000 wm4.XMC1100.h.45.7a7cd799d7738130fcda8b83b0aa37d4
+                           .group:00000000 wm4.core_cm0.h.47.022e66414e77714da7c4b30b3ad99fe8
+                           .group:00000000 wm4.newlib.h.8.a9901dc52d1357e3e94003403d43f8b5
+                           .group:00000000 wm4.features.h.22.b72b3baab2bb2eab3661375590100b6b
+                           .group:00000000 wm4.config.h.193.5fb8ef056cdff92dec3dee9552839d8c
+                           .group:00000000 wm4._ansi.h.23.7aefdac4826acebbfc9f3822a0aeb14c
+                           .group:00000000 wm4.stdint.h.20.54ad762faa59e3c05491630641c8d8bf
+                           .group:00000000 wm4.core_cmInstr.h.39.b7b6650bdd2316848d940915272d75b8
+                           .group:00000000 wm4.core_cm0.h.135.ca70469f87e143609670bb393bfa6518
+                           .group:00000000 wm4.XMC1000_RomFunctionTable.h.31.6d9a94465618f31b040dc9cea9a47ad7
+                           .group:00000000 wm4.XMC1100.h.114.be3711f71ee045884346be801053f4c0
+                           .group:00000000 wm4.stddef.h.40.50cf36416e06376af8a9dca28536f2e4
+                           .group:00000000 wm4.types.h.60.e75c47576398c648cdcf9000ace5e3d8
+                           .group:00000000 wm4.MULTIPLEXER.h.46.383e3edbb9cbf6e538f7c1532ef623c1
+                           .group:00000000 wm4.uc_id.h.35.47f40be5760de9fc3332688f9e95febc
+                           .group:00000000 wm4.CCU4Global_Conf.h.63.a52fac0daa39b5f58343578312b4eb54
+                           .group:00000000 wm4.PWMSP001.h.57.29b732b86baf3e81f49153f5f495912e
+                           .group:00000000 wm4.NVIC002_Conf.h.63.ad46cba077059ba9e39ca51279e72860
+                           .group:00000000 wm4.GPIO.h.2.93bf17ee3a853f64308a0e4d0c9f6a08
+
+UNDEFINED SYMBOLS
+__aeabi_idiv
+DAVE_Init
+PWMSP001_Start
+PWMSP001_Stop
+PWMSP001_Handle0
+PWMSP001_SetPwmFreqAndDutyCycle
