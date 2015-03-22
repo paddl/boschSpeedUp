@@ -29,7 +29,7 @@
     <resourcesList name="pad" requiredResourceUri="http://www.infineon.com/0.10.0/port/p/0/pad_5/pad" isResolved="true"/>
   </provided>
   <provided xsi:type="ResourceModel:SignalDeclaration" name="PAD" URI="http://www.infineon.com/0.10.0/port/p/0/pad/5/pad" isVisible="true">
-    <upWardMappingList xsi:type="ResourceModel:ProxyResource" href="../PWMSP001/1.0.34/pwmsp001_0.app#//@consumed.90"/>
+    <upWardMappingList xsi:type="ResourceModel:ProxyResource" href="../PWMSP001/1.0.34/pwmsp001_0.app#//@consumed.92"/>
   </provided>
   <provided xsi:type="ResourceModel:BitField" name="PC5_2_0" URI="http://www.infineon.com/0.10.0/port/p/0/pad/5/iocr_pcr" maxValue="7" minValue="0" startPos="11" stopPos="13" accessPermission="rw">
     <defaultValue xsi:type="ResourceModel:IntegerValue" value="0"/>

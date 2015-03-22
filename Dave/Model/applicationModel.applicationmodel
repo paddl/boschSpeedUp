@@ -22,13 +22,13 @@
     <resource xsi:type="ResourceModel:App" href="PWMSP001/1.0.34/pwmsp001_0.app#/"/>
   </nodes>
   <nodes xsi:type="DaveExpert:AppNode">
-    <resource xsi:type="ResourceModel:App" href="CCU4GLOBAL/1.0.22/ccu4global_0.app#/"/>
+    <resource xsi:type="ResourceModel:App" href="CCU4GLOBAL/1.0.20/ccu4global_0.app#/"/>
   </nodes>
   <nodes xsi:type="DaveExpert:AppNode">
     <resource xsi:type="ResourceModel:App" href="CLK002/1.0.8/clk002_0.app#/"/>
   </nodes>
   <nodes xsi:type="DaveExpert:AppNode">
-    <resource xsi:type="ResourceModel:App" href="NVIC002/1.0.28/nvic002_0.app#/"/>
+    <resource xsi:type="ResourceModel:App" href="NVIC002/1.0.26/nvic002_0.app#/"/>
   </nodes>
   <connections xsi:type="DaveExpert:NodeConnection" source="//@nodes.6" target="//@nodes.7"/>
   <connections xsi:type="DaveExpert:NodeConnection" source="//@nodes.7" target="//@nodes.8"/>

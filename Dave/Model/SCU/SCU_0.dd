@@ -44,7 +44,7 @@
     <enumValues xsi:type="ResourceModel:RegEnumValue" value="0b1" description="disable gating"/>
   </provided>
   <provided xsi:type="ResourceModel:ResourceGroup" name="DCO 2" URI="http://www.infineon.com/0.10.0/peripheral/scu/0/dco/2">
-    <upWardMappingList xsi:type="ResourceModel:ProxyResource" href="../CLK002/1.0.8/clk002_0.app#//@consumed.28"/>
+    <upWardMappingList xsi:type="ResourceModel:ProxyResource" href="../CLK002/1.0.8/clk002_0.app#//@consumed.12"/>
     <resourcesList name="clkout" requiredResourceUri="http://www.infineon.com/0.10.0/peripheral/scu/0/dco2_clkout" isResolved="true"/>
   </provided>
   <provided xsi:type="ResourceModel:SignalDeclaration" name="DCO2 CLKOUT" description="" URI="http://www.infineon.com/0.10.0/peripheral/scu/0/dco/2/clkout" signalType="SINGAL" direction="OUT" isVisible="true">

@@ -5820,83 +5820,83 @@
  4209              	.Letext0:
  4210              		.file 2 "c:\\dave-3.1.10\\arm-gcc\\bin\\../lib/gcc/arm-none-eabi/4.7.4/../../../../arm-none-eabi/i
  4211              		.file 3 "C:\\DAVE-3.1.10\\eclipse\\/../CMSIS/Infineon/XMC1100_series/Include/XMC1100.h"
- 4212              		.file 4 "C:\\DAVE3_workspace\\ws3.1.10\\PWMSP001_Example1_XMC11\\Dave\\Generated\\inc\\DAVESupport
- 4213              		.file 5 "C:\\DAVE3_workspace\\ws3.1.10\\PWMSP001_Example1_XMC11\\Dave\\Generated\\inc\\DAVESupport
- 4214              		.file 6 "C:\\DAVE3_workspace\\ws3.1.10\\PWMSP001_Example1_XMC11\\Dave\\Generated\\inc\\DAVESupport
+ 4212              		.file 4 "C:\\DAVE3_workspace\\ws3.1.10\\boschSpeedUp\\Dave\\Generated\\inc\\DAVESupport/../../inc/
+ 4213              		.file 5 "C:\\DAVE3_workspace\\ws3.1.10\\boschSpeedUp\\Dave\\Generated\\inc\\DAVESupport/../../inc/
+ 4214              		.file 6 "C:\\DAVE3_workspace\\ws3.1.10\\boschSpeedUp\\Dave\\Generated\\inc\\DAVESupport/../../inc/
 DEFINED SYMBOLS
                             *ABS*:00000000 PWMSP001.c
-C:\Users\Patrick\AppData\Local\Temp\ccOgnZop.s:18     .text.PWMSP001_Init:00000000 $t
-C:\Users\Patrick\AppData\Local\Temp\ccOgnZop.s:23     .text.PWMSP001_Init:00000000 PWMSP001_Init
-C:\Users\Patrick\AppData\Local\Temp\ccOgnZop.s:98     .text.PWMSP001_lInit:00000000 PWMSP001_lInit
-C:\Users\Patrick\AppData\Local\Temp\ccOgnZop.s:796    .text.PWMSP001_Start:00000000 PWMSP001_Start
-C:\Users\Patrick\AppData\Local\Temp\ccOgnZop.s:86     .text.PWMSP001_Init:00000050 $d
-C:\Users\Patrick\AppData\Local\Temp\ccOgnZop.s:93     .text.PWMSP001_lInit:00000000 $t
-C:\Users\Patrick\AppData\Local\Temp\ccOgnZop.s:3334   .text.PWMSP001_lConfigureSecondSlice:00000000 PWMSP001_lConfigureSecondSlice
-C:\Users\Patrick\AppData\Local\Temp\ccOgnZop.s:550    .text.PWMSP001_lInit:000002d4 $d
-C:\Users\Patrick\AppData\Local\Temp\ccOgnZop.s:561    .text.PWMSP001_Deinit:00000000 $t
-C:\Users\Patrick\AppData\Local\Temp\ccOgnZop.s:566    .text.PWMSP001_Deinit:00000000 PWMSP001_Deinit
-C:\Users\Patrick\AppData\Local\Temp\ccOgnZop.s:786    .text.PWMSP001_Deinit:00000148 $d
-C:\Users\Patrick\AppData\Local\Temp\ccOgnZop.s:791    .text.PWMSP001_Start:00000000 $t
-C:\Users\Patrick\AppData\Local\Temp\ccOgnZop.s:1045   .text.PWMSP001_Start:00000170 $d
-C:\Users\Patrick\AppData\Local\Temp\ccOgnZop.s:1051   .text.PWMSP001_Stop:00000000 $t
-C:\Users\Patrick\AppData\Local\Temp\ccOgnZop.s:1056   .text.PWMSP001_Stop:00000000 PWMSP001_Stop
-C:\Users\Patrick\AppData\Local\Temp\ccOgnZop.s:1168   .text.PWMSP001_SetCompare:00000000 $t
-C:\Users\Patrick\AppData\Local\Temp\ccOgnZop.s:1173   .text.PWMSP001_SetCompare:00000000 PWMSP001_SetCompare
-C:\Users\Patrick\AppData\Local\Temp\ccOgnZop.s:1275   .text.PWMSP001_lSetCompareEdgeAlign:00000000 $t
-C:\Users\Patrick\AppData\Local\Temp\ccOgnZop.s:1280   .text.PWMSP001_lSetCompareEdgeAlign:00000000 PWMSP001_lSetCompareEdgeAlign
-C:\Users\Patrick\AppData\Local\Temp\ccOgnZop.s:1341   .text.PWMSP001_lSetCompareEdgeAlignTimerConcat:00000000 $t
-C:\Users\Patrick\AppData\Local\Temp\ccOgnZop.s:1346   .text.PWMSP001_lSetCompareEdgeAlignTimerConcat:00000000 PWMSP001_lSetCompareEdgeAlignTimerConcat
-C:\Users\Patrick\AppData\Local\Temp\ccOgnZop.s:1449   .text.PWMSP001_lSetCompareCenterAlign:00000000 $t
-C:\Users\Patrick\AppData\Local\Temp\ccOgnZop.s:1454   .text.PWMSP001_lSetCompareCenterAlign:00000000 PWMSP001_lSetCompareCenterAlign
-C:\Users\Patrick\AppData\Local\Temp\ccOgnZop.s:1512   .text.PWMSP001_SetDutyCycle:00000000 $t
-C:\Users\Patrick\AppData\Local\Temp\ccOgnZop.s:1517   .text.PWMSP001_SetDutyCycle:00000000 PWMSP001_SetDutyCycle
-C:\Users\Patrick\AppData\Local\Temp\ccOgnZop.s:1586   .text.PWMSP001_SetDutyCycle:00000058 $d
-C:\Users\Patrick\AppData\Local\Temp\ccOgnZop.s:1596   .text.PWMSP001_lSetDutyEdgeAlign:00000000 $t
-C:\Users\Patrick\AppData\Local\Temp\ccOgnZop.s:1601   .text.PWMSP001_lSetDutyEdgeAlign:00000000 PWMSP001_lSetDutyEdgeAlign
-C:\Users\Patrick\AppData\Local\Temp\ccOgnZop.s:1690   .text.PWMSP001_lSetDutyEdgeAlign:00000088 $d
-C:\Users\Patrick\AppData\Local\Temp\ccOgnZop.s:1695   .text.PWMSP001_lSetDutyEdgeAlignTimerConcat:00000000 $t
-C:\Users\Patrick\AppData\Local\Temp\ccOgnZop.s:1700   .text.PWMSP001_lSetDutyEdgeAlignTimerConcat:00000000 PWMSP001_lSetDutyEdgeAlignTimerConcat
-C:\Users\Patrick\AppData\Local\Temp\ccOgnZop.s:1854   .text.PWMSP001_lSetDutyEdgeAlignTimerConcat:000000f4 $d
-C:\Users\Patrick\AppData\Local\Temp\ccOgnZop.s:1859   .text.PWMSP001_lSetDutyCenterAlign:00000000 $t
-C:\Users\Patrick\AppData\Local\Temp\ccOgnZop.s:1864   .text.PWMSP001_lSetDutyCenterAlign:00000000 PWMSP001_lSetDutyCenterAlign
-C:\Users\Patrick\AppData\Local\Temp\ccOgnZop.s:1952   .text.PWMSP001_lSetDutyCenterAlign:00000084 $d
-C:\Users\Patrick\AppData\Local\Temp\ccOgnZop.s:1957   .text.PWMSP001_SetPeriodAndCompare:00000000 $t
-C:\Users\Patrick\AppData\Local\Temp\ccOgnZop.s:1962   .text.PWMSP001_SetPeriodAndCompare:00000000 PWMSP001_SetPeriodAndCompare
-C:\Users\Patrick\AppData\Local\Temp\ccOgnZop.s:2080   .text.PWMSP001_SetPeriod:00000000 $t
-C:\Users\Patrick\AppData\Local\Temp\ccOgnZop.s:2085   .text.PWMSP001_SetPeriod:00000000 PWMSP001_SetPeriod
-C:\Users\Patrick\AppData\Local\Temp\ccOgnZop.s:2227   .text.PWMSP001_SetPwmFreqAndDutyCycle:00000000 $t
-C:\Users\Patrick\AppData\Local\Temp\ccOgnZop.s:2232   .text.PWMSP001_SetPwmFreqAndDutyCycle:00000000 PWMSP001_SetPwmFreqAndDutyCycle
-C:\Users\Patrick\AppData\Local\Temp\ccOgnZop.s:2604   .text.PWMSP001_lSetPwmFreqTimerConcat:00000000 PWMSP001_lSetPwmFreqTimerConcat
-C:\Users\Patrick\AppData\Local\Temp\ccOgnZop.s:2399   .text.PWMSP001_SetPwmFreqAndDutyCycle:000000fc $d
-C:\Users\Patrick\AppData\Local\Temp\ccOgnZop.s:2406   .text.PWMSP001_SetPwmFreq:00000000 $t
-C:\Users\Patrick\AppData\Local\Temp\ccOgnZop.s:2411   .text.PWMSP001_SetPwmFreq:00000000 PWMSP001_SetPwmFreq
-C:\Users\Patrick\AppData\Local\Temp\ccOgnZop.s:2593   .text.PWMSP001_SetPwmFreq:00000110 $d
-C:\Users\Patrick\AppData\Local\Temp\ccOgnZop.s:2599   .text.PWMSP001_lSetPwmFreqTimerConcat:00000000 $t
-C:\Users\Patrick\AppData\Local\Temp\ccOgnZop.s:2730   .text.PWMSP001_lSetPwmFreqTimerConcat:000000a8 $d
-C:\Users\Patrick\AppData\Local\Temp\ccOgnZop.s:2736   .text.PWMSP001_SetTimerVal:00000000 $t
-C:\Users\Patrick\AppData\Local\Temp\ccOgnZop.s:2741   .text.PWMSP001_SetTimerVal:00000000 PWMSP001_SetTimerVal
-C:\Users\Patrick\AppData\Local\Temp\ccOgnZop.s:2811   .text.PWMSP001_GetTimerStatus:00000000 $t
-C:\Users\Patrick\AppData\Local\Temp\ccOgnZop.s:2816   .text.PWMSP001_GetTimerStatus:00000000 PWMSP001_GetTimerStatus
-C:\Users\Patrick\AppData\Local\Temp\ccOgnZop.s:2895   .text.PWMSP001_GetTimerRegsVal:00000000 $t
-C:\Users\Patrick\AppData\Local\Temp\ccOgnZop.s:2900   .text.PWMSP001_GetTimerRegsVal:00000000 PWMSP001_GetTimerRegsVal
-C:\Users\Patrick\AppData\Local\Temp\ccOgnZop.s:3040   .text.PWMSP001_GetPeriodReg:00000000 $t
-C:\Users\Patrick\AppData\Local\Temp\ccOgnZop.s:3045   .text.PWMSP001_GetPeriodReg:00000000 PWMSP001_GetPeriodReg
-C:\Users\Patrick\AppData\Local\Temp\ccOgnZop.s:3127   .text.PWMSP001_SWRequestShadowTransfer:00000000 $t
-C:\Users\Patrick\AppData\Local\Temp\ccOgnZop.s:3132   .text.PWMSP001_SWRequestShadowTransfer:00000000 PWMSP001_SWRequestShadowTransfer
-C:\Users\Patrick\AppData\Local\Temp\ccOgnZop.s:3232   .text.PWMSP001_ResetTrapFlag:00000000 $t
-C:\Users\Patrick\AppData\Local\Temp\ccOgnZop.s:3237   .text.PWMSP001_ResetTrapFlag:00000000 PWMSP001_ResetTrapFlag
-C:\Users\Patrick\AppData\Local\Temp\ccOgnZop.s:3329   .text.PWMSP001_lConfigureSecondSlice:00000000 $t
-C:\Users\Patrick\AppData\Local\Temp\ccOgnZop.s:3686   .text.PWMSP001_lConfigureSecondSlice:00000234 $d
-C:\Users\Patrick\AppData\Local\Temp\ccOgnZop.s:3696   .text.PWMSP001_EnableEvent:00000000 $t
-C:\Users\Patrick\AppData\Local\Temp\ccOgnZop.s:3701   .text.PWMSP001_EnableEvent:00000000 PWMSP001_EnableEvent
-C:\Users\Patrick\AppData\Local\Temp\ccOgnZop.s:3792   .text.PWMSP001_DisableEvent:00000000 $t
-C:\Users\Patrick\AppData\Local\Temp\ccOgnZop.s:3797   .text.PWMSP001_DisableEvent:00000000 PWMSP001_DisableEvent
-C:\Users\Patrick\AppData\Local\Temp\ccOgnZop.s:3890   .text.PWMSP001_ClearPendingEvent:00000000 $t
-C:\Users\Patrick\AppData\Local\Temp\ccOgnZop.s:3895   .text.PWMSP001_ClearPendingEvent:00000000 PWMSP001_ClearPendingEvent
-C:\Users\Patrick\AppData\Local\Temp\ccOgnZop.s:3986   .text.PWMSP001_SetPendingEvent:00000000 $t
-C:\Users\Patrick\AppData\Local\Temp\ccOgnZop.s:3991   .text.PWMSP001_SetPendingEvent:00000000 PWMSP001_SetPendingEvent
-C:\Users\Patrick\AppData\Local\Temp\ccOgnZop.s:4082   .text.PWMSP001_GetPendingEvent:00000000 $t
-C:\Users\Patrick\AppData\Local\Temp\ccOgnZop.s:4087   .text.PWMSP001_GetPendingEvent:00000000 PWMSP001_GetPendingEvent
+C:\Users\Patrick\AppData\Local\Temp\ccntgrgC.s:18     .text.PWMSP001_Init:00000000 $t
+C:\Users\Patrick\AppData\Local\Temp\ccntgrgC.s:23     .text.PWMSP001_Init:00000000 PWMSP001_Init
+C:\Users\Patrick\AppData\Local\Temp\ccntgrgC.s:98     .text.PWMSP001_lInit:00000000 PWMSP001_lInit
+C:\Users\Patrick\AppData\Local\Temp\ccntgrgC.s:796    .text.PWMSP001_Start:00000000 PWMSP001_Start
+C:\Users\Patrick\AppData\Local\Temp\ccntgrgC.s:86     .text.PWMSP001_Init:00000050 $d
+C:\Users\Patrick\AppData\Local\Temp\ccntgrgC.s:93     .text.PWMSP001_lInit:00000000 $t
+C:\Users\Patrick\AppData\Local\Temp\ccntgrgC.s:3334   .text.PWMSP001_lConfigureSecondSlice:00000000 PWMSP001_lConfigureSecondSlice
+C:\Users\Patrick\AppData\Local\Temp\ccntgrgC.s:550    .text.PWMSP001_lInit:000002d4 $d
+C:\Users\Patrick\AppData\Local\Temp\ccntgrgC.s:561    .text.PWMSP001_Deinit:00000000 $t
+C:\Users\Patrick\AppData\Local\Temp\ccntgrgC.s:566    .text.PWMSP001_Deinit:00000000 PWMSP001_Deinit
+C:\Users\Patrick\AppData\Local\Temp\ccntgrgC.s:786    .text.PWMSP001_Deinit:00000148 $d
+C:\Users\Patrick\AppData\Local\Temp\ccntgrgC.s:791    .text.PWMSP001_Start:00000000 $t
+C:\Users\Patrick\AppData\Local\Temp\ccntgrgC.s:1045   .text.PWMSP001_Start:00000170 $d
+C:\Users\Patrick\AppData\Local\Temp\ccntgrgC.s:1051   .text.PWMSP001_Stop:00000000 $t
+C:\Users\Patrick\AppData\Local\Temp\ccntgrgC.s:1056   .text.PWMSP001_Stop:00000000 PWMSP001_Stop
+C:\Users\Patrick\AppData\Local\Temp\ccntgrgC.s:1168   .text.PWMSP001_SetCompare:00000000 $t
+C:\Users\Patrick\AppData\Local\Temp\ccntgrgC.s:1173   .text.PWMSP001_SetCompare:00000000 PWMSP001_SetCompare
+C:\Users\Patrick\AppData\Local\Temp\ccntgrgC.s:1275   .text.PWMSP001_lSetCompareEdgeAlign:00000000 $t
+C:\Users\Patrick\AppData\Local\Temp\ccntgrgC.s:1280   .text.PWMSP001_lSetCompareEdgeAlign:00000000 PWMSP001_lSetCompareEdgeAlign
+C:\Users\Patrick\AppData\Local\Temp\ccntgrgC.s:1341   .text.PWMSP001_lSetCompareEdgeAlignTimerConcat:00000000 $t
+C:\Users\Patrick\AppData\Local\Temp\ccntgrgC.s:1346   .text.PWMSP001_lSetCompareEdgeAlignTimerConcat:00000000 PWMSP001_lSetCompareEdgeAlignTimerConcat
+C:\Users\Patrick\AppData\Local\Temp\ccntgrgC.s:1449   .text.PWMSP001_lSetCompareCenterAlign:00000000 $t
+C:\Users\Patrick\AppData\Local\Temp\ccntgrgC.s:1454   .text.PWMSP001_lSetCompareCenterAlign:00000000 PWMSP001_lSetCompareCenterAlign
+C:\Users\Patrick\AppData\Local\Temp\ccntgrgC.s:1512   .text.PWMSP001_SetDutyCycle:00000000 $t
+C:\Users\Patrick\AppData\Local\Temp\ccntgrgC.s:1517   .text.PWMSP001_SetDutyCycle:00000000 PWMSP001_SetDutyCycle
+C:\Users\Patrick\AppData\Local\Temp\ccntgrgC.s:1586   .text.PWMSP001_SetDutyCycle:00000058 $d
+C:\Users\Patrick\AppData\Local\Temp\ccntgrgC.s:1596   .text.PWMSP001_lSetDutyEdgeAlign:00000000 $t
+C:\Users\Patrick\AppData\Local\Temp\ccntgrgC.s:1601   .text.PWMSP001_lSetDutyEdgeAlign:00000000 PWMSP001_lSetDutyEdgeAlign
+C:\Users\Patrick\AppData\Local\Temp\ccntgrgC.s:1690   .text.PWMSP001_lSetDutyEdgeAlign:00000088 $d
+C:\Users\Patrick\AppData\Local\Temp\ccntgrgC.s:1695   .text.PWMSP001_lSetDutyEdgeAlignTimerConcat:00000000 $t
+C:\Users\Patrick\AppData\Local\Temp\ccntgrgC.s:1700   .text.PWMSP001_lSetDutyEdgeAlignTimerConcat:00000000 PWMSP001_lSetDutyEdgeAlignTimerConcat
+C:\Users\Patrick\AppData\Local\Temp\ccntgrgC.s:1854   .text.PWMSP001_lSetDutyEdgeAlignTimerConcat:000000f4 $d
+C:\Users\Patrick\AppData\Local\Temp\ccntgrgC.s:1859   .text.PWMSP001_lSetDutyCenterAlign:00000000 $t
+C:\Users\Patrick\AppData\Local\Temp\ccntgrgC.s:1864   .text.PWMSP001_lSetDutyCenterAlign:00000000 PWMSP001_lSetDutyCenterAlign
+C:\Users\Patrick\AppData\Local\Temp\ccntgrgC.s:1952   .text.PWMSP001_lSetDutyCenterAlign:00000084 $d
+C:\Users\Patrick\AppData\Local\Temp\ccntgrgC.s:1957   .text.PWMSP001_SetPeriodAndCompare:00000000 $t
+C:\Users\Patrick\AppData\Local\Temp\ccntgrgC.s:1962   .text.PWMSP001_SetPeriodAndCompare:00000000 PWMSP001_SetPeriodAndCompare
+C:\Users\Patrick\AppData\Local\Temp\ccntgrgC.s:2080   .text.PWMSP001_SetPeriod:00000000 $t
+C:\Users\Patrick\AppData\Local\Temp\ccntgrgC.s:2085   .text.PWMSP001_SetPeriod:00000000 PWMSP001_SetPeriod
+C:\Users\Patrick\AppData\Local\Temp\ccntgrgC.s:2227   .text.PWMSP001_SetPwmFreqAndDutyCycle:00000000 $t
+C:\Users\Patrick\AppData\Local\Temp\ccntgrgC.s:2232   .text.PWMSP001_SetPwmFreqAndDutyCycle:00000000 PWMSP001_SetPwmFreqAndDutyCycle
+C:\Users\Patrick\AppData\Local\Temp\ccntgrgC.s:2604   .text.PWMSP001_lSetPwmFreqTimerConcat:00000000 PWMSP001_lSetPwmFreqTimerConcat
+C:\Users\Patrick\AppData\Local\Temp\ccntgrgC.s:2399   .text.PWMSP001_SetPwmFreqAndDutyCycle:000000fc $d
+C:\Users\Patrick\AppData\Local\Temp\ccntgrgC.s:2406   .text.PWMSP001_SetPwmFreq:00000000 $t
+C:\Users\Patrick\AppData\Local\Temp\ccntgrgC.s:2411   .text.PWMSP001_SetPwmFreq:00000000 PWMSP001_SetPwmFreq
+C:\Users\Patrick\AppData\Local\Temp\ccntgrgC.s:2593   .text.PWMSP001_SetPwmFreq:00000110 $d
+C:\Users\Patrick\AppData\Local\Temp\ccntgrgC.s:2599   .text.PWMSP001_lSetPwmFreqTimerConcat:00000000 $t
+C:\Users\Patrick\AppData\Local\Temp\ccntgrgC.s:2730   .text.PWMSP001_lSetPwmFreqTimerConcat:000000a8 $d
+C:\Users\Patrick\AppData\Local\Temp\ccntgrgC.s:2736   .text.PWMSP001_SetTimerVal:00000000 $t
+C:\Users\Patrick\AppData\Local\Temp\ccntgrgC.s:2741   .text.PWMSP001_SetTimerVal:00000000 PWMSP001_SetTimerVal
+C:\Users\Patrick\AppData\Local\Temp\ccntgrgC.s:2811   .text.PWMSP001_GetTimerStatus:00000000 $t
+C:\Users\Patrick\AppData\Local\Temp\ccntgrgC.s:2816   .text.PWMSP001_GetTimerStatus:00000000 PWMSP001_GetTimerStatus
+C:\Users\Patrick\AppData\Local\Temp\ccntgrgC.s:2895   .text.PWMSP001_GetTimerRegsVal:00000000 $t
+C:\Users\Patrick\AppData\Local\Temp\ccntgrgC.s:2900   .text.PWMSP001_GetTimerRegsVal:00000000 PWMSP001_GetTimerRegsVal
+C:\Users\Patrick\AppData\Local\Temp\ccntgrgC.s:3040   .text.PWMSP001_GetPeriodReg:00000000 $t
+C:\Users\Patrick\AppData\Local\Temp\ccntgrgC.s:3045   .text.PWMSP001_GetPeriodReg:00000000 PWMSP001_GetPeriodReg
+C:\Users\Patrick\AppData\Local\Temp\ccntgrgC.s:3127   .text.PWMSP001_SWRequestShadowTransfer:00000000 $t
+C:\Users\Patrick\AppData\Local\Temp\ccntgrgC.s:3132   .text.PWMSP001_SWRequestShadowTransfer:00000000 PWMSP001_SWRequestShadowTransfer
+C:\Users\Patrick\AppData\Local\Temp\ccntgrgC.s:3232   .text.PWMSP001_ResetTrapFlag:00000000 $t
+C:\Users\Patrick\AppData\Local\Temp\ccntgrgC.s:3237   .text.PWMSP001_ResetTrapFlag:00000000 PWMSP001_ResetTrapFlag
+C:\Users\Patrick\AppData\Local\Temp\ccntgrgC.s:3329   .text.PWMSP001_lConfigureSecondSlice:00000000 $t
+C:\Users\Patrick\AppData\Local\Temp\ccntgrgC.s:3686   .text.PWMSP001_lConfigureSecondSlice:00000234 $d
+C:\Users\Patrick\AppData\Local\Temp\ccntgrgC.s:3696   .text.PWMSP001_EnableEvent:00000000 $t
+C:\Users\Patrick\AppData\Local\Temp\ccntgrgC.s:3701   .text.PWMSP001_EnableEvent:00000000 PWMSP001_EnableEvent
+C:\Users\Patrick\AppData\Local\Temp\ccntgrgC.s:3792   .text.PWMSP001_DisableEvent:00000000 $t
+C:\Users\Patrick\AppData\Local\Temp\ccntgrgC.s:3797   .text.PWMSP001_DisableEvent:00000000 PWMSP001_DisableEvent
+C:\Users\Patrick\AppData\Local\Temp\ccntgrgC.s:3890   .text.PWMSP001_ClearPendingEvent:00000000 $t
+C:\Users\Patrick\AppData\Local\Temp\ccntgrgC.s:3895   .text.PWMSP001_ClearPendingEvent:00000000 PWMSP001_ClearPendingEvent
+C:\Users\Patrick\AppData\Local\Temp\ccntgrgC.s:3986   .text.PWMSP001_SetPendingEvent:00000000 $t
+C:\Users\Patrick\AppData\Local\Temp\ccntgrgC.s:3991   .text.PWMSP001_SetPendingEvent:00000000 PWMSP001_SetPendingEvent
+C:\Users\Patrick\AppData\Local\Temp\ccntgrgC.s:4082   .text.PWMSP001_GetPendingEvent:00000000 $t
+C:\Users\Patrick\AppData\Local\Temp\ccntgrgC.s:4087   .text.PWMSP001_GetPendingEvent:00000000 PWMSP001_GetPendingEvent
                      .debug_frame:00000010 $d
                            .group:00000000 wm4.1.63d3e0297d6e9004e0e37a0840833abd
                            .group:00000000 wm4.XMC1100.h.45.7a7cd799d7738130fcda8b83b0aa37d4
@@ -5916,7 +5916,7 @@ C:\Users\Patrick\AppData\Local\Temp\ccOgnZop.s:4087   .text.PWMSP001_GetPendingE
                            .group:00000000 wm4.uc_id.h.35.47f40be5760de9fc3332688f9e95febc
                            .group:00000000 wm4.CCU4Global_Conf.h.63.a52fac0daa39b5f58343578312b4eb54
                            .group:00000000 wm4.PWMSP001.h.57.29b732b86baf3e81f49153f5f495912e
-                           .group:00000000 wm4.NVIC002_Conf.h.63.ad46cba077059ba9e39ca51279e72860
+                           .group:00000000 wm4.NVIC002_Conf.h.62.18166a449b9ed77d0131aa9be7c23c90
 
 UNDEFINED SYMBOLS
 CCU4GLOBAL_Init

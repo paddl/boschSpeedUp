@@ -1,0 +1,307 @@
+   1              		.cpu cortex-m0
+   2              		.fpu softvfp
+   3              		.eabi_attribute 20, 1
+   4              		.eabi_attribute 21, 1
+   5              		.eabi_attribute 23, 3
+   6              		.eabi_attribute 24, 1
+   7              		.eabi_attribute 25, 1
+   8              		.eabi_attribute 26, 1
+   9              		.eabi_attribute 30, 6
+  10              		.eabi_attribute 34, 0
+  11              		.eabi_attribute 18, 4
+  12              		.code	16
+  13              		.file	"Main.original.c"
+  14              		.text
+  15              	.Ltext0:
+  16              		.cfi_sections	.debug_frame
+  17              		.section	.text.main,"ax",%progbits
+  18              		.align	2
+  19              		.global	main
+  20              		.code	16
+  21              		.thumb_func
+  23              	main:
+  24              	.LFB38:
+  25              		.file 1 "../Main.original.c"
+   1:../Main.original.c **** /*=========================================================================== *
+   2:../Main.original.c ****  * Copyright (c) 2014, Infineon Technologies AG                                *
+   3:../Main.original.c ****  * All rights reserved.                                                        *
+   4:../Main.original.c ****  *                                                                             *
+   5:../Main.original.c ****  * Redistribution and use in source and binary forms, with or without          *
+   6:../Main.original.c ****  * modification, are permitted provided that the following conditions are met: *
+   7:../Main.original.c ****  * Redistributions of source code must retain the above copyright notice, this *
+   8:../Main.original.c ****  * list of conditions and the following disclaimer. Redistributions in binary  *
+   9:../Main.original.c ****  * form must reproduce the above copyright notice, this list of conditions and *
+  10:../Main.original.c ****  * the following disclaimer in the documentation and/or other materials        *
+  11:../Main.original.c ****  * provided with the distribution. Neither the name of the copyright holders   *
+  12:../Main.original.c ****  * nor the names of its contributors may be used to endorse or promote         *
+  13:../Main.original.c ****  * products derived from this software without specific prior written          *
+  14:../Main.original.c ****  * permission.                                                                 *
+  15:../Main.original.c ****  *                                                                                                 
+  16:../Main.original.c ****  * THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS "AS IS" *
+  17:../Main.original.c ****  * AND ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO,       *
+  18:../Main.original.c ****  * THE IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR      *
+  19:../Main.original.c ****  * PURPOSE ARE DISCLAIMED. IN NO EVENT SHALL THE COPYRIGHT HOLDER OR           *
+  20:../Main.original.c ****  * CONTRIBUTORS BE LIABLE FOR ANY DIRECT, INDIRECT, INCIDENTAL, SPECIAL,       *
+  21:../Main.original.c ****  * EXEMPLARY, OR CONSEQUENTIAL DAMAGES (INCLUDING, BUT NOT LIMITED TO,         *
+  22:../Main.original.c ****  * PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES; LOSS OF USE, DATA, OR PROFITS; *
+  23:../Main.original.c ****  * OR BUSINESS INTERRUPTION) HOWEVER CAUSED AND ON ANY THEORY OF LIABILITY,    *
+  24:../Main.original.c ****  * WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT (INCLUDING NEGLIGENCE OR     *
+  25:../Main.original.c ****  * OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN IF      *
+  26:../Main.original.c ****  * ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.                                  *
+  27:../Main.original.c ****  * To improve the quality of the software, users are encouraged to share       *
+  28:../Main.original.c ****  * modifications, enhancements or bug fixes with                               *
+  29:../Main.original.c ****  * Infineon Technologies AG (dave@infineon.com).                               *
+  30:../Main.original.c ****  *                                                                             *
+  31:../Main.original.c ****  * ========================================================================== */
+  32:../Main.original.c **** 
+  33:../Main.original.c **** /********************************************************************************
+  34:../Main.original.c **** **                                                                            **
+  35:../Main.original.c **** ** PLATFORM : Infineon XMC1000 Series                                         **
+  36:../Main.original.c **** **                                                                            **
+  37:../Main.original.c **** ** AUTHOR : Application Engineering Team                                      **
+  38:../Main.original.c **** **                                                                            **
+  39:../Main.original.c **** ** Project version update to v 1.0.0 (Initial version)                        **
+  40:../Main.original.c **** **                           v 1.0.2 (Updated with latest Dave apps,linker and**
+  41:../Main.original.c **** **                                    startup files)                          **
+  42:../Main.original.c **** **                                                                            **
+  43:../Main.original.c **** ** MODIFICATION DATE : May 27, 2014                                           **
+  44:../Main.original.c **** **                                                                            **
+  45:../Main.original.c **** *******************************************************************************/
+  46:../Main.original.c **** 
+  47:../Main.original.c **** 
+  48:../Main.original.c **** /*
+  49:../Main.original.c ****  *  Main source file for this PWMSP001 demo. This file contains the main
+  50:../Main.original.c ****  *  tasks of the demo and is responsible for the initial application hardware
+  51:../Main.original.c ****  *  configuration
+  52:../Main.original.c ****  */
+  53:../Main.original.c **** 
+  54:../Main.original.c **** /*******************************************************************************
+  55:../Main.original.c ****  ** INCLUDE FILES                                                             **
+  56:../Main.original.c ****  ******************************************************************************/
+  57:../Main.original.c **** 
+  58:../Main.original.c **** #include <DAVE3.h>			//Declarations from DAVE3 Code Generation
+  59:../Main.original.c **** 
+  60:../Main.original.c **** 
+  61:../Main.original.c **** int main(void)
+  62:../Main.original.c **** {
+  26              		.loc 1 62 0
+  27              		.cfi_startproc
+  28 0000 80B5     		push	{r7, lr}
+  29              	.LCFI0:
+  30              		.cfi_def_cfa_offset 8
+  31              		.cfi_offset 7, -8
+  32              		.cfi_offset 14, -4
+  33 0002 00AF     		add	r7, sp, #0
+  34              	.LCFI1:
+  35              		.cfi_def_cfa_register 7
+  63:../Main.original.c **** //	status_t status;		// Declaration of return variable for DAVE3 APIs
+  64:../Main.original.c **** 
+  65:../Main.original.c **** 
+  66:../Main.original.c **** 	DAVE_Init();			// Initialization of DAVE Apps
+  36              		.loc 1 66 0
+  37 0004 FFF7FEFF 		bl	DAVE_Init
+  67:../Main.original.c **** 
+  68:../Main.original.c **** 	/* Starts the PWMSP001 App (LED) */
+  69:../Main.original.c **** 	PWMSP001_Start(&PWMSP001_Handle0);
+  38              		.loc 1 69 0
+  39 0008 024B     		ldr	r3, .L3
+  40 000a 181C     		mov	r0, r3
+  41 000c FFF7FEFF 		bl	PWMSP001_Start
+  42              	.L2:
+  70:../Main.original.c **** 
+  71:../Main.original.c **** 	while(1)
+  72:../Main.original.c **** 	{
+  73:../Main.original.c **** 
+  74:../Main.original.c **** 	}
+  43              		.loc 1 74 0 discriminator 1
+  44 0010 FEE7     		b	.L2
+  45              	.L4:
+  46 0012 C046     		.align	2
+  47              	.L3:
+  48 0014 00000000 		.word	PWMSP001_Handle0
+  49              		.cfi_endproc
+  50              	.LFE38:
+  52              		.section	.text.CCU40_3_IRQHandler,"ax",%progbits
+  53              		.align	2
+  54              		.global	CCU40_3_IRQHandler
+  55              		.code	16
+  56              		.thumb_func
+  58              	CCU40_3_IRQHandler:
+  59              	.LFB39:
+  75:../Main.original.c **** 	return 0;
+  76:../Main.original.c **** }
+  77:../Main.original.c **** 
+  78:../Main.original.c **** 
+  79:../Main.original.c **** /*
+  80:../Main.original.c ****  * PWM_Period_Interrupt handler: executes every period match of PWMSP001/0.
+  81:../Main.original.c ****  */
+  82:../Main.original.c **** void PWM_Period_Interrupt(void)
+  83:../Main.original.c **** {
+  60              		.loc 1 83 0
+  61              		.cfi_startproc
+  62 0000 80B5     		push	{r7, lr}
+  63              	.LCFI2:
+  64              		.cfi_def_cfa_offset 8
+  65              		.cfi_offset 7, -8
+  66              		.cfi_offset 14, -4
+  67 0002 82B0     		sub	sp, sp, #8
+  68              	.LCFI3:
+  69              		.cfi_def_cfa_offset 16
+  70 0004 00AF     		add	r7, sp, #0
+  71              	.LCFI4:
+  72              		.cfi_def_cfa_register 7
+  84:../Main.original.c **** 	static uint32_t state = 0;
+  85:../Main.original.c **** 	status_t status;
+  86:../Main.original.c **** 
+  87:../Main.original.c **** 	/* state machine to change the different duty cycle */
+  88:../Main.original.c **** 	switch(state)
+  73              		.loc 1 88 0
+  74 0006 194B     		ldr	r3, .L13
+  75 0008 1B68     		ldr	r3, [r3]
+  76 000a 002B     		cmp	r3, #0
+  77 000c 04D0     		beq	.L7
+  78 000e FA22     		mov	r2, #250
+  79 0010 D200     		lsl	r2, r2, #3
+  80 0012 9342     		cmp	r3, r2
+  81 0014 09D0     		beq	.L8
+  82 0016 11E0     		b	.L12
+  83              	.L7:
+  89:../Main.original.c **** 	{
+  90:../Main.original.c **** 		/* Updating of duty cycle to 10% */
+  91:../Main.original.c **** 		case 0: status =  PWMSP001_SetCompare(&PWMSP001_Handle0, 0x4AFF);
+  84              		.loc 1 91 0
+  85 0018 154A     		ldr	r2, .L13+4
+  86 001a 164B     		ldr	r3, .L13+8
+  87 001c 101C     		mov	r0, r2
+  88 001e 191C     		mov	r1, r3
+  89 0020 FFF7FEFF 		bl	PWMSP001_SetCompare
+  90 0024 031C     		mov	r3, r0
+  91 0026 7B60     		str	r3, [r7, #4]
+  92:../Main.original.c **** 		    break;
+  92              		.loc 1 92 0
+  93 0028 09E0     		b	.L9
+  94              	.L8:
+  93:../Main.original.c **** 
+  94:../Main.original.c **** 		/* Updating of duty cycle to 90% */
+  95:../Main.original.c **** 		case 2000: status =  PWMSP001_SetCompare(&PWMSP001_Handle0, 0x0855);
+  95              		.loc 1 95 0
+  96 002a 114A     		ldr	r2, .L13+4
+  97 002c 124B     		ldr	r3, .L13+12
+  98 002e 101C     		mov	r0, r2
+  99 0030 191C     		mov	r1, r3
+ 100 0032 FFF7FEFF 		bl	PWMSP001_SetCompare
+ 101 0036 031C     		mov	r3, r0
+ 102 0038 7B60     		str	r3, [r7, #4]
+  96:../Main.original.c **** 		    break;
+ 103              		.loc 1 96 0
+ 104 003a 00E0     		b	.L9
+ 105              	.L12:
+  97:../Main.original.c **** 
+  98:../Main.original.c **** 		default:
+  99:../Main.original.c **** 			break;
+ 106              		.loc 1 99 0
+ 107 003c C046     		mov	r8, r8
+ 108              	.L9:
+ 100:../Main.original.c **** 	}
+ 101:../Main.original.c **** 
+ 102:../Main.original.c **** 	/* Updation of the state machine */
+ 103:../Main.original.c **** 	state++;
+ 109              		.loc 1 103 0
+ 110 003e 0B4B     		ldr	r3, .L13
+ 111 0040 1B68     		ldr	r3, [r3]
+ 112 0042 5A1C     		add	r2, r3, #1
+ 113 0044 094B     		ldr	r3, .L13
+ 114 0046 1A60     		str	r2, [r3]
+ 104:../Main.original.c **** 	if(state>=4000)
+ 115              		.loc 1 104 0
+ 116 0048 084B     		ldr	r3, .L13
+ 117 004a 1A68     		ldr	r2, [r3]
+ 118 004c 0B4B     		ldr	r3, .L13+16
+ 119 004e 9A42     		cmp	r2, r3
+ 120 0050 02D9     		bls	.L10
+ 105:../Main.original.c **** 	{
+ 106:../Main.original.c **** 		state= 0;
+ 121              		.loc 1 106 0
+ 122 0052 064B     		ldr	r3, .L13
+ 123 0054 0022     		mov	r2, #0
+ 124 0056 1A60     		str	r2, [r3]
+ 125              	.L10:
+ 107:../Main.original.c **** 	}
+ 108:../Main.original.c **** 
+ 109:../Main.original.c **** 	if(status != DAVEApp_SUCCESS)
+ 126              		.loc 1 109 0
+ 127 0058 7B68     		ldr	r3, [r7, #4]
+ 128 005a 002B     		cmp	r3, #0
+ 129 005c 03D0     		beq	.L5
+ 110:../Main.original.c **** 	{
+ 111:../Main.original.c **** 		PWMSP001_Stop((PWMSP001_HandleType*)&PWMSP001_Handle0);
+ 130              		.loc 1 111 0
+ 131 005e 044B     		ldr	r3, .L13+4
+ 132 0060 181C     		mov	r0, r3
+ 133 0062 FFF7FEFF 		bl	PWMSP001_Stop
+ 134              	.L5:
+ 112:../Main.original.c **** 	}
+ 113:../Main.original.c **** }
+ 135              		.loc 1 113 0
+ 136 0066 BD46     		mov	sp, r7
+ 137 0068 02B0     		add	sp, sp, #8
+ 138              		@ sp needed for prologue
+ 139 006a 80BD     		pop	{r7, pc}
+ 140              	.L14:
+ 141              		.align	2
+ 142              	.L13:
+ 143 006c 00000000 		.word	state.4866
+ 144 0070 00000000 		.word	PWMSP001_Handle0
+ 145 0074 FF4A0000 		.word	19199
+ 146 0078 55080000 		.word	2133
+ 147 007c 9F0F0000 		.word	3999
+ 148              		.cfi_endproc
+ 149              	.LFE39:
+ 151              		.bss
+ 152              		.align	2
+ 153              	state.4866:
+ 154 0000 00000000 		.space	4
+ 155              		.text
+ 156              	.Letext0:
+ 157              		.file 2 "c:\\dave-3.1.10\\arm-gcc\\bin\\../lib/gcc/arm-none-eabi/4.7.4/../../../../arm-none-eabi/i
+ 158              		.file 3 "C:\\DAVE-3.1.10\\eclipse\\/../CMSIS/Infineon/XMC1100_series/Include/XMC1100.h"
+ 159              		.file 4 "C:\\DAVE3_workspace\\ws3.1.10\\boschSpeedUp\\Dave\\Generated\\inc\\DAVESupport/../../inc/
+ 160              		.file 5 "C:\\DAVE3_workspace\\ws3.1.10\\boschSpeedUp\\Dave\\Generated\\inc\\DAVESupport/../../inc/
+ 161              		.file 6 "C:\\DAVE3_workspace\\ws3.1.10\\boschSpeedUp\\Dave\\Generated\\inc\\DAVESupport/../../inc/
+DEFINED SYMBOLS
+                            *ABS*:00000000 Main.original.c
+C:\Users\Patrick\AppData\Local\Temp\ccMKjykH.s:18     .text.main:00000000 $t
+C:\Users\Patrick\AppData\Local\Temp\ccMKjykH.s:23     .text.main:00000000 main
+C:\Users\Patrick\AppData\Local\Temp\ccMKjykH.s:48     .text.main:00000014 $d
+C:\Users\Patrick\AppData\Local\Temp\ccMKjykH.s:53     .text.CCU40_3_IRQHandler:00000000 $t
+C:\Users\Patrick\AppData\Local\Temp\ccMKjykH.s:58     .text.CCU40_3_IRQHandler:00000000 CCU40_3_IRQHandler
+C:\Users\Patrick\AppData\Local\Temp\ccMKjykH.s:143    .text.CCU40_3_IRQHandler:0000006c $d
+C:\Users\Patrick\AppData\Local\Temp\ccMKjykH.s:153    .bss:00000000 state.4866
+C:\Users\Patrick\AppData\Local\Temp\ccMKjykH.s:152    .bss:00000000 $d
+                     .debug_frame:00000010 $d
+                           .group:00000000 wm4.1.63d3e0297d6e9004e0e37a0840833abd
+                           .group:00000000 wm4.XMC1100.h.45.7a7cd799d7738130fcda8b83b0aa37d4
+                           .group:00000000 wm4.core_cm0.h.47.022e66414e77714da7c4b30b3ad99fe8
+                           .group:00000000 wm4.newlib.h.8.a9901dc52d1357e3e94003403d43f8b5
+                           .group:00000000 wm4.features.h.22.b72b3baab2bb2eab3661375590100b6b
+                           .group:00000000 wm4.config.h.193.5fb8ef056cdff92dec3dee9552839d8c
+                           .group:00000000 wm4._ansi.h.23.7aefdac4826acebbfc9f3822a0aeb14c
+                           .group:00000000 wm4.stdint.h.20.54ad762faa59e3c05491630641c8d8bf
+                           .group:00000000 wm4.core_cmInstr.h.39.b7b6650bdd2316848d940915272d75b8
+                           .group:00000000 wm4.core_cm0.h.135.ca70469f87e143609670bb393bfa6518
+                           .group:00000000 wm4.XMC1000_RomFunctionTable.h.31.6d9a94465618f31b040dc9cea9a47ad7
+                           .group:00000000 wm4.XMC1100.h.114.be3711f71ee045884346be801053f4c0
+                           .group:00000000 wm4.stddef.h.40.50cf36416e06376af8a9dca28536f2e4
+                           .group:00000000 wm4.types.h.60.e75c47576398c648cdcf9000ace5e3d8
+                           .group:00000000 wm4.MULTIPLEXER.h.46.383e3edbb9cbf6e538f7c1532ef623c1
+                           .group:00000000 wm4.uc_id.h.35.47f40be5760de9fc3332688f9e95febc
+                           .group:00000000 wm4.CCU4Global_Conf.h.63.a52fac0daa39b5f58343578312b4eb54
+                           .group:00000000 wm4.PWMSP001.h.57.29b732b86baf3e81f49153f5f495912e
+                           .group:00000000 wm4.NVIC002_Conf.h.62.18166a449b9ed77d0131aa9be7c23c90
+
+UNDEFINED SYMBOLS
+DAVE_Init
+PWMSP001_Start
+PWMSP001_Handle0
+PWMSP001_SetCompare
+PWMSP001_Stop

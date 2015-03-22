@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="ASCII"?>
 <ResourceModel:Peripheral xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:ResourceModel="http://www.infineon.com/Davex/Resource.ecore" name="CPU" description="Central Processing Unit" URI="http://www.infineon.com/0.10.0/peripheral/cpu/0">
   <provided xsi:type="ResourceModel:ResourceGroup" name="CCU40_3_IRQHandler" URI="http://www.infineon.com/0.10.0/peripheral/cpu/0/nvic/interrupt/24">
-    <upWardMappingList xsi:type="ResourceModel:ProxyResource" href="../NVIC002/1.0.28/nvic002_0.app#//@consumed.0"/>
+    <upWardMappingList xsi:type="ResourceModel:ProxyResource" href="../NVIC002/1.0.26/nvic002_0.app#//@consumed.0"/>
     <resourcesList name="iser_setena" requiredResourceUri="http://www.infineon.com/0.10.0/peripheral/cpu/0/iser/setena31" isResolved="true"/>
     <resourcesList name="icer_clrena" requiredResourceUri="http://www.infineon.com/0.10.0/peripheral/cpu/0/icer/clrena31" isResolved="true"/>
     <resourcesList name="ispr_setpend" requiredResourceUri="http://www.infineon.com/0.10.0/peripheral/cpu/0/ispr/setpend31" isResolved="true"/>
@@ -10,11 +10,11 @@
     <resourcesList name="signal_in" requiredResourceUri="http://www.infineon.com/0.10.0/peripheral/cpu/0/ccu40_3_irqhandler" isResolved="true"/>
   </provided>
   <provided xsi:type="ResourceModel:SignalDeclaration" name="CCU40_3_IRQ" description="CCU40_3_IRQ" URI="http://www.infineon.com/0.10.0/peripheral/cpu/0/nvic/interrupt/24/signal_in" signalType="INTERRUPT" interruptVectorAddress="36" isVisible="true">
-    <upWardMappingList xsi:type="ResourceModel:ProxyResource" href="../NVIC002/1.0.28/nvic002_0.app#//@consumed.1"/>
+    <upWardMappingList xsi:type="ResourceModel:ProxyResource" href="../NVIC002/1.0.26/nvic002_0.app#//@consumed.1"/>
   </provided>
   <provided xsi:type="ResourceModel:BitField" name="PRI_0" URI="http://www.infineon.com/0.10.0/peripheral/cpu/0/nvic/interrupt/24/ipr_pri" maxValue="255" minValue="0" startPos="0" stopPos="7" accessPermission="rw">
     <defaultValue xsi:type="ResourceModel:IntegerValue" value="0"/>
-    <upWardMappingList xsi:type="ResourceModel:ProxyResource" href="../NVIC002/1.0.28/nvic002_0.app#//@consumed.2"/>
+    <upWardMappingList xsi:type="ResourceModel:ProxyResource" href="../NVIC002/1.0.26/nvic002_0.app#//@consumed.2"/>
     <localValue xsi:type="ResourceModel:IntegerValue" value="fc"/>
     <globalValue xsi:type="ResourceModel:IntegerValue" value="fc"/>
     <toolTipHelpDescription>Priority, Byte Offset 0</toolTipHelpDescription>

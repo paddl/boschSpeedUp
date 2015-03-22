@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="ASCII"?>
 <ResourceModel:Peripheral xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:ResourceModel="http://www.infineon.com/Davex/Resource.ecore" name="CCU40" description="Capture/Compare Unit 4 (CAPCOM4)" URI="http://www.infineon.com/0.10.0/peripheral/ccu4/0">
   <provided xsi:type="ResourceModel:ResourceGroup" name="global" URI="http://www.infineon.com/0.10.0/peripheral/ccu4/0/global">
-    <upWardMappingList xsi:type="ResourceModel:ProxyResource" href="../CCU4GLOBAL/1.0.22/ccu4global_0.app#//@consumed.0"/>
+    <upWardMappingList xsi:type="ResourceModel:ProxyResource" href="../CCU4GLOBAL/1.0.20/ccu4global_0.app#//@consumed.0"/>
     <resourcesList name="gctrl" requiredResourceUri="http://www.infineon.com/0.10.0/peripheral/ccu4/0/gctrl" isResolved="true"/>
     <resourcesList name="gctrl_pcis" requiredResourceUri="http://www.infineon.com/0.10.0/peripheral/ccu4/0/gctrl/pcis" isResolved="true"/>
     <resourcesList name="gstat" requiredResourceUri="http://www.infineon.com/0.10.0/peripheral/ccu4/0/gstat" isResolved="true"/>
@@ -14,10 +14,10 @@
     <resourcesList name="global_signal" requiredResourceUri="http://www.infineon.com/0.10.0/peripheral/ccu4/0/global_signal" isResolved="true"/>
   </provided>
   <provided xsi:type="ResourceModel:SignalDeclaration" name="clk" description="clk" URI="http://www.infineon.com/0.10.0/peripheral/ccu4/0/global/clk" signalType="SINGAL" direction="IN" isVisible="true">
-    <upWardMappingList xsi:type="ResourceModel:ProxyResource" href="../CCU4GLOBAL/1.0.22/ccu4global_0.app#//@consumed.5"/>
+    <upWardMappingList xsi:type="ResourceModel:ProxyResource" href="../CCU4GLOBAL/1.0.20/ccu4global_0.app#//@consumed.5"/>
   </provided>
   <provided xsi:type="ResourceModel:SignalDeclaration" name="global_signal" description="global_signal" URI="http://www.infineon.com/0.10.0/peripheral/ccu4/0/global/global_signal" signalType="SINGAL" direction="OUT" isVisible="true">
-    <upWardMappingList xsi:type="ResourceModel:ProxyResource" href="../CCU4GLOBAL/1.0.22/ccu4global_0.app#//@consumed.4"/>
+    <upWardMappingList xsi:type="ResourceModel:ProxyResource" href="../CCU4GLOBAL/1.0.20/ccu4global_0.app#//@consumed.4"/>
   </provided>
   <provided xsi:type="ResourceModel:ResourceGroup" name="0" URI="http://www.infineon.com/0.10.0/peripheral/ccu4/0/cc4/0">
     <upWardMappingList xsi:type="ResourceModel:ProxyResource" href="../PWMSP001/1.0.34/pwmsp001_0.app#//@consumed.13"/>
@@ -91,73 +91,73 @@
     <resourcesList name="cmds_cmus" requiredResourceUri="http://www.infineon.com/0.10.0/peripheral/ccu4/0/cc40_cmds_cmus" isResolved="true"/>
   </provided>
   <provided xsi:type="ResourceModel:SignalDeclaration" name="gp01_unsync" description="gp01_unsync" URI="http://www.infineon.com/0.10.0/peripheral/ccu4/0/cc4/0/gp1_unsync" signalType="SINGAL" direction="IN" isVisible="true">
-    <upWardMappingList xsi:type="ResourceModel:ProxyResource" href="../PWMSP001/1.0.34/pwmsp001_0.app#//@consumed.94"/>
+    <upWardMappingList xsi:type="ResourceModel:ProxyResource" href="../PWMSP001/1.0.34/pwmsp001_0.app#//@consumed.27"/>
   </provided>
   <provided xsi:type="ResourceModel:SignalDeclaration" name="cc40_cmds_cmus" description="cc40_cmds_cmus" URI="http://www.infineon.com/0.10.0/peripheral/ccu4/0/cc4/0/cmds_cmus" signalType="INTERRUPT" direction="OUT" isVisible="true">
-    <upWardMappingList xsi:type="ResourceModel:ProxyResource" href="../PWMSP001/1.0.34/pwmsp001_0.app#//@consumed.82"/>
-  </provided>
-  <provided xsi:type="ResourceModel:SignalDeclaration" name="cc40_e2as" description="cc40_e2as" URI="http://www.infineon.com/0.10.0/peripheral/ccu4/0/cc4/0/e2as" signalType="INTERRUPT" direction="OUT" isVisible="true">
-    <upWardMappingList xsi:type="ResourceModel:ProxyResource" href="../PWMSP001/1.0.34/pwmsp001_0.app#//@consumed.85"/>
-  </provided>
-  <provided xsi:type="ResourceModel:SignalDeclaration" name="gp00_unsync" description="gp00_unsync" URI="http://www.infineon.com/0.10.0/peripheral/ccu4/0/cc4/0/gp0_unsync" signalType="SINGAL" direction="IN" isVisible="true">
     <upWardMappingList xsi:type="ResourceModel:ProxyResource" href="../PWMSP001/1.0.34/pwmsp001_0.app#//@consumed.89"/>
   </provided>
+  <provided xsi:type="ResourceModel:SignalDeclaration" name="cc40_e2as" description="cc40_e2as" URI="http://www.infineon.com/0.10.0/peripheral/ccu4/0/cc4/0/e2as" signalType="INTERRUPT" direction="OUT" isVisible="true">
+    <upWardMappingList xsi:type="ResourceModel:ProxyResource" href="../PWMSP001/1.0.34/pwmsp001_0.app#//@consumed.24"/>
+  </provided>
+  <provided xsi:type="ResourceModel:SignalDeclaration" name="gp00_unsync" description="gp00_unsync" URI="http://www.infineon.com/0.10.0/peripheral/ccu4/0/cc4/0/gp0_unsync" signalType="SINGAL" direction="IN" isVisible="true">
+    <upWardMappingList xsi:type="ResourceModel:ProxyResource" href="../PWMSP001/1.0.34/pwmsp001_0.app#//@consumed.21"/>
+  </provided>
   <provided xsi:type="ResourceModel:SignalDeclaration" name="st0" description="st0" URI="http://www.infineon.com/0.10.0/peripheral/ccu4/0/cc4/0/st" signalType="SINGAL" direction="OUT" isVisible="true">
-    <upWardMappingList xsi:type="ResourceModel:ProxyResource" href="../PWMSP001/1.0.34/pwmsp001_0.app#//@consumed.88"/>
-  </provided>
-  <provided xsi:type="ResourceModel:SignalDeclaration" name="cc40_e0as" description="cc40_e0as" URI="http://www.infineon.com/0.10.0/peripheral/ccu4/0/cc4/0/e0as" signalType="INTERRUPT" direction="OUT" isVisible="true">
-    <upWardMappingList xsi:type="ResourceModel:ProxyResource" href="../PWMSP001/1.0.34/pwmsp001_0.app#//@consumed.92"/>
-  </provided>
-  <provided xsi:type="ResourceModel:SignalDeclaration" name="out0" description="out0" URI="http://www.infineon.com/0.10.0/peripheral/ccu4/0/cc4/0/out" signalType="SINGAL" direction="OUT" isVisible="true">
     <upWardMappingList xsi:type="ResourceModel:ProxyResource" href="../PWMSP001/1.0.34/pwmsp001_0.app#//@consumed.96"/>
   </provided>
+  <provided xsi:type="ResourceModel:SignalDeclaration" name="cc40_e0as" description="cc40_e0as" URI="http://www.infineon.com/0.10.0/peripheral/ccu4/0/cc4/0/e0as" signalType="INTERRUPT" direction="OUT" isVisible="true">
+    <upWardMappingList xsi:type="ResourceModel:ProxyResource" href="../PWMSP001/1.0.34/pwmsp001_0.app#//@consumed.25"/>
+  </provided>
+  <provided xsi:type="ResourceModel:SignalDeclaration" name="out0" description="out0" URI="http://www.infineon.com/0.10.0/peripheral/ccu4/0/cc4/0/out" signalType="SINGAL" direction="OUT" isVisible="true">
+    <upWardMappingList xsi:type="ResourceModel:ProxyResource" href="../PWMSP001/1.0.34/pwmsp001_0.app#//@consumed.95"/>
+  </provided>
   <provided xsi:type="ResourceModel:SignalDeclaration" name="global_signal0" description="global_signal0" URI="http://www.infineon.com/0.10.0/peripheral/ccu4/0/cc4/0/global_signal" signalType="SINGAL" direction="IN" isVisible="true">
-    <upWardMappingList xsi:type="ResourceModel:ProxyResource" href="../PWMSP001/1.0.34/pwmsp001_0.app#//@consumed.81"/>
+    <upWardMappingList xsi:type="ResourceModel:ProxyResource" href="../PWMSP001/1.0.34/pwmsp001_0.app#//@consumed.20"/>
   </provided>
   <provided xsi:type="ResourceModel:SignalDeclaration" name="cc40_e1as" description="cc40_e1as" URI="http://www.infineon.com/0.10.0/peripheral/ccu4/0/cc4/0/e1as" signalType="INTERRUPT" direction="OUT" isVisible="true">
     <upWardMappingList xsi:type="ResourceModel:ProxyResource" href="../PWMSP001/1.0.34/pwmsp001_0.app#//@consumed.91"/>
   </provided>
   <provided xsi:type="ResourceModel:SignalDeclaration" name="concat_bus_in0" description="concat_bus_in0" URI="http://www.infineon.com/0.10.0/peripheral/ccu4/0/cc4/0/concat_bus_in" signalType="SINGAL" direction="IN" isVisible="true">
-    <upWardMappingList xsi:type="ResourceModel:ProxyResource" href="../PWMSP001/1.0.34/pwmsp001_0.app#//@consumed.83"/>
+    <upWardMappingList xsi:type="ResourceModel:ProxyResource" href="../PWMSP001/1.0.34/pwmsp001_0.app#//@consumed.90"/>
   </provided>
   <provided xsi:type="ResourceModel:BitField" name="SS0I" URI="http://www.infineon.com/0.10.0/peripheral/ccu4/0/cc4/0/gidls_ssi" maxValue="1" minValue="0" startPos="0" stopPos="0" accessPermission="w">
     <defaultValue xsi:type="ResourceModel:IntegerValue" value="0"/>
-    <upWardMappingList xsi:type="ResourceModel:ProxyResource" href="../PWMSP001/1.0.34/pwmsp001_0.app#//@consumed.20"/>
+    <upWardMappingList xsi:type="ResourceModel:ProxyResource" href="../PWMSP001/1.0.34/pwmsp001_0.app#//@consumed.28"/>
     <localValue xsi:type="ResourceModel:IntegerValue" value="0"/>
     <globalValue xsi:type="ResourceModel:IntegerValue" value="0"/>
     <toolTipHelpDescription>CC40 IDLE mode set</toolTipHelpDescription>
   </provided>
   <provided xsi:type="ResourceModel:BitField" name="CS0I" URI="http://www.infineon.com/0.10.0/peripheral/ccu4/0/cc4/0/gidlc_csi" maxValue="1" minValue="0" startPos="0" stopPos="0" accessPermission="w">
     <defaultValue xsi:type="ResourceModel:IntegerValue" value="0"/>
-    <upWardMappingList xsi:type="ResourceModel:ProxyResource" href="../PWMSP001/1.0.34/pwmsp001_0.app#//@consumed.21"/>
+    <upWardMappingList xsi:type="ResourceModel:ProxyResource" href="../PWMSP001/1.0.34/pwmsp001_0.app#//@consumed.29"/>
     <localValue xsi:type="ResourceModel:IntegerValue" value="0"/>
     <globalValue xsi:type="ResourceModel:IntegerValue" value="0"/>
     <toolTipHelpDescription>CC40 IDLE mode clear</toolTipHelpDescription>
   </provided>
   <provided xsi:type="ResourceModel:BitField" name="S0SE" URI="http://www.infineon.com/0.10.0/peripheral/ccu4/0/cc4/0/gcss_sse" maxValue="1" minValue="0" startPos="0" stopPos="0" accessPermission="w">
     <defaultValue xsi:type="ResourceModel:IntegerValue" value="0"/>
-    <upWardMappingList xsi:type="ResourceModel:ProxyResource" href="../PWMSP001/1.0.34/pwmsp001_0.app#//@consumed.22"/>
+    <upWardMappingList xsi:type="ResourceModel:ProxyResource" href="../PWMSP001/1.0.34/pwmsp001_0.app#//@consumed.30"/>
     <localValue xsi:type="ResourceModel:IntegerValue" value="0"/>
     <globalValue xsi:type="ResourceModel:IntegerValue" value="0"/>
     <toolTipHelpDescription>Slice 0 shadow transfer set enable</toolTipHelpDescription>
   </provided>
   <provided xsi:type="ResourceModel:BitField" name="S0DSE" URI="http://www.infineon.com/0.10.0/peripheral/ccu4/0/cc4/0/gcss_sdse" maxValue="1" minValue="0" startPos="1" stopPos="1" accessPermission="w">
     <defaultValue xsi:type="ResourceModel:IntegerValue" value="0"/>
-    <upWardMappingList xsi:type="ResourceModel:ProxyResource" href="../PWMSP001/1.0.34/pwmsp001_0.app#//@consumed.23"/>
+    <upWardMappingList xsi:type="ResourceModel:ProxyResource" href="../PWMSP001/1.0.34/pwmsp001_0.app#//@consumed.31"/>
     <localValue xsi:type="ResourceModel:IntegerValue" value="0"/>
     <globalValue xsi:type="ResourceModel:IntegerValue" value="0"/>
     <toolTipHelpDescription>Slice 0 Dither shadow transfer set enable</toolTipHelpDescription>
   </provided>
   <provided xsi:type="ResourceModel:BitField" name="S0PSE" URI="http://www.infineon.com/0.10.0/peripheral/ccu4/0/cc4/0/gcss_spse" maxValue="1" minValue="0" startPos="2" stopPos="2" accessPermission="w">
     <defaultValue xsi:type="ResourceModel:IntegerValue" value="0"/>
-    <upWardMappingList xsi:type="ResourceModel:ProxyResource" href="../PWMSP001/1.0.34/pwmsp001_0.app#//@consumed.24"/>
+    <upWardMappingList xsi:type="ResourceModel:ProxyResource" href="../PWMSP001/1.0.34/pwmsp001_0.app#//@consumed.32"/>
     <localValue xsi:type="ResourceModel:IntegerValue" value="0"/>
     <globalValue xsi:type="ResourceModel:IntegerValue" value="0"/>
     <toolTipHelpDescription>Slice 0 Prescaler shadow transfer set enable</toolTipHelpDescription>
   </provided>
   <provided xsi:type="ResourceModel:RegisterParameter" name="CC40INS" URI="http://www.infineon.com/0.10.0/peripheral/ccu4/0/cc4/0/ins" accessPermission="rw" addressOffset="0x0100" resetValue="00000000" resetMask="0xFFFFFFFF">
     <defaultValue xsi:type="ResourceModel:IntegerValue" value="00000000"/>
-    <upWardMappingList xsi:type="ResourceModel:ProxyResource" href="../PWMSP001/1.0.34/pwmsp001_0.app#//@consumed.25"/>
+    <upWardMappingList xsi:type="ResourceModel:ProxyResource" href="../PWMSP001/1.0.34/pwmsp001_0.app#//@consumed.33"/>
     <localValue xsi:type="ResourceModel:IntegerValue" value="00000000"/>
     <globalValue xsi:type="ResourceModel:IntegerValue" value="00000000"/>
     <toolTipHelpDescription>Input Selector Configuration</toolTipHelpDescription>
@@ -197,7 +197,7 @@
     </bitFields>
     <bitFields name="EV0EM" URI="http://www.infineon.com/0.10.0/peripheral/ccu4/0/cc4/0/ins/ev0em" maxValue="3" minValue="0" startPos="16" stopPos="17" accessPermission="rw">
       <defaultValue xsi:type="ResourceModel:IntegerValue" value="0"/>
-      <upWardMappingList xsi:type="ResourceModel:ProxyResource" href="../PWMSP001/1.0.34/pwmsp001_0.app#//@consumed.26"/>
+      <upWardMappingList xsi:type="ResourceModel:ProxyResource" href="../PWMSP001/1.0.34/pwmsp001_0.app#//@consumed.34"/>
       <localValue xsi:type="ResourceModel:IntegerValue" value="0"/>
       <globalValue xsi:type="ResourceModel:IntegerValue" value="0"/>
       <toolTipHelpDescription>Event 0 Edge Selection</toolTipHelpDescription>
@@ -208,7 +208,7 @@
     </bitFields>
     <bitFields name="EV1EM" URI="http://www.infineon.com/0.10.0/peripheral/ccu4/0/cc4/0/ins/ev1em" maxValue="3" minValue="0" startPos="18" stopPos="19" accessPermission="rw">
       <defaultValue xsi:type="ResourceModel:IntegerValue" value="0"/>
-      <upWardMappingList xsi:type="ResourceModel:ProxyResource" href="../PWMSP001/1.0.34/pwmsp001_0.app#//@consumed.27"/>
+      <upWardMappingList xsi:type="ResourceModel:ProxyResource" href="../PWMSP001/1.0.34/pwmsp001_0.app#//@consumed.35"/>
       <localValue xsi:type="ResourceModel:IntegerValue" value="0"/>
       <globalValue xsi:type="ResourceModel:IntegerValue" value="0"/>
       <toolTipHelpDescription>Event 1 Edge Selection</toolTipHelpDescription>
@@ -235,7 +235,7 @@
     </bitFields>
     <bitFields name="EV2LM" URI="http://www.infineon.com/0.10.0/peripheral/ccu4/0/cc4/0/ins/ev2lm" maxValue="1" minValue="0" startPos="24" stopPos="24" accessPermission="rw">
       <defaultValue xsi:type="ResourceModel:IntegerValue" value="0"/>
-      <upWardMappingList xsi:type="ResourceModel:ProxyResource" href="../PWMSP001/1.0.34/pwmsp001_0.app#//@consumed.28"/>
+      <upWardMappingList xsi:type="ResourceModel:ProxyResource" href="../PWMSP001/1.0.34/pwmsp001_0.app#//@consumed.36"/>
       <localValue xsi:type="ResourceModel:IntegerValue" value="1"/>
       <globalValue xsi:type="ResourceModel:IntegerValue" value="1"/>
       <toolTipHelpDescription>Event 2 Level Selection</toolTipHelpDescription>
@@ -265,7 +265,7 @@
   </provided>
   <provided xsi:type="ResourceModel:RegisterParameter" name="CC40CMC" URI="http://www.infineon.com/0.10.0/peripheral/ccu4/0/cc4/0/cmc" accessPermission="rw" addressOffset="0x0104" resetValue="00000000" resetMask="0xFFFFFFFF">
     <defaultValue xsi:type="ResourceModel:IntegerValue" value="00000000"/>
-    <upWardMappingList xsi:type="ResourceModel:ProxyResource" href="../PWMSP001/1.0.34/pwmsp001_0.app#//@consumed.29"/>
+    <upWardMappingList xsi:type="ResourceModel:ProxyResource" href="../PWMSP001/1.0.34/pwmsp001_0.app#//@consumed.37"/>
     <localValue xsi:type="ResourceModel:IntegerValue" value="00000000"/>
     <globalValue xsi:type="ResourceModel:IntegerValue" value="00000000"/>
     <toolTipHelpDescription>Connection Matrix Control</toolTipHelpDescription>
@@ -369,7 +369,7 @@
     </bitFields>
     <bitFields name="TCE" URI="http://www.infineon.com/0.10.0/peripheral/ccu4/0/cc4/0/cmc/tce" maxValue="1" minValue="0" startPos="20" stopPos="20" accessPermission="rw">
       <defaultValue xsi:type="ResourceModel:IntegerValue" value="0"/>
-      <upWardMappingList xsi:type="ResourceModel:ProxyResource" href="../PWMSP001/1.0.34/pwmsp001_0.app#//@consumed.31"/>
+      <upWardMappingList xsi:type="ResourceModel:ProxyResource" href="../PWMSP001/1.0.34/pwmsp001_0.app#//@consumed.39"/>
       <localValue xsi:type="ResourceModel:IntegerValue" value="1"/>
       <globalValue xsi:type="ResourceModel:IntegerValue" value="1"/>
       <toolTipHelpDescription>Timer Concatenation Enable</toolTipHelpDescription>
@@ -379,7 +379,7 @@
   </provided>
   <provided xsi:type="ResourceModel:RegisterParameter" name="CC40TCST" URI="http://www.infineon.com/0.10.0/peripheral/ccu4/0/cc4/0/tcst" addressOffset="0x0108" resetValue="00000000" resetMask="0xFFFFFFFF">
     <defaultValue xsi:type="ResourceModel:IntegerValue" value="00000000"/>
-    <upWardMappingList xsi:type="ResourceModel:ProxyResource" href="../PWMSP001/1.0.34/pwmsp001_0.app#//@consumed.32"/>
+    <upWardMappingList xsi:type="ResourceModel:ProxyResource" href="../PWMSP001/1.0.34/pwmsp001_0.app#//@consumed.40"/>
     <localValue xsi:type="ResourceModel:IntegerValue" value="00000000"/>
     <globalValue xsi:type="ResourceModel:IntegerValue" value="00000000"/>
     <toolTipHelpDescription>Slice Timer Status</toolTipHelpDescription>
@@ -402,7 +402,7 @@
   </provided>
   <provided xsi:type="ResourceModel:RegisterParameter" name="CC40TCSET" URI="http://www.infineon.com/0.10.0/peripheral/ccu4/0/cc4/0/tcset" accessPermission="w" addressOffset="0x010C" resetValue="00000000" resetMask="0xFFFFFFFF">
     <defaultValue xsi:type="ResourceModel:IntegerValue" value="00000000"/>
-    <upWardMappingList xsi:type="ResourceModel:ProxyResource" href="../PWMSP001/1.0.34/pwmsp001_0.app#//@consumed.33"/>
+    <upWardMappingList xsi:type="ResourceModel:ProxyResource" href="../PWMSP001/1.0.34/pwmsp001_0.app#//@consumed.41"/>
     <localValue xsi:type="ResourceModel:IntegerValue" value="00000000"/>
     <globalValue xsi:type="ResourceModel:IntegerValue" value="00000000"/>
     <toolTipHelpDescription>Slice Timer Run Set</toolTipHelpDescription>
@@ -415,7 +415,7 @@
   </provided>
   <provided xsi:type="ResourceModel:RegisterParameter" name="CC40TCCLR" URI="http://www.infineon.com/0.10.0/peripheral/ccu4/0/cc4/0/tcclr" accessPermission="w" addressOffset="0x0110" resetValue="00000000" resetMask="0xFFFFFFFF">
     <defaultValue xsi:type="ResourceModel:IntegerValue" value="00000000"/>
-    <upWardMappingList xsi:type="ResourceModel:ProxyResource" href="../PWMSP001/1.0.34/pwmsp001_0.app#//@consumed.34"/>
+    <upWardMappingList xsi:type="ResourceModel:ProxyResource" href="../PWMSP001/1.0.34/pwmsp001_0.app#//@consumed.42"/>
     <localValue xsi:type="ResourceModel:IntegerValue" value="00000000"/>
     <globalValue xsi:type="ResourceModel:IntegerValue" value="00000000"/>
     <toolTipHelpDescription>Slice Timer Clear</toolTipHelpDescription>
@@ -440,13 +440,13 @@
   </provided>
   <provided xsi:type="ResourceModel:RegisterParameter" name="CC40TC" URI="http://www.infineon.com/0.10.0/peripheral/ccu4/0/cc4/0/tc" accessPermission="rw" addressOffset="0x0114" resetValue="00000000" resetMask="0xFFFFFFFF">
     <defaultValue xsi:type="ResourceModel:IntegerValue" value="00000000"/>
-    <upWardMappingList xsi:type="ResourceModel:ProxyResource" href="../PWMSP001/1.0.34/pwmsp001_0.app#//@consumed.35"/>
+    <upWardMappingList xsi:type="ResourceModel:ProxyResource" href="../PWMSP001/1.0.34/pwmsp001_0.app#//@consumed.43"/>
     <localValue xsi:type="ResourceModel:IntegerValue" value="00000000"/>
     <globalValue xsi:type="ResourceModel:IntegerValue" value="00000000"/>
     <toolTipHelpDescription>Slice Timer Control</toolTipHelpDescription>
     <bitFields name="TCM" URI="http://www.infineon.com/0.10.0/peripheral/ccu4/0/cc4/0/tc/tcm" maxValue="1" minValue="0" startPos="0" stopPos="0" accessPermission="rw">
       <defaultValue xsi:type="ResourceModel:IntegerValue" value="0"/>
-      <upWardMappingList xsi:type="ResourceModel:ProxyResource" href="../PWMSP001/1.0.34/pwmsp001_0.app#//@consumed.39"/>
+      <upWardMappingList xsi:type="ResourceModel:ProxyResource" href="../PWMSP001/1.0.34/pwmsp001_0.app#//@consumed.47"/>
       <localValue xsi:type="ResourceModel:IntegerValue" value="0"/>
       <globalValue xsi:type="ResourceModel:IntegerValue" value="0"/>
       <toolTipHelpDescription>Timer Counting Mode</toolTipHelpDescription>
@@ -455,7 +455,7 @@
     </bitFields>
     <bitFields name="TSSM" URI="http://www.infineon.com/0.10.0/peripheral/ccu4/0/cc4/0/tc/tssm" maxValue="1" minValue="0" startPos="1" stopPos="1" accessPermission="rw">
       <defaultValue xsi:type="ResourceModel:IntegerValue" value="0"/>
-      <upWardMappingList xsi:type="ResourceModel:ProxyResource" href="../PWMSP001/1.0.34/pwmsp001_0.app#//@consumed.38"/>
+      <upWardMappingList xsi:type="ResourceModel:ProxyResource" href="../PWMSP001/1.0.34/pwmsp001_0.app#//@consumed.46"/>
       <localValue xsi:type="ResourceModel:IntegerValue" value="0"/>
       <globalValue xsi:type="ResourceModel:IntegerValue" value="0"/>
       <toolTipHelpDescription>Timer Single Shot Mode</toolTipHelpDescription>
@@ -496,7 +496,7 @@
     </bitFields>
     <bitFields name="ENDM" URI="http://www.infineon.com/0.10.0/peripheral/ccu4/0/cc4/0/tc/endm" maxValue="3" minValue="0" startPos="8" stopPos="9" accessPermission="rw">
       <defaultValue xsi:type="ResourceModel:IntegerValue" value="0"/>
-      <upWardMappingList xsi:type="ResourceModel:ProxyResource" href="../PWMSP001/1.0.34/pwmsp001_0.app#//@consumed.37"/>
+      <upWardMappingList xsi:type="ResourceModel:ProxyResource" href="../PWMSP001/1.0.34/pwmsp001_0.app#//@consumed.45"/>
       <localValue xsi:type="ResourceModel:IntegerValue" value="0"/>
       <globalValue xsi:type="ResourceModel:IntegerValue" value="0"/>
       <toolTipHelpDescription>Extended Stop Function Control</toolTipHelpDescription>
@@ -507,7 +507,7 @@
     </bitFields>
     <bitFields name="STRM" URI="http://www.infineon.com/0.10.0/peripheral/ccu4/0/cc4/0/tc/strm" maxValue="1" minValue="0" startPos="10" stopPos="10" accessPermission="rw">
       <defaultValue xsi:type="ResourceModel:IntegerValue" value="0"/>
-      <upWardMappingList xsi:type="ResourceModel:ProxyResource" href="../PWMSP001/1.0.34/pwmsp001_0.app#//@consumed.36"/>
+      <upWardMappingList xsi:type="ResourceModel:ProxyResource" href="../PWMSP001/1.0.34/pwmsp001_0.app#//@consumed.44"/>
       <localValue xsi:type="ResourceModel:IntegerValue" value="0"/>
       <globalValue xsi:type="ResourceModel:IntegerValue" value="0"/>
       <toolTipHelpDescription>Extended Start Function Control</toolTipHelpDescription>
@@ -532,7 +532,7 @@
     </bitFields>
     <bitFields name="DITHE" URI="http://www.infineon.com/0.10.0/peripheral/ccu4/0/cc4/0/tc/dithe" maxValue="3" minValue="0" startPos="13" stopPos="14" accessPermission="rw">
       <defaultValue xsi:type="ResourceModel:IntegerValue" value="0"/>
-      <upWardMappingList xsi:type="ResourceModel:ProxyResource" href="../PWMSP001/1.0.34/pwmsp001_0.app#//@consumed.40"/>
+      <upWardMappingList xsi:type="ResourceModel:ProxyResource" href="../PWMSP001/1.0.34/pwmsp001_0.app#//@consumed.48"/>
       <localValue xsi:type="ResourceModel:IntegerValue" value="0"/>
       <globalValue xsi:type="ResourceModel:IntegerValue" value="0"/>
       <toolTipHelpDescription>Dither Enable</toolTipHelpDescription>
@@ -559,7 +559,7 @@
     </bitFields>
     <bitFields name="TRAPE" URI="http://www.infineon.com/0.10.0/peripheral/ccu4/0/cc4/0/tc/trape" maxValue="1" minValue="0" startPos="17" stopPos="17" accessPermission="rw">
       <defaultValue xsi:type="ResourceModel:IntegerValue" value="0"/>
-      <upWardMappingList xsi:type="ResourceModel:ProxyResource" href="../PWMSP001/1.0.34/pwmsp001_0.app#//@consumed.41"/>
+      <upWardMappingList xsi:type="ResourceModel:ProxyResource" href="../PWMSP001/1.0.34/pwmsp001_0.app#//@consumed.49"/>
       <localValue xsi:type="ResourceModel:IntegerValue" value="0"/>
       <globalValue xsi:type="ResourceModel:IntegerValue" value="0"/>
       <toolTipHelpDescription>TRAP enable</toolTipHelpDescription>
@@ -568,7 +568,7 @@
     </bitFields>
     <bitFields name="TRPSE" URI="http://www.infineon.com/0.10.0/peripheral/ccu4/0/cc4/0/tc/trpse" maxValue="1" minValue="0" startPos="21" stopPos="21" accessPermission="rw">
       <defaultValue xsi:type="ResourceModel:IntegerValue" value="0"/>
-      <upWardMappingList xsi:type="ResourceModel:ProxyResource" href="../PWMSP001/1.0.34/pwmsp001_0.app#//@consumed.42"/>
+      <upWardMappingList xsi:type="ResourceModel:ProxyResource" href="../PWMSP001/1.0.34/pwmsp001_0.app#//@consumed.50"/>
       <localValue xsi:type="ResourceModel:IntegerValue" value="0"/>
       <globalValue xsi:type="ResourceModel:IntegerValue" value="0"/>
       <toolTipHelpDescription>TRAP Synchronization Enable</toolTipHelpDescription>
@@ -577,7 +577,7 @@
     </bitFields>
     <bitFields name="TRPSW" URI="http://www.infineon.com/0.10.0/peripheral/ccu4/0/cc4/0/tc/trpsw" maxValue="1" minValue="0" startPos="22" stopPos="22" accessPermission="rw">
       <defaultValue xsi:type="ResourceModel:IntegerValue" value="0"/>
-      <upWardMappingList xsi:type="ResourceModel:ProxyResource" href="../PWMSP001/1.0.34/pwmsp001_0.app#//@consumed.43"/>
+      <upWardMappingList xsi:type="ResourceModel:ProxyResource" href="../PWMSP001/1.0.34/pwmsp001_0.app#//@consumed.51"/>
       <localValue xsi:type="ResourceModel:IntegerValue" value="0"/>
       <globalValue xsi:type="ResourceModel:IntegerValue" value="0"/>
       <toolTipHelpDescription>TRAP State Clear Control</toolTipHelpDescription>
@@ -611,13 +611,13 @@
   </provided>
   <provided xsi:type="ResourceModel:RegisterParameter" name="CC40PSL" URI="http://www.infineon.com/0.10.0/peripheral/ccu4/0/cc4/0/psl" accessPermission="rw" addressOffset="0x0118" resetValue="00000000" resetMask="0xFFFFFFFF">
     <defaultValue xsi:type="ResourceModel:IntegerValue" value="00000000"/>
-    <upWardMappingList xsi:type="ResourceModel:ProxyResource" href="../PWMSP001/1.0.34/pwmsp001_0.app#//@consumed.44"/>
+    <upWardMappingList xsi:type="ResourceModel:ProxyResource" href="../PWMSP001/1.0.34/pwmsp001_0.app#//@consumed.52"/>
     <localValue xsi:type="ResourceModel:IntegerValue" value="00000000"/>
     <globalValue xsi:type="ResourceModel:IntegerValue" value="00000000"/>
     <toolTipHelpDescription>Passive Level Config</toolTipHelpDescription>
     <bitFields name="PSL" URI="http://www.infineon.com/0.10.0/peripheral/ccu4/0/cc4/0/psl/psl" maxValue="1" minValue="0" startPos="0" stopPos="0" accessPermission="rw">
       <defaultValue xsi:type="ResourceModel:IntegerValue" value="0"/>
-      <upWardMappingList xsi:type="ResourceModel:ProxyResource" href="../PWMSP001/1.0.34/pwmsp001_0.app#//@consumed.45"/>
+      <upWardMappingList xsi:type="ResourceModel:ProxyResource" href="../PWMSP001/1.0.34/pwmsp001_0.app#//@consumed.53"/>
       <localValue xsi:type="ResourceModel:IntegerValue" value="0"/>
       <globalValue xsi:type="ResourceModel:IntegerValue" value="0"/>
       <toolTipHelpDescription>Output Passive Level</toolTipHelpDescription>
@@ -627,7 +627,7 @@
   </provided>
   <provided xsi:type="ResourceModel:RegisterParameter" name="CC40DIT" URI="http://www.infineon.com/0.10.0/peripheral/ccu4/0/cc4/0/dit" addressOffset="0x011C" resetValue="00000000" resetMask="0xFFFFFFFF">
     <defaultValue xsi:type="ResourceModel:IntegerValue" value="00000000"/>
-    <upWardMappingList xsi:type="ResourceModel:ProxyResource" href="../PWMSP001/1.0.34/pwmsp001_0.app#//@consumed.46"/>
+    <upWardMappingList xsi:type="ResourceModel:ProxyResource" href="../PWMSP001/1.0.34/pwmsp001_0.app#//@consumed.54"/>
     <localValue xsi:type="ResourceModel:IntegerValue" value="00000000"/>
     <globalValue xsi:type="ResourceModel:IntegerValue" value="00000000"/>
     <toolTipHelpDescription>Dither Config</toolTipHelpDescription>
@@ -646,13 +646,13 @@
   </provided>
   <provided xsi:type="ResourceModel:RegisterParameter" name="CC40DITS" URI="http://www.infineon.com/0.10.0/peripheral/ccu4/0/cc4/0/dits" accessPermission="rw" addressOffset="0x0120" resetValue="00000000" resetMask="0xFFFFFFFF">
     <defaultValue xsi:type="ResourceModel:IntegerValue" value="00000000"/>
-    <upWardMappingList xsi:type="ResourceModel:ProxyResource" href="../PWMSP001/1.0.34/pwmsp001_0.app#//@consumed.47"/>
+    <upWardMappingList xsi:type="ResourceModel:ProxyResource" href="../PWMSP001/1.0.34/pwmsp001_0.app#//@consumed.55"/>
     <localValue xsi:type="ResourceModel:IntegerValue" value="00000000"/>
     <globalValue xsi:type="ResourceModel:IntegerValue" value="00000000"/>
     <toolTipHelpDescription>Dither Shadow Register</toolTipHelpDescription>
     <bitFields name="DCVS" URI="http://www.infineon.com/0.10.0/peripheral/ccu4/0/cc4/0/dits/dcvs" maxValue="15" minValue="0" startPos="0" stopPos="3" accessPermission="rw">
       <defaultValue xsi:type="ResourceModel:IntegerValue" value="0"/>
-      <upWardMappingList xsi:type="ResourceModel:ProxyResource" href="../PWMSP001/1.0.34/pwmsp001_0.app#//@consumed.48"/>
+      <upWardMappingList xsi:type="ResourceModel:ProxyResource" href="../PWMSP001/1.0.34/pwmsp001_0.app#//@consumed.56"/>
       <localValue xsi:type="ResourceModel:IntegerValue" value="0"/>
       <globalValue xsi:type="ResourceModel:IntegerValue" value="0"/>
       <toolTipHelpDescription>Dither Shadow Compare Value</toolTipHelpDescription>
@@ -660,21 +660,21 @@
   </provided>
   <provided xsi:type="ResourceModel:RegisterParameter" name="CC40PSC" URI="http://www.infineon.com/0.10.0/peripheral/ccu4/0/cc4/0/psc" accessPermission="rw" addressOffset="0x0124" resetValue="00000000" resetMask="0xFFFFFFFF">
     <defaultValue xsi:type="ResourceModel:IntegerValue" value="00000000"/>
-    <upWardMappingList xsi:type="ResourceModel:ProxyResource" href="../PWMSP001/1.0.34/pwmsp001_0.app#//@consumed.49"/>
+    <upWardMappingList xsi:type="ResourceModel:ProxyResource" href="../PWMSP001/1.0.34/pwmsp001_0.app#//@consumed.57"/>
     <localValue xsi:type="ResourceModel:IntegerValue" value="00000000"/>
     <globalValue xsi:type="ResourceModel:IntegerValue" value="00000000"/>
     <toolTipHelpDescription>Prescaler Control</toolTipHelpDescription>
     <bitFields name="PSIV" URI="http://www.infineon.com/0.10.0/peripheral/ccu4/0/cc4/0/psc/psiv" maxValue="15" minValue="0" startPos="0" stopPos="3" accessPermission="rw">
       <defaultValue xsi:type="ResourceModel:IntegerValue" value="0"/>
-      <upWardMappingList xsi:type="ResourceModel:ProxyResource" href="../PWMSP001/1.0.34/pwmsp001_0.app#//@consumed.50"/>
-      <localValue xsi:type="ResourceModel:IntegerValue" value="a"/>
-      <globalValue xsi:type="ResourceModel:IntegerValue" value="a"/>
+      <upWardMappingList xsi:type="ResourceModel:ProxyResource" href="../PWMSP001/1.0.34/pwmsp001_0.app#//@consumed.58"/>
+      <localValue xsi:type="ResourceModel:IntegerValue" value="0"/>
+      <globalValue xsi:type="ResourceModel:IntegerValue" value="0"/>
       <toolTipHelpDescription>Prescaler Initial Value</toolTipHelpDescription>
     </bitFields>
   </provided>
   <provided xsi:type="ResourceModel:RegisterParameter" name="CC40FPC" URI="http://www.infineon.com/0.10.0/peripheral/ccu4/0/cc4/0/fpc" accessPermission="rw" addressOffset="0x0128" resetValue="00000000" resetMask="0xFFFFFFFF">
     <defaultValue xsi:type="ResourceModel:IntegerValue" value="00000000"/>
-    <upWardMappingList xsi:type="ResourceModel:ProxyResource" href="../PWMSP001/1.0.34/pwmsp001_0.app#//@consumed.51"/>
+    <upWardMappingList xsi:type="ResourceModel:ProxyResource" href="../PWMSP001/1.0.34/pwmsp001_0.app#//@consumed.59"/>
     <localValue xsi:type="ResourceModel:IntegerValue" value="00000000"/>
     <globalValue xsi:type="ResourceModel:IntegerValue" value="00000000"/>
     <toolTipHelpDescription>Floating Prescaler Control</toolTipHelpDescription>
@@ -693,7 +693,7 @@
   </provided>
   <provided xsi:type="ResourceModel:RegisterParameter" name="CC40FPCS" URI="http://www.infineon.com/0.10.0/peripheral/ccu4/0/cc4/0/fpcs" accessPermission="rw" addressOffset="0x012C" resetValue="00000000" resetMask="0xFFFFFFFF">
     <defaultValue xsi:type="ResourceModel:IntegerValue" value="00000000"/>
-    <upWardMappingList xsi:type="ResourceModel:ProxyResource" href="../PWMSP001/1.0.34/pwmsp001_0.app#//@consumed.52"/>
+    <upWardMappingList xsi:type="ResourceModel:ProxyResource" href="../PWMSP001/1.0.34/pwmsp001_0.app#//@consumed.60"/>
     <localValue xsi:type="ResourceModel:IntegerValue" value="00000000"/>
     <globalValue xsi:type="ResourceModel:IntegerValue" value="00000000"/>
     <toolTipHelpDescription>Floating Prescaler Shadow</toolTipHelpDescription>
@@ -706,7 +706,7 @@
   </provided>
   <provided xsi:type="ResourceModel:RegisterParameter" name="CC40PR" URI="http://www.infineon.com/0.10.0/peripheral/ccu4/0/cc4/0/pr" addressOffset="0x0130" resetValue="00000000" resetMask="0xFFFFFFFF">
     <defaultValue xsi:type="ResourceModel:IntegerValue" value="00000000"/>
-    <upWardMappingList xsi:type="ResourceModel:ProxyResource" href="../PWMSP001/1.0.34/pwmsp001_0.app#//@consumed.53"/>
+    <upWardMappingList xsi:type="ResourceModel:ProxyResource" href="../PWMSP001/1.0.34/pwmsp001_0.app#//@consumed.61"/>
     <localValue xsi:type="ResourceModel:IntegerValue" value="00000000"/>
     <globalValue xsi:type="ResourceModel:IntegerValue" value="00000000"/>
     <toolTipHelpDescription>Timer Period Value</toolTipHelpDescription>
@@ -719,13 +719,13 @@
   </provided>
   <provided xsi:type="ResourceModel:RegisterParameter" name="CC40PRS" URI="http://www.infineon.com/0.10.0/peripheral/ccu4/0/cc4/0/prs" accessPermission="rw" addressOffset="0x0134" resetValue="00000000" resetMask="0xFFFFFFFF">
     <defaultValue xsi:type="ResourceModel:IntegerValue" value="00000000"/>
-    <upWardMappingList xsi:type="ResourceModel:ProxyResource" href="../PWMSP001/1.0.34/pwmsp001_0.app#//@consumed.54"/>
+    <upWardMappingList xsi:type="ResourceModel:ProxyResource" href="../PWMSP001/1.0.34/pwmsp001_0.app#//@consumed.62"/>
     <localValue xsi:type="ResourceModel:IntegerValue" value="00000000"/>
     <globalValue xsi:type="ResourceModel:IntegerValue" value="00000000"/>
     <toolTipHelpDescription>Timer Shadow Period Value</toolTipHelpDescription>
     <bitFields name="PRS" URI="http://www.infineon.com/0.10.0/peripheral/ccu4/0/cc4/0/prs/prs" maxValue="65535" minValue="0" startPos="0" stopPos="15" accessPermission="rw">
       <defaultValue xsi:type="ResourceModel:IntegerValue" value="0"/>
-      <upWardMappingList xsi:type="ResourceModel:ProxyResource" href="../PWMSP001/1.0.34/pwmsp001_0.app#//@consumed.55"/>
+      <upWardMappingList xsi:type="ResourceModel:ProxyResource" href="../PWMSP001/1.0.34/pwmsp001_0.app#//@consumed.63"/>
       <localValue xsi:type="ResourceModel:IntegerValue" value="1"/>
       <globalValue xsi:type="ResourceModel:IntegerValue" value="1"/>
       <toolTipHelpDescription>Period Register</toolTipHelpDescription>
@@ -733,7 +733,7 @@
   </provided>
   <provided xsi:type="ResourceModel:RegisterParameter" name="CC40CR" URI="http://www.infineon.com/0.10.0/peripheral/ccu4/0/cc4/0/cr" addressOffset="0x0138" resetValue="00000000" resetMask="0xFFFFFFFF">
     <defaultValue xsi:type="ResourceModel:IntegerValue" value="00000000"/>
-    <upWardMappingList xsi:type="ResourceModel:ProxyResource" href="../PWMSP001/1.0.34/pwmsp001_0.app#//@consumed.58"/>
+    <upWardMappingList xsi:type="ResourceModel:ProxyResource" href="../PWMSP001/1.0.34/pwmsp001_0.app#//@consumed.66"/>
     <localValue xsi:type="ResourceModel:IntegerValue" value="00000000"/>
     <globalValue xsi:type="ResourceModel:IntegerValue" value="00000000"/>
     <toolTipHelpDescription>Timer Compare Value</toolTipHelpDescription>
@@ -746,13 +746,13 @@
   </provided>
   <provided xsi:type="ResourceModel:RegisterParameter" name="CC40CRS" URI="http://www.infineon.com/0.10.0/peripheral/ccu4/0/cc4/0/crs" accessPermission="rw" addressOffset="0x013C" resetValue="00000000" resetMask="0xFFFFFFFF">
     <defaultValue xsi:type="ResourceModel:IntegerValue" value="00000000"/>
-    <upWardMappingList xsi:type="ResourceModel:ProxyResource" href="../PWMSP001/1.0.34/pwmsp001_0.app#//@consumed.59"/>
+    <upWardMappingList xsi:type="ResourceModel:ProxyResource" href="../PWMSP001/1.0.34/pwmsp001_0.app#//@consumed.67"/>
     <localValue xsi:type="ResourceModel:IntegerValue" value="00000000"/>
     <globalValue xsi:type="ResourceModel:IntegerValue" value="00000000"/>
     <toolTipHelpDescription>Timer Shadow Compare Value</toolTipHelpDescription>
     <bitFields name="CRS" URI="http://www.infineon.com/0.10.0/peripheral/ccu4/0/cc4/0/crs/crs" maxValue="65535" minValue="0" startPos="0" stopPos="15" accessPermission="rw">
       <defaultValue xsi:type="ResourceModel:IntegerValue" value="0"/>
-      <upWardMappingList xsi:type="ResourceModel:ProxyResource" href="../PWMSP001/1.0.34/pwmsp001_0.app#//@consumed.60"/>
+      <upWardMappingList xsi:type="ResourceModel:ProxyResource" href="../PWMSP001/1.0.34/pwmsp001_0.app#//@consumed.68"/>
       <localValue xsi:type="ResourceModel:IntegerValue" value="1"/>
       <globalValue xsi:type="ResourceModel:IntegerValue" value="1"/>
       <toolTipHelpDescription>Compare Register</toolTipHelpDescription>
@@ -760,7 +760,7 @@
   </provided>
   <provided xsi:type="ResourceModel:RegisterParameter" name="CC40TIMER" URI="http://www.infineon.com/0.10.0/peripheral/ccu4/0/cc4/0/timer" accessPermission="rw" addressOffset="0x0170" resetValue="00000000" resetMask="0xFFFFFFFF">
     <defaultValue xsi:type="ResourceModel:IntegerValue" value="00000000"/>
-    <upWardMappingList xsi:type="ResourceModel:ProxyResource" href="../PWMSP001/1.0.34/pwmsp001_0.app#//@consumed.63"/>
+    <upWardMappingList xsi:type="ResourceModel:ProxyResource" href="../PWMSP001/1.0.34/pwmsp001_0.app#//@consumed.71"/>
     <localValue xsi:type="ResourceModel:IntegerValue" value="00000000"/>
     <globalValue xsi:type="ResourceModel:IntegerValue" value="00000000"/>
     <toolTipHelpDescription>Timer Value</toolTipHelpDescription>
@@ -773,7 +773,7 @@
   </provided>
   <provided xsi:type="ResourceModel:RegisterParameter" name="CC40C0V" URI="http://www.infineon.com/0.10.0/peripheral/ccu4/0/cc4/0/c0v" addressOffset="0x0174" resetValue="00000000" resetMask="0xFFFFFFFF">
     <defaultValue xsi:type="ResourceModel:IntegerValue" value="00000000"/>
-    <upWardMappingList xsi:type="ResourceModel:ProxyResource" href="../PWMSP001/1.0.34/pwmsp001_0.app#//@consumed.64"/>
+    <upWardMappingList xsi:type="ResourceModel:ProxyResource" href="../PWMSP001/1.0.34/pwmsp001_0.app#//@consumed.72"/>
     <localValue xsi:type="ResourceModel:IntegerValue" value="00000000"/>
     <globalValue xsi:type="ResourceModel:IntegerValue" value="00000000"/>
     <toolTipHelpDescription>Capture Register 0</toolTipHelpDescription>
@@ -800,7 +800,7 @@
   </provided>
   <provided xsi:type="ResourceModel:RegisterParameter" name="CC40C1V" URI="http://www.infineon.com/0.10.0/peripheral/ccu4/0/cc4/0/c1v" addressOffset="0x0178" resetValue="00000000" resetMask="0xFFFFFFFF">
     <defaultValue xsi:type="ResourceModel:IntegerValue" value="00000000"/>
-    <upWardMappingList xsi:type="ResourceModel:ProxyResource" href="../PWMSP001/1.0.34/pwmsp001_0.app#//@consumed.65"/>
+    <upWardMappingList xsi:type="ResourceModel:ProxyResource" href="../PWMSP001/1.0.34/pwmsp001_0.app#//@consumed.73"/>
     <localValue xsi:type="ResourceModel:IntegerValue" value="00000000"/>
     <globalValue xsi:type="ResourceModel:IntegerValue" value="00000000"/>
     <toolTipHelpDescription>Capture Register 1</toolTipHelpDescription>
@@ -827,7 +827,7 @@
   </provided>
   <provided xsi:type="ResourceModel:RegisterParameter" name="CC40C2V" URI="http://www.infineon.com/0.10.0/peripheral/ccu4/0/cc4/0/c2v" addressOffset="0x017C" resetValue="00000000" resetMask="0xFFFFFFFF">
     <defaultValue xsi:type="ResourceModel:IntegerValue" value="00000000"/>
-    <upWardMappingList xsi:type="ResourceModel:ProxyResource" href="../PWMSP001/1.0.34/pwmsp001_0.app#//@consumed.66"/>
+    <upWardMappingList xsi:type="ResourceModel:ProxyResource" href="../PWMSP001/1.0.34/pwmsp001_0.app#//@consumed.74"/>
     <localValue xsi:type="ResourceModel:IntegerValue" value="00000000"/>
     <globalValue xsi:type="ResourceModel:IntegerValue" value="00000000"/>
     <toolTipHelpDescription>Capture Register 2</toolTipHelpDescription>
@@ -854,7 +854,7 @@
   </provided>
   <provided xsi:type="ResourceModel:RegisterParameter" name="CC40C3V" URI="http://www.infineon.com/0.10.0/peripheral/ccu4/0/cc4/0/c3v" addressOffset="0x0180" resetValue="00000000" resetMask="0xFFFFFFFF">
     <defaultValue xsi:type="ResourceModel:IntegerValue" value="00000000"/>
-    <upWardMappingList xsi:type="ResourceModel:ProxyResource" href="../PWMSP001/1.0.34/pwmsp001_0.app#//@consumed.67"/>
+    <upWardMappingList xsi:type="ResourceModel:ProxyResource" href="../PWMSP001/1.0.34/pwmsp001_0.app#//@consumed.75"/>
     <localValue xsi:type="ResourceModel:IntegerValue" value="00000000"/>
     <globalValue xsi:type="ResourceModel:IntegerValue" value="00000000"/>
     <toolTipHelpDescription>Capture Register 3</toolTipHelpDescription>
@@ -881,7 +881,7 @@
   </provided>
   <provided xsi:type="ResourceModel:RegisterParameter" name="CC40INTS" URI="http://www.infineon.com/0.10.0/peripheral/ccu4/0/cc4/0/ints" addressOffset="0x01A0" resetValue="00000000" resetMask="0xFFFFFFFF">
     <defaultValue xsi:type="ResourceModel:IntegerValue" value="00000000"/>
-    <upWardMappingList xsi:type="ResourceModel:ProxyResource" href="../PWMSP001/1.0.34/pwmsp001_0.app#//@consumed.68"/>
+    <upWardMappingList xsi:type="ResourceModel:ProxyResource" href="../PWMSP001/1.0.34/pwmsp001_0.app#//@consumed.76"/>
     <localValue xsi:type="ResourceModel:IntegerValue" value="00000000"/>
     <globalValue xsi:type="ResourceModel:IntegerValue" value="00000000"/>
     <toolTipHelpDescription>Interrupt Status</toolTipHelpDescription>
@@ -950,13 +950,13 @@
   </provided>
   <provided xsi:type="ResourceModel:RegisterParameter" name="CC40INTE" URI="http://www.infineon.com/0.10.0/peripheral/ccu4/0/cc4/0/inte" accessPermission="rw" addressOffset="0x01A4" resetValue="00000000" resetMask="0xFFFFFFFF">
     <defaultValue xsi:type="ResourceModel:IntegerValue" value="00000000"/>
-    <upWardMappingList xsi:type="ResourceModel:ProxyResource" href="../PWMSP001/1.0.34/pwmsp001_0.app#//@consumed.69"/>
+    <upWardMappingList xsi:type="ResourceModel:ProxyResource" href="../PWMSP001/1.0.34/pwmsp001_0.app#//@consumed.77"/>
     <localValue xsi:type="ResourceModel:IntegerValue" value="00000000"/>
     <globalValue xsi:type="ResourceModel:IntegerValue" value="00000000"/>
     <toolTipHelpDescription>Interrupt Enable Control</toolTipHelpDescription>
     <bitFields name="PME" URI="http://www.infineon.com/0.10.0/peripheral/ccu4/0/cc4/0/inte/pme" maxValue="1" minValue="0" startPos="0" stopPos="0" accessPermission="rw">
       <defaultValue xsi:type="ResourceModel:IntegerValue" value="0"/>
-      <upWardMappingList xsi:type="ResourceModel:ProxyResource" href="../PWMSP001/1.0.34/pwmsp001_0.app#//@consumed.70"/>
+      <upWardMappingList xsi:type="ResourceModel:ProxyResource" href="../PWMSP001/1.0.34/pwmsp001_0.app#//@consumed.78"/>
       <localValue xsi:type="ResourceModel:IntegerValue" value="0"/>
       <globalValue xsi:type="ResourceModel:IntegerValue" value="0"/>
       <toolTipHelpDescription>Period match while counting up enable</toolTipHelpDescription>
@@ -973,7 +973,7 @@
     </bitFields>
     <bitFields name="CMUE" URI="http://www.infineon.com/0.10.0/peripheral/ccu4/0/cc4/0/inte/cmue" maxValue="1" minValue="0" startPos="2" stopPos="2" accessPermission="rw">
       <defaultValue xsi:type="ResourceModel:IntegerValue" value="0"/>
-      <upWardMappingList xsi:type="ResourceModel:ProxyResource" href="../PWMSP001/1.0.34/pwmsp001_0.app#//@consumed.71"/>
+      <upWardMappingList xsi:type="ResourceModel:ProxyResource" href="../PWMSP001/1.0.34/pwmsp001_0.app#//@consumed.79"/>
       <localValue xsi:type="ResourceModel:IntegerValue" value="0"/>
       <globalValue xsi:type="ResourceModel:IntegerValue" value="0"/>
       <toolTipHelpDescription>Compare match while counting up enable</toolTipHelpDescription>
@@ -982,7 +982,7 @@
     </bitFields>
     <bitFields name="CMDE" URI="http://www.infineon.com/0.10.0/peripheral/ccu4/0/cc4/0/inte/cmde" maxValue="1" minValue="0" startPos="3" stopPos="3" accessPermission="rw">
       <defaultValue xsi:type="ResourceModel:IntegerValue" value="0"/>
-      <upWardMappingList xsi:type="ResourceModel:ProxyResource" href="../PWMSP001/1.0.34/pwmsp001_0.app#//@consumed.72"/>
+      <upWardMappingList xsi:type="ResourceModel:ProxyResource" href="../PWMSP001/1.0.34/pwmsp001_0.app#//@consumed.80"/>
       <localValue xsi:type="ResourceModel:IntegerValue" value="0"/>
       <globalValue xsi:type="ResourceModel:IntegerValue" value="0"/>
       <toolTipHelpDescription>Compare match while counting down enable</toolTipHelpDescription>
@@ -991,7 +991,7 @@
     </bitFields>
     <bitFields name="E0AE" URI="http://www.infineon.com/0.10.0/peripheral/ccu4/0/cc4/0/inte/e0ae" maxValue="1" minValue="0" startPos="8" stopPos="8" accessPermission="rw">
       <defaultValue xsi:type="ResourceModel:IntegerValue" value="0"/>
-      <upWardMappingList xsi:type="ResourceModel:ProxyResource" href="../PWMSP001/1.0.34/pwmsp001_0.app#//@consumed.73"/>
+      <upWardMappingList xsi:type="ResourceModel:ProxyResource" href="../PWMSP001/1.0.34/pwmsp001_0.app#//@consumed.81"/>
       <localValue xsi:type="ResourceModel:IntegerValue" value="0"/>
       <globalValue xsi:type="ResourceModel:IntegerValue" value="0"/>
       <toolTipHelpDescription>Event 0 interrupt enable</toolTipHelpDescription>
@@ -1000,7 +1000,7 @@
     </bitFields>
     <bitFields name="E1AE" URI="http://www.infineon.com/0.10.0/peripheral/ccu4/0/cc4/0/inte/e1ae" maxValue="1" minValue="0" startPos="9" stopPos="9" accessPermission="rw">
       <defaultValue xsi:type="ResourceModel:IntegerValue" value="0"/>
-      <upWardMappingList xsi:type="ResourceModel:ProxyResource" href="../PWMSP001/1.0.34/pwmsp001_0.app#//@consumed.74"/>
+      <upWardMappingList xsi:type="ResourceModel:ProxyResource" href="../PWMSP001/1.0.34/pwmsp001_0.app#//@consumed.82"/>
       <localValue xsi:type="ResourceModel:IntegerValue" value="0"/>
       <globalValue xsi:type="ResourceModel:IntegerValue" value="0"/>
       <toolTipHelpDescription>Event 1 interrupt enable</toolTipHelpDescription>
@@ -1009,7 +1009,7 @@
     </bitFields>
     <bitFields name="E2AE" URI="http://www.infineon.com/0.10.0/peripheral/ccu4/0/cc4/0/inte/e2ae" maxValue="1" minValue="0" startPos="10" stopPos="10" accessPermission="rw">
       <defaultValue xsi:type="ResourceModel:IntegerValue" value="0"/>
-      <upWardMappingList xsi:type="ResourceModel:ProxyResource" href="../PWMSP001/1.0.34/pwmsp001_0.app#//@consumed.75"/>
+      <upWardMappingList xsi:type="ResourceModel:ProxyResource" href="../PWMSP001/1.0.34/pwmsp001_0.app#//@consumed.83"/>
       <localValue xsi:type="ResourceModel:IntegerValue" value="0"/>
       <globalValue xsi:type="ResourceModel:IntegerValue" value="0"/>
       <toolTipHelpDescription>Event 2 interrupt enable</toolTipHelpDescription>
@@ -1019,7 +1019,7 @@
   </provided>
   <provided xsi:type="ResourceModel:RegisterParameter" name="CC40SRS" URI="http://www.infineon.com/0.10.0/peripheral/ccu4/0/cc4/0/srs" accessPermission="rw" addressOffset="0x01A8" resetValue="00000000" resetMask="0xFFFFFFFF">
     <defaultValue xsi:type="ResourceModel:IntegerValue" value="00000000"/>
-    <upWardMappingList xsi:type="ResourceModel:ProxyResource" href="../PWMSP001/1.0.34/pwmsp001_0.app#//@consumed.76"/>
+    <upWardMappingList xsi:type="ResourceModel:ProxyResource" href="../PWMSP001/1.0.34/pwmsp001_0.app#//@consumed.84"/>
     <localValue xsi:type="ResourceModel:IntegerValue" value="00000000"/>
     <globalValue xsi:type="ResourceModel:IntegerValue" value="00000000"/>
     <toolTipHelpDescription>Service Request Selector</toolTipHelpDescription>
@@ -1076,7 +1076,7 @@
   </provided>
   <provided xsi:type="ResourceModel:RegisterParameter" name="CC40SWS" URI="http://www.infineon.com/0.10.0/peripheral/ccu4/0/cc4/0/sws" accessPermission="w" addressOffset="0x01AC" resetValue="00000000" resetMask="0xFFFFFFFF">
     <defaultValue xsi:type="ResourceModel:IntegerValue" value="00000000"/>
-    <upWardMappingList xsi:type="ResourceModel:ProxyResource" href="../PWMSP001/1.0.34/pwmsp001_0.app#//@consumed.77"/>
+    <upWardMappingList xsi:type="ResourceModel:ProxyResource" href="../PWMSP001/1.0.34/pwmsp001_0.app#//@consumed.85"/>
     <localValue xsi:type="ResourceModel:IntegerValue" value="00000000"/>
     <globalValue xsi:type="ResourceModel:IntegerValue" value="00000000"/>
     <toolTipHelpDescription>Interrupt Status Set</toolTipHelpDescription>
@@ -1131,7 +1131,7 @@
   </provided>
   <provided xsi:type="ResourceModel:RegisterParameter" name="CC40SWR" URI="http://www.infineon.com/0.10.0/peripheral/ccu4/0/cc4/0/swr" accessPermission="w" addressOffset="0x01B0" resetValue="00000000" resetMask="0xFFFFFFFF">
     <defaultValue xsi:type="ResourceModel:IntegerValue" value="00000000"/>
-    <upWardMappingList xsi:type="ResourceModel:ProxyResource" href="../PWMSP001/1.0.34/pwmsp001_0.app#//@consumed.78"/>
+    <upWardMappingList xsi:type="ResourceModel:ProxyResource" href="../PWMSP001/1.0.34/pwmsp001_0.app#//@consumed.86"/>
     <localValue xsi:type="ResourceModel:IntegerValue" value="00000000"/>
     <globalValue xsi:type="ResourceModel:IntegerValue" value="00000000"/>
     <toolTipHelpDescription>Interrupt Status Clear</toolTipHelpDescription>
@@ -1185,10 +1185,10 @@
     </bitFields>
   </provided>
   <provided xsi:type="ResourceModel:SignalDeclaration" name="gp02_unsync" description="gp02_unsync" URI="http://www.infineon.com/0.10.0/peripheral/ccu4/0/cc4/0/gp2_unsync" signalType="SINGAL" direction="IN" isVisible="true">
-    <upWardMappingList xsi:type="ResourceModel:ProxyResource" href="../PWMSP001/1.0.34/pwmsp001_0.app#//@consumed.95"/>
+    <upWardMappingList xsi:type="ResourceModel:ProxyResource" href="../PWMSP001/1.0.34/pwmsp001_0.app#//@consumed.93"/>
   </provided>
   <provided xsi:type="ResourceModel:SignalDeclaration" name="cc40_pmus_omds" description="cc40_pmus_omds" URI="http://www.infineon.com/0.10.0/peripheral/ccu4/0/cc4/0/pmus_omds" signalType="INTERRUPT" direction="OUT" isVisible="true">
-    <upWardMappingList xsi:type="ResourceModel:ProxyResource" href="../PWMSP001/1.0.34/pwmsp001_0.app#//@consumed.84"/>
+    <upWardMappingList xsi:type="ResourceModel:ProxyResource" href="../PWMSP001/1.0.34/pwmsp001_0.app#//@consumed.23"/>
   </provided>
   <provided xsi:type="ResourceModel:BitField" name="EV2S" URI="http://www.infineon.com/0.10.0/peripheral/ccu4/0/cc4/0/cc40ins_ev2is" maxValue="15" minValue="0" startPos="8" stopPos="11" accessPermission="rw">
     <defaultValue xsi:type="ResourceModel:IntegerValue" value="0"/>
