@@ -95,8 +95,6 @@ int main(void)
 	PIN_LOW_INIT();
 	PIN_IS_INIT();
 
-
-
 	bool lastPinState = PIN_IS_HIGH();
 	bool trigger = FALSE;
 	int noTriggerCnt=0;
@@ -182,18 +180,10 @@ int main(void)
  */
 void PWM_Period_Interrupt(void)
 {
-//#define FFAST   10
-//#define FSLOW   1
-//#define FASTCYCLES (FFAST*6)
-//#define SLOWCYCLES (FSLOW*6)
-
 #define MAXFREQ 7
-
-
 	static uint32_t state = 0;
 	static uint32_t cycles = 0;
 	static status_t status = DAVEApp_SUCCESS;
-
 	/* state machine to change the different duty cycle */
 	if (cycles == 0)
 	{
@@ -201,36 +191,11 @@ void PWM_Period_Interrupt(void)
 		status = PWMSP001_SetPwmFreqAndDutyCycle((PWMSP001_HandleType*)&PWMSP001_Handle0, cycles, 50);
 		cycles = cycles<<2;
 
-
-
-//		switch(state&0x1)
-//		{
-//
-//			case 0: //status =  PWMSP001_SetCompare(&PWMSP001_Handle0, 0x4AFF); /* Updating of duty cycle to 10% */
-//				status = PWMSP001_SetPwmFreqAndDutyCycle((PWMSP001_HandleType*)&PWMSP001_Handle0, FFAST, 50);
-//				cycles = FASTCYCLES;
-//				break;
-//
-//			default: //status =  PWMSP001_SetCompare(&PWMSP001_Handle0, 0x0855); /* Updating of duty cycle to 90% */
-//				status = PWMSP001_SetPwmFreqAndDutyCycle((PWMSP001_HandleType*)&PWMSP001_Handle0, FSLOW, 50);
-//				cycles = SLOWCYCLES;
-//				break;
-//
-//		}
 		state++;
 		if(status != DAVEApp_SUCCESS)
 		{
 			PWMSP001_Stop((PWMSP001_HandleType*)&PWMSP001_Handle0);
 		}
 	}
-
-	/* Updation of the state machine */
-
 	cycles--;
-//	if(state>=PERIODE)
-//	{
-//		state= 0;
-//	}
-
-
 }
