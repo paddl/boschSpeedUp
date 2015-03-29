@@ -89,25 +89,6 @@ void DAVE_MUX_Init(void)
 {  
    	 
             	         
-                                     
-       /*        SCU Macro definitions     */                  
-        //********* Capture/Compare Unit 4 (CAPCOM4) CONFIGURATIONS ************************* 
-                       
-    // Configuring CCU40_CC40SRS  =  Service Request Selector
-
-    WR_REG(CCU40_CC40->SRS, CCU4_CC4_SRS_POSR_Msk, CCU4_CC4_SRS_POSR_Pos, CCU_SR3);    
-   	 
-            	         
-                                                     
-   	 
-            	         
-                                                 
-
-/*        PORT Macro definitions for IOCR_OE, IOCR_PCR & HWSEL_HW     */                                      
-  WR_REG(PORT0->IOCR4, 0xb800U, PORT_IOCR_PC1_PCR_Pos, 0x14U);                /*P0.5 : PORT0_IOCR4_PC5_PCR and PORT0_IOCR4_PC5_OE */					   
-					      
-   	 
-            	         
                                                      
 }
 
@@ -128,8 +109,6 @@ void DAVE_MUX_Init(void)
 *******************************************************************************/
  
 void DAVE_MUX_PreInit(void)
-{        
-
-/*        PORT Macro definitions for IOCR_OE, IOCR_PCR & HWSEL_HW     */                       
+{    
 }
 

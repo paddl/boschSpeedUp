@@ -88,15 +88,6 @@ void DAVE_Init(void)
 //****************************************************************************
 	//  MUX configurations
 	DAVE_MUX_PreInit(); 
-	//  Initialization of app 'CLK002'		     
-	CLK002_Init();
-	 
-	//  Initialization of app 'CCU4GLOBAL'		     
-	CCU4GLOBAL_Init();
-	 
-	//  Initialization of app 'PWMSP001'		     
-	PWMSP001_Init();
-	 
 	//  Initialization of app 'NVIC002'		     
 	NVIC002_Init();
 	

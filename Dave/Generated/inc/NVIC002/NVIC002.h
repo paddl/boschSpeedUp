@@ -25,7 +25,7 @@
 **                                                                            **
 ** MAY BE CHANGED BY USER [yes/no]: Yes                                       **
 **                                                                            **
-** MODIFICATION DATE : Feb 24, 2014                                           **
+** MODIFICATION DATE : July 17, 2014                                          **
 *******************************************************************************/
 
 /*******************************************************************************
@@ -46,6 +46,9 @@
   * 18  Feb 2013   v1.0.12  Comments are added.
   * 28  Nov 2013   v1.0.20  Updated as per coding guidelines
   * 24  Feb 2014   v1.0.24  Modified all macros to STATIC INLINE
+  * 28  Feb 2014   v1.0.26  Reverted uc_id header file inclusion for backward 
+                            compatibility with DAVE
+  * 17  Jul 2014   v1.0.28  Typecasted all the NodeIDs with IRQn_Type                            
   */
 
 #ifndef NVIC002_H_
@@ -174,7 +177,7 @@ void  NVIC002_Init(void);
  * @endcode<BR> </p>
  */
 __STATIC_INLINE void NVIC002_EnableIRQ (const NVIC002_HandleType *const Handle) {
-    NVIC_EnableIRQ(Handle->NodeID);
+    NVIC_EnableIRQ((IRQn_Type)(Handle->NodeID));
 }
 
 /**
@@ -196,7 +199,7 @@ __STATIC_INLINE void NVIC002_EnableIRQ (const NVIC002_HandleType *const Handle) 
  * @endcode<BR> </p>
  */
 __STATIC_INLINE void NVIC002_DisableIRQ (const NVIC002_HandleType *const Handle) {
-    NVIC_DisableIRQ(Handle->NodeID);
+    NVIC_DisableIRQ((IRQn_Type)(Handle->NodeID));
 }
 
 /**
@@ -217,8 +220,8 @@ __STATIC_INLINE void NVIC002_DisableIRQ (const NVIC002_HandleType *const Handle)
  *  }
  * @endcode<BR> </p>
  */
-__STATIC_INLINE void NVIC002_GetPendingIRQ (const NVIC002_HandleType *const Handle) {
-    NVIC_GetPendingIRQ(Handle->NodeID);
+__STATIC_INLINE uint32_t NVIC002_GetPendingIRQ (const NVIC002_HandleType *const Handle) {
+    return NVIC_GetPendingIRQ((IRQn_Type)(Handle->NodeID));
 }
 
 /**
@@ -240,7 +243,7 @@ __STATIC_INLINE void NVIC002_GetPendingIRQ (const NVIC002_HandleType *const Hand
  * @endcode<BR> </p>
  */
 __STATIC_INLINE void NVIC002_SetPendingIRQ (const NVIC002_HandleType *const Handle) {
-    NVIC_SetPendingIRQ(Handle->NodeID);
+    NVIC_SetPendingIRQ((IRQn_Type)(Handle->NodeID));
 }
 
 /**
@@ -262,7 +265,7 @@ __STATIC_INLINE void NVIC002_SetPendingIRQ (const NVIC002_HandleType *const Hand
  * @endcode<BR> </p>
  */
 __STATIC_INLINE void NVIC002_ClearPendingIRQ (const NVIC002_HandleType *const Handle) {
-    NVIC_ClearPendingIRQ(Handle->NodeID);
+    NVIC_ClearPendingIRQ((IRQn_Type)(Handle->NodeID));
 }
 
 /**
@@ -279,4 +282,3 @@ __STATIC_INLINE void NVIC002_ClearPendingIRQ (const NVIC002_HandleType *const Ha
 #endif
 #endif /* NVIC002_H_ */
 /*CODE_BLOCK_END*/
-

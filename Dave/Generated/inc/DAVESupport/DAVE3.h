@@ -70,9 +70,6 @@ void DAVE_Init(void);
 
 // #include APP HEADER FILES.
 	#include "../../inc/LIBS/LIBS.h" 
-	#include "../../inc/CLK002/CLK002.h" 
-	#include "../../inc/CCU4GLOBAL/CCU4GLOBAL.h" 
-	#include "../../inc/PWMSP001/PWMSP001.h" 
 	#include "../../inc/NVIC002/NVIC002.h" 
 
                      

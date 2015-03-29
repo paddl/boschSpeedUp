@@ -59,41 +59,50 @@
 #include "XMC1100.h"
 #include "GPIO.h"
 
-#define PIN_IS_HIGH()      P0_5_read()
-#define PIN_LOW_DEASSERT() P0_6_set()
-#define PIN_LOW_ASSERT()   P0_6_reset()
-#define PIN_LOW_TOGGLE()   P0_6_toggle()
+
+#define PIN_SW_HIGH()      P1_4_read()
+#define PIN_IS_HIGH()      P0_6_read()
+#define PIN_LOW_DEASSERT() P0_5_set()
+#define PIN_LOW_ASSERT()   P0_5_reset()
+#define PIN_LOW_TOGGLE()   P0_5_toggle()
 
 #define PIN_LOW_INIT() \
-	P0_6_set_mode(OUTPUT_OD_GP); \
-	P0_6_set();
+	P0_5_set_mode(OUTPUT_OD_GP); \
+	P0_5_set();
 
 #define PIN_IS_INIT() \
-	P0_5_set_large_hysteresis(); \
-	P0_5_read(); \
-	//P0_5_set_mode(INPUT);
+    P0_6_set_mode(INPUT_PU); \
+	P0_6_set_large_hysteresis(); \
+	P0_6_read(); \
 
+#define PIN_SW_INIT() \
+    P1_4_set_mode(INPUT_PU); \
+	P1_4_set_large_hysteresis(); \
+	P1_4_read(); \
 
 
 
 
 int main(void)
 {
-	status_t status;		// Declaration of return variable for DAVE3 APIs
+	//status_t status;		// Declaration of return variable for DAVE3 APIs
 
 
 	DAVE_Init();			// Initialization of DAVE Apps
 
+	//PWMSP001_Stop((PWMSP001_HandleType*)&PWMSP001_Handle0);
+
 	
-	/* Starts the PWMSP001 App (LED) */
+	/* Starts the PWMSP001 App (LED)
 	status = PWMSP001_Start((PWMSP001_HandleType*)&PWMSP001_Handle0);
 	if(status != DAVEApp_SUCCESS)
 	{
 		PWMSP001_Stop((PWMSP001_HandleType*)&PWMSP001_Handle0);
-	}
+	}*/
 
 	PIN_LOW_INIT();
 	PIN_IS_INIT();
+	PIN_SW_INIT();
 
 	bool lastPinState = PIN_IS_HIGH();
 	bool trigger = FALSE;
@@ -104,10 +113,12 @@ int main(void)
 
 	int pinCheckCycles = 100;
 
+#ifdef DEBUG
+
 #define DEBUG_CNT_BUFFER_SIZE 100
 	static int debugCount = 0;
 	static int debugSpeedBuffer[DEBUG_CNT_BUFFER_SIZE];
-
+#endif
 
 
 
@@ -134,11 +145,21 @@ int main(void)
 			if (lastPinState)
 			{
 				trigger = TRUE;
-				speedLowHigh = (speed<<3)/10; // *16/10/2
+				if (PIN_SW_HIGH())
+				{
+					speedLowHigh =  speed>>1; // /2
+				}
+				else
+				{
+					speedLowHigh =  (speed<<3)/10; // *16/10/2
+				}
+
+#ifdef DEBUG
 				debugSpeedBuffer[debugCount%DEBUG_CNT_BUFFER_SIZE] = speed;
 				debugCount++;
 				debugSpeedBuffer[debugCount%DEBUG_CNT_BUFFER_SIZE] = speedLowHigh;
 				debugCount++;
+#endif
 				speed=0;
 
 			}
@@ -188,13 +209,13 @@ void PWM_Period_Interrupt(void)
 	if (cycles == 0)
 	{
 		cycles = (state%MAXFREQ) + 1;
-		status = PWMSP001_SetPwmFreqAndDutyCycle((PWMSP001_HandleType*)&PWMSP001_Handle0, cycles, 50);
+		//status = PWMSP001_SetPwmFreqAndDutyCycle((PWMSP001_HandleType*)&PWMSP001_Handle0, cycles, 50);
 		cycles = cycles<<2;
 
 		state++;
 		if(status != DAVEApp_SUCCESS)
 		{
-			PWMSP001_Stop((PWMSP001_HandleType*)&PWMSP001_Handle0);
+			//PWMSP001_Stop((PWMSP001_HandleType*)&PWMSP001_Handle0);
 		}
 	}
 	cycles--;

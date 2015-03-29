@@ -45,8 +45,10 @@
 #ifdef __cplusplus
 extern "C" {
 #endif
-  
-#include "../../inc/CLK002/CLKVAL_SSW.h"  
+
+#define CLKVAL1_SSW 0x80000000 
+#define CLKVAL2_SSW 0x80000000 
+ 
 
 #ifdef __cplusplus
 }

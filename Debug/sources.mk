@@ -19,9 +19,6 @@ SUBDIRS := \
 Startup \
 . \
 Lib \
-Dave/Generated/src/PWMSP001 \
 Dave/Generated/src/NVIC002 \
 Dave/Generated/src/DAVESupport \
-Dave/Generated/src/CLK002 \
-Dave/Generated/src/CCU4GLOBAL \
 

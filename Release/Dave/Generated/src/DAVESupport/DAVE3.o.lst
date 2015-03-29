@@ -20,22 +20,16 @@
   21 0000 08B5     		push	{r3, lr}
   22 0002 FFF7FEFF 		bl	DAVE_MUX_PreInit
   23              		@ sp needed for prologue
-  24 0006 FFF7FEFF 		bl	CLK002_Init
-  25 000a FFF7FEFF 		bl	CCU4GLOBAL_Init
-  26 000e FFF7FEFF 		bl	PWMSP001_Init
-  27 0012 FFF7FEFF 		bl	NVIC002_Init
-  28 0016 FFF7FEFF 		bl	DAVE_MUX_Init
-  29 001a 08BD     		pop	{r3, pc}
-  31              		.ident	"GCC: (GNU Tools for ARM Embedded Processors) 4.7.4 20130913 (release) [ARM/embedded-4_7-br
+  24 0006 FFF7FEFF 		bl	NVIC002_Init
+  25 000a FFF7FEFF 		bl	DAVE_MUX_Init
+  26 000e 08BD     		pop	{r3, pc}
+  28              		.ident	"GCC: (GNU Tools for ARM Embedded Processors) 4.7.4 20130913 (release) [ARM/embedded-4_7-br
 DEFINED SYMBOLS
                             *ABS*:00000000 DAVE3.c
-C:\Users\Patrick\AppData\Local\Temp\ccNffVeb.s:15     .text.DAVE_Init:00000000 $t
-C:\Users\Patrick\AppData\Local\Temp\ccNffVeb.s:20     .text.DAVE_Init:00000000 DAVE_Init
+C:\Users\Patrick\AppData\Local\Temp\ccV5TpvM.s:15     .text.DAVE_Init:00000000 $t
+C:\Users\Patrick\AppData\Local\Temp\ccV5TpvM.s:20     .text.DAVE_Init:00000000 DAVE_Init
 
 UNDEFINED SYMBOLS
 DAVE_MUX_PreInit
-CLK002_Init
-CCU4GLOBAL_Init
-PWMSP001_Init
 NVIC002_Init
 DAVE_MUX_Init

@@ -829,7 +829,7 @@
   25:../Dave/Generated/src/NVIC002/../../inc/NVIC002/NVIC002.h **** **                                                                            **
   26:../Dave/Generated/src/NVIC002/../../inc/NVIC002/NVIC002.h **** ** MAY BE CHANGED BY USER [yes/no]: Yes                                       **
   27:../Dave/Generated/src/NVIC002/../../inc/NVIC002/NVIC002.h **** **                                                                            **
-  28:../Dave/Generated/src/NVIC002/../../inc/NVIC002/NVIC002.h **** ** MODIFICATION DATE : Feb 24, 2014                                           **
+  28:../Dave/Generated/src/NVIC002/../../inc/NVIC002/NVIC002.h **** ** MODIFICATION DATE : July 17, 2014                                          **
   29:../Dave/Generated/src/NVIC002/../../inc/NVIC002/NVIC002.h **** *******************************************************************************/
   30:../Dave/Generated/src/NVIC002/../../inc/NVIC002/NVIC002.h **** 
   31:../Dave/Generated/src/NVIC002/../../inc/NVIC002/NVIC002.h **** /*******************************************************************************
@@ -850,135 +850,138 @@
   46:../Dave/Generated/src/NVIC002/../../inc/NVIC002/NVIC002.h ****   * 18  Feb 2013   v1.0.12  Comments are added.
   47:../Dave/Generated/src/NVIC002/../../inc/NVIC002/NVIC002.h ****   * 28  Nov 2013   v1.0.20  Updated as per coding guidelines
   48:../Dave/Generated/src/NVIC002/../../inc/NVIC002/NVIC002.h ****   * 24  Feb 2014   v1.0.24  Modified all macros to STATIC INLINE
-  49:../Dave/Generated/src/NVIC002/../../inc/NVIC002/NVIC002.h ****   */
-  50:../Dave/Generated/src/NVIC002/../../inc/NVIC002/NVIC002.h **** 
-  51:../Dave/Generated/src/NVIC002/../../inc/NVIC002/NVIC002.h **** #ifndef NVIC002_H_
-  52:../Dave/Generated/src/NVIC002/../../inc/NVIC002/NVIC002.h **** #define NVIC002_H_
+  49:../Dave/Generated/src/NVIC002/../../inc/NVIC002/NVIC002.h ****   * 28  Feb 2014   v1.0.26  Reverted uc_id header file inclusion for backward 
+  50:../Dave/Generated/src/NVIC002/../../inc/NVIC002/NVIC002.h ****                             compatibility with DAVE
+  51:../Dave/Generated/src/NVIC002/../../inc/NVIC002/NVIC002.h ****   * 17  Jul 2014   v1.0.28  Typecasted all the NodeIDs with IRQn_Type                            
+  52:../Dave/Generated/src/NVIC002/../../inc/NVIC002/NVIC002.h ****   */
   53:../Dave/Generated/src/NVIC002/../../inc/NVIC002/NVIC002.h **** 
-  54:../Dave/Generated/src/NVIC002/../../inc/NVIC002/NVIC002.h **** #ifdef __cplusplus
-  55:../Dave/Generated/src/NVIC002/../../inc/NVIC002/NVIC002.h **** extern "C" {
-  56:../Dave/Generated/src/NVIC002/../../inc/NVIC002/NVIC002.h **** #endif
-  57:../Dave/Generated/src/NVIC002/../../inc/NVIC002/NVIC002.h **** /******************************************************************************
-  58:../Dave/Generated/src/NVIC002/../../inc/NVIC002/NVIC002.h **** **                      Include Files                                        **
-  59:../Dave/Generated/src/NVIC002/../../inc/NVIC002/NVIC002.h **** ******************************************************************************/
-  60:../Dave/Generated/src/NVIC002/../../inc/NVIC002/NVIC002.h **** 
-  61:../Dave/Generated/src/NVIC002/../../inc/NVIC002/NVIC002.h **** #include <uc_id.h>
-  62:../Dave/Generated/src/NVIC002/../../inc/NVIC002/NVIC002.h **** 
-  63:../Dave/Generated/src/NVIC002/../../inc/NVIC002/NVIC002.h **** #if (__TARGET_DEVICE__ == XMC45)
-  64:../Dave/Generated/src/NVIC002/../../inc/NVIC002/NVIC002.h **** #include <XMC4500.h>
-  65:../Dave/Generated/src/NVIC002/../../inc/NVIC002/NVIC002.h **** #elif (__TARGET_DEVICE__ == XMC44)
-  66:../Dave/Generated/src/NVIC002/../../inc/NVIC002/NVIC002.h **** #include <XMC4400.h>
-  67:../Dave/Generated/src/NVIC002/../../inc/NVIC002/NVIC002.h **** #elif ((__TARGET_DEVICE__ == XMC42)||(__TARGET_DEVICE__ == XMC41))
-  68:../Dave/Generated/src/NVIC002/../../inc/NVIC002/NVIC002.h **** #include <XMC4200.h>
-  69:../Dave/Generated/src/NVIC002/../../inc/NVIC002/NVIC002.h **** #elif (__TARGET_DEVICE__ == XMC13)
-  70:../Dave/Generated/src/NVIC002/../../inc/NVIC002/NVIC002.h **** #include <XMC1300.h>
-  71:../Dave/Generated/src/NVIC002/../../inc/NVIC002/NVIC002.h **** #elif (__TARGET_DEVICE__ == XMC12)
-  72:../Dave/Generated/src/NVIC002/../../inc/NVIC002/NVIC002.h **** #include <XMC1200.h>
-  73:../Dave/Generated/src/NVIC002/../../inc/NVIC002/NVIC002.h **** #elif (__TARGET_DEVICE__ == XMC11)
-  74:../Dave/Generated/src/NVIC002/../../inc/NVIC002/NVIC002.h **** #include <XMC1100.h>
-  75:../Dave/Generated/src/NVIC002/../../inc/NVIC002/NVIC002.h **** #endif
-  76:../Dave/Generated/src/NVIC002/../../inc/NVIC002/NVIC002.h **** 
-  77:../Dave/Generated/src/NVIC002/../../inc/NVIC002/NVIC002.h **** 
-  78:../Dave/Generated/src/NVIC002/../../inc/NVIC002/NVIC002.h **** /* Include App config file */
-  79:../Dave/Generated/src/NVIC002/../../inc/NVIC002/NVIC002.h **** #ifdef DAVE_CE
-  80:../Dave/Generated/src/NVIC002/../../inc/NVIC002/NVIC002.h **** #include "NVIC002_Conf.h"
-  81:../Dave/Generated/src/NVIC002/../../inc/NVIC002/NVIC002.h **** #endif 
-  82:../Dave/Generated/src/NVIC002/../../inc/NVIC002/NVIC002.h **** /******************************************************************************
-  83:../Dave/Generated/src/NVIC002/../../inc/NVIC002/NVIC002.h **** **                      Global Macro Definitions                             **
-  84:../Dave/Generated/src/NVIC002/../../inc/NVIC002/NVIC002.h **** ******************************************************************************/
-  85:../Dave/Generated/src/NVIC002/../../inc/NVIC002/NVIC002.h **** 
-  86:../Dave/Generated/src/NVIC002/../../inc/NVIC002/NVIC002.h **** /******************************************************************************
-  87:../Dave/Generated/src/NVIC002/../../inc/NVIC002/NVIC002.h **** **                      Global Type Definitions                              **
-  88:../Dave/Generated/src/NVIC002/../../inc/NVIC002/NVIC002.h **** ******************************************************************************/
-  89:../Dave/Generated/src/NVIC002/../../inc/NVIC002/NVIC002.h **** /**
-  90:../Dave/Generated/src/NVIC002/../../inc/NVIC002/NVIC002.h ****  * @ingroup NVIC002_datastructures
-  91:../Dave/Generated/src/NVIC002/../../inc/NVIC002/NVIC002.h ****  * @{
-  92:../Dave/Generated/src/NVIC002/../../inc/NVIC002/NVIC002.h ****  */
-  93:../Dave/Generated/src/NVIC002/../../inc/NVIC002/NVIC002.h **** 
-  94:../Dave/Generated/src/NVIC002/../../inc/NVIC002/NVIC002.h **** /**
-  95:../Dave/Generated/src/NVIC002/../../inc/NVIC002/NVIC002.h ****  * Structure which holds the UI configuration mapped for the App
-  96:../Dave/Generated/src/NVIC002/../../inc/NVIC002/NVIC002.h ****  *        instance.
-  97:../Dave/Generated/src/NVIC002/../../inc/NVIC002/NVIC002.h ****  *  Note: Sub-Priority is not available for TIMM Devices
-  98:../Dave/Generated/src/NVIC002/../../inc/NVIC002/NVIC002.h ****  */
-  99:../Dave/Generated/src/NVIC002/../../inc/NVIC002/NVIC002.h **** 
- 100:../Dave/Generated/src/NVIC002/../../inc/NVIC002/NVIC002.h **** typedef struct NVIC002_HandleType
- 101:../Dave/Generated/src/NVIC002/../../inc/NVIC002/NVIC002.h **** {
- 102:../Dave/Generated/src/NVIC002/../../inc/NVIC002/NVIC002.h ****   /** Mapped NVIC Node */
- 103:../Dave/Generated/src/NVIC002/../../inc/NVIC002/NVIC002.h ****   uint8_t NodeID;     
- 104:../Dave/Generated/src/NVIC002/../../inc/NVIC002/NVIC002.h ****   /**  Node Interrupt Priority */
- 105:../Dave/Generated/src/NVIC002/../../inc/NVIC002/NVIC002.h ****   uint8_t Priority;    
- 106:../Dave/Generated/src/NVIC002/../../inc/NVIC002/NVIC002.h ****   /**  Node Interrupt SubPriority */
- 107:../Dave/Generated/src/NVIC002/../../inc/NVIC002/NVIC002.h ****   uint8_t SubPriority;  
- 108:../Dave/Generated/src/NVIC002/../../inc/NVIC002/NVIC002.h ****   /* Interrupt enable for Node */
- 109:../Dave/Generated/src/NVIC002/../../inc/NVIC002/NVIC002.h ****   uint8_t InterruptEnable;
- 110:../Dave/Generated/src/NVIC002/../../inc/NVIC002/NVIC002.h **** }NVIC002_HandleType;
- 111:../Dave/Generated/src/NVIC002/../../inc/NVIC002/NVIC002.h **** 
- 112:../Dave/Generated/src/NVIC002/../../inc/NVIC002/NVIC002.h **** /**
- 113:../Dave/Generated/src/NVIC002/../../inc/NVIC002/NVIC002.h ****  * @}
- 114:../Dave/Generated/src/NVIC002/../../inc/NVIC002/NVIC002.h ****  */
- 115:../Dave/Generated/src/NVIC002/../../inc/NVIC002/NVIC002.h **** 
- 116:../Dave/Generated/src/NVIC002/../../inc/NVIC002/NVIC002.h **** /*******************************************************************************
- 117:../Dave/Generated/src/NVIC002/../../inc/NVIC002/NVIC002.h **** **                      Global Constant Declarations                          **
- 118:../Dave/Generated/src/NVIC002/../../inc/NVIC002/NVIC002.h **** *******************************************************************************/
- 119:../Dave/Generated/src/NVIC002/../../inc/NVIC002/NVIC002.h **** 
- 120:../Dave/Generated/src/NVIC002/../../inc/NVIC002/NVIC002.h **** 
- 121:../Dave/Generated/src/NVIC002/../../inc/NVIC002/NVIC002.h **** /*******************************************************************************
- 122:../Dave/Generated/src/NVIC002/../../inc/NVIC002/NVIC002.h **** **                      Extern Variables                                      **
- 123:../Dave/Generated/src/NVIC002/../../inc/NVIC002/NVIC002.h **** *******************************************************************************/
- 124:../Dave/Generated/src/NVIC002/../../inc/NVIC002/NVIC002.h **** 
- 125:../Dave/Generated/src/NVIC002/../../inc/NVIC002/NVIC002.h **** 
- 126:../Dave/Generated/src/NVIC002/../../inc/NVIC002/NVIC002.h **** /*******************************************************************************
- 127:../Dave/Generated/src/NVIC002/../../inc/NVIC002/NVIC002.h **** ** FUNCTION PROTOTYPES                                                        **
- 128:../Dave/Generated/src/NVIC002/../../inc/NVIC002/NVIC002.h **** *******************************************************************************/
- 129:../Dave/Generated/src/NVIC002/../../inc/NVIC002/NVIC002.h **** 
- 130:../Dave/Generated/src/NVIC002/../../inc/NVIC002/NVIC002.h **** /**
- 131:../Dave/Generated/src/NVIC002/../../inc/NVIC002/NVIC002.h ****  * @ingroup NVIC002_apidoc
- 132:../Dave/Generated/src/NVIC002/../../inc/NVIC002/NVIC002.h ****  * @{
- 133:../Dave/Generated/src/NVIC002/../../inc/NVIC002/NVIC002.h ****  */
- 134:../Dave/Generated/src/NVIC002/../../inc/NVIC002/NVIC002.h **** 
- 135:../Dave/Generated/src/NVIC002/../../inc/NVIC002/NVIC002.h **** /**
- 136:../Dave/Generated/src/NVIC002/../../inc/NVIC002/NVIC002.h ****  * This function is used to configure and initialize the NVIC002 App instances
- 137:../Dave/Generated/src/NVIC002/../../inc/NVIC002/NVIC002.h ****  *
- 138:../Dave/Generated/src/NVIC002/../../inc/NVIC002/NVIC002.h ****  *
- 139:../Dave/Generated/src/NVIC002/../../inc/NVIC002/NVIC002.h ****  * @param[in] None
+  54:../Dave/Generated/src/NVIC002/../../inc/NVIC002/NVIC002.h **** #ifndef NVIC002_H_
+  55:../Dave/Generated/src/NVIC002/../../inc/NVIC002/NVIC002.h **** #define NVIC002_H_
+  56:../Dave/Generated/src/NVIC002/../../inc/NVIC002/NVIC002.h **** 
+  57:../Dave/Generated/src/NVIC002/../../inc/NVIC002/NVIC002.h **** #ifdef __cplusplus
+  58:../Dave/Generated/src/NVIC002/../../inc/NVIC002/NVIC002.h **** extern "C" {
+  59:../Dave/Generated/src/NVIC002/../../inc/NVIC002/NVIC002.h **** #endif
+  60:../Dave/Generated/src/NVIC002/../../inc/NVIC002/NVIC002.h **** /******************************************************************************
+  61:../Dave/Generated/src/NVIC002/../../inc/NVIC002/NVIC002.h **** **                      Include Files                                        **
+  62:../Dave/Generated/src/NVIC002/../../inc/NVIC002/NVIC002.h **** ******************************************************************************/
+  63:../Dave/Generated/src/NVIC002/../../inc/NVIC002/NVIC002.h **** 
+  64:../Dave/Generated/src/NVIC002/../../inc/NVIC002/NVIC002.h **** #include <uc_id.h>
+  65:../Dave/Generated/src/NVIC002/../../inc/NVIC002/NVIC002.h **** 
+  66:../Dave/Generated/src/NVIC002/../../inc/NVIC002/NVIC002.h **** #if (__TARGET_DEVICE__ == XMC45)
+  67:../Dave/Generated/src/NVIC002/../../inc/NVIC002/NVIC002.h **** #include <XMC4500.h>
+  68:../Dave/Generated/src/NVIC002/../../inc/NVIC002/NVIC002.h **** #elif (__TARGET_DEVICE__ == XMC44)
+  69:../Dave/Generated/src/NVIC002/../../inc/NVIC002/NVIC002.h **** #include <XMC4400.h>
+  70:../Dave/Generated/src/NVIC002/../../inc/NVIC002/NVIC002.h **** #elif ((__TARGET_DEVICE__ == XMC42)||(__TARGET_DEVICE__ == XMC41))
+  71:../Dave/Generated/src/NVIC002/../../inc/NVIC002/NVIC002.h **** #include <XMC4200.h>
+  72:../Dave/Generated/src/NVIC002/../../inc/NVIC002/NVIC002.h **** #elif (__TARGET_DEVICE__ == XMC13)
+  73:../Dave/Generated/src/NVIC002/../../inc/NVIC002/NVIC002.h **** #include <XMC1300.h>
+  74:../Dave/Generated/src/NVIC002/../../inc/NVIC002/NVIC002.h **** #elif (__TARGET_DEVICE__ == XMC12)
+  75:../Dave/Generated/src/NVIC002/../../inc/NVIC002/NVIC002.h **** #include <XMC1200.h>
+  76:../Dave/Generated/src/NVIC002/../../inc/NVIC002/NVIC002.h **** #elif (__TARGET_DEVICE__ == XMC11)
+  77:../Dave/Generated/src/NVIC002/../../inc/NVIC002/NVIC002.h **** #include <XMC1100.h>
+  78:../Dave/Generated/src/NVIC002/../../inc/NVIC002/NVIC002.h **** #endif
+  79:../Dave/Generated/src/NVIC002/../../inc/NVIC002/NVIC002.h **** 
+  80:../Dave/Generated/src/NVIC002/../../inc/NVIC002/NVIC002.h **** 
+  81:../Dave/Generated/src/NVIC002/../../inc/NVIC002/NVIC002.h **** /* Include App config file */
+  82:../Dave/Generated/src/NVIC002/../../inc/NVIC002/NVIC002.h **** #ifdef DAVE_CE
+  83:../Dave/Generated/src/NVIC002/../../inc/NVIC002/NVIC002.h **** #include "NVIC002_Conf.h"
+  84:../Dave/Generated/src/NVIC002/../../inc/NVIC002/NVIC002.h **** #endif 
+  85:../Dave/Generated/src/NVIC002/../../inc/NVIC002/NVIC002.h **** /******************************************************************************
+  86:../Dave/Generated/src/NVIC002/../../inc/NVIC002/NVIC002.h **** **                      Global Macro Definitions                             **
+  87:../Dave/Generated/src/NVIC002/../../inc/NVIC002/NVIC002.h **** ******************************************************************************/
+  88:../Dave/Generated/src/NVIC002/../../inc/NVIC002/NVIC002.h **** 
+  89:../Dave/Generated/src/NVIC002/../../inc/NVIC002/NVIC002.h **** /******************************************************************************
+  90:../Dave/Generated/src/NVIC002/../../inc/NVIC002/NVIC002.h **** **                      Global Type Definitions                              **
+  91:../Dave/Generated/src/NVIC002/../../inc/NVIC002/NVIC002.h **** ******************************************************************************/
+  92:../Dave/Generated/src/NVIC002/../../inc/NVIC002/NVIC002.h **** /**
+  93:../Dave/Generated/src/NVIC002/../../inc/NVIC002/NVIC002.h ****  * @ingroup NVIC002_datastructures
+  94:../Dave/Generated/src/NVIC002/../../inc/NVIC002/NVIC002.h ****  * @{
+  95:../Dave/Generated/src/NVIC002/../../inc/NVIC002/NVIC002.h ****  */
+  96:../Dave/Generated/src/NVIC002/../../inc/NVIC002/NVIC002.h **** 
+  97:../Dave/Generated/src/NVIC002/../../inc/NVIC002/NVIC002.h **** /**
+  98:../Dave/Generated/src/NVIC002/../../inc/NVIC002/NVIC002.h ****  * Structure which holds the UI configuration mapped for the App
+  99:../Dave/Generated/src/NVIC002/../../inc/NVIC002/NVIC002.h ****  *        instance.
+ 100:../Dave/Generated/src/NVIC002/../../inc/NVIC002/NVIC002.h ****  *  Note: Sub-Priority is not available for TIMM Devices
+ 101:../Dave/Generated/src/NVIC002/../../inc/NVIC002/NVIC002.h ****  */
+ 102:../Dave/Generated/src/NVIC002/../../inc/NVIC002/NVIC002.h **** 
+ 103:../Dave/Generated/src/NVIC002/../../inc/NVIC002/NVIC002.h **** typedef struct NVIC002_HandleType
+ 104:../Dave/Generated/src/NVIC002/../../inc/NVIC002/NVIC002.h **** {
+ 105:../Dave/Generated/src/NVIC002/../../inc/NVIC002/NVIC002.h ****   /** Mapped NVIC Node */
+ 106:../Dave/Generated/src/NVIC002/../../inc/NVIC002/NVIC002.h ****   uint8_t NodeID;     
+ 107:../Dave/Generated/src/NVIC002/../../inc/NVIC002/NVIC002.h ****   /**  Node Interrupt Priority */
+ 108:../Dave/Generated/src/NVIC002/../../inc/NVIC002/NVIC002.h ****   uint8_t Priority;    
+ 109:../Dave/Generated/src/NVIC002/../../inc/NVIC002/NVIC002.h ****   /**  Node Interrupt SubPriority */
+ 110:../Dave/Generated/src/NVIC002/../../inc/NVIC002/NVIC002.h ****   uint8_t SubPriority;  
+ 111:../Dave/Generated/src/NVIC002/../../inc/NVIC002/NVIC002.h ****   /* Interrupt enable for Node */
+ 112:../Dave/Generated/src/NVIC002/../../inc/NVIC002/NVIC002.h ****   uint8_t InterruptEnable;
+ 113:../Dave/Generated/src/NVIC002/../../inc/NVIC002/NVIC002.h **** }NVIC002_HandleType;
+ 114:../Dave/Generated/src/NVIC002/../../inc/NVIC002/NVIC002.h **** 
+ 115:../Dave/Generated/src/NVIC002/../../inc/NVIC002/NVIC002.h **** /**
+ 116:../Dave/Generated/src/NVIC002/../../inc/NVIC002/NVIC002.h ****  * @}
+ 117:../Dave/Generated/src/NVIC002/../../inc/NVIC002/NVIC002.h ****  */
+ 118:../Dave/Generated/src/NVIC002/../../inc/NVIC002/NVIC002.h **** 
+ 119:../Dave/Generated/src/NVIC002/../../inc/NVIC002/NVIC002.h **** /*******************************************************************************
+ 120:../Dave/Generated/src/NVIC002/../../inc/NVIC002/NVIC002.h **** **                      Global Constant Declarations                          **
+ 121:../Dave/Generated/src/NVIC002/../../inc/NVIC002/NVIC002.h **** *******************************************************************************/
+ 122:../Dave/Generated/src/NVIC002/../../inc/NVIC002/NVIC002.h **** 
+ 123:../Dave/Generated/src/NVIC002/../../inc/NVIC002/NVIC002.h **** 
+ 124:../Dave/Generated/src/NVIC002/../../inc/NVIC002/NVIC002.h **** /*******************************************************************************
+ 125:../Dave/Generated/src/NVIC002/../../inc/NVIC002/NVIC002.h **** **                      Extern Variables                                      **
+ 126:../Dave/Generated/src/NVIC002/../../inc/NVIC002/NVIC002.h **** *******************************************************************************/
+ 127:../Dave/Generated/src/NVIC002/../../inc/NVIC002/NVIC002.h **** 
+ 128:../Dave/Generated/src/NVIC002/../../inc/NVIC002/NVIC002.h **** 
+ 129:../Dave/Generated/src/NVIC002/../../inc/NVIC002/NVIC002.h **** /*******************************************************************************
+ 130:../Dave/Generated/src/NVIC002/../../inc/NVIC002/NVIC002.h **** ** FUNCTION PROTOTYPES                                                        **
+ 131:../Dave/Generated/src/NVIC002/../../inc/NVIC002/NVIC002.h **** *******************************************************************************/
+ 132:../Dave/Generated/src/NVIC002/../../inc/NVIC002/NVIC002.h **** 
+ 133:../Dave/Generated/src/NVIC002/../../inc/NVIC002/NVIC002.h **** /**
+ 134:../Dave/Generated/src/NVIC002/../../inc/NVIC002/NVIC002.h ****  * @ingroup NVIC002_apidoc
+ 135:../Dave/Generated/src/NVIC002/../../inc/NVIC002/NVIC002.h ****  * @{
+ 136:../Dave/Generated/src/NVIC002/../../inc/NVIC002/NVIC002.h ****  */
+ 137:../Dave/Generated/src/NVIC002/../../inc/NVIC002/NVIC002.h **** 
+ 138:../Dave/Generated/src/NVIC002/../../inc/NVIC002/NVIC002.h **** /**
+ 139:../Dave/Generated/src/NVIC002/../../inc/NVIC002/NVIC002.h ****  * This function is used to configure and initialize the NVIC002 App instances
  140:../Dave/Generated/src/NVIC002/../../inc/NVIC002/NVIC002.h ****  *
- 141:../Dave/Generated/src/NVIC002/../../inc/NVIC002/NVIC002.h ****  * @return     void
- 142:../Dave/Generated/src/NVIC002/../../inc/NVIC002/NVIC002.h ****  *
- 143:../Dave/Generated/src/NVIC002/../../inc/NVIC002/NVIC002.h ****  * <BR><P ALIGN="LEFT"><B>Example:</B>
- 144:../Dave/Generated/src/NVIC002/../../inc/NVIC002/NVIC002.h ****  * @code
- 145:../Dave/Generated/src/NVIC002/../../inc/NVIC002/NVIC002.h ****  *  #include <DAVE3.h>
- 146:../Dave/Generated/src/NVIC002/../../inc/NVIC002/NVIC002.h ****  *
- 147:../Dave/Generated/src/NVIC002/../../inc/NVIC002/NVIC002.h ****  *  int main(void)
- 148:../Dave/Generated/src/NVIC002/../../inc/NVIC002/NVIC002.h ****  *  {
- 149:../Dave/Generated/src/NVIC002/../../inc/NVIC002/NVIC002.h ****  *    DAVE_Init(); // NVIC002_Init() is called within DAVE_Init()
- 150:../Dave/Generated/src/NVIC002/../../inc/NVIC002/NVIC002.h ****  *    return 0;
- 151:../Dave/Generated/src/NVIC002/../../inc/NVIC002/NVIC002.h ****  *  }
- 152:../Dave/Generated/src/NVIC002/../../inc/NVIC002/NVIC002.h ****  * @endcode<BR> </p>
- 153:../Dave/Generated/src/NVIC002/../../inc/NVIC002/NVIC002.h ****  *
- 154:../Dave/Generated/src/NVIC002/../../inc/NVIC002/NVIC002.h ****  */
- 155:../Dave/Generated/src/NVIC002/../../inc/NVIC002/NVIC002.h **** void  NVIC002_Init(void);
- 156:../Dave/Generated/src/NVIC002/../../inc/NVIC002/NVIC002.h **** 
- 157:../Dave/Generated/src/NVIC002/../../inc/NVIC002/NVIC002.h **** /**
- 158:../Dave/Generated/src/NVIC002/../../inc/NVIC002/NVIC002.h ****  * This function is used to enable the IRQ
- 159:../Dave/Generated/src/NVIC002/../../inc/NVIC002/NVIC002.h ****  *
- 160:../Dave/Generated/src/NVIC002/../../inc/NVIC002/NVIC002.h ****  * @param[in]  Handle Instance Handle
- 161:../Dave/Generated/src/NVIC002/../../inc/NVIC002/NVIC002.h ****  *
- 162:../Dave/Generated/src/NVIC002/../../inc/NVIC002/NVIC002.h ****  * @return     void
- 163:../Dave/Generated/src/NVIC002/../../inc/NVIC002/NVIC002.h ****  *
- 164:../Dave/Generated/src/NVIC002/../../inc/NVIC002/NVIC002.h ****  * <BR><P ALIGN="LEFT"><B>Example:</B>
- 165:../Dave/Generated/src/NVIC002/../../inc/NVIC002/NVIC002.h ****  * @code
- 166:../Dave/Generated/src/NVIC002/../../inc/NVIC002/NVIC002.h ****  *  #include <DAVE3.h>
- 167:../Dave/Generated/src/NVIC002/../../inc/NVIC002/NVIC002.h ****  *
- 168:../Dave/Generated/src/NVIC002/../../inc/NVIC002/NVIC002.h ****  *  int main(void)
- 169:../Dave/Generated/src/NVIC002/../../inc/NVIC002/NVIC002.h ****  *  {
- 170:../Dave/Generated/src/NVIC002/../../inc/NVIC002/NVIC002.h ****  *    DAVE_Init(); // NVIC002_Init() is called within DAVE_Init()
- 171:../Dave/Generated/src/NVIC002/../../inc/NVIC002/NVIC002.h ****  *    NVIC002_EnableIRQ(&NVIC002_Handle0);
- 172:../Dave/Generated/src/NVIC002/../../inc/NVIC002/NVIC002.h ****  *    return 0;
- 173:../Dave/Generated/src/NVIC002/../../inc/NVIC002/NVIC002.h ****  *  }
- 174:../Dave/Generated/src/NVIC002/../../inc/NVIC002/NVIC002.h ****  * @endcode<BR> </p>
- 175:../Dave/Generated/src/NVIC002/../../inc/NVIC002/NVIC002.h ****  */
- 176:../Dave/Generated/src/NVIC002/../../inc/NVIC002/NVIC002.h **** __STATIC_INLINE void NVIC002_EnableIRQ (const NVIC002_HandleType *const Handle) {
- 218              		.loc 2 176 0
+ 141:../Dave/Generated/src/NVIC002/../../inc/NVIC002/NVIC002.h ****  *
+ 142:../Dave/Generated/src/NVIC002/../../inc/NVIC002/NVIC002.h ****  * @param[in] None
+ 143:../Dave/Generated/src/NVIC002/../../inc/NVIC002/NVIC002.h ****  *
+ 144:../Dave/Generated/src/NVIC002/../../inc/NVIC002/NVIC002.h ****  * @return     void
+ 145:../Dave/Generated/src/NVIC002/../../inc/NVIC002/NVIC002.h ****  *
+ 146:../Dave/Generated/src/NVIC002/../../inc/NVIC002/NVIC002.h ****  * <BR><P ALIGN="LEFT"><B>Example:</B>
+ 147:../Dave/Generated/src/NVIC002/../../inc/NVIC002/NVIC002.h ****  * @code
+ 148:../Dave/Generated/src/NVIC002/../../inc/NVIC002/NVIC002.h ****  *  #include <DAVE3.h>
+ 149:../Dave/Generated/src/NVIC002/../../inc/NVIC002/NVIC002.h ****  *
+ 150:../Dave/Generated/src/NVIC002/../../inc/NVIC002/NVIC002.h ****  *  int main(void)
+ 151:../Dave/Generated/src/NVIC002/../../inc/NVIC002/NVIC002.h ****  *  {
+ 152:../Dave/Generated/src/NVIC002/../../inc/NVIC002/NVIC002.h ****  *    DAVE_Init(); // NVIC002_Init() is called within DAVE_Init()
+ 153:../Dave/Generated/src/NVIC002/../../inc/NVIC002/NVIC002.h ****  *    return 0;
+ 154:../Dave/Generated/src/NVIC002/../../inc/NVIC002/NVIC002.h ****  *  }
+ 155:../Dave/Generated/src/NVIC002/../../inc/NVIC002/NVIC002.h ****  * @endcode<BR> </p>
+ 156:../Dave/Generated/src/NVIC002/../../inc/NVIC002/NVIC002.h ****  *
+ 157:../Dave/Generated/src/NVIC002/../../inc/NVIC002/NVIC002.h ****  */
+ 158:../Dave/Generated/src/NVIC002/../../inc/NVIC002/NVIC002.h **** void  NVIC002_Init(void);
+ 159:../Dave/Generated/src/NVIC002/../../inc/NVIC002/NVIC002.h **** 
+ 160:../Dave/Generated/src/NVIC002/../../inc/NVIC002/NVIC002.h **** /**
+ 161:../Dave/Generated/src/NVIC002/../../inc/NVIC002/NVIC002.h ****  * This function is used to enable the IRQ
+ 162:../Dave/Generated/src/NVIC002/../../inc/NVIC002/NVIC002.h ****  *
+ 163:../Dave/Generated/src/NVIC002/../../inc/NVIC002/NVIC002.h ****  * @param[in]  Handle Instance Handle
+ 164:../Dave/Generated/src/NVIC002/../../inc/NVIC002/NVIC002.h ****  *
+ 165:../Dave/Generated/src/NVIC002/../../inc/NVIC002/NVIC002.h ****  * @return     void
+ 166:../Dave/Generated/src/NVIC002/../../inc/NVIC002/NVIC002.h ****  *
+ 167:../Dave/Generated/src/NVIC002/../../inc/NVIC002/NVIC002.h ****  * <BR><P ALIGN="LEFT"><B>Example:</B>
+ 168:../Dave/Generated/src/NVIC002/../../inc/NVIC002/NVIC002.h ****  * @code
+ 169:../Dave/Generated/src/NVIC002/../../inc/NVIC002/NVIC002.h ****  *  #include <DAVE3.h>
+ 170:../Dave/Generated/src/NVIC002/../../inc/NVIC002/NVIC002.h ****  *
+ 171:../Dave/Generated/src/NVIC002/../../inc/NVIC002/NVIC002.h ****  *  int main(void)
+ 172:../Dave/Generated/src/NVIC002/../../inc/NVIC002/NVIC002.h ****  *  {
+ 173:../Dave/Generated/src/NVIC002/../../inc/NVIC002/NVIC002.h ****  *    DAVE_Init(); // NVIC002_Init() is called within DAVE_Init()
+ 174:../Dave/Generated/src/NVIC002/../../inc/NVIC002/NVIC002.h ****  *    NVIC002_EnableIRQ(&NVIC002_Handle0);
+ 175:../Dave/Generated/src/NVIC002/../../inc/NVIC002/NVIC002.h ****  *    return 0;
+ 176:../Dave/Generated/src/NVIC002/../../inc/NVIC002/NVIC002.h ****  *  }
+ 177:../Dave/Generated/src/NVIC002/../../inc/NVIC002/NVIC002.h ****  * @endcode<BR> </p>
+ 178:../Dave/Generated/src/NVIC002/../../inc/NVIC002/NVIC002.h ****  */
+ 179:../Dave/Generated/src/NVIC002/../../inc/NVIC002/NVIC002.h **** __STATIC_INLINE void NVIC002_EnableIRQ (const NVIC002_HandleType *const Handle) {
+ 218              		.loc 2 179 0
  219              		.cfi_startproc
  220 0000 80B5     		push	{r7, lr}
  221              	.LCFI6:
@@ -992,16 +995,16 @@
  229              	.LCFI8:
  230              		.cfi_def_cfa_register 7
  231 0006 7860     		str	r0, [r7, #4]
- 177:../Dave/Generated/src/NVIC002/../../inc/NVIC002/NVIC002.h ****     NVIC_EnableIRQ(Handle->NodeID);
- 232              		.loc 2 177 0
+ 180:../Dave/Generated/src/NVIC002/../../inc/NVIC002/NVIC002.h ****     NVIC_EnableIRQ((IRQn_Type)(Handle->NodeID));
+ 232              		.loc 2 180 0
  233 0008 7B68     		ldr	r3, [r7, #4]
  234 000a 1B78     		ldrb	r3, [r3]
  235 000c DBB2     		uxtb	r3, r3
  236 000e 5BB2     		sxtb	r3, r3
  237 0010 181C     		mov	r0, r3
  238 0012 FFF7FEFF 		bl	NVIC_EnableIRQ
- 178:../Dave/Generated/src/NVIC002/../../inc/NVIC002/NVIC002.h **** }
- 239              		.loc 2 178 0
+ 181:../Dave/Generated/src/NVIC002/../../inc/NVIC002/NVIC002.h **** }
+ 239              		.loc 2 181 0
  240 0016 BD46     		mov	sp, r7
  241 0018 02B0     		add	sp, sp, #8
  242              		@ sp needed for prologue
@@ -1289,19 +1292,19 @@
  357              		.file 6 "../Dave/Generated/src/NVIC002/../../inc/NVIC002/NVIC002_Extern.h"
 DEFINED SYMBOLS
                             *ABS*:00000000 NVIC002.c
-C:\Users\Patrick\AppData\Local\Temp\ccFee2N2.s:18     .text.NVIC_EnableIRQ:00000000 $t
-C:\Users\Patrick\AppData\Local\Temp\ccFee2N2.s:22     .text.NVIC_EnableIRQ:00000000 NVIC_EnableIRQ
-C:\Users\Patrick\AppData\Local\Temp\ccFee2N2.s:61     .text.NVIC_EnableIRQ:00000028 $d
-C:\Users\Patrick\AppData\Local\Temp\ccFee2N2.s:66     .text.NVIC_SetPriority:00000000 $t
-C:\Users\Patrick\AppData\Local\Temp\ccFee2N2.s:70     .text.NVIC_SetPriority:00000000 NVIC_SetPriority
-C:\Users\Patrick\AppData\Local\Temp\ccFee2N2.s:205    .text.NVIC_SetPriority:000000d8 $d
-C:\Users\Patrick\AppData\Local\Temp\ccFee2N2.s:211    .text.NVIC002_EnableIRQ:00000000 $t
-C:\Users\Patrick\AppData\Local\Temp\ccFee2N2.s:215    .text.NVIC002_EnableIRQ:00000000 NVIC002_EnableIRQ
-C:\Users\Patrick\AppData\Local\Temp\ccFee2N2.s:248    .text.NVIC002_Init:00000000 $t
-C:\Users\Patrick\AppData\Local\Temp\ccFee2N2.s:253    .text.NVIC002_Init:00000000 NVIC002_Init
-C:\Users\Patrick\AppData\Local\Temp\ccFee2N2.s:307    .text.NVIC002_lInit:00000000 NVIC002_lInit
-C:\Users\Patrick\AppData\Local\Temp\ccFee2N2.s:298    .text.NVIC002_Init:0000002c $d
-C:\Users\Patrick\AppData\Local\Temp\ccFee2N2.s:303    .text.NVIC002_lInit:00000000 $t
+C:\Users\Patrick\AppData\Local\Temp\ccE3GuAo.s:18     .text.NVIC_EnableIRQ:00000000 $t
+C:\Users\Patrick\AppData\Local\Temp\ccE3GuAo.s:22     .text.NVIC_EnableIRQ:00000000 NVIC_EnableIRQ
+C:\Users\Patrick\AppData\Local\Temp\ccE3GuAo.s:61     .text.NVIC_EnableIRQ:00000028 $d
+C:\Users\Patrick\AppData\Local\Temp\ccE3GuAo.s:66     .text.NVIC_SetPriority:00000000 $t
+C:\Users\Patrick\AppData\Local\Temp\ccE3GuAo.s:70     .text.NVIC_SetPriority:00000000 NVIC_SetPriority
+C:\Users\Patrick\AppData\Local\Temp\ccE3GuAo.s:205    .text.NVIC_SetPriority:000000d8 $d
+C:\Users\Patrick\AppData\Local\Temp\ccE3GuAo.s:211    .text.NVIC002_EnableIRQ:00000000 $t
+C:\Users\Patrick\AppData\Local\Temp\ccE3GuAo.s:215    .text.NVIC002_EnableIRQ:00000000 NVIC002_EnableIRQ
+C:\Users\Patrick\AppData\Local\Temp\ccE3GuAo.s:248    .text.NVIC002_Init:00000000 $t
+C:\Users\Patrick\AppData\Local\Temp\ccE3GuAo.s:253    .text.NVIC002_Init:00000000 NVIC002_Init
+C:\Users\Patrick\AppData\Local\Temp\ccE3GuAo.s:307    .text.NVIC002_lInit:00000000 NVIC002_lInit
+C:\Users\Patrick\AppData\Local\Temp\ccE3GuAo.s:298    .text.NVIC002_Init:0000002c $d
+C:\Users\Patrick\AppData\Local\Temp\ccE3GuAo.s:303    .text.NVIC002_lInit:00000000 $t
                      .debug_frame:00000010 $d
                            .group:00000000 wm4.1.63d3e0297d6e9004e0e37a0840833abd
                            .group:00000000 wm4.uc_id.h.35.47f40be5760de9fc3332688f9e95febc
@@ -1316,7 +1319,7 @@ C:\Users\Patrick\AppData\Local\Temp\ccFee2N2.s:303    .text.NVIC002_lInit:000000
                            .group:00000000 wm4.core_cm0.h.135.ca70469f87e143609670bb393bfa6518
                            .group:00000000 wm4.XMC1000_RomFunctionTable.h.31.6d9a94465618f31b040dc9cea9a47ad7
                            .group:00000000 wm4.XMC1100.h.114.be3711f71ee045884346be801053f4c0
-                           .group:00000000 wm4.NVIC002_Conf.h.62.18166a449b9ed77d0131aa9be7c23c90
+                           .group:00000000 wm4.NVIC002_Conf.h.63.9c71769d77b95acb42ba2599ae4f9114
 
 UNDEFINED SYMBOLS
 NVIC002_HandleArray

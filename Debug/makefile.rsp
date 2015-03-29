@@ -2,12 +2,7 @@ Startup/startup_XMC1100.o
 Startup/system_XMC1100.o
 Main.o
 Lib/System_LibcStubs.o
-Dave/Generated/src/PWMSP001/PWMSP001.o
-Dave/Generated/src/PWMSP001/PWMSP001_Conf.o
 Dave/Generated/src/NVIC002/NVIC002.o
 Dave/Generated/src/NVIC002/NVIC002_Conf.o
 Dave/Generated/src/DAVESupport/DAVE3.o
 Dave/Generated/src/DAVESupport/MULTIPLEXER.o
-Dave/Generated/src/CLK002/CLK002.o
-Dave/Generated/src/CCU4GLOBAL/CCU4GLOBAL.o
-Dave/Generated/src/CCU4GLOBAL/CCU4GLOBAL_Conf.o

@@ -1,0 +1,422 @@
+Archive member included because of file (symbol)
+
+c:/dave-3.1.10/arm-gcc/bin/../lib/gcc/arm-none-eabi/4.7.4/armv6-m\libgcc.a(_udivsi3.o)
+                              Startup/system_XMC1100.o (__aeabi_uidiv)
+c:/dave-3.1.10/arm-gcc/bin/../lib/gcc/arm-none-eabi/4.7.4/armv6-m\libgcc.a(_divsi3.o)
+                              Main.o (__aeabi_idiv)
+c:/dave-3.1.10/arm-gcc/bin/../lib/gcc/arm-none-eabi/4.7.4/armv6-m\libgcc.a(_dvmd_tls.o)
+                              c:/dave-3.1.10/arm-gcc/bin/../lib/gcc/arm-none-eabi/4.7.4/armv6-m\libgcc.a(_udivsi3.o) (__aeabi_idiv0)
+
+Allocating common symbols
+Common symbol       size              file
+
+SystemCoreClock     0x4               Startup/system_XMC1100.o
+
+Discarded input sections
+
+ .comment       0x00000000       0x71 Startup/system_XMC1100.o
+ .comment       0x00000000       0x71 Main.o
+ .comment       0x00000000       0x71 Lib/System_LibcStubs.o
+ .comment       0x00000000       0x71 Dave/Generated/src/NVIC002/NVIC002.o
+ .comment       0x00000000       0x71 Dave/Generated/src/NVIC002/NVIC002_Conf.o
+ .comment       0x00000000       0x71 Dave/Generated/src/DAVESupport/DAVE3.o
+ .comment       0x00000000       0x71 Dave/Generated/src/DAVESupport/MULTIPLEXER.o
+
+Memory Configuration
+
+Name             Origin             Length             Attributes
+FLASH            0x10001000         0x00010000         xr
+SRAM             0x20000000         0x00004000         !xr
+*default*        0x00000000         0xffffffff
+
+Linker script and memory map
+
+LOAD Startup/startup_XMC1100.o
+LOAD Startup/system_XMC1100.o
+LOAD Main.o
+LOAD Lib/System_LibcStubs.o
+LOAD Dave/Generated/src/NVIC002/NVIC002.o
+LOAD Dave/Generated/src/NVIC002/NVIC002_Conf.o
+LOAD Dave/Generated/src/DAVESupport/DAVE3.o
+LOAD Dave/Generated/src/DAVESupport/MULTIPLEXER.o
+START GROUP
+LOAD c:/dave-3.1.10/arm-gcc/bin/../lib/gcc/arm-none-eabi/4.7.4/armv6-m\libgcc.a
+LOAD c:/dave-3.1.10/arm-gcc/bin/../lib/gcc/arm-none-eabi/4.7.4/../../../../arm-none-eabi/lib/armv6-m\libc.a
+END GROUP
+                0x00000800                stack_size = 0x800
+
+.text           0x10001000      0x4f4
+                0x10001000                sText = .
+ *(.Xmc1100.reset)
+ .Xmc1100.reset
+                0x10001000       0x2c Startup/startup_XMC1100.o
+                0x10001000                __Xmc1100_interrupt_vector_cortex_m
+                0x10001018                __Xmc1100_reset_cortex_m
+ *(.Xmc1100.postreset)
+ .Xmc1100.postreset
+                0x1000102c       0xa0 Startup/startup_XMC1100.o
+ *(.XmcStartup)
+ .XmcStartup    0x100010cc        0x8 Startup/startup_XMC1100.o
+                0x100010cc                software_init_hook
+                0x100010d0                hardware_init_hook
+ *(.text .text.* .gnu.linkonce.t.*)
+ .text          0x100010d4       0x30 Startup/startup_XMC1100.o
+                0x100010d4                NMI_Handler
+                0x100010d6                HardFault_Handler
+                0x100010d8                SVC_Handler
+                0x100010da                PendSV_Handler
+                0x100010dc                SysTick_Handler
+                0x100010de                SCU_0_IRQHandler
+                0x100010e0                SCU_1_IRQHandler
+                0x100010e2                SCU_2_IRQHandler
+                0x100010e4                ERU0_0_IRQHandler
+                0x100010e6                ERU0_1_IRQHandler
+                0x100010e8                ERU0_2_IRQHandler
+                0x100010ea                ERU0_3_IRQHandler
+                0x100010ec                VADC0_C0_0_IRQHandler
+                0x100010ee                VADC0_C0_1_IRQHandler
+                0x100010f0                CCU40_0_IRQHandler
+                0x100010f2                CCU40_1_IRQHandler
+                0x100010f4                CCU40_2_IRQHandler
+                0x100010f6                CCU40_3_IRQHandler
+                0x100010f8                USIC0_0_IRQHandler
+                0x100010fa                USIC0_1_IRQHandler
+                0x100010fc                USIC0_2_IRQHandler
+                0x100010fe                USIC0_3_IRQHandler
+                0x10001100                USIC0_4_IRQHandler
+                0x10001102                USIC0_5_IRQHandler
+ .text          0x10001104        0x0 Startup/system_XMC1100.o
+ .text.SystemCoreClockUpdate
+                0x10001104       0x38 Startup/system_XMC1100.o
+                0x10001104                SystemCoreClockUpdate
+ .text.SystemInit
+                0x1000113c        0x8 Startup/system_XMC1100.o
+                0x1000113c                SystemInit
+ .text          0x10001144        0x0 Main.o
+ .text.startup.main
+                0x10001144       0xfc Main.o
+                0x10001144                main
+ .text.IRQ_Hdlr_26
+                0x10001240       0x2c Main.o
+                0x10001240                IRQ_Hdlr_26
+ .text          0x1000126c        0x0 Lib/System_LibcStubs.o
+ .text._open    0x1000126c        0x6 Lib/System_LibcStubs.o
+                0x1000126c                _open
+ .text._lseek   0x10001272        0x6 Lib/System_LibcStubs.o
+                0x10001272                _lseek
+ .text._read    0x10001278        0x4 Lib/System_LibcStubs.o
+                0x10001278                _read
+ .text._write   0x1000127c        0x6 Lib/System_LibcStubs.o
+                0x1000127c                _write
+ .text._close   0x10001282        0x6 Lib/System_LibcStubs.o
+                0x10001282                _close
+ .text._fstat   0x10001288        0x8 Lib/System_LibcStubs.o
+                0x10001288                _fstat
+ .text._link    0x10001290        0xa Lib/System_LibcStubs.o
+                0x10001290                _link
+ .text._unlink  0x1000129a        0x6 Lib/System_LibcStubs.o
+                0x1000129a                _unlink
+ .text._sbrk    0x100012a0       0x38 Lib/System_LibcStubs.o
+                0x100012a0                _sbrk
+ .text._times   0x100012d8        0x6 Lib/System_LibcStubs.o
+                0x100012d8                _times
+ .text._wait    0x100012de        0x6 Lib/System_LibcStubs.o
+                0x100012de                _wait
+ .text._kill    0x100012e4        0x6 Lib/System_LibcStubs.o
+                0x100012e4                _kill
+ .text._fork    0x100012ea        0x6 Lib/System_LibcStubs.o
+                0x100012ea                _fork
+ .text._getpid  0x100012f0        0x6 Lib/System_LibcStubs.o
+                0x100012f0                _getpid
+ .text._exit    0x100012f6        0x2 Lib/System_LibcStubs.o
+                0x100012f6                _exit
+ .text._init    0x100012f8        0x2 Lib/System_LibcStubs.o
+                0x100012f8                _init
+ .text._isatty  0x100012fa        0x6 Lib/System_LibcStubs.o
+                0x100012fa                _isatty
+ .text          0x10001300        0x0 Dave/Generated/src/NVIC002/NVIC002.o
+ .text.NVIC002_Init
+                0x10001300       0x80 Dave/Generated/src/NVIC002/NVIC002.o
+                0x10001300                NVIC002_Init
+ .text          0x10001380        0x0 Dave/Generated/src/NVIC002/NVIC002_Conf.o
+ .text          0x10001380        0x0 Dave/Generated/src/DAVESupport/DAVE3.o
+ .text.DAVE_Init
+                0x10001380       0x10 Dave/Generated/src/DAVESupport/DAVE3.o
+                0x10001380                DAVE_Init
+ .text          0x10001390        0x0 Dave/Generated/src/DAVESupport/MULTIPLEXER.o
+ .text.DAVE_MUX_Init
+                0x10001390        0x2 Dave/Generated/src/DAVESupport/MULTIPLEXER.o
+                0x10001390                DAVE_MUX_Init
+ .text.DAVE_MUX_PreInit
+                0x10001392        0x2 Dave/Generated/src/DAVESupport/MULTIPLEXER.o
+                0x10001392                DAVE_MUX_PreInit
+ .text          0x10001394       0x9c c:/dave-3.1.10/arm-gcc/bin/../lib/gcc/arm-none-eabi/4.7.4/armv6-m\libgcc.a(_udivsi3.o)
+                0x10001394                __aeabi_uidiv
+                0x10001394                __udivsi3
+                0x1000141c                __aeabi_uidivmod
+ .text          0x10001430       0xc0 c:/dave-3.1.10/arm-gcc/bin/../lib/gcc/arm-none-eabi/4.7.4/armv6-m\libgcc.a(_divsi3.o)
+                0x10001430                __divsi3
+                0x10001430                __aeabi_idiv
+                0x100014dc                __aeabi_idivmod
+ .text          0x100014f0        0x4 c:/dave-3.1.10/arm-gcc/bin/../lib/gcc/arm-none-eabi/4.7.4/armv6-m\libgcc.a(_dvmd_tls.o)
+                0x100014f0                __aeabi_idiv0
+                0x100014f0                __aeabi_ldiv0
+ *(.glue*)
+ .glue_7        0x00000000        0x0 linker stubs
+ .glue_7t       0x00000000        0x0 linker stubs
+ *(.v4*)
+ .v4_bx         0x00000000        0x0 linker stubs
+ *(.vfp11_veneer)
+ .vfp11_veneer  0x00000000        0x0 linker stubs
+ *(.init)
+                0x100014f4                __preinit_array_start = .
+ *(.preinit_array)
+                0x100014f4                __preinit_array_end = .
+                0x100014f4                __init_array_start = .
+ *(SORT(.init_array.*))
+ *(.init_array)
+                0x100014f4                __init_array_end = .
+ *crtbegin.o(.ctors)
+ *(EXCLUDE_FILE(*crtend.o) .ctors)
+ *(SORT(.ctors.*))
+ *crtend.o(.ctors)
+ *(.fini)
+                0x100014f4                __fini_array_start = .
+ *(.fini_array)
+ *(SORT(.fini_array.*))
+                0x100014f4                __fini_array_end = .
+ *crtbegin.o(.dtors)
+ *(EXCLUDE_FILE(*crtend.o) .dtors)
+ *(SORT(.dtors.*))
+ *crtend.o(.dtors)
+                0x100014f4                __extab_start = .
+ *(.ARM.extab* .gnu.linkonce.armextab.*)
+ .ARM.extab.Xmc1100.reset
+                0x100014f4        0x0 Startup/startup_XMC1100.o
+ .ARM.extab.Xmc1100.postreset
+                0x100014f4        0x0 Startup/startup_XMC1100.o
+                0x100014f4                . = ALIGN (0x4)
+                0x100014f4                __extab_end = ABSOLUTE (.)
+
+.iplt           0x100014f4        0x0
+ .iplt          0x00000000        0x0 Startup/startup_XMC1100.o
+
+.ARM.exidx      0x100014f4       0x10
+                0x100014f4                __exidx_start = .
+ *(.ARM.exidx* .gnu.linkonce.armexidx.*)
+ .ARM.exidx.Xmc1100.reset
+                0x100014f4        0x8 Startup/startup_XMC1100.o
+ .ARM.exidx.Xmc1100.postreset
+                0x100014fc        0x8 Startup/startup_XMC1100.o
+                0x10001504                . = ALIGN (0x4)
+                0x10001504                __exidx_end = ABSOLUTE (.)
+
+.rodata         0x10001504        0x4
+ *(.rodata .rodata.*)
+ .rodata        0x10001504        0x4 Dave/Generated/src/NVIC002/NVIC002_Conf.o
+                0x10001504                NVIC002_Handle0
+ *(.gnu.linkonce.r*)
+                0x10001510                . = ALIGN (0x10)
+                0x10001510                eROData = .
+                0x10001510                VeneerLoadAddr = ABSOLUTE (eROData)
+
+.VENEER_Code    0x2000000c      0x110 load address 0x10001510
+                0x2000000c                VeneerStart = .
+ *(.XmcVeneerCode)
+ .XmcVeneerCode
+                0x2000000c      0x110 Startup/startup_XMC1100.o
+                0x2000000c                HardFault_Veneer
+                0x2000002c                SVC_Veneer
+                0x20000038                PendSV_Veneer
+                0x2000003c                SysTick_Veneer
+                0x20000040                SCU_0_Veneer
+                0x20000044                SCU_1_Veneer
+                0x20000048                SCU_2_Veneer
+                0x2000004c                SCU_3_Veneer
+                0x20000050                SCU_4_Veneer
+                0x20000054                SCU_5_Veneer
+                0x20000058                SCU_6_Veneer
+                0x20000064                USIC0_0_Veneer
+                0x20000068                USIC0_1_Veneer
+                0x2000006c                USIC0_2_Veneer
+                0x20000070                USIC0_3_Veneer
+                0x20000074                USIC0_4_Veneer
+                0x20000078                USIC0_5_Veneer
+                0x2000007c                VADC0_C0_0_Veneer
+                0x20000080                VADC0_C0_1_Veneer
+                0x20000094                CCU40_0_Veneer
+                0x20000098                CCU40_1_Veneer
+                0x2000009c                CCU40_2_Veneer
+                0x200000a0                CCU40_3_Veneer
+                0x2000011c                . = ALIGN (0x4)
+                0x2000011c                VeneerEnd = .
+                0x00000110                VeneerSize = (ABSOLUTE (VeneerEnd) - ABSOLUTE (VeneerStart))
+
+.rel.dyn        0x2000011c        0x0 load address 0x10001620
+ .rel.iplt      0x00000000        0x0 Startup/startup_XMC1100.o
+
+.GUARD_Band     0x2000011c        0x4 load address 0x00000000
+                0x2000011f                . = (. + 0x3)
+ *fill*         0x2000011c        0x3 00
+                0x20000120                . = ALIGN (0x10)
+ *fill*         0x2000011f        0x1 00
+                0x20000120                Guard_Band_End = .
+
+Stack           0x20000120      0x800 load address 0x00000000
+                0x20000920                . = (. + stack_size)
+ *fill*         0x20000120      0x800 00
+                0x20000920                __Xmc1100_stack = .
+
+.bss            0x20000920       0x18
+                0x20000920                __Xmc1100_sBSS = .
+ *(.bss)
+ .bss           0x20000920        0x0 Startup/startup_XMC1100.o
+ .bss           0x20000920        0x0 Startup/system_XMC1100.o
+ .bss           0x20000920        0x8 Main.o
+ .bss           0x20000928        0xc Lib/System_LibcStubs.o
+                0x20000930                __dso_handle
+ .bss           0x20000934        0x0 Dave/Generated/src/NVIC002/NVIC002.o
+ .bss           0x20000934        0x0 Dave/Generated/src/NVIC002/NVIC002_Conf.o
+ .bss           0x20000934        0x0 Dave/Generated/src/DAVESupport/DAVE3.o
+ .bss           0x20000934        0x0 Dave/Generated/src/DAVESupport/MULTIPLEXER.o
+ .bss           0x20000934        0x0 c:/dave-3.1.10/arm-gcc/bin/../lib/gcc/arm-none-eabi/4.7.4/armv6-m\libgcc.a(_udivsi3.o)
+ .bss           0x20000934        0x0 c:/dave-3.1.10/arm-gcc/bin/../lib/gcc/arm-none-eabi/4.7.4/armv6-m\libgcc.a(_divsi3.o)
+ .bss           0x20000934        0x0 c:/dave-3.1.10/arm-gcc/bin/../lib/gcc/arm-none-eabi/4.7.4/armv6-m\libgcc.a(_dvmd_tls.o)
+ *(.bss*)
+ *(COMMON)
+ COMMON         0x20000934        0x4 Startup/system_XMC1100.o
+                0x20000934                SystemCoreClock
+ *(.gnu.linkonce.b*)
+                0x20000938                __Xmc1100_eBSS = ALIGN (0x4)
+                0x00000018                __Xmc1100_BSS_Size = (__Xmc1100_eBSS - __Xmc1100_sBSS)
+                0x10001620                DataLoadAddr = (eROData + VeneerSize)
+
+.data           0x20000940        0x4 load address 0x10001620
+                0x20000940                __Xmc1100_sData = .
+ *(.data)
+ .data          0x20000940        0x0 Startup/startup_XMC1100.o
+ .data          0x20000940        0x0 Startup/system_XMC1100.o
+ .data          0x20000940        0x0 Main.o
+ .data          0x20000940        0x0 Lib/System_LibcStubs.o
+ .data          0x20000940        0x0 Dave/Generated/src/NVIC002/NVIC002.o
+ .data          0x20000940        0x4 Dave/Generated/src/NVIC002/NVIC002_Conf.o
+                0x20000940                NVIC002_HandleArray
+ .data          0x20000944        0x0 Dave/Generated/src/DAVESupport/DAVE3.o
+ .data          0x20000944        0x0 Dave/Generated/src/DAVESupport/MULTIPLEXER.o
+ .data          0x20000944        0x0 c:/dave-3.1.10/arm-gcc/bin/../lib/gcc/arm-none-eabi/4.7.4/armv6-m\libgcc.a(_udivsi3.o)
+ .data          0x20000944        0x0 c:/dave-3.1.10/arm-gcc/bin/../lib/gcc/arm-none-eabi/4.7.4/armv6-m\libgcc.a(_divsi3.o)
+ .data          0x20000944        0x0 c:/dave-3.1.10/arm-gcc/bin/../lib/gcc/arm-none-eabi/4.7.4/armv6-m\libgcc.a(_dvmd_tls.o)
+ *(.data*)
+ *(*.data)
+ *(.gnu.linkonce.d*)
+                0x20000944                __Xmc1100_eData = ALIGN (0x4)
+                0x00000004                __Xmc1100_Data_Size = (__Xmc1100_eData - __Xmc1100_sData)
+
+.igot.plt       0x20000944        0x0 load address 0x10001624
+ .igot.plt      0x00000000        0x0 Startup/startup_XMC1100.o
+
+.ram_code       0x20000944        0x0 load address 0x10001624
+                0x20000944                __ram_code_start = .
+ *(.ram_code)
+                0x20000944                __ram_code_end = .
+                0x10001624                __ram_code_load = LOADADDR (.ram_code)
+                0x00000000                __ram_code_size = (__ram_code_end - __ram_code_start)
+                0x20000948                __Xmc1100_heap_start = ALIGN (0x8)
+                0x20004000                __Xmc1100_heap_end = (ORIGIN (SRAM) + 0x4000)
+                0x20000948                Heap_Bank1_Start = __Xmc1100_heap_start
+                0x000036b8                Heap_Bank1_Size = (__Xmc1100_heap_end - __Xmc1100_heap_start)
+
+/DISCARD/
+ *(.comment)
+
+.stab
+ *(.stab)
+
+.stabstr
+ *(.stabstr)
+
+.debug
+ *(.debug)
+
+.line
+ *(.line)
+
+.debug_srcinfo
+ *(.debug_srcinfo)
+
+.debug_sfnames
+ *(.debug_sfnames)
+
+.debug_aranges
+ *(.debug_aranges)
+
+.debug_pubnames
+ *(.debug_pubnames)
+
+.debug_pubtypes
+ *(.debug_pubtypes)
+
+.debug_info
+ *(.debug_info .gnu.linkonce.wi.*)
+
+.debug_abbrev
+ *(.debug_abbrev)
+
+.debug_line
+ *(.debug_line)
+
+.debug_frame    0x00000000       0x40
+ *(.debug_frame)
+ .debug_frame   0x00000000       0x20 c:/dave-3.1.10/arm-gcc/bin/../lib/gcc/arm-none-eabi/4.7.4/armv6-m\libgcc.a(_udivsi3.o)
+ .debug_frame   0x00000020       0x20 c:/dave-3.1.10/arm-gcc/bin/../lib/gcc/arm-none-eabi/4.7.4/armv6-m\libgcc.a(_divsi3.o)
+
+.debug_str
+ *(.debug_str)
+
+.debug_loc
+ *(.debug_loc)
+
+.debug_macinfo
+ *(.debug_macinfo)
+
+.debug_ranges
+ *(.debug_ranges)
+
+.debug_weaknames
+ *(.debug_weaknames)
+
+.debug_funcnames
+ *(.debug_funcnames)
+
+.debug_typenames
+ *(.debug_typenames)
+
+.debug_varnames
+ *(.debug_varnames)
+
+.build_attributes
+                0x00000000      0x1d2
+ *(.ARM.attributes)
+ .ARM.attributes
+                0x00000000       0x21 Startup/startup_XMC1100.o
+ .ARM.attributes
+                0x00000021       0x31 Startup/system_XMC1100.o
+ .ARM.attributes
+                0x00000052       0x31 Main.o
+ .ARM.attributes
+                0x00000083       0x31 Lib/System_LibcStubs.o
+ .ARM.attributes
+                0x000000b4       0x31 Dave/Generated/src/NVIC002/NVIC002.o
+ .ARM.attributes
+                0x000000e5       0x31 Dave/Generated/src/NVIC002/NVIC002_Conf.o
+ .ARM.attributes
+                0x00000116       0x31 Dave/Generated/src/DAVESupport/DAVE3.o
+ .ARM.attributes
+                0x00000147       0x31 Dave/Generated/src/DAVESupport/MULTIPLEXER.o
+ .ARM.attributes
+                0x00000178       0x1e c:/dave-3.1.10/arm-gcc/bin/../lib/gcc/arm-none-eabi/4.7.4/armv6-m\libgcc.a(_udivsi3.o)
+ .ARM.attributes
+                0x00000196       0x1e c:/dave-3.1.10/arm-gcc/bin/../lib/gcc/arm-none-eabi/4.7.4/armv6-m\libgcc.a(_divsi3.o)
+ .ARM.attributes
+                0x000001b4       0x1e c:/dave-3.1.10/arm-gcc/bin/../lib/gcc/arm-none-eabi/4.7.4/armv6-m\libgcc.a(_dvmd_tls.o)
+OUTPUT(boschSpeedUp.elf elf32-littlearm)

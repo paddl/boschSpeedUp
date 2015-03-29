@@ -124,44 +124,29 @@
   90:../Dave/Generated/src/DAVESupport/DAVE3.c **** 	DAVE_MUX_PreInit(); 
   36              		.loc 1 90 0
   37 0004 FFF7FEFF 		bl	DAVE_MUX_PreInit
-  91:../Dave/Generated/src/DAVESupport/DAVE3.c **** 	//  Initialization of app 'CLK002'		     
-  92:../Dave/Generated/src/DAVESupport/DAVE3.c **** 	CLK002_Init();
+  91:../Dave/Generated/src/DAVESupport/DAVE3.c **** 	//  Initialization of app 'NVIC002'		     
+  92:../Dave/Generated/src/DAVESupport/DAVE3.c **** 	NVIC002_Init();
   38              		.loc 1 92 0
-  39 0008 FFF7FEFF 		bl	CLK002_Init
-  93:../Dave/Generated/src/DAVESupport/DAVE3.c **** 	 
-  94:../Dave/Generated/src/DAVESupport/DAVE3.c **** 	//  Initialization of app 'CCU4GLOBAL'		     
-  95:../Dave/Generated/src/DAVESupport/DAVE3.c **** 	CCU4GLOBAL_Init();
-  40              		.loc 1 95 0
-  41 000c FFF7FEFF 		bl	CCU4GLOBAL_Init
-  96:../Dave/Generated/src/DAVESupport/DAVE3.c **** 	 
-  97:../Dave/Generated/src/DAVESupport/DAVE3.c **** 	//  Initialization of app 'PWMSP001'		     
-  98:../Dave/Generated/src/DAVESupport/DAVE3.c **** 	PWMSP001_Init();
-  42              		.loc 1 98 0
-  43 0010 FFF7FEFF 		bl	PWMSP001_Init
-  99:../Dave/Generated/src/DAVESupport/DAVE3.c **** 	 
- 100:../Dave/Generated/src/DAVESupport/DAVE3.c **** 	//  Initialization of app 'NVIC002'		     
- 101:../Dave/Generated/src/DAVESupport/DAVE3.c **** 	NVIC002_Init();
-  44              		.loc 1 101 0
-  45 0014 FFF7FEFF 		bl	NVIC002_Init
- 102:../Dave/Generated/src/DAVESupport/DAVE3.c **** 	
- 103:../Dave/Generated/src/DAVESupport/DAVE3.c ****       
- 104:../Dave/Generated/src/DAVESupport/DAVE3.c **** 	//  MUX configurations
- 105:../Dave/Generated/src/DAVESupport/DAVE3.c **** 	DAVE_MUX_Init();	
-  46              		.loc 1 105 0
-  47 0018 FFF7FEFF 		bl	DAVE_MUX_Init
- 106:../Dave/Generated/src/DAVESupport/DAVE3.c **** } //  End of function DAVE_Init
-  48              		.loc 1 106 0
-  49 001c BD46     		mov	sp, r7
-  50              		@ sp needed for prologue
-  51 001e 80BD     		pop	{r7, pc}
-  52              		.cfi_endproc
-  53              	.LFE38:
-  55              		.text
-  56              	.Letext0:
+  39 0008 FFF7FEFF 		bl	NVIC002_Init
+  93:../Dave/Generated/src/DAVESupport/DAVE3.c **** 	
+  94:../Dave/Generated/src/DAVESupport/DAVE3.c ****       
+  95:../Dave/Generated/src/DAVESupport/DAVE3.c **** 	//  MUX configurations
+  96:../Dave/Generated/src/DAVESupport/DAVE3.c **** 	DAVE_MUX_Init();	
+  40              		.loc 1 96 0
+  41 000c FFF7FEFF 		bl	DAVE_MUX_Init
+  97:../Dave/Generated/src/DAVESupport/DAVE3.c **** } //  End of function DAVE_Init
+  42              		.loc 1 97 0
+  43 0010 BD46     		mov	sp, r7
+  44              		@ sp needed for prologue
+  45 0012 80BD     		pop	{r7, pc}
+  46              		.cfi_endproc
+  47              	.LFE38:
+  49              		.text
+  50              	.Letext0:
 DEFINED SYMBOLS
                             *ABS*:00000000 DAVE3.c
-C:\Users\Patrick\AppData\Local\Temp\cclTIPor.s:18     .text.DAVE_Init:00000000 $t
-C:\Users\Patrick\AppData\Local\Temp\cclTIPor.s:23     .text.DAVE_Init:00000000 DAVE_Init
+C:\Users\Patrick\AppData\Local\Temp\ccXCDPWU.s:18     .text.DAVE_Init:00000000 $t
+C:\Users\Patrick\AppData\Local\Temp\ccXCDPWU.s:23     .text.DAVE_Init:00000000 DAVE_Init
                      .debug_frame:00000010 $d
                            .group:00000000 wm4.1.63d3e0297d6e9004e0e37a0840833abd
                            .group:00000000 wm4.XMC1100.h.45.7a7cd799d7738130fcda8b83b0aa37d4
@@ -179,14 +164,9 @@ C:\Users\Patrick\AppData\Local\Temp\cclTIPor.s:23     .text.DAVE_Init:00000000 D
                            .group:00000000 wm4.types.h.60.e75c47576398c648cdcf9000ace5e3d8
                            .group:00000000 wm4.MULTIPLEXER.h.46.383e3edbb9cbf6e538f7c1532ef623c1
                            .group:00000000 wm4.uc_id.h.35.47f40be5760de9fc3332688f9e95febc
-                           .group:00000000 wm4.CCU4Global_Conf.h.63.a52fac0daa39b5f58343578312b4eb54
-                           .group:00000000 wm4.PWMSP001.h.57.29b732b86baf3e81f49153f5f495912e
-                           .group:00000000 wm4.NVIC002_Conf.h.62.18166a449b9ed77d0131aa9be7c23c90
+                           .group:00000000 wm4.NVIC002_Conf.h.63.9c71769d77b95acb42ba2599ae4f9114
 
 UNDEFINED SYMBOLS
 DAVE_MUX_PreInit
-CLK002_Init
-CCU4GLOBAL_Init
-PWMSP001_Init
 NVIC002_Init
 DAVE_MUX_Init

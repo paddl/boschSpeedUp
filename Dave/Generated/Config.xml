@@ -12,21 +12,6 @@
     <Generated_Files>
         <Source_Files>
             <Source_File>
-                <File_Name>CCU4GLOBAL.c</File_Name>
-                <Path>\Dave\Generated\src\CCU4GLOBAL\CCU4GLOBAL.c</Path>
-                <Type>C File</Type>
-            </Source_File>
-            <Source_File>
-                <File_Name>CCU4GLOBAL_Conf.c</File_Name>
-                <Path>\Dave\Generated\src\CCU4GLOBAL\CCU4GLOBAL_Conf.c</Path>
-                <Type>C File</Type>
-            </Source_File>
-            <Source_File>
-                <File_Name>CLK002.c</File_Name>
-                <Path>\Dave\Generated\src\CLK002\CLK002.c</Path>
-                <Type>C File</Type>
-            </Source_File>
-            <Source_File>
                 <File_Name>DAVE3.c</File_Name>
                 <Path>\Dave\Generated\src\DAVESupport\DAVE3.c</Path>
                 <Type>C File</Type>
@@ -46,43 +31,8 @@
                 <Path>\Dave\Generated\src\NVIC002\NVIC002_Conf.c</Path>
                 <Type>C File</Type>
             </Source_File>
-            <Source_File>
-                <File_Name>PWMSP001.c</File_Name>
-                <Path>\Dave\Generated\src\PWMSP001\PWMSP001.c</Path>
-                <Type>C File</Type>
-            </Source_File>
-            <Source_File>
-                <File_Name>PWMSP001_Conf.c</File_Name>
-                <Path>\Dave\Generated\src\PWMSP001\PWMSP001_Conf.c</Path>
-                <Type>C File</Type>
-            </Source_File>
         </Source_Files>
         <Header_Files>
-            <Header_File>
-                <File_Name>CCU4GLOBAL.h</File_Name>
-                <Path>\Dave\Generated\inc\CCU4GLOBAL\CCU4GLOBAL.h</Path>
-                <Type>H File</Type>
-            </Header_File>
-            <Header_File>
-                <File_Name>CCU4GLOBAL_Conf.h</File_Name>
-                <Path>\Dave\Generated\inc\CCU4GLOBAL\CCU4GLOBAL_Conf.h</Path>
-                <Type>H File</Type>
-            </Header_File>
-            <Header_File>
-                <File_Name>CCU4GLOBAL_Extern.h</File_Name>
-                <Path>\Dave\Generated\inc\CCU4GLOBAL\CCU4GLOBAL_Extern.h</Path>
-                <Type>H File</Type>
-            </Header_File>
-            <Header_File>
-                <File_Name>CLK002.h</File_Name>
-                <Path>\Dave\Generated\inc\CLK002\CLK002.h</Path>
-                <Type>H File</Type>
-            </Header_File>
-            <Header_File>
-                <File_Name>CLKVAL_SSW.h</File_Name>
-                <Path>\Dave\Generated\inc\CLK002\CLKVAL_SSW.h</Path>
-                <Type>H File</Type>
-            </Header_File>
             <Header_File>
                 <File_Name>DAVE3.h</File_Name>
                 <Path>\Dave\Generated\inc\DAVESupport\DAVE3.h</Path>
@@ -121,16 +71,6 @@
             <Header_File>
                 <File_Name>NVIC002_Extern.h</File_Name>
                 <Path>\Dave\Generated\inc\NVIC002\NVIC002_Extern.h</Path>
-                <Type>H File</Type>
-            </Header_File>
-            <Header_File>
-                <File_Name>PWMSP001.h</File_Name>
-                <Path>\Dave\Generated\inc\PWMSP001\PWMSP001.h</Path>
-                <Type>H File</Type>
-            </Header_File>
-            <Header_File>
-                <File_Name>PWMSP001_Conf.h</File_Name>
-                <Path>\Dave\Generated\inc\PWMSP001\PWMSP001_Conf.h</Path>
                 <Type>H File</Type>
             </Header_File>
         </Header_Files>
