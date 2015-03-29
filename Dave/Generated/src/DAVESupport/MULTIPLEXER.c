@@ -89,6 +89,22 @@ void DAVE_MUX_Init(void)
 {  
    	 
             	         
+                                                   
+/*        ERU0 Macro definitions:         */  
+
+  WR_REG(ERU0->EXISEL, ERU_EXISEL_EXS1A_Msk, ERU_EXISEL_EXS1A_Pos, SIGNAL_ERU_xA1);                /*    ERU0_EXISEL_EXS1A */
+
+  WR_REG(ERU0->EXICON[1], ERU_EXICON_PE_Msk, ERU_EXICON_PE_Pos, SIGNAL_TR1);                            /*    ERU0_EXICON[1]_PE */
+
+  WR_REG(ERU0->EXICON[1], ERU_EXICON_OCS_Msk, ERU_EXICON_OCS_Pos, SIGNAL_TRx3);                        /*    ERU0_EXICON[1]_OCS */  
+/*        ERU1 Macro definitions:         */      
+   	 
+            	         
+                                                 
+
+/*        PORT Macro definitions for IOCR_OE, IOCR_PCR & HWSEL_HW     */                   
+   	 
+            	         
                                                      
 }
 
@@ -110,5 +126,9 @@ void DAVE_MUX_Init(void)
  
 void DAVE_MUX_PreInit(void)
 {    
+
+/*        PORT Macro definitions for IOCR_OE, IOCR_PCR & HWSEL_HW     */               
+           
+  WR_REG(PORT2->PDISC, PORT2_PDISC_PDIS5_Msk, PORT2_PDISC_PDIS5_Pos, PORT_PDISC_PDIS0);            /*    P2.5 : PORT2_PDISC_PDIS5 */        
 }
 

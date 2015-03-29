@@ -1,0 +1,52 @@
+   1              		.cpu cortex-m0
+   2              		.fpu softvfp
+   3              		.eabi_attribute 20, 1
+   4              		.eabi_attribute 21, 1
+   5              		.eabi_attribute 23, 3
+   6              		.eabi_attribute 24, 1
+   7              		.eabi_attribute 25, 1
+   8              		.eabi_attribute 26, 1
+   9              		.eabi_attribute 30, 4
+  10              		.eabi_attribute 34, 0
+  11              		.eabi_attribute 18, 4
+  12              		.code	16
+  13              		.file	"IO002_Conf.c"
+  14              		.global	IO002_HandleArr
+  15              		.global	IO002_Handle0
+  16              		.section	.rodata
+  17              		.align	2
+  20              	IO002_Handle0:
+  21 0000 02       		.byte	2
+  22 0001 05       		.byte	5
+  23 0002 0000     		.space	2
+  24 0004 00000000 		.word	0
+  25 0008 00000000 		.word	0
+  26 000c 00000000 		.word	0
+  27 0010 00000000 		.word	0
+  28 0014 04000000 		.word	4
+  29 0018 00000000 		.word	0
+  30 001c 00000000 		.word	0
+  31 0020 01000000 		.word	1
+  32 0024 00000000 		.word	0
+  33 0028 00000000 		.space	16
+  33      00000000 
+  33      00000000 
+  33      00000000 
+  34 0038 00004000 		.word	4194304
+  35 003c 00000000 		.space	4
+  36 0040 00020440 		.word	1074004480
+  37 0044 00000000 		.word	0
+  38 0048 00000000 		.word	0
+  39              		.data
+  40              		.align	2
+  43              	IO002_HandleArr:
+  44 0000 00000000 		.word	IO002_Handle0
+  45              		.ident	"GCC: (GNU Tools for ARM Embedded Processors) 4.7.4 20130913 (release) [ARM/embedded-4_7-br
+DEFINED SYMBOLS
+                            *ABS*:00000000 IO002_Conf.c
+C:\Users\Patrick\AppData\Local\Temp\ccaasV3H.s:43     .data:00000000 IO002_HandleArr
+C:\Users\Patrick\AppData\Local\Temp\ccaasV3H.s:20     .rodata:00000000 IO002_Handle0
+C:\Users\Patrick\AppData\Local\Temp\ccaasV3H.s:17     .rodata:00000000 $d
+C:\Users\Patrick\AppData\Local\Temp\ccaasV3H.s:40     .data:00000000 $d
+
+NO UNDEFINED SYMBOLS

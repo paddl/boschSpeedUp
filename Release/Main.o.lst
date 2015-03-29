@@ -11,197 +11,245 @@
   11              		.eabi_attribute 18, 4
   12              		.code	16
   13              		.file	"Main.c"
-  14              		.global	__aeabi_idiv
-  15              		.section	.text.startup.main,"ax",%progbits
-  16              		.align	1
-  17              		.global	main
-  18              		.code	16
-  19              		.thumb_func
-  21              	main:
-  22 0000 F0B5     		push	{r4, r5, r6, r7, lr}
-  23 0002 394D     		ldr	r5, .L25
-  24 0004 85B0     		sub	sp, sp, #20
-  25 0006 FFF7FEFF 		bl	DAVE_Init
-  26 000a 6A69     		ldr	r2, [r5, #20]
-  27 000c 374B     		ldr	r3, .L25+4
-  28 000e C021     		mov	r1, #192
-  29 0010 1340     		and	r3, r2
-  30 0012 6B61     		str	r3, [r5, #20]
-  31 0014 6869     		ldr	r0, [r5, #20]
-  32 0016 0C02     		lsl	r4, r1, #8
-  33 0018 0443     		orr	r4, r0
-  34 001a 2026     		mov	r6, #32
-  35 001c 6C61     		str	r4, [r5, #20]
-  36 001e 6E60     		str	r6, [r5, #4]
-  37 0020 6F69     		ldr	r7, [r5, #20]
-  38 0022 334A     		ldr	r2, .L25+8
-  39 0024 8023     		mov	r3, #128
-  40 0026 3A40     		and	r2, r7
-  41 0028 6A61     		str	r2, [r5, #20]
-  42 002a 6869     		ldr	r0, [r5, #20]
-  43 002c 5903     		lsl	r1, r3, #13
-  44 002e 0143     		orr	r1, r0
-  45 0030 6961     		str	r1, [r5, #20]
-  46 0032 2C6C     		ldr	r4, [r5, #64]
-  47 0034 8026     		mov	r6, #128
-  48 0036 F704     		lsl	r7, r6, #19
-  49 0038 2E48     		ldr	r0, .L25+12
-  50 003a 2743     		orr	r7, r4
-  51 003c 2F64     		str	r7, [r5, #64]
-  52 003e 6B6A     		ldr	r3, [r5, #36]
-  53 0040 4369     		ldr	r3, [r0, #20]
-  54 0042 F822     		mov	r2, #248
-  55 0044 9343     		bic	r3, r2
-  56 0046 4361     		str	r3, [r0, #20]
-  57 0048 4169     		ldr	r1, [r0, #20]
-  58 004a 1024     		mov	r4, #16
-  59 004c 2143     		orr	r1, r4
-  60 004e 4161     		str	r1, [r0, #20]
-  61 0050 066C     		ldr	r6, [r0, #64]
-  62 0052 8027     		mov	r7, #128
-  63 0054 FB02     		lsl	r3, r7, #11
-  64 0056 3343     		orr	r3, r6
-  65 0058 0364     		str	r3, [r0, #64]
-  66 005a 436A     		ldr	r3, [r0, #36]
-  67 005c 6A6A     		ldr	r2, [r5, #36]
-  68 005e 4020     		mov	r0, #64
-  69 0060 0240     		and	r2, r0
-  70 0062 0020     		mov	r0, #0
-  71 0064 041C     		mov	r4, r0
-  72 0066 031C     		mov	r3, r0
-  73 0068 0290     		str	r0, [sp, #8]
-  74 006a 8446     		mov	ip, r0
-  75              	.L22:
-  76 006c 0021     		mov	r1, #0
-  77 006e 0133     		add	r3, r3, #1
-  78 0070 0134     		add	r4, r4, #1
-  79 0072 6427     		mov	r7, #100
-  80 0074 0191     		str	r1, [sp, #4]
-  81              	.L5:
-  82 0076 6E6A     		ldr	r6, [r5, #36]
-  83 0078 7606     		lsl	r6, r6, #25
-  84 007a 03D5     		bpl	.L3
-  85 007c 019E     		ldr	r6, [sp, #4]
-  86 007e 0136     		add	r6, r6, #1
-  87 0080 0196     		str	r6, [sp, #4]
-  88 0082 00E0     		b	.L4
-  89              	.L3:
-  90 0084 0131     		add	r1, r1, #1
-  91              	.L4:
-  92 0086 013F     		sub	r7, r7, #1
-  93 0088 002F     		cmp	r7, #0
-  94 008a F4D1     		bne	.L5
-  95 008c 0029     		cmp	r1, #0
-  96 008e 0BD0     		beq	.L6
-  97 0090 002A     		cmp	r2, #0
-  98 0092 0DD0     		beq	.L7
-  99 0094 174A     		ldr	r2, .L25+12
- 100 0096 5810     		asr	r0, r3, #1
- 101 0098 576A     		ldr	r7, [r2, #36]
- 102 009a FE06     		lsl	r6, r7, #27
- 103 009c 1DD4     		bmi	.L9
- 104 009e D800     		lsl	r0, r3, #3
- 105 00a0 0A21     		mov	r1, #10
- 106 00a2 FFF7FEFF 		bl	__aeabi_idiv
- 107 00a6 18E0     		b	.L9
- 108              	.L6:
- 109 00a8 019F     		ldr	r7, [sp, #4]
- 110 00aa 002F     		cmp	r7, #0
- 111 00ac 00D0     		beq	.L7
- 112 00ae 0122     		mov	r2, #1
- 113              	.L7:
- 114 00b0 8442     		cmp	r4, r0
- 115 00b2 DBDB     		blt	.L22
- 116 00b4 6446     		mov	r4, ip
- 117 00b6 002C     		cmp	r4, #0
- 118 00b8 0DD1     		bne	.L11
- 119 00ba 0299     		ldr	r1, [sp, #8]
- 120 00bc 0129     		cmp	r1, #1
- 121 00be 03D1     		bne	.L14
- 122 00c0 2026     		mov	r6, #32
- 123 00c2 6E60     		str	r6, [r5, #4]
- 124 00c4 6446     		mov	r4, ip
- 125 00c6 D1E7     		b	.L22
- 126              	.L14:
- 127 00c8 0124     		mov	r4, #1
- 128              	.L23:
- 129 00ca 0B4E     		ldr	r6, .L25+16
- 130 00cc 0294     		str	r4, [sp, #8]
- 131 00ce 0024     		mov	r4, #0
- 132 00d0 6E60     		str	r6, [r5, #4]
- 133 00d2 A446     		mov	ip, r4
- 134 00d4 CAE7     		b	.L22
- 135              	.L11:
- 136 00d6 0024     		mov	r4, #0
- 137 00d8 F7E7     		b	.L23
- 138              	.L9:
- 139 00da 0023     		mov	r3, #0
- 140 00dc 1A1C     		mov	r2, r3
- 141 00de 8442     		cmp	r4, r0
- 142 00e0 F9DA     		bge	.L11
- 143 00e2 0121     		mov	r1, #1
- 144 00e4 8C46     		mov	ip, r1
- 145 00e6 C1E7     		b	.L22
- 146              	.L26:
- 147              		.align	2
- 148              	.L25:
- 149 00e8 00000440 		.word	1074003968
- 150 00ec FF07FFFF 		.word	-63489
- 151 00f0 FFFF07FF 		.word	-16252929
- 152 00f4 00010440 		.word	1074004224
- 153 00f8 20002000 		.word	2097184
- 155              		.global	__aeabi_uidivmod
- 156              		.section	.text.IRQ_Hdlr_26,"ax",%progbits
- 157              		.align	1
- 158              		.global	IRQ_Hdlr_26
- 159              		.code	16
- 160              		.thumb_func
- 162              	IRQ_Hdlr_26:
- 163 0000 38B5     		push	{r3, r4, r5, lr}
- 164 0002 094C     		ldr	r4, .L29
- 165 0004 2368     		ldr	r3, [r4]
- 166 0006 002B     		cmp	r3, #0
- 167 0008 09D1     		bne	.L28
- 168 000a 6568     		ldr	r5, [r4, #4]
- 169 000c 0721     		mov	r1, #7
- 170 000e 281C     		mov	r0, r5
- 171 0010 FFF7FEFF 		bl	__aeabi_uidivmod
- 172 0014 0131     		add	r1, r1, #1
- 173 0016 8900     		lsl	r1, r1, #2
- 174 0018 0135     		add	r5, r5, #1
- 175 001a 2160     		str	r1, [r4]
- 176 001c 6560     		str	r5, [r4, #4]
- 177              	.L28:
- 178 001e 2068     		ldr	r0, [r4]
- 179              		@ sp needed for prologue
- 180 0020 0138     		sub	r0, r0, #1
- 181 0022 2060     		str	r0, [r4]
- 182 0024 38BD     		pop	{r3, r4, r5, pc}
- 183              	.L30:
- 184 0026 C046     		.align	2
- 185              	.L29:
- 186 0028 00000000 		.word	.LANCHOR0
- 188              		.bss
- 189              		.align	2
- 190              		.set	.LANCHOR0,. + 0
- 193              	cycles.5739:
- 194 0000 00000000 		.space	4
- 197              	state.5738:
- 198 0004 00000000 		.space	4
- 199              		.ident	"GCC: (GNU Tools for ARM Embedded Processors) 4.7.4 20130913 (release) [ARM/embedded-4_7-br
+  14              		.section	.text.startup.main,"ax",%progbits
+  15              		.align	1
+  16              		.global	main
+  17              		.code	16
+  18              		.thumb_func
+  20              	main:
+  21 0000 F7B5     		push	{r0, r1, r2, r4, r5, r6, r7, lr}
+  22 0002 FFF7FEFF 		bl	DAVE_Init
+  23 0006 2D4B     		ldr	r3, .L16
+  24 0008 2D4A     		ldr	r2, .L16+4
+  25 000a 5969     		ldr	r1, [r3, #20]
+  26 000c C024     		mov	r4, #192
+  27 000e 0A40     		and	r2, r1
+  28 0010 5A61     		str	r2, [r3, #20]
+  29 0012 5869     		ldr	r0, [r3, #20]
+  30 0014 2502     		lsl	r5, r4, #8
+  31 0016 0543     		orr	r5, r0
+  32 0018 2026     		mov	r6, #32
+  33 001a 5D61     		str	r5, [r3, #20]
+  34 001c 5E60     		str	r6, [r3, #4]
+  35 001e 5F69     		ldr	r7, [r3, #20]
+  36 0020 2849     		ldr	r1, .L16+8
+  37 0022 8022     		mov	r2, #128
+  38 0024 3940     		and	r1, r7
+  39 0026 5961     		str	r1, [r3, #20]
+  40 0028 5869     		ldr	r0, [r3, #20]
+  41 002a 5403     		lsl	r4, r2, #13
+  42 002c 0443     		orr	r4, r0
+  43 002e 5C61     		str	r4, [r3, #20]
+  44 0030 1D6C     		ldr	r5, [r3, #64]
+  45 0032 8026     		mov	r6, #128
+  46 0034 F704     		lsl	r7, r6, #19
+  47 0036 2F43     		orr	r7, r5
+  48 0038 1F64     		str	r7, [r3, #64]
+  49 003a 5A6A     		ldr	r2, [r3, #36]
+  50 003c 224A     		ldr	r2, .L16+12
+  51 003e F820     		mov	r0, #248
+  52 0040 5169     		ldr	r1, [r2, #20]
+  53 0042 1025     		mov	r5, #16
+  54 0044 8143     		bic	r1, r0
+  55 0046 5161     		str	r1, [r2, #20]
+  56 0048 5469     		ldr	r4, [r2, #20]
+  57 004a 8027     		mov	r7, #128
+  58 004c 2C43     		orr	r4, r5
+  59 004e 5461     		str	r4, [r2, #20]
+  60 0050 166C     		ldr	r6, [r2, #64]
+  61 0052 F902     		lsl	r1, r7, #11
+  62 0054 3143     		orr	r1, r6
+  63 0056 1164     		str	r1, [r2, #64]
+  64 0058 526A     		ldr	r2, [r2, #36]
+  65 005a 1C4A     		ldr	r2, .L16+16
+  66 005c 1568     		ldr	r5, [r2]
+  67 005e 1779     		ldrb	r7, [r2, #4]
+  68 0060 0195     		str	r5, [sp, #4]
+  69 0062 002D     		cmp	r5, #0
+  70 0064 01DC     		bgt	.L2
+  71 0066 0120     		mov	r0, #1
+  72 0068 0190     		str	r0, [sp, #4]
+  73              	.L2:
+  74 006a 9168     		ldr	r1, [r2, #8]
+  75 006c 0022     		mov	r2, #0
+  76              	.L3:
+  77 006e 0C1C     		mov	r4, r1
+  78              	.L7:
+  79 0070 174E     		ldr	r6, .L16+20
+  80 0072 0134     		add	r4, r4, #1
+  81 0074 B442     		cmp	r4, r6
+  82 0076 07D1     		bne	.L4
+  83 0078 1648     		ldr	r0, .L16+24
+  84 007a 8242     		cmp	r2, r0
+  85 007c 02DC     		bgt	.L5
+  86 007e 0132     		add	r2, r2, #1
+  87 0080 0A2A     		cmp	r2, #10
+  88 0082 01DD     		ble	.L4
+  89              	.L5:
+  90              	@ 349 "C:\DAVE-3.1.10\eclipse\/../CMSIS/Include/core_cmInstr.h" 1
+  91 0084 20BF     		wfe
+  92              	@ 0 "" 2
+  93              		.code	16
+  94 0086 0022     		mov	r2, #0
+  95              	.L4:
+  96 0088 6420     		mov	r0, #100
+  97              	.L6:
+  98 008a 0138     		sub	r0, r0, #1
+  99 008c 5E6A     		ldr	r6, [r3, #36]
+ 100 008e 0028     		cmp	r0, #0
+ 101 0090 FBD1     		bne	.L6
+ 102 0092 661A     		sub	r6, r4, r1
+ 103 0094 AE42     		cmp	r6, r5
+ 104 0096 EBDB     		blt	.L7
+ 105 0098 002F     		cmp	r7, #0
+ 106 009a 07D1     		bne	.L11
+ 107 009c 0D4F     		ldr	r7, .L16+24
+ 108 009e BA42     		cmp	r2, r7
+ 109 00a0 02DC     		bgt	.L9
+ 110 00a2 0132     		add	r2, r2, #1
+ 111 00a4 012A     		cmp	r2, #1
+ 112 00a6 02DD     		ble	.L8
+ 113              	.L9:
+ 114 00a8 2024     		mov	r4, #32
+ 115 00aa 01E0     		b	.L14
+ 116              	.L11:
+ 117 00ac 021C     		mov	r2, r0
+ 118              	.L8:
+ 119 00ae 0A4C     		ldr	r4, .L16+28
+ 120              	.L14:
+ 121 00b0 0198     		ldr	r0, [sp, #4]
+ 122 00b2 5C60     		str	r4, [r3, #4]
+ 123 00b4 0918     		add	r1, r1, r0
+ 124 00b6 0027     		mov	r7, #0
+ 125 00b8 D9E7     		b	.L3
+ 126              	.L17:
+ 127 00ba C046     		.align	2
+ 128              	.L16:
+ 129 00bc 00000440 		.word	1074003968
+ 130 00c0 FF07FFFF 		.word	-63489
+ 131 00c4 FFFF07FF 		.word	-16252929
+ 132 00c8 00010440 		.word	1074004224
+ 133 00cc 00000000 		.word	.LANCHOR0
+ 134 00d0 FFFF0000 		.word	65535
+ 135 00d4 FEFF0000 		.word	65534
+ 136 00d8 20002000 		.word	2097184
+ 138              		.global	__aeabi_idiv
+ 139              		.section	.text.ERU0_3_IRQHandler,"ax",%progbits
+ 140              		.align	1
+ 141              		.global	ERU0_3_IRQHandler
+ 142              		.code	16
+ 143              		.thumb_func
+ 145              	ERU0_3_IRQHandler:
+ 146 0000 37B5     		push	{r0, r1, r2, r4, r5, lr}
+ 147 0002 0F4D     		ldr	r5, .L25
+ 148 0004 2B79     		ldrb	r3, [r5, #4]
+ 149 0006 2A68     		ldr	r2, [r5]
+ 150 0008 0433     		add	r3, r3, #4
+ 151 000a 9800     		lsl	r0, r3, #2
+ 152 000c 8158     		ldr	r1, [r0, r2]
+ 153 000e 0A06     		lsl	r2, r1, #24
+ 154 0010 15D5     		bpl	.L18
+ 155 0012 0C4C     		ldr	r4, .L25+4
+ 156 0014 0122     		mov	r2, #1
+ 157 0016 0C4B     		ldr	r3, .L25+8
+ 158 0018 2271     		strb	r2, [r4, #4]
+ 159 001a 586A     		ldr	r0, [r3, #36]
+ 160 001c C206     		lsl	r2, r0, #27
+ 161 001e 03D5     		bpl	.L20
+ 162 0020 A268     		ldr	r2, [r4, #8]
+ 163 0022 5310     		asr	r3, r2, #1
+ 164 0024 2360     		str	r3, [r4]
+ 165 0026 05E0     		b	.L21
+ 166              	.L20:
+ 167 0028 A168     		ldr	r1, [r4, #8]
+ 168 002a C800     		lsl	r0, r1, #3
+ 169 002c 0A21     		mov	r1, #10
+ 170 002e FFF7FEFF 		bl	__aeabi_idiv
+ 171 0032 2060     		str	r0, [r4]
+ 172              	.L21:
+ 173 0034 0020     		mov	r0, #0
+ 174 0036 A060     		str	r0, [r4, #8]
+ 175 0038 07CD     		ldmia	r5!, {r0, r1, r2}
+ 176 003a FFF7FEFF 		bl	ERU001_ClearFlag
+ 177              	.L18:
+ 178              		@ sp needed for prologue
+ 179 003e 37BD     		pop	{r0, r1, r2, r4, r5, pc}
+ 180              	.L26:
+ 181              		.align	2
+ 182              	.L25:
+ 183 0040 00000000 		.word	ERU001_Handle0
+ 184 0044 00000000 		.word	.LANCHOR0
+ 185 0048 00010440 		.word	1074004224
+ 187              		.global	__aeabi_uidivmod
+ 188              		.section	.text.PWM_Period_Interrupt,"ax",%progbits
+ 189              		.align	1
+ 190              		.global	PWM_Period_Interrupt
+ 191              		.code	16
+ 192              		.thumb_func
+ 194              	PWM_Period_Interrupt:
+ 195 0000 38B5     		push	{r3, r4, r5, lr}
+ 196 0002 094C     		ldr	r4, .L29
+ 197 0004 E368     		ldr	r3, [r4, #12]
+ 198 0006 002B     		cmp	r3, #0
+ 199 0008 09D1     		bne	.L28
+ 200 000a 2569     		ldr	r5, [r4, #16]
+ 201 000c 0721     		mov	r1, #7
+ 202 000e 281C     		mov	r0, r5
+ 203 0010 FFF7FEFF 		bl	__aeabi_uidivmod
+ 204 0014 0131     		add	r1, r1, #1
+ 205 0016 8900     		lsl	r1, r1, #2
+ 206 0018 0135     		add	r5, r5, #1
+ 207 001a E160     		str	r1, [r4, #12]
+ 208 001c 2561     		str	r5, [r4, #16]
+ 209              	.L28:
+ 210 001e E068     		ldr	r0, [r4, #12]
+ 211              		@ sp needed for prologue
+ 212 0020 0138     		sub	r0, r0, #1
+ 213 0022 E060     		str	r0, [r4, #12]
+ 214 0024 38BD     		pop	{r3, r4, r5, pc}
+ 215              	.L30:
+ 216 0026 C046     		.align	2
+ 217              	.L29:
+ 218 0028 00000000 		.word	.LANCHOR0
+ 220              		.global	trigger
+ 221              		.global	speedLowHigh
+ 222              		.global	speed
+ 223              		.bss
+ 224              		.align	2
+ 225              		.set	.LANCHOR0,. + 0
+ 228              	speedLowHigh:
+ 229 0000 00000000 		.space	4
+ 232              	trigger:
+ 233 0004 00       		.space	1
+ 234 0005 000000   		.space	3
+ 237              	speed:
+ 238 0008 00000000 		.space	4
+ 241              	cycles.5869:
+ 242 000c 00000000 		.space	4
+ 245              	state.5868:
+ 246 0010 00000000 		.space	4
+ 247              		.ident	"GCC: (GNU Tools for ARM Embedded Processors) 4.7.4 20130913 (release) [ARM/embedded-4_7-br
 DEFINED SYMBOLS
                             *ABS*:00000000 Main.c
-C:\Users\Patrick\AppData\Local\Temp\ccMKuRES.s:16     .text.startup.main:00000000 $t
-C:\Users\Patrick\AppData\Local\Temp\ccMKuRES.s:21     .text.startup.main:00000000 main
-C:\Users\Patrick\AppData\Local\Temp\ccMKuRES.s:149    .text.startup.main:000000e8 $d
-C:\Users\Patrick\AppData\Local\Temp\ccMKuRES.s:157    .text.IRQ_Hdlr_26:00000000 $t
-C:\Users\Patrick\AppData\Local\Temp\ccMKuRES.s:162    .text.IRQ_Hdlr_26:00000000 IRQ_Hdlr_26
-C:\Users\Patrick\AppData\Local\Temp\ccMKuRES.s:186    .text.IRQ_Hdlr_26:00000028 $d
-C:\Users\Patrick\AppData\Local\Temp\ccMKuRES.s:189    .bss:00000000 $d
-C:\Users\Patrick\AppData\Local\Temp\ccMKuRES.s:193    .bss:00000000 cycles.5739
-C:\Users\Patrick\AppData\Local\Temp\ccMKuRES.s:197    .bss:00000004 state.5738
+C:\Users\Patrick\AppData\Local\Temp\ccSsoySi.s:15     .text.startup.main:00000000 $t
+C:\Users\Patrick\AppData\Local\Temp\ccSsoySi.s:20     .text.startup.main:00000000 main
+C:\Users\Patrick\AppData\Local\Temp\ccSsoySi.s:129    .text.startup.main:000000bc $d
+C:\Users\Patrick\AppData\Local\Temp\ccSsoySi.s:140    .text.ERU0_3_IRQHandler:00000000 $t
+C:\Users\Patrick\AppData\Local\Temp\ccSsoySi.s:145    .text.ERU0_3_IRQHandler:00000000 ERU0_3_IRQHandler
+C:\Users\Patrick\AppData\Local\Temp\ccSsoySi.s:183    .text.ERU0_3_IRQHandler:00000040 $d
+C:\Users\Patrick\AppData\Local\Temp\ccSsoySi.s:189    .text.PWM_Period_Interrupt:00000000 $t
+C:\Users\Patrick\AppData\Local\Temp\ccSsoySi.s:194    .text.PWM_Period_Interrupt:00000000 PWM_Period_Interrupt
+C:\Users\Patrick\AppData\Local\Temp\ccSsoySi.s:218    .text.PWM_Period_Interrupt:00000028 $d
+C:\Users\Patrick\AppData\Local\Temp\ccSsoySi.s:232    .bss:00000004 trigger
+C:\Users\Patrick\AppData\Local\Temp\ccSsoySi.s:228    .bss:00000000 speedLowHigh
+C:\Users\Patrick\AppData\Local\Temp\ccSsoySi.s:237    .bss:00000008 speed
+C:\Users\Patrick\AppData\Local\Temp\ccSsoySi.s:224    .bss:00000000 $d
+C:\Users\Patrick\AppData\Local\Temp\ccSsoySi.s:241    .bss:0000000c cycles.5869
+C:\Users\Patrick\AppData\Local\Temp\ccSsoySi.s:245    .bss:00000010 state.5868
 
 UNDEFINED SYMBOLS
-__aeabi_idiv
 DAVE_Init
+__aeabi_idiv
+ERU001_ClearFlag
+ERU001_Handle0
 __aeabi_uidivmod

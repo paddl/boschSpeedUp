@@ -4,5 +4,11 @@ Main.o
 Lib/System_LibcStubs.o
 Dave/Generated/src/NVIC002/NVIC002.o
 Dave/Generated/src/NVIC002/NVIC002_Conf.o
+Dave/Generated/src/IO002/IO002.o
+Dave/Generated/src/IO002/IO002_Conf.o
+Dave/Generated/src/ERU002/ERU002.o
+Dave/Generated/src/ERU002/ERU002_Conf.o
+Dave/Generated/src/ERU001/ERU001.o
+Dave/Generated/src/ERU001/ERU001_Conf.o
 Dave/Generated/src/DAVESupport/DAVE3.o
 Dave/Generated/src/DAVESupport/MULTIPLEXER.o

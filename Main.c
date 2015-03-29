@@ -80,7 +80,14 @@
 	P1_4_set_large_hysteresis(); \
 	P1_4_read(); \
 
+#define SLEEP_COUNT 10
 
+#define pinCheckCycles  100
+
+
+	int speed=0;
+	int speedLowHigh=0;
+	bool trigger = FALSE;
 
 
 int main(void)
@@ -103,15 +110,14 @@ int main(void)
 	PIN_LOW_INIT();
 	PIN_IS_INIT();
 	PIN_SW_INIT();
-
+#ifdef NO_INTERRUPT
 	bool lastPinState = PIN_IS_HIGH();
-	bool trigger = FALSE;
-	int noTriggerCnt=0;
-	int speed=0;
-	int speedLow=0;
-	int speedLowHigh=0;
+#endif
 
-	int pinCheckCycles = 100;
+	int noTriggerCnt=0;
+	int speedLow=0;
+
+
 
 #ifdef DEBUG
 
@@ -121,13 +127,22 @@ int main(void)
 #endif
 
 
-
-
 	while(1)
 	{
 		speed++;
 		speedLow++;
 		
+		if (speed == 0xFFFF)
+		{
+			if (noTriggerCnt < 0xFFFF)
+				noTriggerCnt++;
+			if (noTriggerCnt > SLEEP_COUNT)
+			{
+				__WFE();  // sleep and wait for event
+				noTriggerCnt = 0;
+			}
+		}
+
 
 		int cnt_high=0;
 		int cnt_low=0;
@@ -139,7 +154,7 @@ int main(void)
 				cnt_low++;
 		}
 		
-		
+#ifdef NO_INTERRUPT
 		if (cnt_low > 0)
 		{
 			if (lastPinState)
@@ -169,20 +184,25 @@ int main(void)
 		{
 			lastPinState = TRUE;
 		}
+#endif
 		
 		if (speedLow >= speedLowHigh)
 		{
 			speedLow = 0;
 			
 			if (!trigger)
-				noTriggerCnt++;
+			{
+				if (noTriggerCnt < 0xFFFF)
+					noTriggerCnt++;
+			}
 			else
 				noTriggerCnt=0;
+
 			trigger = FALSE;
 			
 			if (noTriggerCnt > 1)
 			{
-				noTriggerCnt=1;
+				//noTriggerCnt=1;
 				PIN_LOW_DEASSERT();
 			}
 			else
@@ -194,6 +214,44 @@ int main(void)
 	}
 	return 0;
 }
+
+
+
+/**
+ * @brief ERU Event Handler (Handler for external Interrupt): Turns on P0.5 on ERU event
+ * @param[in/out] None
+ *
+ */
+void ERU_Event_Handler(void)
+{
+	uint32_t status;
+
+	/* Reads Status Flag */
+	status = RD_REG(ERU001_Handle0.ERURegs->EXICON[ERU001_Handle0.InputChannel],ERU_EXICON_FL_Msk , ERU_EXICON_FL_Pos);
+
+	if(status)
+    {
+		// falling edge on pin 2.5
+
+		trigger = TRUE;
+		if (PIN_SW_HIGH())
+		{
+			speedLowHigh =  speed>>1; // /2
+		}
+		else
+		{
+			speedLowHigh =  (speed<<3)/10; // *16/10/2
+		}
+
+		speed=0;
+
+    	//IO004_ResetPin(IO004_Handle1);		/*  ERU event received, turn on LED */
+    	ERU001_ClearFlag(ERU001_Handle0);	/* Clears the Status Flag */
+    }
+
+}
+
+
 
 
 /*

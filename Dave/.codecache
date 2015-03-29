@@ -1,14 +1,23 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <Cache>
     <TemplateCaches>
-        <File genName="LIBS.h" genPath="Dave\Generated\inc\LIBS\LIBS.h" jetPath="LIBS/1.0.28/Templates/LIBSh.jet" location="bin\CodeGenerator\libsh_template.class"/>
+        <File genName="MULTIPLEXER.h" genPath="Dave\Generated\inc\DAVESupport\MULTIPLEXER.h" jetPath="DAVESUPPORT/1.0.44/Templates/MUX_H.jet" location="bin\CodeGenerator\mux_h_template.class"/>
+        <File genName="ERU002_Conf.h" genPath="Dave\Generated\inc\ERU002\ERU002_Conf.h" jetPath="ERU002/1.0.14/Templates/ERU002Confh.jet" location="bin\CodeGenerator\eru002confh_template.class"/>
+        <File genName="NVIC002_Extern.h" genPath="Dave\Generated\inc\NVIC002\NVIC002_Extern.h" jetPath="NVIC002/1.0.28/Templates/NVIC002_Externh.jet" location="bin\CodeGenerator\nvic002_externh_template.class"/>
+        <File genName="DAVE3.c" genPath="Dave\Generated\src\DAVESupport\DAVE3.c" jetPath="DAVESUPPORT/1.0.44/Templates/DAVE3_C.jet" location="bin\CodeGenerator\dave3_c_template.class"/>
+        <File genName="NVIC002_Conf.h" genPath="Dave\Generated\inc\NVIC002\NVIC002_Conf.h" jetPath="NVIC002/1.0.28/Templates/NVIC002_Confh.jet" location="bin\CodeGenerator\nvic002_confh_template.class"/>
+        <File genName="ERU002_Extern.h" genPath="Dave\Generated\inc\ERU002\ERU002_Extern.h" jetPath="ERU002/1.0.14/Templates/ERU002_Externh.jet" location="bin\CodeGenerator\eru002_externh_template.class"/>
         <File genName="DAVE3.h" genPath="Dave\Generated\inc\DAVESupport\DAVE3.h" jetPath="DAVESUPPORT/1.0.44/Templates/DAVE3_H.jet" location="bin\CodeGenerator\dave3_h_template.class"/>
         <File genName="Device_Data.h" genPath="Dave\Generated\inc\DAVESupport\Device_Data.h" jetPath="DAVESUPPORT/1.0.44/Templates/DEVICE_DATA_H.jet" location="bin\CodeGenerator\device_data_h_template.class"/>
         <File genName="NVIC002_Conf.c" genPath="Dave\Generated\src\NVIC002\NVIC002_Conf.c" jetPath="NVIC002/1.0.28/Templates/NVIC002_Confc.jet" location="bin\CodeGenerator\nvic002_confc_template.class"/>
-        <File genName="DAVE3.c" genPath="Dave\Generated\src\DAVESupport\DAVE3.c" jetPath="DAVESUPPORT/1.0.44/Templates/DAVE3_C.jet" location="bin\CodeGenerator\dave3_c_template.class"/>
-        <File genName="NVIC002_Extern.h" genPath="Dave\Generated\inc\NVIC002\NVIC002_Extern.h" jetPath="NVIC002/1.0.28/Templates/NVIC002_Externh.jet" location="bin\CodeGenerator\nvic002_externh_template.class"/>
+        <File genName="IO002_Conf.c" genPath="Dave\Generated\src\IO002\IO002_Conf.c" jetPath="IO002/1.0.30/Templates/IO002_Confc.jet" location="bin\CodeGenerator\io002_confc_template.class"/>
         <File genName="MULTIPLEXER.c" genPath="Dave\Generated\src\DAVESupport\MULTIPLEXER.c" jetPath="DAVESUPPORT/1.0.44/Templates/MUX_C.jet" location="bin\CodeGenerator\mux_c_template.class"/>
-        <File genName="MULTIPLEXER.h" genPath="Dave\Generated\inc\DAVESupport\MULTIPLEXER.h" jetPath="DAVESUPPORT/1.0.44/Templates/MUX_H.jet" location="bin\CodeGenerator\mux_h_template.class"/>
-        <File genName="NVIC002_Conf.h" genPath="Dave\Generated\inc\NVIC002\NVIC002_Conf.h" jetPath="NVIC002/1.0.28/Templates/NVIC002_Confh.jet" location="bin\CodeGenerator\nvic002_confh_template.class"/>
+        <File genName="IO002_Conf.h" genPath="Dave\Generated\inc\IO002\IO002_Conf.h" jetPath="IO002/1.0.30/Templates/IO002_Confh.jet" location="bin\CodeGenerator\io002_confh_template.class"/>
+        <File genName="IO002_Extern.h" genPath="Dave\Generated\inc\IO002\IO002_Extern.h" jetPath="IO002/1.0.30/Templates/IO002_Externh.jet" location="bin\CodeGenerator\io002_externh_template.class"/>
+        <File genName="LIBS.h" genPath="Dave\Generated\inc\LIBS\LIBS.h" jetPath="LIBS/1.0.28/Templates/LIBSh.jet" location="bin\CodeGenerator\libsh_template.class"/>
+    <File genName="ERU002_Conf.c" genPath="Dave\Generated\src\ERU002\ERU002_Conf.c" jetPath="ERU002/1.0.14/Templates/ERU002Confc.jet" location="bin\CodeGenerator\eru002confc_template.class"/>
+        <File genName="ERU001_Conf.h" genPath="Dave\Generated\inc\ERU001\ERU001_Conf.h" jetPath="ERU001/1.0.16/Templates/ERU001Confh.jet" location="bin\CodeGenerator\eru001confh_template.class"/>
+        <File genName="ERU001_Extern.h" genPath="Dave\Generated\inc\ERU001\ERU001_Extern.h" jetPath="ERU001/1.0.16/Templates/ERU001Externh.jet" location="bin\CodeGenerator\eru001externh_template.class"/>
+        <File genName="ERU001_Conf.c" genPath="Dave\Generated\src\ERU001\ERU001_Conf.c" jetPath="ERU001/1.0.16/Templates/ERU001Confc.jet" location="bin\CodeGenerator\eru001confc_template.class"/>
     </TemplateCaches>
 </Cache>

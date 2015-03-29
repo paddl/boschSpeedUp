@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="ASCII"?>
+<ResourceModel:Peripheral xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:ResourceModel="http://www.infineon.com/Davex/Resource.ecore" name="P2" description="Port 2" URI="http://www.infineon.com/0.11.380/port/p/2">
+  <provided xsi:type="ResourceModel:ResourceGroup" name="P2.5 / #2" URI="http://www.infineon.com/0.11.380/port/p/2/pad/5">
+    <upWardMappingList xsi:type="ResourceModel:ProxyResource" href="../IO002/1.0.30/io002_0.app#//@consumed.0"/>
+    <resourcesList name="out_p" requiredResourceUri="http://www.infineon.com/0.11.380/port/p/2/out/p5" isResolved="true"/>
+    <resourcesList name="omr_ps" requiredResourceUri="http://www.infineon.com/0.11.380/port/p/2/omr/ps5" isResolved="true"/>
+    <resourcesList name="omr_pr" requiredResourceUri="http://www.infineon.com/0.11.380/port/p/2/omr/pr5" isResolved="true"/>
+    <resourcesList name="in_p" requiredResourceUri="http://www.infineon.com/0.11.380/port/p/2/in/p5" isResolved="true"/>
+    <resourcesList name="pps_pps" requiredResourceUri="http://www.infineon.com/0.11.380/port/p/2/pps/pps5" isResolved="true"/>
+    <resourcesList name="hwsel_hw" requiredResourceUri="http://www.infineon.com/0.11.380/port/p/2/hwsel/hw5" isResolved="true"/>
+    <resourcesList name="phcr_ph" requiredResourceUri="http://www.infineon.com/0.11.380/port/p/2/phcr0/ph5"/>
+    <resourcesList name="pdisc_pdis" requiredResourceUri="http://www.infineon.com/0.11.380/port/p/2/pdisc/pdis5" isResolved="true"/>
+    <resourcesList name="iocr_oe" requiredResourceUri="http://www.infineon.com/0.11.380/port/p/2/iocr4/pc5_4" isResolved="true"/>
+    <resourcesList name="iocr_po" requiredResourceUri="http://www.infineon.com/0.11.380/port/p/2/iocr4/pc5_3" isResolved="true"/>
+    <resourcesList name="iocr_pcr" requiredResourceUri="http://www.infineon.com/0.11.380/port/p/2/iocr4/pc5_2_0" isResolved="true"/>
+    <resourcesList name="analogout" requiredResourceUri="http://www.infineon.com/0.11.380/port/p/2/pad_5/analogout"/>
+    <resourcesList name="analogin" requiredResourceUri="http://www.infineon.com/0.11.380/port/p/2/pad_5/analogin" isResolved="true"/>
+    <resourcesList name="altin" requiredResourceUri="http://www.infineon.com/0.11.380/port/p/2/pad_5/altin" isResolved="true"/>
+    <resourcesList name="pad" requiredResourceUri="http://www.infineon.com/0.11.380/port/p/2/pad_5/pad" isResolved="true"/>
+  </provided>
+  <provided xsi:type="ResourceModel:SignalDeclaration" name="PAD" URI="http://www.infineon.com/0.11.380/port/p/2/pad/5/pad" isVisible="true">
+    <upWardMappingList xsi:type="ResourceModel:ProxyResource" href="../IO002/1.0.30/io002_0.app#//@consumed.4"/>
+  </provided>
+  <provided xsi:type="ResourceModel:BitField" name="PC5_4" URI="http://www.infineon.com/0.11.380/port/p/2/pad/5/iocr_oe" maxValue="1" minValue="0" startPos="15" stopPos="15" accessPermission="rw">
+    <defaultValue xsi:type="ResourceModel:IntegerValue" value="0"/>
+    <upWardMappingList xsi:type="ResourceModel:ProxyResource" href="../IO002/1.0.30/io002_0.app#//@consumed.5"/>
+    <localValue xsi:type="ResourceModel:IntegerValue" value="0"/>
+    <globalValue xsi:type="ResourceModel:IntegerValue" value="0"/>
+    <toolTipHelpDescription>Port Control for Port n Pin 4 to 7</toolTipHelpDescription>
+  </provided>
+  <provided xsi:type="ResourceModel:BitField" name="PC5_3" URI="http://www.infineon.com/0.11.380/port/p/2/pad/5/iocr_po" maxValue="1" minValue="0" startPos="14" stopPos="14" accessPermission="rw">
+    <defaultValue xsi:type="ResourceModel:IntegerValue" value="0"/>
+    <upWardMappingList xsi:type="ResourceModel:ProxyResource" href="../IO002/1.0.30/io002_0.app#//@consumed.6"/>
+    <localValue xsi:type="ResourceModel:IntegerValue" value="0"/>
+    <globalValue xsi:type="ResourceModel:IntegerValue" value="0"/>
+    <toolTipHelpDescription>Port Control for Port n Pin 4 to 7</toolTipHelpDescription>
+  </provided>
+  <provided xsi:type="ResourceModel:BitField" name="PC5_2_0" URI="http://www.infineon.com/0.11.380/port/p/2/pad/5/iocr_pcr" maxValue="7" minValue="0" startPos="11" stopPos="13" accessPermission="rw">
+    <defaultValue xsi:type="ResourceModel:IntegerValue" value="0"/>
+    <upWardMappingList xsi:type="ResourceModel:ProxyResource" href="../IO002/1.0.30/io002_0.app#//@consumed.7"/>
+    <localValue xsi:type="ResourceModel:IntegerValue" value="0"/>
+    <globalValue xsi:type="ResourceModel:IntegerValue" value="0"/>
+    <toolTipHelpDescription>Port Control for Port n Pin 4 to 7</toolTipHelpDescription>
+  </provided>
+  <provided xsi:type="ResourceModel:BitField" name="PS5" URI="http://www.infineon.com/0.11.380/port/p/2/pad/5/omr_ps" maxValue="1" minValue="0" startPos="5" stopPos="5" accessPermission="w">
+    <defaultValue xsi:type="ResourceModel:IntegerValue" value="0"/>
+    <upWardMappingList xsi:type="ResourceModel:ProxyResource" href="../IO002/1.0.30/io002_0.app#//@consumed.8"/>
+    <localValue xsi:type="ResourceModel:IntegerValue" value="0"/>
+    <globalValue xsi:type="ResourceModel:IntegerValue" value="0"/>
+    <toolTipHelpDescription>Port n Set Bit x</toolTipHelpDescription>
+  </provided>
+  <provided xsi:type="ResourceModel:BitField" name="PDIS5" URI="http://www.infineon.com/0.11.380/port/p/2/pad/5/pdisc_pdis" maxValue="1" minValue="0" startPos="5" stopPos="5">
+    <defaultValue xsi:type="ResourceModel:IntegerValue" value="1"/>
+    <localValue xsi:type="ResourceModel:IntegerValue" value="0"/>
+    <globalValue xsi:type="ResourceModel:IntegerValue" value="0"/>
+    <toolTipHelpDescription>Pad Disable for Port n Pin x</toolTipHelpDescription>
+    <enumValues xsi:type="ResourceModel:RegEnumValue" value="0b0" description="Pad Pn.x is enabled."/>
+    <enumValues xsi:type="ResourceModel:RegEnumValue" value="0b1" description="Pad Pn.x is disabled."/>
+  </provided>
+  <categoryDescription description="Port 2 is a 16-bit bi-directional general-purpose I/O port." name="Port 2"/>
+</ResourceModel:Peripheral>

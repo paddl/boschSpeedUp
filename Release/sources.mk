@@ -20,5 +20,8 @@ Startup \
 . \
 Lib \
 Dave/Generated/src/NVIC002 \
+Dave/Generated/src/IO002 \
+Dave/Generated/src/ERU002 \
+Dave/Generated/src/ERU001 \
 Dave/Generated/src/DAVESupport \
 

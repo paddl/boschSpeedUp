@@ -1,0 +1,109 @@
+   1              		.cpu cortex-m0
+   2              		.fpu softvfp
+   3              		.eabi_attribute 20, 1
+   4              		.eabi_attribute 21, 1
+   5              		.eabi_attribute 23, 3
+   6              		.eabi_attribute 24, 1
+   7              		.eabi_attribute 25, 1
+   8              		.eabi_attribute 26, 1
+   9              		.eabi_attribute 30, 4
+  10              		.eabi_attribute 34, 0
+  11              		.eabi_attribute 18, 4
+  12              		.code	16
+  13              		.file	"ERU001.c"
+  14              		.section	.text.ERU001_lInit,"ax",%progbits
+  15              		.align	1
+  16              		.global	ERU001_lInit
+  17              		.code	16
+  18              		.thumb_func
+  20              	ERU001_lInit:
+  21 0000 70B5     		push	{r4, r5, r6, lr}
+  22 0002 0279     		ldrb	r2, [r0, #4]
+  23 0004 4579     		ldrb	r5, [r0, #5]
+  24 0006 8179     		ldrb	r1, [r0, #6]
+  25 0008 0368     		ldr	r3, [r0]
+  26 000a 0226     		mov	r6, #2
+  27 000c 0432     		add	r2, r2, #4
+  28 000e 6D00     		lsl	r5, r5, #1
+  29 0010 9200     		lsl	r2, r2, #2
+  30 0012 3540     		and	r5, r6
+  31 0014 B140     		lsl	r1, r1, r6
+  32 0016 0426     		mov	r6, #4
+  33 0018 D458     		ldr	r4, [r2, r3]
+  34 001a 3140     		and	r1, r6
+  35 001c 2943     		orr	r1, r5
+  36 001e 2143     		orr	r1, r4
+  37 0020 C479     		ldrb	r4, [r0, #7]
+  38 0022 0825     		mov	r5, #8
+  39 0024 E400     		lsl	r4, r4, #3
+  40 0026 2C40     		and	r4, r5
+  41 0028 2143     		orr	r1, r4
+  42 002a 047A     		ldrb	r4, [r0, #8]
+  43              		@ sp needed for prologue
+  44 002c 2502     		lsl	r5, r4, #8
+  45 002e C024     		mov	r4, #192
+  46 0030 A400     		lsl	r4, r4, #2
+  47 0032 2C40     		and	r4, r5
+  48 0034 457A     		ldrb	r5, [r0, #9]
+  49 0036 2143     		orr	r1, r4
+  50 0038 8024     		mov	r4, #128
+  51 003a AD02     		lsl	r5, r5, #10
+  52 003c E400     		lsl	r4, r4, #3
+  53 003e 2C40     		and	r4, r5
+  54 0040 807A     		ldrb	r0, [r0, #10]
+  55 0042 2143     		orr	r1, r4
+  56 0044 8024     		mov	r4, #128
+  57 0046 C502     		lsl	r5, r0, #11
+  58 0048 B440     		lsl	r4, r4, r6
+  59 004a 2C40     		and	r4, r5
+  60 004c 2143     		orr	r1, r4
+  61 004e D150     		str	r1, [r2, r3]
+  62 0050 70BD     		pop	{r4, r5, r6, pc}
+  64              		.section	.text.ERU001_Init,"ax",%progbits
+  65              		.align	1
+  66              		.global	ERU001_Init
+  67              		.code	16
+  68              		.thumb_func
+  70              	ERU001_Init:
+  71 0000 08B5     		push	{r3, lr}
+  72 0002 024B     		ldr	r3, .L3
+  73              		@ sp needed for prologue
+  74 0004 1868     		ldr	r0, [r3]
+  75 0006 FFF7FEFF 		bl	ERU001_lInit
+  76 000a 08BD     		pop	{r3, pc}
+  77              	.L4:
+  78              		.align	2
+  79              	.L3:
+  80 000c 00000000 		.word	ERU001_HandleArray
+  82              		.section	.text.ERU001_ClearFlag,"ax",%progbits
+  83              		.align	1
+  84              		.global	ERU001_ClearFlag
+  85              		.code	16
+  86              		.thumb_func
+  88              	ERU001_ClearFlag:
+  89 0000 1FB5     		push	{r0, r1, r2, r3, r4, lr}
+  90 0002 0291     		str	r1, [sp, #8]
+  91 0004 C9B2     		uxtb	r1, r1
+  92 0006 0431     		add	r1, r1, #4
+  93 0008 8C00     		lsl	r4, r1, #2
+  94 000a 2358     		ldr	r3, [r4, r0]
+  95 000c 0392     		str	r2, [sp, #12]
+  96 000e 8022     		mov	r2, #128
+  97 0010 9343     		bic	r3, r2
+  98 0012 0190     		str	r0, [sp, #4]
+  99 0014 2350     		str	r3, [r4, r0]
+ 100              		@ sp needed for prologue
+ 101 0016 1FBD     		pop	{r0, r1, r2, r3, r4, pc}
+ 103              		.ident	"GCC: (GNU Tools for ARM Embedded Processors) 4.7.4 20130913 (release) [ARM/embedded-4_7-br
+DEFINED SYMBOLS
+                            *ABS*:00000000 ERU001.c
+C:\Users\Patrick\AppData\Local\Temp\ccM0IMAa.s:15     .text.ERU001_lInit:00000000 $t
+C:\Users\Patrick\AppData\Local\Temp\ccM0IMAa.s:20     .text.ERU001_lInit:00000000 ERU001_lInit
+C:\Users\Patrick\AppData\Local\Temp\ccM0IMAa.s:65     .text.ERU001_Init:00000000 $t
+C:\Users\Patrick\AppData\Local\Temp\ccM0IMAa.s:70     .text.ERU001_Init:00000000 ERU001_Init
+C:\Users\Patrick\AppData\Local\Temp\ccM0IMAa.s:80     .text.ERU001_Init:0000000c $d
+C:\Users\Patrick\AppData\Local\Temp\ccM0IMAa.s:83     .text.ERU001_ClearFlag:00000000 $t
+C:\Users\Patrick\AppData\Local\Temp\ccM0IMAa.s:88     .text.ERU001_ClearFlag:00000000 ERU001_ClearFlag
+
+UNDEFINED SYMBOLS
+ERU001_HandleArray

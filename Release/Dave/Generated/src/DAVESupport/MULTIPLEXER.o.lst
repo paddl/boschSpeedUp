@@ -17,22 +17,53 @@
   17              		.code	16
   18              		.thumb_func
   20              	DAVE_MUX_Init:
-  21              		@ sp needed for prologue
-  22 0000 7047     		bx	lr
-  24              		.section	.text.DAVE_MUX_PreInit,"ax",%progbits
-  25              		.align	1
-  26              		.global	DAVE_MUX_PreInit
-  27              		.code	16
-  28              		.thumb_func
-  30              	DAVE_MUX_PreInit:
-  31              		@ sp needed for prologue
-  32 0000 7047     		bx	lr
-  34              		.ident	"GCC: (GNU Tools for ARM Embedded Processors) 4.7.4 20130913 (release) [ARM/embedded-4_7-br
+  21 0000 084B     		ldr	r3, .L2
+  22 0002 3022     		mov	r2, #48
+  23 0004 1968     		ldr	r1, [r3]
+  24 0006 1020     		mov	r0, #16
+  25 0008 9143     		bic	r1, r2
+  26 000a 0143     		orr	r1, r0
+  27 000c 1960     		str	r1, [r3]
+  28 000e 5969     		ldr	r1, [r3, #20]
+  29 0010 0120     		mov	r0, #1
+  30 0012 0143     		orr	r1, r0
+  31 0014 5961     		str	r1, [r3, #20]
+  32 0016 5969     		ldr	r1, [r3, #20]
+  33 0018 7020     		mov	r0, #112
+  34 001a 8143     		bic	r1, r0
+  35 001c 0A43     		orr	r2, r1
+  36 001e 5A61     		str	r2, [r3, #20]
+  37              		@ sp needed for prologue
+  38 0020 7047     		bx	lr
+  39              	.L3:
+  40 0022 C046     		.align	2
+  41              	.L2:
+  42 0024 00060140 		.word	1073808896
+  44              		.section	.text.DAVE_MUX_PreInit,"ax",%progbits
+  45              		.align	1
+  46              		.global	DAVE_MUX_PreInit
+  47              		.code	16
+  48              		.thumb_func
+  50              	DAVE_MUX_PreInit:
+  51 0000 024B     		ldr	r3, .L5
+  52 0002 2021     		mov	r1, #32
+  53 0004 1A6E     		ldr	r2, [r3, #96]
+  54              		@ sp needed for prologue
+  55 0006 8A43     		bic	r2, r1
+  56 0008 1A66     		str	r2, [r3, #96]
+  57 000a 7047     		bx	lr
+  58              	.L6:
+  59              		.align	2
+  60              	.L5:
+  61 000c 00020440 		.word	1074004480
+  63              		.ident	"GCC: (GNU Tools for ARM Embedded Processors) 4.7.4 20130913 (release) [ARM/embedded-4_7-br
 DEFINED SYMBOLS
                             *ABS*:00000000 MULTIPLEXER.c
-C:\Users\Patrick\AppData\Local\Temp\cccgJAyc.s:15     .text.DAVE_MUX_Init:00000000 $t
-C:\Users\Patrick\AppData\Local\Temp\cccgJAyc.s:20     .text.DAVE_MUX_Init:00000000 DAVE_MUX_Init
-C:\Users\Patrick\AppData\Local\Temp\cccgJAyc.s:25     .text.DAVE_MUX_PreInit:00000000 $t
-C:\Users\Patrick\AppData\Local\Temp\cccgJAyc.s:30     .text.DAVE_MUX_PreInit:00000000 DAVE_MUX_PreInit
+C:\Users\Patrick\AppData\Local\Temp\ccz9OxyN.s:15     .text.DAVE_MUX_Init:00000000 $t
+C:\Users\Patrick\AppData\Local\Temp\ccz9OxyN.s:20     .text.DAVE_MUX_Init:00000000 DAVE_MUX_Init
+C:\Users\Patrick\AppData\Local\Temp\ccz9OxyN.s:42     .text.DAVE_MUX_Init:00000024 $d
+C:\Users\Patrick\AppData\Local\Temp\ccz9OxyN.s:45     .text.DAVE_MUX_PreInit:00000000 $t
+C:\Users\Patrick\AppData\Local\Temp\ccz9OxyN.s:50     .text.DAVE_MUX_PreInit:00000000 DAVE_MUX_PreInit
+C:\Users\Patrick\AppData\Local\Temp\ccz9OxyN.s:61     .text.DAVE_MUX_PreInit:0000000c $d
 
 NO UNDEFINED SYMBOLS

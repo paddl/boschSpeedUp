@@ -6,7 +6,10 @@
     <ResourceReserve/>
     <Solver>
         <SolverBndMap>
-            <BindMap MUri="peripheral/cpu/0/nvic/interrupt/26" Proxy="app/nvic002/0/nvicnode"/>
+            <BindMap MUri="peripheral/eru/0/ers_etl/1" Proxy="app/eru001/0/ers_etl"/>
+            <BindMap MUri="peripheral/eru/0/ogu/3" Proxy="app/eru002/0/ogu"/>
+            <BindMap MUri="peripheral/cpu/0/nvic/interrupt/6" Proxy="app/nvic002/0/nvicnode"/>
+            <BindMap MUri="port/p/2/pad/5" Proxy="app/io002/0/pin"/>
         </SolverBndMap>
     </Solver>
 </ProjectConfig>

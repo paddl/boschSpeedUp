@@ -1,0 +1,68 @@
+   1              		.cpu cortex-m0
+   2              		.fpu softvfp
+   3              		.eabi_attribute 20, 1
+   4              		.eabi_attribute 21, 1
+   5              		.eabi_attribute 23, 3
+   6              		.eabi_attribute 24, 1
+   7              		.eabi_attribute 25, 1
+   8              		.eabi_attribute 26, 1
+   9              		.eabi_attribute 30, 4
+  10              		.eabi_attribute 34, 0
+  11              		.eabi_attribute 18, 4
+  12              		.code	16
+  13              		.file	"BMI01.c"
+  14              		.section	.text.BMI01_UpdateBMI,"ax",%progbits
+  15              		.align	1
+  16              		.global	BMI01_UpdateBMI
+  17              		.code	16
+  18              		.thumb_func
+  20              	BMI01_UpdateBMI:
+  21 0000 08B5     		push	{r3, lr}
+  22 0002 0902     		lsl	r1, r1, #8
+  23 0004 0843     		orr	r0, r1
+  24 0006 5202     		lsl	r2, r2, #9
+  25 0008 8423     		mov	r3, #132
+  26 000a 1043     		orr	r0, r2
+  27 000c 5900     		lsl	r1, r3, #1
+  28 000e 80B2     		uxth	r0, r0
+  29 0010 0A68     		ldr	r2, [r1]
+  30 0012 9047     		blx	r2
+  31              		@ sp needed for prologue
+  32 0014 08BD     		pop	{r3, pc}
+  34              		.section	.text.BMI01_ReadBMI,"ax",%progbits
+  35              		.align	1
+  36              		.global	BMI01_ReadBMI
+  37              		.code	16
+  38              		.thumb_func
+  40              	BMI01_ReadBMI:
+  41 0000 074B     		ldr	r3, .L3
+  42 0002 3F22     		mov	r2, #63
+  43 0004 1968     		ldr	r1, [r3]
+  44              		@ sp needed for prologue
+  45 0006 0A40     		and	r2, r1
+  46 0008 0260     		str	r2, [r0]
+  47 000a 1968     		ldr	r1, [r3]
+  48 000c 8022     		mov	r2, #128
+  49 000e 5200     		lsl	r2, r2, #1
+  50 0010 0A40     		and	r2, r1
+  51 0012 4260     		str	r2, [r0, #4]
+  52 0014 1A68     		ldr	r2, [r3]
+  53 0016 C023     		mov	r3, #192
+  54 0018 D900     		lsl	r1, r3, #3
+  55 001a 1140     		and	r1, r2
+  56 001c 8160     		str	r1, [r0, #8]
+  57 001e 7047     		bx	lr
+  58              	.L4:
+  59              		.align	2
+  60              	.L3:
+  61 0020 000E0010 		.word	268439040
+  63              		.ident	"GCC: (GNU Tools for ARM Embedded Processors) 4.7.4 20130913 (release) [ARM/embedded-4_7-br
+DEFINED SYMBOLS
+                            *ABS*:00000000 BMI01.c
+C:\Users\Patrick\AppData\Local\Temp\ccevsWTj.s:15     .text.BMI01_UpdateBMI:00000000 $t
+C:\Users\Patrick\AppData\Local\Temp\ccevsWTj.s:20     .text.BMI01_UpdateBMI:00000000 BMI01_UpdateBMI
+C:\Users\Patrick\AppData\Local\Temp\ccevsWTj.s:35     .text.BMI01_ReadBMI:00000000 $t
+C:\Users\Patrick\AppData\Local\Temp\ccevsWTj.s:40     .text.BMI01_ReadBMI:00000000 BMI01_ReadBMI
+C:\Users\Patrick\AppData\Local\Temp\ccevsWTj.s:61     .text.BMI01_ReadBMI:00000020 $d
+
+NO UNDEFINED SYMBOLS

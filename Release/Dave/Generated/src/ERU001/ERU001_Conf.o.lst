@@ -1,0 +1,40 @@
+   1              		.cpu cortex-m0
+   2              		.fpu softvfp
+   3              		.eabi_attribute 20, 1
+   4              		.eabi_attribute 21, 1
+   5              		.eabi_attribute 23, 3
+   6              		.eabi_attribute 24, 1
+   7              		.eabi_attribute 25, 1
+   8              		.eabi_attribute 26, 1
+   9              		.eabi_attribute 30, 4
+  10              		.eabi_attribute 34, 0
+  11              		.eabi_attribute 18, 4
+  12              		.code	16
+  13              		.file	"ERU001_Conf.c"
+  14              		.global	ERU001_HandleArray
+  15              		.global	ERU001_Handle0
+  16              		.section	.rodata
+  17              		.align	2
+  20              	ERU001_Handle0:
+  21 0000 00060140 		.word	1073808896
+  22 0004 01       		.byte	1
+  23 0005 01       		.byte	1
+  24 0006 00       		.byte	0
+  25 0007 01       		.byte	1
+  26 0008 00       		.byte	0
+  27 0009 00       		.byte	0
+  28 000a 00       		.byte	0
+  29 000b 00       		.space	1
+  30              		.data
+  31              		.align	2
+  34              	ERU001_HandleArray:
+  35 0000 00000000 		.word	ERU001_Handle0
+  36              		.ident	"GCC: (GNU Tools for ARM Embedded Processors) 4.7.4 20130913 (release) [ARM/embedded-4_7-br
+DEFINED SYMBOLS
+                            *ABS*:00000000 ERU001_Conf.c
+C:\Users\Patrick\AppData\Local\Temp\ccYyWrIJ.s:34     .data:00000000 ERU001_HandleArray
+C:\Users\Patrick\AppData\Local\Temp\ccYyWrIJ.s:20     .rodata:00000000 ERU001_Handle0
+C:\Users\Patrick\AppData\Local\Temp\ccYyWrIJ.s:17     .rodata:00000000 $d
+C:\Users\Patrick\AppData\Local\Temp\ccYyWrIJ.s:31     .data:00000000 $d
+
+NO UNDEFINED SYMBOLS

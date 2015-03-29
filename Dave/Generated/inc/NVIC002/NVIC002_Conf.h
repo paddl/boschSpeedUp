@@ -71,8 +71,8 @@ extern "C" {
 ****************************************************************************/
 #define DEBUG_APP false
   
-/* User defined function mapped to IRQ_Hdlr_26 */
-#define PWM_Period_Interrupt    IRQ_Hdlr_26 
+/* User defined function mapped to IRQ_Hdlr_6 */
+#define ERU_Event_Handler    IRQ_Hdlr_6 
 
 
 /**

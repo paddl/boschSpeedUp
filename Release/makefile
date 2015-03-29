@@ -11,6 +11,9 @@ RM := rm -rf
 -include Startup/subdir.mk
 -include Lib/subdir.mk
 -include Dave/Generated/src/NVIC002/subdir.mk
+-include Dave/Generated/src/IO002/subdir.mk
+-include Dave/Generated/src/ERU002/subdir.mk
+-include Dave/Generated/src/ERU001/subdir.mk
 -include Dave/Generated/src/DAVESupport/subdir.mk
 -include subdir.mk
 -include objects.mk

@@ -1,0 +1,183 @@
+   1              		.cpu cortex-m0
+   2              		.fpu softvfp
+   3              		.eabi_attribute 20, 1
+   4              		.eabi_attribute 21, 1
+   5              		.eabi_attribute 23, 3
+   6              		.eabi_attribute 24, 1
+   7              		.eabi_attribute 25, 1
+   8              		.eabi_attribute 26, 1
+   9              		.eabi_attribute 30, 4
+  10              		.eabi_attribute 34, 0
+  11              		.eabi_attribute 18, 4
+  12              		.code	16
+  13              		.file	"ERU002.c"
+  14              		.section	.text.ERU002_lInit,"ax",%progbits
+  15              		.align	1
+  16              		.global	ERU002_lInit
+  17              		.code	16
+  18              		.thumb_func
+  20              	ERU002_lInit:
+  21 0000 8168     		ldr	r1, [r0, #8]
+  22 0002 4268     		ldr	r2, [r0, #4]
+  23 0004 0368     		ldr	r3, [r0]
+  24 0006 C068     		ldr	r0, [r0, #12]
+  25 0008 30B5     		push	{r4, r5, lr}
+  26 000a 0832     		add	r2, r2, #8
+  27 000c 0D01     		lsl	r5, r1, #4
+  28 000e 3021     		mov	r1, #48
+  29 0010 0D40     		and	r5, r1
+  30 0012 9200     		lsl	r2, r2, #2
+  31 0014 8100     		lsl	r1, r0, #2
+  32 0016 0420     		mov	r0, #4
+  33 0018 D458     		ldr	r4, [r2, r3]
+  34 001a 0140     		and	r1, r0
+  35 001c 2943     		orr	r1, r5
+  36 001e 2143     		orr	r1, r4
+  37 0020 D150     		str	r1, [r2, r3]
+  38              		@ sp needed for prologue
+  39 0022 30BD     		pop	{r4, r5, pc}
+  41              		.section	.text.ERU002_Init,"ax",%progbits
+  42              		.align	1
+  43              		.global	ERU002_Init
+  44              		.code	16
+  45              		.thumb_func
+  47              	ERU002_Init:
+  48 0000 08B5     		push	{r3, lr}
+  49 0002 024B     		ldr	r3, .L3
+  50              		@ sp needed for prologue
+  51 0004 1868     		ldr	r0, [r3]
+  52 0006 FFF7FEFF 		bl	ERU002_lInit
+  53 000a 08BD     		pop	{r3, pc}
+  54              	.L4:
+  55              		.align	2
+  56              	.L3:
+  57 000c 00000000 		.word	ERU002_HandleArray
+  59              		.section	.text.ERU002_SetPeripheralTrigInputSrc,"ax",%progbits
+  60              		.align	1
+  61              		.global	ERU002_SetPeripheralTrigInputSrc
+  62              		.code	16
+  63              		.thumb_func
+  65              	ERU002_SetPeripheralTrigInputSrc:
+  66 0000 021C     		mov	r2, r0
+  67 0002 0368     		ldr	r3, [r0]
+  68 0004 10B5     		push	{r4, lr}
+  69 0006 0F20     		mov	r0, #15
+  70 0008 0329     		cmp	r1, #3
+  71 000a 0AD8     		bhi	.L6
+  72 000c 002B     		cmp	r3, #0
+  73 000e 08D0     		beq	.L6
+  74 0010 5068     		ldr	r0, [r2, #4]
+  75 0012 0324     		mov	r4, #3
+  76 0014 0830     		add	r0, r0, #8
+  77 0016 8200     		lsl	r2, r0, #2
+  78 0018 D058     		ldr	r0, [r2, r3]
+  79 001a A043     		bic	r0, r4
+  80 001c 0143     		orr	r1, r0
+  81 001e D150     		str	r1, [r2, r3]
+  82 0020 0120     		mov	r0, #1
+  83              	.L6:
+  84              		@ sp needed for prologue
+  85 0022 10BD     		pop	{r4, pc}
+  87              		.section	.text.ERU002_GetPatternResult,"ax",%progbits
+  88              		.align	1
+  89              		.global	ERU002_GetPatternResult
+  90              		.code	16
+  91              		.thumb_func
+  93              	ERU002_GetPatternResult:
+  94 0000 1FB5     		push	{r0, r1, r2, r3, r4, lr}
+  95 0002 041C     		mov	r4, r0
+  96 0004 0090     		str	r0, [sp]
+  97 0006 081C     		mov	r0, r1
+  98 0008 0830     		add	r0, r0, #8
+  99 000a 0191     		str	r1, [sp, #4]
+ 100 000c 8100     		lsl	r1, r0, #2
+ 101 000e 0292     		str	r2, [sp, #8]
+ 102 0010 0A59     		ldr	r2, [r1, r4]
+ 103 0012 0393     		str	r3, [sp, #12]
+ 104 0014 1307     		lsl	r3, r2, #28
+ 105 0016 D80F     		lsr	r0, r3, #31
+ 106 0018 04B0     		add	sp, sp, #16
+ 107              		@ sp needed for prologue
+ 108 001a 10BD     		pop	{r4, pc}
+ 110              		.section	.text.ERU002_EnablePatternDetection,"ax",%progbits
+ 111              		.align	1
+ 112              		.global	ERU002_EnablePatternDetection
+ 113              		.code	16
+ 114              		.thumb_func
+ 116              	ERU002_EnablePatternDetection:
+ 117 0000 0028     		cmp	r0, #0
+ 118 0002 07D0     		beq	.L11
+ 119 0004 4268     		ldr	r2, [r0, #4]
+ 120 0006 0368     		ldr	r3, [r0]
+ 121 0008 0832     		add	r2, r2, #8
+ 122 000a 9200     		lsl	r2, r2, #2
+ 123 000c D158     		ldr	r1, [r2, r3]
+ 124 000e 0420     		mov	r0, #4
+ 125 0010 0143     		orr	r1, r0
+ 126 0012 D150     		str	r1, [r2, r3]
+ 127              	.L11:
+ 128              		@ sp needed for prologue
+ 129 0014 7047     		bx	lr
+ 131              		.section	.text.ERU002_DisablePatternDetection,"ax",%progbits
+ 132              		.align	1
+ 133              		.global	ERU002_DisablePatternDetection
+ 134              		.code	16
+ 135              		.thumb_func
+ 137              	ERU002_DisablePatternDetection:
+ 138 0000 0028     		cmp	r0, #0
+ 139 0002 07D0     		beq	.L16
+ 140 0004 4268     		ldr	r2, [r0, #4]
+ 141 0006 0368     		ldr	r3, [r0]
+ 142 0008 0832     		add	r2, r2, #8
+ 143 000a 9200     		lsl	r2, r2, #2
+ 144 000c D158     		ldr	r1, [r2, r3]
+ 145 000e 0420     		mov	r0, #4
+ 146 0010 8143     		bic	r1, r0
+ 147 0012 D150     		str	r1, [r2, r3]
+ 148              	.L16:
+ 149              		@ sp needed for prologue
+ 150 0014 7047     		bx	lr
+ 152              		.section	.text.ERU002_SelectServiceRequestMode,"ax",%progbits
+ 153              		.align	1
+ 154              		.global	ERU002_SelectServiceRequestMode
+ 155              		.code	16
+ 156              		.thumb_func
+ 158              	ERU002_SelectServiceRequestMode:
+ 159 0000 10B5     		push	{r4, lr}
+ 160 0002 0028     		cmp	r0, #0
+ 161 0004 0AD0     		beq	.L21
+ 162 0006 4268     		ldr	r2, [r0, #4]
+ 163 0008 0368     		ldr	r3, [r0]
+ 164 000a 0832     		add	r2, r2, #8
+ 165 000c 9200     		lsl	r2, r2, #2
+ 166 000e D458     		ldr	r4, [r2, r3]
+ 167 0010 3020     		mov	r0, #48
+ 168 0012 0901     		lsl	r1, r1, #4
+ 169 0014 0140     		and	r1, r0
+ 170 0016 8443     		bic	r4, r0
+ 171 0018 2143     		orr	r1, r4
+ 172 001a D150     		str	r1, [r2, r3]
+ 173              	.L21:
+ 174              		@ sp needed for prologue
+ 175 001c 10BD     		pop	{r4, pc}
+ 177              		.ident	"GCC: (GNU Tools for ARM Embedded Processors) 4.7.4 20130913 (release) [ARM/embedded-4_7-br
+DEFINED SYMBOLS
+                            *ABS*:00000000 ERU002.c
+C:\Users\Patrick\AppData\Local\Temp\ccbaSBoa.s:15     .text.ERU002_lInit:00000000 $t
+C:\Users\Patrick\AppData\Local\Temp\ccbaSBoa.s:20     .text.ERU002_lInit:00000000 ERU002_lInit
+C:\Users\Patrick\AppData\Local\Temp\ccbaSBoa.s:42     .text.ERU002_Init:00000000 $t
+C:\Users\Patrick\AppData\Local\Temp\ccbaSBoa.s:47     .text.ERU002_Init:00000000 ERU002_Init
+C:\Users\Patrick\AppData\Local\Temp\ccbaSBoa.s:57     .text.ERU002_Init:0000000c $d
+C:\Users\Patrick\AppData\Local\Temp\ccbaSBoa.s:60     .text.ERU002_SetPeripheralTrigInputSrc:00000000 $t
+C:\Users\Patrick\AppData\Local\Temp\ccbaSBoa.s:65     .text.ERU002_SetPeripheralTrigInputSrc:00000000 ERU002_SetPeripheralTrigInputSrc
+C:\Users\Patrick\AppData\Local\Temp\ccbaSBoa.s:88     .text.ERU002_GetPatternResult:00000000 $t
+C:\Users\Patrick\AppData\Local\Temp\ccbaSBoa.s:93     .text.ERU002_GetPatternResult:00000000 ERU002_GetPatternResult
+C:\Users\Patrick\AppData\Local\Temp\ccbaSBoa.s:111    .text.ERU002_EnablePatternDetection:00000000 $t
+C:\Users\Patrick\AppData\Local\Temp\ccbaSBoa.s:116    .text.ERU002_EnablePatternDetection:00000000 ERU002_EnablePatternDetection
+C:\Users\Patrick\AppData\Local\Temp\ccbaSBoa.s:132    .text.ERU002_DisablePatternDetection:00000000 $t
+C:\Users\Patrick\AppData\Local\Temp\ccbaSBoa.s:137    .text.ERU002_DisablePatternDetection:00000000 ERU002_DisablePatternDetection
+C:\Users\Patrick\AppData\Local\Temp\ccbaSBoa.s:153    .text.ERU002_SelectServiceRequestMode:00000000 $t
+C:\Users\Patrick\AppData\Local\Temp\ccbaSBoa.s:158    .text.ERU002_SelectServiceRequestMode:00000000 ERU002_SelectServiceRequestMode
+
+UNDEFINED SYMBOLS
+ERU002_HandleArray
