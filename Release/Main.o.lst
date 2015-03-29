@@ -19,8 +19,8 @@
   20              	main:
   21 0000 F7B5     		push	{r0, r1, r2, r4, r5, r6, r7, lr}
   22 0002 FFF7FEFF 		bl	DAVE_Init
-  23 0006 2D4B     		ldr	r3, .L16
-  24 0008 2D4A     		ldr	r2, .L16+4
+  23 0006 304B     		ldr	r3, .L16
+  24 0008 304A     		ldr	r2, .L16+4
   25 000a 5969     		ldr	r1, [r3, #20]
   26 000c C024     		mov	r4, #192
   27 000e 0A40     		and	r2, r1
@@ -32,7 +32,7 @@
   33 001a 5D61     		str	r5, [r3, #20]
   34 001c 5E60     		str	r6, [r3, #4]
   35 001e 5F69     		ldr	r7, [r3, #20]
-  36 0020 2849     		ldr	r1, .L16+8
+  36 0020 2B49     		ldr	r1, .L16+8
   37 0022 8022     		mov	r2, #128
   38 0024 3940     		and	r1, r7
   39 0026 5961     		str	r1, [r3, #20]
@@ -46,7 +46,7 @@
   47 0036 2F43     		orr	r7, r5
   48 0038 1F64     		str	r7, [r3, #64]
   49 003a 5A6A     		ldr	r2, [r3, #36]
-  50 003c 224A     		ldr	r2, .L16+12
+  50 003c 254A     		ldr	r2, .L16+12
   51 003e F820     		mov	r0, #248
   52 0040 5169     		ldr	r1, [r2, #20]
   53 0042 1025     		mov	r5, #16
@@ -61,191 +61,199 @@
   62 0054 3143     		orr	r1, r6
   63 0056 1164     		str	r1, [r2, #64]
   64 0058 526A     		ldr	r2, [r2, #36]
-  65 005a 1C4A     		ldr	r2, .L16+16
-  66 005c 1568     		ldr	r5, [r2]
-  67 005e 1779     		ldrb	r7, [r2, #4]
-  68 0060 0195     		str	r5, [sp, #4]
-  69 0062 002D     		cmp	r5, #0
-  70 0064 01DC     		bgt	.L2
-  71 0066 0120     		mov	r0, #1
-  72 0068 0190     		str	r0, [sp, #4]
-  73              	.L2:
-  74 006a 9168     		ldr	r1, [r2, #8]
-  75 006c 0022     		mov	r2, #0
-  76              	.L3:
-  77 006e 0C1C     		mov	r4, r1
-  78              	.L7:
-  79 0070 174E     		ldr	r6, .L16+20
-  80 0072 0134     		add	r4, r4, #1
-  81 0074 B442     		cmp	r4, r6
-  82 0076 07D1     		bne	.L4
-  83 0078 1648     		ldr	r0, .L16+24
-  84 007a 8242     		cmp	r2, r0
-  85 007c 02DC     		bgt	.L5
-  86 007e 0132     		add	r2, r2, #1
-  87 0080 0A2A     		cmp	r2, #10
-  88 0082 01DD     		ble	.L4
-  89              	.L5:
-  90              	@ 349 "C:\DAVE-3.1.10\eclipse\/../CMSIS/Include/core_cmInstr.h" 1
-  91 0084 20BF     		wfe
-  92              	@ 0 "" 2
-  93              		.code	16
-  94 0086 0022     		mov	r2, #0
-  95              	.L4:
-  96 0088 6420     		mov	r0, #100
-  97              	.L6:
-  98 008a 0138     		sub	r0, r0, #1
-  99 008c 5E6A     		ldr	r6, [r3, #36]
- 100 008e 0028     		cmp	r0, #0
- 101 0090 FBD1     		bne	.L6
- 102 0092 661A     		sub	r6, r4, r1
- 103 0094 AE42     		cmp	r6, r5
- 104 0096 EBDB     		blt	.L7
- 105 0098 002F     		cmp	r7, #0
- 106 009a 07D1     		bne	.L11
- 107 009c 0D4F     		ldr	r7, .L16+24
- 108 009e BA42     		cmp	r2, r7
- 109 00a0 02DC     		bgt	.L9
- 110 00a2 0132     		add	r2, r2, #1
- 111 00a4 012A     		cmp	r2, #1
- 112 00a6 02DD     		ble	.L8
- 113              	.L9:
- 114 00a8 2024     		mov	r4, #32
- 115 00aa 01E0     		b	.L14
- 116              	.L11:
- 117 00ac 021C     		mov	r2, r0
- 118              	.L8:
- 119 00ae 0A4C     		ldr	r4, .L16+28
- 120              	.L14:
- 121 00b0 0198     		ldr	r0, [sp, #4]
- 122 00b2 5C60     		str	r4, [r3, #4]
- 123 00b4 0918     		add	r1, r1, r0
- 124 00b6 0027     		mov	r7, #0
- 125 00b8 D9E7     		b	.L3
- 126              	.L17:
- 127 00ba C046     		.align	2
- 128              	.L16:
- 129 00bc 00000440 		.word	1074003968
- 130 00c0 FF07FFFF 		.word	-63489
- 131 00c4 FFFF07FF 		.word	-16252929
- 132 00c8 00010440 		.word	1074004224
- 133 00cc 00000000 		.word	.LANCHOR0
- 134 00d0 FFFF0000 		.word	65535
- 135 00d4 FEFF0000 		.word	65534
- 136 00d8 20002000 		.word	2097184
- 138              		.global	__aeabi_idiv
- 139              		.section	.text.ERU0_3_IRQHandler,"ax",%progbits
- 140              		.align	1
- 141              		.global	ERU0_3_IRQHandler
- 142              		.code	16
- 143              		.thumb_func
- 145              	ERU0_3_IRQHandler:
- 146 0000 37B5     		push	{r0, r1, r2, r4, r5, lr}
- 147 0002 0F4D     		ldr	r5, .L25
- 148 0004 2B79     		ldrb	r3, [r5, #4]
- 149 0006 2A68     		ldr	r2, [r5]
- 150 0008 0433     		add	r3, r3, #4
- 151 000a 9800     		lsl	r0, r3, #2
- 152 000c 8158     		ldr	r1, [r0, r2]
- 153 000e 0A06     		lsl	r2, r1, #24
- 154 0010 15D5     		bpl	.L18
- 155 0012 0C4C     		ldr	r4, .L25+4
- 156 0014 0122     		mov	r2, #1
- 157 0016 0C4B     		ldr	r3, .L25+8
- 158 0018 2271     		strb	r2, [r4, #4]
- 159 001a 586A     		ldr	r0, [r3, #36]
- 160 001c C206     		lsl	r2, r0, #27
- 161 001e 03D5     		bpl	.L20
- 162 0020 A268     		ldr	r2, [r4, #8]
- 163 0022 5310     		asr	r3, r2, #1
- 164 0024 2360     		str	r3, [r4]
- 165 0026 05E0     		b	.L21
- 166              	.L20:
- 167 0028 A168     		ldr	r1, [r4, #8]
- 168 002a C800     		lsl	r0, r1, #3
- 169 002c 0A21     		mov	r1, #10
- 170 002e FFF7FEFF 		bl	__aeabi_idiv
- 171 0032 2060     		str	r0, [r4]
- 172              	.L21:
- 173 0034 0020     		mov	r0, #0
- 174 0036 A060     		str	r0, [r4, #8]
- 175 0038 07CD     		ldmia	r5!, {r0, r1, r2}
- 176 003a FFF7FEFF 		bl	ERU001_ClearFlag
- 177              	.L18:
- 178              		@ sp needed for prologue
- 179 003e 37BD     		pop	{r0, r1, r2, r4, r5, pc}
- 180              	.L26:
- 181              		.align	2
- 182              	.L25:
- 183 0040 00000000 		.word	ERU001_Handle0
- 184 0044 00000000 		.word	.LANCHOR0
- 185 0048 00010440 		.word	1074004224
- 187              		.global	__aeabi_uidivmod
- 188              		.section	.text.PWM_Period_Interrupt,"ax",%progbits
- 189              		.align	1
- 190              		.global	PWM_Period_Interrupt
- 191              		.code	16
- 192              		.thumb_func
- 194              	PWM_Period_Interrupt:
- 195 0000 38B5     		push	{r3, r4, r5, lr}
- 196 0002 094C     		ldr	r4, .L29
- 197 0004 E368     		ldr	r3, [r4, #12]
- 198 0006 002B     		cmp	r3, #0
- 199 0008 09D1     		bne	.L28
- 200 000a 2569     		ldr	r5, [r4, #16]
- 201 000c 0721     		mov	r1, #7
- 202 000e 281C     		mov	r0, r5
- 203 0010 FFF7FEFF 		bl	__aeabi_uidivmod
- 204 0014 0131     		add	r1, r1, #1
- 205 0016 8900     		lsl	r1, r1, #2
- 206 0018 0135     		add	r5, r5, #1
- 207 001a E160     		str	r1, [r4, #12]
- 208 001c 2561     		str	r5, [r4, #16]
- 209              	.L28:
- 210 001e E068     		ldr	r0, [r4, #12]
- 211              		@ sp needed for prologue
- 212 0020 0138     		sub	r0, r0, #1
- 213 0022 E060     		str	r0, [r4, #12]
- 214 0024 38BD     		pop	{r3, r4, r5, pc}
- 215              	.L30:
- 216 0026 C046     		.align	2
- 217              	.L29:
- 218 0028 00000000 		.word	.LANCHOR0
- 220              		.global	trigger
- 221              		.global	speedLowHigh
- 222              		.global	speed
- 223              		.bss
- 224              		.align	2
- 225              		.set	.LANCHOR0,. + 0
- 228              	speedLowHigh:
- 229 0000 00000000 		.space	4
- 232              	trigger:
- 233 0004 00       		.space	1
- 234 0005 000000   		.space	3
- 237              	speed:
- 238 0008 00000000 		.space	4
- 241              	cycles.5869:
- 242 000c 00000000 		.space	4
- 245              	state.5868:
- 246 0010 00000000 		.space	4
- 247              		.ident	"GCC: (GNU Tools for ARM Embedded Processors) 4.7.4 20130913 (release) [ARM/embedded-4_7-br
+  65 005a 1F4D     		ldr	r5, .L16+16
+  66 005c D122     		mov	r2, #209
+  67 005e 1601     		lsl	r6, r2, #4
+  68 0060 A859     		ldr	r0, [r5, r6]
+  69 0062 1E49     		ldr	r1, .L16+20
+  70 0064 0424     		mov	r4, #4
+  71 0066 2043     		orr	r0, r4
+  72 0068 A851     		str	r0, [r5, r6]
+  73 006a 0D68     		ldr	r5, [r1]
+  74 006c 0F79     		ldrb	r7, [r1, #4]
+  75 006e 0195     		str	r5, [sp, #4]
+  76 0070 002D     		cmp	r5, #0
+  77 0072 01DC     		bgt	.L2
+  78 0074 0122     		mov	r2, #1
+  79 0076 0192     		str	r2, [sp, #4]
+  80              	.L2:
+  81 0078 8968     		ldr	r1, [r1, #8]
+  82 007a 0022     		mov	r2, #0
+  83              	.L3:
+  84 007c 0C1C     		mov	r4, r1
+  85              	.L7:
+  86 007e 184E     		ldr	r6, .L16+24
+  87 0080 0134     		add	r4, r4, #1
+  88 0082 B442     		cmp	r4, r6
+  89 0084 07D1     		bne	.L4
+  90 0086 1748     		ldr	r0, .L16+28
+  91 0088 8242     		cmp	r2, r0
+  92 008a 02DC     		bgt	.L5
+  93 008c 0132     		add	r2, r2, #1
+  94 008e 0A2A     		cmp	r2, #10
+  95 0090 01DD     		ble	.L4
+  96              	.L5:
+  97              	@ 349 "C:\DAVE-3.1.10\eclipse\/../CMSIS/Include/core_cmInstr.h" 1
+  98 0092 20BF     		wfe
+  99              	@ 0 "" 2
+ 100              		.code	16
+ 101 0094 0022     		mov	r2, #0
+ 102              	.L4:
+ 103 0096 6420     		mov	r0, #100
+ 104              	.L6:
+ 105 0098 0138     		sub	r0, r0, #1
+ 106 009a 5E6A     		ldr	r6, [r3, #36]
+ 107 009c 0028     		cmp	r0, #0
+ 108 009e FBD1     		bne	.L6
+ 109 00a0 661A     		sub	r6, r4, r1
+ 110 00a2 AE42     		cmp	r6, r5
+ 111 00a4 EBDB     		blt	.L7
+ 112 00a6 002F     		cmp	r7, #0
+ 113 00a8 07D1     		bne	.L11
+ 114 00aa 0E4F     		ldr	r7, .L16+28
+ 115 00ac BA42     		cmp	r2, r7
+ 116 00ae 02DC     		bgt	.L9
+ 117 00b0 0132     		add	r2, r2, #1
+ 118 00b2 012A     		cmp	r2, #1
+ 119 00b4 02DD     		ble	.L8
+ 120              	.L9:
+ 121 00b6 2024     		mov	r4, #32
+ 122 00b8 01E0     		b	.L14
+ 123              	.L11:
+ 124 00ba 021C     		mov	r2, r0
+ 125              	.L8:
+ 126 00bc 0A4C     		ldr	r4, .L16+32
+ 127              	.L14:
+ 128 00be 0198     		ldr	r0, [sp, #4]
+ 129 00c0 5C60     		str	r4, [r3, #4]
+ 130 00c2 0918     		add	r1, r1, r0
+ 131 00c4 0027     		mov	r7, #0
+ 132 00c6 D9E7     		b	.L3
+ 133              	.L17:
+ 134              		.align	2
+ 135              	.L16:
+ 136 00c8 00000440 		.word	1074003968
+ 137 00cc FF07FFFF 		.word	-63489
+ 138 00d0 FFFF07FF 		.word	-16252929
+ 139 00d4 00010440 		.word	1074004224
+ 140 00d8 00E000E0 		.word	-536813568
+ 141 00dc 00000000 		.word	.LANCHOR0
+ 142 00e0 FFFF0000 		.word	65535
+ 143 00e4 FEFF0000 		.word	65534
+ 144 00e8 20002000 		.word	2097184
+ 146              		.global	__aeabi_idiv
+ 147              		.section	.text.ERU0_3_IRQHandler,"ax",%progbits
+ 148              		.align	1
+ 149              		.global	ERU0_3_IRQHandler
+ 150              		.code	16
+ 151              		.thumb_func
+ 153              	ERU0_3_IRQHandler:
+ 154 0000 37B5     		push	{r0, r1, r2, r4, r5, lr}
+ 155 0002 0F4D     		ldr	r5, .L25
+ 156 0004 2B79     		ldrb	r3, [r5, #4]
+ 157 0006 2A68     		ldr	r2, [r5]
+ 158 0008 0433     		add	r3, r3, #4
+ 159 000a 9800     		lsl	r0, r3, #2
+ 160 000c 8158     		ldr	r1, [r0, r2]
+ 161 000e 0A06     		lsl	r2, r1, #24
+ 162 0010 15D5     		bpl	.L18
+ 163 0012 0C4C     		ldr	r4, .L25+4
+ 164 0014 0122     		mov	r2, #1
+ 165 0016 0C4B     		ldr	r3, .L25+8
+ 166 0018 2271     		strb	r2, [r4, #4]
+ 167 001a 586A     		ldr	r0, [r3, #36]
+ 168 001c C206     		lsl	r2, r0, #27
+ 169 001e 03D5     		bpl	.L20
+ 170 0020 A268     		ldr	r2, [r4, #8]
+ 171 0022 5310     		asr	r3, r2, #1
+ 172 0024 2360     		str	r3, [r4]
+ 173 0026 05E0     		b	.L21
+ 174              	.L20:
+ 175 0028 A168     		ldr	r1, [r4, #8]
+ 176 002a C800     		lsl	r0, r1, #3
+ 177 002c 0A21     		mov	r1, #10
+ 178 002e FFF7FEFF 		bl	__aeabi_idiv
+ 179 0032 2060     		str	r0, [r4]
+ 180              	.L21:
+ 181 0034 0020     		mov	r0, #0
+ 182 0036 A060     		str	r0, [r4, #8]
+ 183 0038 07CD     		ldmia	r5!, {r0, r1, r2}
+ 184 003a FFF7FEFF 		bl	ERU001_ClearFlag
+ 185              	.L18:
+ 186              		@ sp needed for prologue
+ 187 003e 37BD     		pop	{r0, r1, r2, r4, r5, pc}
+ 188              	.L26:
+ 189              		.align	2
+ 190              	.L25:
+ 191 0040 00000000 		.word	ERU001_Handle0
+ 192 0044 00000000 		.word	.LANCHOR0
+ 193 0048 00010440 		.word	1074004224
+ 195              		.global	__aeabi_uidivmod
+ 196              		.section	.text.PWM_Period_Interrupt,"ax",%progbits
+ 197              		.align	1
+ 198              		.global	PWM_Period_Interrupt
+ 199              		.code	16
+ 200              		.thumb_func
+ 202              	PWM_Period_Interrupt:
+ 203 0000 38B5     		push	{r3, r4, r5, lr}
+ 204 0002 094C     		ldr	r4, .L29
+ 205 0004 E368     		ldr	r3, [r4, #12]
+ 206 0006 002B     		cmp	r3, #0
+ 207 0008 09D1     		bne	.L28
+ 208 000a 2569     		ldr	r5, [r4, #16]
+ 209 000c 0721     		mov	r1, #7
+ 210 000e 281C     		mov	r0, r5
+ 211 0010 FFF7FEFF 		bl	__aeabi_uidivmod
+ 212 0014 0131     		add	r1, r1, #1
+ 213 0016 8900     		lsl	r1, r1, #2
+ 214 0018 0135     		add	r5, r5, #1
+ 215 001a E160     		str	r1, [r4, #12]
+ 216 001c 2561     		str	r5, [r4, #16]
+ 217              	.L28:
+ 218 001e E068     		ldr	r0, [r4, #12]
+ 219              		@ sp needed for prologue
+ 220 0020 0138     		sub	r0, r0, #1
+ 221 0022 E060     		str	r0, [r4, #12]
+ 222 0024 38BD     		pop	{r3, r4, r5, pc}
+ 223              	.L30:
+ 224 0026 C046     		.align	2
+ 225              	.L29:
+ 226 0028 00000000 		.word	.LANCHOR0
+ 228              		.global	trigger
+ 229              		.global	speedLowHigh
+ 230              		.global	speed
+ 231              		.bss
+ 232              		.align	2
+ 233              		.set	.LANCHOR0,. + 0
+ 236              	speedLowHigh:
+ 237 0000 00000000 		.space	4
+ 240              	trigger:
+ 241 0004 00       		.space	1
+ 242 0005 000000   		.space	3
+ 245              	speed:
+ 246 0008 00000000 		.space	4
+ 249              	cycles.5869:
+ 250 000c 00000000 		.space	4
+ 253              	state.5868:
+ 254 0010 00000000 		.space	4
+ 255              		.ident	"GCC: (GNU Tools for ARM Embedded Processors) 4.7.4 20130913 (release) [ARM/embedded-4_7-br
 DEFINED SYMBOLS
                             *ABS*:00000000 Main.c
-C:\Users\Patrick\AppData\Local\Temp\ccSsoySi.s:15     .text.startup.main:00000000 $t
-C:\Users\Patrick\AppData\Local\Temp\ccSsoySi.s:20     .text.startup.main:00000000 main
-C:\Users\Patrick\AppData\Local\Temp\ccSsoySi.s:129    .text.startup.main:000000bc $d
-C:\Users\Patrick\AppData\Local\Temp\ccSsoySi.s:140    .text.ERU0_3_IRQHandler:00000000 $t
-C:\Users\Patrick\AppData\Local\Temp\ccSsoySi.s:145    .text.ERU0_3_IRQHandler:00000000 ERU0_3_IRQHandler
-C:\Users\Patrick\AppData\Local\Temp\ccSsoySi.s:183    .text.ERU0_3_IRQHandler:00000040 $d
-C:\Users\Patrick\AppData\Local\Temp\ccSsoySi.s:189    .text.PWM_Period_Interrupt:00000000 $t
-C:\Users\Patrick\AppData\Local\Temp\ccSsoySi.s:194    .text.PWM_Period_Interrupt:00000000 PWM_Period_Interrupt
-C:\Users\Patrick\AppData\Local\Temp\ccSsoySi.s:218    .text.PWM_Period_Interrupt:00000028 $d
-C:\Users\Patrick\AppData\Local\Temp\ccSsoySi.s:232    .bss:00000004 trigger
-C:\Users\Patrick\AppData\Local\Temp\ccSsoySi.s:228    .bss:00000000 speedLowHigh
-C:\Users\Patrick\AppData\Local\Temp\ccSsoySi.s:237    .bss:00000008 speed
-C:\Users\Patrick\AppData\Local\Temp\ccSsoySi.s:224    .bss:00000000 $d
-C:\Users\Patrick\AppData\Local\Temp\ccSsoySi.s:241    .bss:0000000c cycles.5869
-C:\Users\Patrick\AppData\Local\Temp\ccSsoySi.s:245    .bss:00000010 state.5868
+C:\Users\Patrick\AppData\Local\Temp\ccVyVRRO.s:15     .text.startup.main:00000000 $t
+C:\Users\Patrick\AppData\Local\Temp\ccVyVRRO.s:20     .text.startup.main:00000000 main
+C:\Users\Patrick\AppData\Local\Temp\ccVyVRRO.s:136    .text.startup.main:000000c8 $d
+C:\Users\Patrick\AppData\Local\Temp\ccVyVRRO.s:148    .text.ERU0_3_IRQHandler:00000000 $t
+C:\Users\Patrick\AppData\Local\Temp\ccVyVRRO.s:153    .text.ERU0_3_IRQHandler:00000000 ERU0_3_IRQHandler
+C:\Users\Patrick\AppData\Local\Temp\ccVyVRRO.s:191    .text.ERU0_3_IRQHandler:00000040 $d
+C:\Users\Patrick\AppData\Local\Temp\ccVyVRRO.s:197    .text.PWM_Period_Interrupt:00000000 $t
+C:\Users\Patrick\AppData\Local\Temp\ccVyVRRO.s:202    .text.PWM_Period_Interrupt:00000000 PWM_Period_Interrupt
+C:\Users\Patrick\AppData\Local\Temp\ccVyVRRO.s:226    .text.PWM_Period_Interrupt:00000028 $d
+C:\Users\Patrick\AppData\Local\Temp\ccVyVRRO.s:240    .bss:00000004 trigger
+C:\Users\Patrick\AppData\Local\Temp\ccVyVRRO.s:236    .bss:00000000 speedLowHigh
+C:\Users\Patrick\AppData\Local\Temp\ccVyVRRO.s:245    .bss:00000008 speed
+C:\Users\Patrick\AppData\Local\Temp\ccVyVRRO.s:232    .bss:00000000 $d
+C:\Users\Patrick\AppData\Local\Temp\ccVyVRRO.s:249    .bss:0000000c cycles.5869
+C:\Users\Patrick\AppData\Local\Temp\ccVyVRRO.s:253    .bss:00000010 state.5868
 
 UNDEFINED SYMBOLS
 DAVE_Init

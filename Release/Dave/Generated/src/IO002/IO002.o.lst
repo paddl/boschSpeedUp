@@ -333,24 +333,24 @@
  349              		.ident	"GCC: (GNU Tools for ARM Embedded Processors) 4.7.4 20130913 (release) [ARM/embedded-4_7-br
 DEFINED SYMBOLS
                             *ABS*:00000000 IO002.c
-C:\Users\Patrick\AppData\Local\Temp\ccALb4uc.s:15     .text.IO002_Init:00000000 $t
-C:\Users\Patrick\AppData\Local\Temp\ccALb4uc.s:20     .text.IO002_Init:00000000 IO002_Init
-C:\Users\Patrick\AppData\Local\Temp\ccALb4uc.s:191    .text.IO002_Init:00000128 $d
-C:\Users\Patrick\AppData\Local\Temp\ccALb4uc.s:194    .text.IO002_ReadPin:00000000 $t
-C:\Users\Patrick\AppData\Local\Temp\ccALb4uc.s:199    .text.IO002_ReadPin:00000000 IO002_ReadPin
-C:\Users\Patrick\AppData\Local\Temp\ccALb4uc.s:217    .text.IO002_SetPin:00000000 $t
-C:\Users\Patrick\AppData\Local\Temp\ccALb4uc.s:222    .text.IO002_SetPin:00000000 IO002_SetPin
-C:\Users\Patrick\AppData\Local\Temp\ccALb4uc.s:242    .text.IO002_ResetPin:00000000 $t
-C:\Users\Patrick\AppData\Local\Temp\ccALb4uc.s:247    .text.IO002_ResetPin:00000000 IO002_ResetPin
-C:\Users\Patrick\AppData\Local\Temp\ccALb4uc.s:268    .text.IO002_SetOutputValue:00000000 $t
-C:\Users\Patrick\AppData\Local\Temp\ccALb4uc.s:273    .text.IO002_SetOutputValue:00000000 IO002_SetOutputValue
-C:\Users\Patrick\AppData\Local\Temp\ccALb4uc.s:301    .text.IO002_TogglePin:00000000 $t
-C:\Users\Patrick\AppData\Local\Temp\ccALb4uc.s:306    .text.IO002_TogglePin:00000000 IO002_TogglePin
-C:\Users\Patrick\AppData\Local\Temp\ccALb4uc.s:327    .text.IO002_TogglePin:00000020 $d
-C:\Users\Patrick\AppData\Local\Temp\ccALb4uc.s:330    .text.IO002_DisableOutputDriver:00000000 $t
-C:\Users\Patrick\AppData\Local\Temp\ccALb4uc.s:335    .text.IO002_DisableOutputDriver:00000000 IO002_DisableOutputDriver
-C:\Users\Patrick\AppData\Local\Temp\ccALb4uc.s:340    .text.IO002_EnableOutputDriver:00000000 $t
-C:\Users\Patrick\AppData\Local\Temp\ccALb4uc.s:345    .text.IO002_EnableOutputDriver:00000000 IO002_EnableOutputDriver
+C:\Users\Patrick\AppData\Local\Temp\ccPXUoOL.s:15     .text.IO002_Init:00000000 $t
+C:\Users\Patrick\AppData\Local\Temp\ccPXUoOL.s:20     .text.IO002_Init:00000000 IO002_Init
+C:\Users\Patrick\AppData\Local\Temp\ccPXUoOL.s:191    .text.IO002_Init:00000128 $d
+C:\Users\Patrick\AppData\Local\Temp\ccPXUoOL.s:194    .text.IO002_ReadPin:00000000 $t
+C:\Users\Patrick\AppData\Local\Temp\ccPXUoOL.s:199    .text.IO002_ReadPin:00000000 IO002_ReadPin
+C:\Users\Patrick\AppData\Local\Temp\ccPXUoOL.s:217    .text.IO002_SetPin:00000000 $t
+C:\Users\Patrick\AppData\Local\Temp\ccPXUoOL.s:222    .text.IO002_SetPin:00000000 IO002_SetPin
+C:\Users\Patrick\AppData\Local\Temp\ccPXUoOL.s:242    .text.IO002_ResetPin:00000000 $t
+C:\Users\Patrick\AppData\Local\Temp\ccPXUoOL.s:247    .text.IO002_ResetPin:00000000 IO002_ResetPin
+C:\Users\Patrick\AppData\Local\Temp\ccPXUoOL.s:268    .text.IO002_SetOutputValue:00000000 $t
+C:\Users\Patrick\AppData\Local\Temp\ccPXUoOL.s:273    .text.IO002_SetOutputValue:00000000 IO002_SetOutputValue
+C:\Users\Patrick\AppData\Local\Temp\ccPXUoOL.s:301    .text.IO002_TogglePin:00000000 $t
+C:\Users\Patrick\AppData\Local\Temp\ccPXUoOL.s:306    .text.IO002_TogglePin:00000000 IO002_TogglePin
+C:\Users\Patrick\AppData\Local\Temp\ccPXUoOL.s:327    .text.IO002_TogglePin:00000020 $d
+C:\Users\Patrick\AppData\Local\Temp\ccPXUoOL.s:330    .text.IO002_DisableOutputDriver:00000000 $t
+C:\Users\Patrick\AppData\Local\Temp\ccPXUoOL.s:335    .text.IO002_DisableOutputDriver:00000000 IO002_DisableOutputDriver
+C:\Users\Patrick\AppData\Local\Temp\ccPXUoOL.s:340    .text.IO002_EnableOutputDriver:00000000 $t
+C:\Users\Patrick\AppData\Local\Temp\ccPXUoOL.s:345    .text.IO002_EnableOutputDriver:00000000 IO002_EnableOutputDriver
 
 UNDEFINED SYMBOLS
 IO002_HandleArr

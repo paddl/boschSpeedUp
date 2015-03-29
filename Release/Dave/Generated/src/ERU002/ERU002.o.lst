@@ -163,21 +163,21 @@
  177              		.ident	"GCC: (GNU Tools for ARM Embedded Processors) 4.7.4 20130913 (release) [ARM/embedded-4_7-br
 DEFINED SYMBOLS
                             *ABS*:00000000 ERU002.c
-C:\Users\Patrick\AppData\Local\Temp\ccbaSBoa.s:15     .text.ERU002_lInit:00000000 $t
-C:\Users\Patrick\AppData\Local\Temp\ccbaSBoa.s:20     .text.ERU002_lInit:00000000 ERU002_lInit
-C:\Users\Patrick\AppData\Local\Temp\ccbaSBoa.s:42     .text.ERU002_Init:00000000 $t
-C:\Users\Patrick\AppData\Local\Temp\ccbaSBoa.s:47     .text.ERU002_Init:00000000 ERU002_Init
-C:\Users\Patrick\AppData\Local\Temp\ccbaSBoa.s:57     .text.ERU002_Init:0000000c $d
-C:\Users\Patrick\AppData\Local\Temp\ccbaSBoa.s:60     .text.ERU002_SetPeripheralTrigInputSrc:00000000 $t
-C:\Users\Patrick\AppData\Local\Temp\ccbaSBoa.s:65     .text.ERU002_SetPeripheralTrigInputSrc:00000000 ERU002_SetPeripheralTrigInputSrc
-C:\Users\Patrick\AppData\Local\Temp\ccbaSBoa.s:88     .text.ERU002_GetPatternResult:00000000 $t
-C:\Users\Patrick\AppData\Local\Temp\ccbaSBoa.s:93     .text.ERU002_GetPatternResult:00000000 ERU002_GetPatternResult
-C:\Users\Patrick\AppData\Local\Temp\ccbaSBoa.s:111    .text.ERU002_EnablePatternDetection:00000000 $t
-C:\Users\Patrick\AppData\Local\Temp\ccbaSBoa.s:116    .text.ERU002_EnablePatternDetection:00000000 ERU002_EnablePatternDetection
-C:\Users\Patrick\AppData\Local\Temp\ccbaSBoa.s:132    .text.ERU002_DisablePatternDetection:00000000 $t
-C:\Users\Patrick\AppData\Local\Temp\ccbaSBoa.s:137    .text.ERU002_DisablePatternDetection:00000000 ERU002_DisablePatternDetection
-C:\Users\Patrick\AppData\Local\Temp\ccbaSBoa.s:153    .text.ERU002_SelectServiceRequestMode:00000000 $t
-C:\Users\Patrick\AppData\Local\Temp\ccbaSBoa.s:158    .text.ERU002_SelectServiceRequestMode:00000000 ERU002_SelectServiceRequestMode
+C:\Users\Patrick\AppData\Local\Temp\ccC6INJN.s:15     .text.ERU002_lInit:00000000 $t
+C:\Users\Patrick\AppData\Local\Temp\ccC6INJN.s:20     .text.ERU002_lInit:00000000 ERU002_lInit
+C:\Users\Patrick\AppData\Local\Temp\ccC6INJN.s:42     .text.ERU002_Init:00000000 $t
+C:\Users\Patrick\AppData\Local\Temp\ccC6INJN.s:47     .text.ERU002_Init:00000000 ERU002_Init
+C:\Users\Patrick\AppData\Local\Temp\ccC6INJN.s:57     .text.ERU002_Init:0000000c $d
+C:\Users\Patrick\AppData\Local\Temp\ccC6INJN.s:60     .text.ERU002_SetPeripheralTrigInputSrc:00000000 $t
+C:\Users\Patrick\AppData\Local\Temp\ccC6INJN.s:65     .text.ERU002_SetPeripheralTrigInputSrc:00000000 ERU002_SetPeripheralTrigInputSrc
+C:\Users\Patrick\AppData\Local\Temp\ccC6INJN.s:88     .text.ERU002_GetPatternResult:00000000 $t
+C:\Users\Patrick\AppData\Local\Temp\ccC6INJN.s:93     .text.ERU002_GetPatternResult:00000000 ERU002_GetPatternResult
+C:\Users\Patrick\AppData\Local\Temp\ccC6INJN.s:111    .text.ERU002_EnablePatternDetection:00000000 $t
+C:\Users\Patrick\AppData\Local\Temp\ccC6INJN.s:116    .text.ERU002_EnablePatternDetection:00000000 ERU002_EnablePatternDetection
+C:\Users\Patrick\AppData\Local\Temp\ccC6INJN.s:132    .text.ERU002_DisablePatternDetection:00000000 $t
+C:\Users\Patrick\AppData\Local\Temp\ccC6INJN.s:137    .text.ERU002_DisablePatternDetection:00000000 ERU002_DisablePatternDetection
+C:\Users\Patrick\AppData\Local\Temp\ccC6INJN.s:153    .text.ERU002_SelectServiceRequestMode:00000000 $t
+C:\Users\Patrick\AppData\Local\Temp\ccC6INJN.s:158    .text.ERU002_SelectServiceRequestMode:00000000 ERU002_SelectServiceRequestMode
 
 UNDEFINED SYMBOLS
 ERU002_HandleArray

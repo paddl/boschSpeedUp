@@ -97,6 +97,8 @@ int main(void)
 
 	DAVE_Init();			// Initialization of DAVE Apps
 
+
+
 	//PWMSP001_Stop((PWMSP001_HandleType*)&PWMSP001_Handle0);
 
 	
@@ -126,6 +128,10 @@ int main(void)
 	static int debugSpeedBuffer[DEBUG_CNT_BUFFER_SIZE];
 #endif
 
+
+
+	// enable deep sleep
+	PPB->SCR |= PPB_SCR_SLEEPDEEP_Msk;
 
 	while(1)
 	{
