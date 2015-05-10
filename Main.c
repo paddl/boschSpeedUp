@@ -60,7 +60,8 @@
 #include "GPIO.h"
 
 
-#define PIN_SW_HIGH()      P1_4_read()
+//#define PIN_SW_HIGH()      P1_4_read()
+#define PIN_SW_HIGH()      FALSE
 #define PIN_IS_HIGH()      P0_6_read()
 #define PIN_LOW_DEASSERT() P0_5_set()
 #define PIN_LOW_ASSERT()   P0_5_reset()

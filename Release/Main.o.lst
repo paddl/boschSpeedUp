@@ -148,112 +148,103 @@
  150              		.code	16
  151              		.thumb_func
  153              	ERU0_3_IRQHandler:
- 154 0000 37B5     		push	{r0, r1, r2, r4, r5, lr}
- 155 0002 0F4D     		ldr	r5, .L25
- 156 0004 2B79     		ldrb	r3, [r5, #4]
- 157 0006 2A68     		ldr	r2, [r5]
+ 154 0000 70B5     		push	{r4, r5, r6, lr}
+ 155 0002 0C4C     		ldr	r4, .L23
+ 156 0004 2379     		ldrb	r3, [r4, #4]
+ 157 0006 2668     		ldr	r6, [r4]
  158 0008 0433     		add	r3, r3, #4
  159 000a 9800     		lsl	r0, r3, #2
- 160 000c 8158     		ldr	r1, [r0, r2]
+ 160 000c 8159     		ldr	r1, [r0, r6]
  161 000e 0A06     		lsl	r2, r1, #24
- 162 0010 15D5     		bpl	.L18
- 163 0012 0C4C     		ldr	r4, .L25+4
+ 162 0010 0FD5     		bpl	.L18
+ 163 0012 094D     		ldr	r5, .L23+4
  164 0014 0122     		mov	r2, #1
- 165 0016 0C4B     		ldr	r3, .L25+8
- 166 0018 2271     		strb	r2, [r4, #4]
- 167 001a 586A     		ldr	r0, [r3, #36]
- 168 001c C206     		lsl	r2, r0, #27
- 169 001e 03D5     		bpl	.L20
- 170 0020 A268     		ldr	r2, [r4, #8]
- 171 0022 5310     		asr	r3, r2, #1
- 172 0024 2360     		str	r3, [r4]
- 173 0026 05E0     		b	.L21
- 174              	.L20:
- 175 0028 A168     		ldr	r1, [r4, #8]
- 176 002a C800     		lsl	r0, r1, #3
- 177 002c 0A21     		mov	r1, #10
- 178 002e FFF7FEFF 		bl	__aeabi_idiv
- 179 0032 2060     		str	r0, [r4]
- 180              	.L21:
- 181 0034 0020     		mov	r0, #0
- 182 0036 A060     		str	r0, [r4, #8]
- 183 0038 07CD     		ldmia	r5!, {r0, r1, r2}
- 184 003a FFF7FEFF 		bl	ERU001_ClearFlag
- 185              	.L18:
- 186              		@ sp needed for prologue
- 187 003e 37BD     		pop	{r0, r1, r2, r4, r5, pc}
- 188              	.L26:
- 189              		.align	2
- 190              	.L25:
- 191 0040 00000000 		.word	ERU001_Handle0
- 192 0044 00000000 		.word	.LANCHOR0
- 193 0048 00010440 		.word	1074004224
- 195              		.global	__aeabi_uidivmod
- 196              		.section	.text.PWM_Period_Interrupt,"ax",%progbits
- 197              		.align	1
- 198              		.global	PWM_Period_Interrupt
- 199              		.code	16
- 200              		.thumb_func
- 202              	PWM_Period_Interrupt:
- 203 0000 38B5     		push	{r3, r4, r5, lr}
- 204 0002 094C     		ldr	r4, .L29
- 205 0004 E368     		ldr	r3, [r4, #12]
- 206 0006 002B     		cmp	r3, #0
- 207 0008 09D1     		bne	.L28
- 208 000a 2569     		ldr	r5, [r4, #16]
- 209 000c 0721     		mov	r1, #7
- 210 000e 281C     		mov	r0, r5
- 211 0010 FFF7FEFF 		bl	__aeabi_uidivmod
- 212 0014 0131     		add	r1, r1, #1
- 213 0016 8900     		lsl	r1, r1, #2
- 214 0018 0135     		add	r5, r5, #1
- 215 001a E160     		str	r1, [r4, #12]
- 216 001c 2561     		str	r5, [r4, #16]
- 217              	.L28:
- 218 001e E068     		ldr	r0, [r4, #12]
- 219              		@ sp needed for prologue
- 220 0020 0138     		sub	r0, r0, #1
- 221 0022 E060     		str	r0, [r4, #12]
- 222 0024 38BD     		pop	{r3, r4, r5, pc}
- 223              	.L30:
- 224 0026 C046     		.align	2
- 225              	.L29:
- 226 0028 00000000 		.word	.LANCHOR0
- 228              		.global	trigger
- 229              		.global	speedLowHigh
- 230              		.global	speed
- 231              		.bss
- 232              		.align	2
- 233              		.set	.LANCHOR0,. + 0
- 236              	speedLowHigh:
- 237 0000 00000000 		.space	4
- 240              	trigger:
- 241 0004 00       		.space	1
- 242 0005 000000   		.space	3
- 245              	speed:
- 246 0008 00000000 		.space	4
- 249              	cycles.5869:
- 250 000c 00000000 		.space	4
- 253              	state.5868:
- 254 0010 00000000 		.space	4
- 255              		.ident	"GCC: (GNU Tools for ARM Embedded Processors) 4.7.4 20130913 (release) [ARM/embedded-4_7-br
+ 165 0016 AB68     		ldr	r3, [r5, #8]
+ 166 0018 2A71     		strb	r2, [r5, #4]
+ 167 001a 0A21     		mov	r1, #10
+ 168 001c D800     		lsl	r0, r3, #3
+ 169 001e FFF7FEFF 		bl	__aeabi_idiv
+ 170 0022 2860     		str	r0, [r5]
+ 171 0024 0020     		mov	r0, #0
+ 172 0026 A860     		str	r0, [r5, #8]
+ 173 0028 6168     		ldr	r1, [r4, #4]
+ 174 002a 301C     		mov	r0, r6
+ 175 002c A268     		ldr	r2, [r4, #8]
+ 176 002e FFF7FEFF 		bl	ERU001_ClearFlag
+ 177              	.L18:
+ 178              		@ sp needed for prologue
+ 179 0032 70BD     		pop	{r4, r5, r6, pc}
+ 180              	.L24:
+ 181              		.align	2
+ 182              	.L23:
+ 183 0034 00000000 		.word	ERU001_Handle0
+ 184 0038 00000000 		.word	.LANCHOR0
+ 186              		.global	__aeabi_uidivmod
+ 187              		.section	.text.PWM_Period_Interrupt,"ax",%progbits
+ 188              		.align	1
+ 189              		.global	PWM_Period_Interrupt
+ 190              		.code	16
+ 191              		.thumb_func
+ 193              	PWM_Period_Interrupt:
+ 194 0000 38B5     		push	{r3, r4, r5, lr}
+ 195 0002 094C     		ldr	r4, .L27
+ 196 0004 E368     		ldr	r3, [r4, #12]
+ 197 0006 002B     		cmp	r3, #0
+ 198 0008 09D1     		bne	.L26
+ 199 000a 2569     		ldr	r5, [r4, #16]
+ 200 000c 0721     		mov	r1, #7
+ 201 000e 281C     		mov	r0, r5
+ 202 0010 FFF7FEFF 		bl	__aeabi_uidivmod
+ 203 0014 0131     		add	r1, r1, #1
+ 204 0016 8900     		lsl	r1, r1, #2
+ 205 0018 0135     		add	r5, r5, #1
+ 206 001a E160     		str	r1, [r4, #12]
+ 207 001c 2561     		str	r5, [r4, #16]
+ 208              	.L26:
+ 209 001e E068     		ldr	r0, [r4, #12]
+ 210              		@ sp needed for prologue
+ 211 0020 0138     		sub	r0, r0, #1
+ 212 0022 E060     		str	r0, [r4, #12]
+ 213 0024 38BD     		pop	{r3, r4, r5, pc}
+ 214              	.L28:
+ 215 0026 C046     		.align	2
+ 216              	.L27:
+ 217 0028 00000000 		.word	.LANCHOR0
+ 219              		.global	trigger
+ 220              		.global	speedLowHigh
+ 221              		.global	speed
+ 222              		.bss
+ 223              		.align	2
+ 224              		.set	.LANCHOR0,. + 0
+ 227              	speedLowHigh:
+ 228 0000 00000000 		.space	4
+ 231              	trigger:
+ 232 0004 00       		.space	1
+ 233 0005 000000   		.space	3
+ 236              	speed:
+ 237 0008 00000000 		.space	4
+ 240              	cycles.5869:
+ 241 000c 00000000 		.space	4
+ 244              	state.5868:
+ 245 0010 00000000 		.space	4
+ 246              		.ident	"GCC: (GNU Tools for ARM Embedded Processors) 4.7.4 20130913 (release) [ARM/embedded-4_7-br
 DEFINED SYMBOLS
                             *ABS*:00000000 Main.c
-C:\Users\Patrick\AppData\Local\Temp\ccVyVRRO.s:15     .text.startup.main:00000000 $t
-C:\Users\Patrick\AppData\Local\Temp\ccVyVRRO.s:20     .text.startup.main:00000000 main
-C:\Users\Patrick\AppData\Local\Temp\ccVyVRRO.s:136    .text.startup.main:000000c8 $d
-C:\Users\Patrick\AppData\Local\Temp\ccVyVRRO.s:148    .text.ERU0_3_IRQHandler:00000000 $t
-C:\Users\Patrick\AppData\Local\Temp\ccVyVRRO.s:153    .text.ERU0_3_IRQHandler:00000000 ERU0_3_IRQHandler
-C:\Users\Patrick\AppData\Local\Temp\ccVyVRRO.s:191    .text.ERU0_3_IRQHandler:00000040 $d
-C:\Users\Patrick\AppData\Local\Temp\ccVyVRRO.s:197    .text.PWM_Period_Interrupt:00000000 $t
-C:\Users\Patrick\AppData\Local\Temp\ccVyVRRO.s:202    .text.PWM_Period_Interrupt:00000000 PWM_Period_Interrupt
-C:\Users\Patrick\AppData\Local\Temp\ccVyVRRO.s:226    .text.PWM_Period_Interrupt:00000028 $d
-C:\Users\Patrick\AppData\Local\Temp\ccVyVRRO.s:240    .bss:00000004 trigger
-C:\Users\Patrick\AppData\Local\Temp\ccVyVRRO.s:236    .bss:00000000 speedLowHigh
-C:\Users\Patrick\AppData\Local\Temp\ccVyVRRO.s:245    .bss:00000008 speed
-C:\Users\Patrick\AppData\Local\Temp\ccVyVRRO.s:232    .bss:00000000 $d
-C:\Users\Patrick\AppData\Local\Temp\ccVyVRRO.s:249    .bss:0000000c cycles.5869
-C:\Users\Patrick\AppData\Local\Temp\ccVyVRRO.s:253    .bss:00000010 state.5868
+C:\Users\Patrick\AppData\Local\Temp\ccW2CRsA.s:15     .text.startup.main:00000000 $t
+C:\Users\Patrick\AppData\Local\Temp\ccW2CRsA.s:20     .text.startup.main:00000000 main
+C:\Users\Patrick\AppData\Local\Temp\ccW2CRsA.s:136    .text.startup.main:000000c8 $d
+C:\Users\Patrick\AppData\Local\Temp\ccW2CRsA.s:148    .text.ERU0_3_IRQHandler:00000000 $t
+C:\Users\Patrick\AppData\Local\Temp\ccW2CRsA.s:153    .text.ERU0_3_IRQHandler:00000000 ERU0_3_IRQHandler
+C:\Users\Patrick\AppData\Local\Temp\ccW2CRsA.s:183    .text.ERU0_3_IRQHandler:00000034 $d
+C:\Users\Patrick\AppData\Local\Temp\ccW2CRsA.s:188    .text.PWM_Period_Interrupt:00000000 $t
+C:\Users\Patrick\AppData\Local\Temp\ccW2CRsA.s:193    .text.PWM_Period_Interrupt:00000000 PWM_Period_Interrupt
+C:\Users\Patrick\AppData\Local\Temp\ccW2CRsA.s:217    .text.PWM_Period_Interrupt:00000028 $d
+C:\Users\Patrick\AppData\Local\Temp\ccW2CRsA.s:231    .bss:00000004 trigger
+C:\Users\Patrick\AppData\Local\Temp\ccW2CRsA.s:227    .bss:00000000 speedLowHigh
+C:\Users\Patrick\AppData\Local\Temp\ccW2CRsA.s:236    .bss:00000008 speed
+C:\Users\Patrick\AppData\Local\Temp\ccW2CRsA.s:223    .bss:00000000 $d
+C:\Users\Patrick\AppData\Local\Temp\ccW2CRsA.s:240    .bss:0000000c cycles.5869
+C:\Users\Patrick\AppData\Local\Temp\ccW2CRsA.s:244    .bss:00000010 state.5868
 
 UNDEFINED SYMBOLS
 DAVE_Init

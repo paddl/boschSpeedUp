@@ -57,7 +57,7 @@ LOAD c:/dave-3.1.10/arm-gcc/bin/../lib/gcc/arm-none-eabi/4.7.4/../../../../arm-n
 END GROUP
                 0x00000800                stack_size = 0x800
 
-.text           0x10001000      0x888
+.text           0x10001000      0x878
                 0x10001000                sText = .
  *(.Xmc1100.reset)
  .Xmc1100.reset
@@ -108,134 +108,134 @@ END GROUP
                 0x10001144       0xec Main.o
                 0x10001144                main
  .text.ERU0_3_IRQHandler
-                0x10001230       0x4c Main.o
+                0x10001230       0x3c Main.o
                 0x10001230                ERU0_3_IRQHandler
  .text.PWM_Period_Interrupt
-                0x1000127c       0x2c Main.o
-                0x1000127c                PWM_Period_Interrupt
- .text          0x100012a8        0x0 Lib/System_LibcStubs.o
- .text._open    0x100012a8        0x6 Lib/System_LibcStubs.o
-                0x100012a8                _open
- .text._lseek   0x100012ae        0x6 Lib/System_LibcStubs.o
-                0x100012ae                _lseek
- .text._read    0x100012b4        0x4 Lib/System_LibcStubs.o
-                0x100012b4                _read
- .text._write   0x100012b8        0x6 Lib/System_LibcStubs.o
-                0x100012b8                _write
- .text._close   0x100012be        0x6 Lib/System_LibcStubs.o
-                0x100012be                _close
- .text._fstat   0x100012c4        0x8 Lib/System_LibcStubs.o
-                0x100012c4                _fstat
- .text._link    0x100012cc        0xa Lib/System_LibcStubs.o
-                0x100012cc                _link
- .text._unlink  0x100012d6        0x6 Lib/System_LibcStubs.o
-                0x100012d6                _unlink
- .text._sbrk    0x100012dc       0x38 Lib/System_LibcStubs.o
-                0x100012dc                _sbrk
- .text._times   0x10001314        0x6 Lib/System_LibcStubs.o
-                0x10001314                _times
- .text._wait    0x1000131a        0x6 Lib/System_LibcStubs.o
-                0x1000131a                _wait
- .text._kill    0x10001320        0x6 Lib/System_LibcStubs.o
-                0x10001320                _kill
- .text._fork    0x10001326        0x6 Lib/System_LibcStubs.o
-                0x10001326                _fork
- .text._getpid  0x1000132c        0x6 Lib/System_LibcStubs.o
-                0x1000132c                _getpid
- .text._exit    0x10001332        0x2 Lib/System_LibcStubs.o
-                0x10001332                _exit
- .text._init    0x10001334        0x2 Lib/System_LibcStubs.o
-                0x10001334                _init
- .text._isatty  0x10001336        0x6 Lib/System_LibcStubs.o
-                0x10001336                _isatty
- .text          0x1000133c        0x0 Dave/Generated/src/NVIC002/NVIC002.o
+                0x1000126c       0x2c Main.o
+                0x1000126c                PWM_Period_Interrupt
+ .text          0x10001298        0x0 Lib/System_LibcStubs.o
+ .text._open    0x10001298        0x6 Lib/System_LibcStubs.o
+                0x10001298                _open
+ .text._lseek   0x1000129e        0x6 Lib/System_LibcStubs.o
+                0x1000129e                _lseek
+ .text._read    0x100012a4        0x4 Lib/System_LibcStubs.o
+                0x100012a4                _read
+ .text._write   0x100012a8        0x6 Lib/System_LibcStubs.o
+                0x100012a8                _write
+ .text._close   0x100012ae        0x6 Lib/System_LibcStubs.o
+                0x100012ae                _close
+ .text._fstat   0x100012b4        0x8 Lib/System_LibcStubs.o
+                0x100012b4                _fstat
+ .text._link    0x100012bc        0xa Lib/System_LibcStubs.o
+                0x100012bc                _link
+ .text._unlink  0x100012c6        0x6 Lib/System_LibcStubs.o
+                0x100012c6                _unlink
+ .text._sbrk    0x100012cc       0x38 Lib/System_LibcStubs.o
+                0x100012cc                _sbrk
+ .text._times   0x10001304        0x6 Lib/System_LibcStubs.o
+                0x10001304                _times
+ .text._wait    0x1000130a        0x6 Lib/System_LibcStubs.o
+                0x1000130a                _wait
+ .text._kill    0x10001310        0x6 Lib/System_LibcStubs.o
+                0x10001310                _kill
+ .text._fork    0x10001316        0x6 Lib/System_LibcStubs.o
+                0x10001316                _fork
+ .text._getpid  0x1000131c        0x6 Lib/System_LibcStubs.o
+                0x1000131c                _getpid
+ .text._exit    0x10001322        0x2 Lib/System_LibcStubs.o
+                0x10001322                _exit
+ .text._init    0x10001324        0x2 Lib/System_LibcStubs.o
+                0x10001324                _init
+ .text._isatty  0x10001326        0x6 Lib/System_LibcStubs.o
+                0x10001326                _isatty
+ .text          0x1000132c        0x0 Dave/Generated/src/NVIC002/NVIC002.o
  .text.NVIC002_Init
-                0x1000133c       0x80 Dave/Generated/src/NVIC002/NVIC002.o
-                0x1000133c                NVIC002_Init
- .text          0x100013bc        0x0 Dave/Generated/src/NVIC002/NVIC002_Conf.o
- .text          0x100013bc        0x0 Dave/Generated/src/IO002/IO002.o
+                0x1000132c       0x80 Dave/Generated/src/NVIC002/NVIC002.o
+                0x1000132c                NVIC002_Init
+ .text          0x100013ac        0x0 Dave/Generated/src/NVIC002/NVIC002_Conf.o
+ .text          0x100013ac        0x0 Dave/Generated/src/IO002/IO002.o
  .text.IO002_Init
-                0x100013bc      0x12c Dave/Generated/src/IO002/IO002.o
-                0x100013bc                IO002_Init
+                0x100013ac      0x12c Dave/Generated/src/IO002/IO002.o
+                0x100013ac                IO002_Init
  .text.IO002_ReadPin
-                0x100014e8       0x1c Dave/Generated/src/IO002/IO002.o
-                0x100014e8                IO002_ReadPin
+                0x100014d8       0x1c Dave/Generated/src/IO002/IO002.o
+                0x100014d8                IO002_ReadPin
  .text.IO002_SetPin
-                0x10001504       0x20 Dave/Generated/src/IO002/IO002.o
-                0x10001504                IO002_SetPin
+                0x100014f4       0x20 Dave/Generated/src/IO002/IO002.o
+                0x100014f4                IO002_SetPin
  .text.IO002_ResetPin
-                0x10001524       0x22 Dave/Generated/src/IO002/IO002.o
-                0x10001524                IO002_ResetPin
+                0x10001514       0x22 Dave/Generated/src/IO002/IO002.o
+                0x10001514                IO002_ResetPin
  .text.IO002_SetOutputValue
-                0x10001546       0x2c Dave/Generated/src/IO002/IO002.o
-                0x10001546                IO002_SetOutputValue
- *fill*         0x10001572        0x2 00
+                0x10001536       0x2c Dave/Generated/src/IO002/IO002.o
+                0x10001536                IO002_SetOutputValue
+ *fill*         0x10001562        0x2 00
  .text.IO002_TogglePin
-                0x10001574       0x24 Dave/Generated/src/IO002/IO002.o
-                0x10001574                IO002_TogglePin
+                0x10001564       0x24 Dave/Generated/src/IO002/IO002.o
+                0x10001564                IO002_TogglePin
  .text.IO002_DisableOutputDriver
-                0x10001598        0x2 Dave/Generated/src/IO002/IO002.o
-                0x10001598                IO002_DisableOutputDriver
+                0x10001588        0x2 Dave/Generated/src/IO002/IO002.o
+                0x10001588                IO002_DisableOutputDriver
  .text.IO002_EnableOutputDriver
-                0x1000159a        0x2 Dave/Generated/src/IO002/IO002.o
-                0x1000159a                IO002_EnableOutputDriver
- .text          0x1000159c        0x0 Dave/Generated/src/IO002/IO002_Conf.o
- .text          0x1000159c        0x0 Dave/Generated/src/ERU002/ERU002.o
+                0x1000158a        0x2 Dave/Generated/src/IO002/IO002.o
+                0x1000158a                IO002_EnableOutputDriver
+ .text          0x1000158c        0x0 Dave/Generated/src/IO002/IO002_Conf.o
+ .text          0x1000158c        0x0 Dave/Generated/src/ERU002/ERU002.o
  .text.ERU002_lInit
-                0x1000159c       0x24 Dave/Generated/src/ERU002/ERU002.o
-                0x1000159c                ERU002_lInit
+                0x1000158c       0x24 Dave/Generated/src/ERU002/ERU002.o
+                0x1000158c                ERU002_lInit
  .text.ERU002_Init
-                0x100015c0       0x10 Dave/Generated/src/ERU002/ERU002.o
-                0x100015c0                ERU002_Init
+                0x100015b0       0x10 Dave/Generated/src/ERU002/ERU002.o
+                0x100015b0                ERU002_Init
  .text.ERU002_SetPeripheralTrigInputSrc
-                0x100015d0       0x24 Dave/Generated/src/ERU002/ERU002.o
-                0x100015d0                ERU002_SetPeripheralTrigInputSrc
+                0x100015c0       0x24 Dave/Generated/src/ERU002/ERU002.o
+                0x100015c0                ERU002_SetPeripheralTrigInputSrc
  .text.ERU002_GetPatternResult
-                0x100015f4       0x1c Dave/Generated/src/ERU002/ERU002.o
-                0x100015f4                ERU002_GetPatternResult
+                0x100015e4       0x1c Dave/Generated/src/ERU002/ERU002.o
+                0x100015e4                ERU002_GetPatternResult
  .text.ERU002_EnablePatternDetection
-                0x10001610       0x16 Dave/Generated/src/ERU002/ERU002.o
-                0x10001610                ERU002_EnablePatternDetection
+                0x10001600       0x16 Dave/Generated/src/ERU002/ERU002.o
+                0x10001600                ERU002_EnablePatternDetection
  .text.ERU002_DisablePatternDetection
-                0x10001626       0x16 Dave/Generated/src/ERU002/ERU002.o
-                0x10001626                ERU002_DisablePatternDetection
+                0x10001616       0x16 Dave/Generated/src/ERU002/ERU002.o
+                0x10001616                ERU002_DisablePatternDetection
  .text.ERU002_SelectServiceRequestMode
-                0x1000163c       0x1e Dave/Generated/src/ERU002/ERU002.o
-                0x1000163c                ERU002_SelectServiceRequestMode
- .text          0x1000165a        0x0 Dave/Generated/src/ERU002/ERU002_Conf.o
- .text          0x1000165a        0x0 Dave/Generated/src/ERU001/ERU001.o
+                0x1000162c       0x1e Dave/Generated/src/ERU002/ERU002.o
+                0x1000162c                ERU002_SelectServiceRequestMode
+ .text          0x1000164a        0x0 Dave/Generated/src/ERU002/ERU002_Conf.o
+ .text          0x1000164a        0x0 Dave/Generated/src/ERU001/ERU001.o
  .text.ERU001_lInit
-                0x1000165a       0x52 Dave/Generated/src/ERU001/ERU001.o
-                0x1000165a                ERU001_lInit
+                0x1000164a       0x52 Dave/Generated/src/ERU001/ERU001.o
+                0x1000164a                ERU001_lInit
  .text.ERU001_Init
-                0x100016ac       0x10 Dave/Generated/src/ERU001/ERU001.o
-                0x100016ac                ERU001_Init
+                0x1000169c       0x10 Dave/Generated/src/ERU001/ERU001.o
+                0x1000169c                ERU001_Init
  .text.ERU001_ClearFlag
-                0x100016bc       0x18 Dave/Generated/src/ERU001/ERU001.o
-                0x100016bc                ERU001_ClearFlag
- .text          0x100016d4        0x0 Dave/Generated/src/ERU001/ERU001_Conf.o
- .text          0x100016d4        0x0 Dave/Generated/src/DAVESupport/DAVE3.o
+                0x100016ac       0x18 Dave/Generated/src/ERU001/ERU001.o
+                0x100016ac                ERU001_ClearFlag
+ .text          0x100016c4        0x0 Dave/Generated/src/ERU001/ERU001_Conf.o
+ .text          0x100016c4        0x0 Dave/Generated/src/DAVESupport/DAVE3.o
  .text.DAVE_Init
-                0x100016d4       0x1c Dave/Generated/src/DAVESupport/DAVE3.o
-                0x100016d4                DAVE_Init
- .text          0x100016f0        0x0 Dave/Generated/src/DAVESupport/MULTIPLEXER.o
+                0x100016c4       0x1c Dave/Generated/src/DAVESupport/DAVE3.o
+                0x100016c4                DAVE_Init
+ .text          0x100016e0        0x0 Dave/Generated/src/DAVESupport/MULTIPLEXER.o
  .text.DAVE_MUX_Init
-                0x100016f0       0x28 Dave/Generated/src/DAVESupport/MULTIPLEXER.o
-                0x100016f0                DAVE_MUX_Init
+                0x100016e0       0x28 Dave/Generated/src/DAVESupport/MULTIPLEXER.o
+                0x100016e0                DAVE_MUX_Init
  .text.DAVE_MUX_PreInit
-                0x10001718       0x10 Dave/Generated/src/DAVESupport/MULTIPLEXER.o
-                0x10001718                DAVE_MUX_PreInit
- .text          0x10001728       0x9c c:/dave-3.1.10/arm-gcc/bin/../lib/gcc/arm-none-eabi/4.7.4/armv6-m\libgcc.a(_udivsi3.o)
-                0x10001728                __aeabi_uidiv
-                0x10001728                __udivsi3
-                0x100017b0                __aeabi_uidivmod
- .text          0x100017c4       0xc0 c:/dave-3.1.10/arm-gcc/bin/../lib/gcc/arm-none-eabi/4.7.4/armv6-m\libgcc.a(_divsi3.o)
-                0x100017c4                __divsi3
-                0x100017c4                __aeabi_idiv
-                0x10001870                __aeabi_idivmod
- .text          0x10001884        0x4 c:/dave-3.1.10/arm-gcc/bin/../lib/gcc/arm-none-eabi/4.7.4/armv6-m\libgcc.a(_dvmd_tls.o)
-                0x10001884                __aeabi_idiv0
-                0x10001884                __aeabi_ldiv0
+                0x10001708       0x10 Dave/Generated/src/DAVESupport/MULTIPLEXER.o
+                0x10001708                DAVE_MUX_PreInit
+ .text          0x10001718       0x9c c:/dave-3.1.10/arm-gcc/bin/../lib/gcc/arm-none-eabi/4.7.4/armv6-m\libgcc.a(_udivsi3.o)
+                0x10001718                __aeabi_uidiv
+                0x10001718                __udivsi3
+                0x100017a0                __aeabi_uidivmod
+ .text          0x100017b4       0xc0 c:/dave-3.1.10/arm-gcc/bin/../lib/gcc/arm-none-eabi/4.7.4/armv6-m\libgcc.a(_divsi3.o)
+                0x100017b4                __divsi3
+                0x100017b4                __aeabi_idiv
+                0x10001860                __aeabi_idivmod
+ .text          0x10001874        0x4 c:/dave-3.1.10/arm-gcc/bin/../lib/gcc/arm-none-eabi/4.7.4/armv6-m\libgcc.a(_dvmd_tls.o)
+                0x10001874                __aeabi_idiv0
+                0x10001874                __aeabi_ldiv0
  *(.glue*)
  .glue_7        0x00000000        0x0 linker stubs
  .glue_7t       0x00000000        0x0 linker stubs
@@ -244,64 +244,64 @@ END GROUP
  *(.vfp11_veneer)
  .vfp11_veneer  0x00000000        0x0 linker stubs
  *(.init)
-                0x10001888                __preinit_array_start = .
+                0x10001878                __preinit_array_start = .
  *(.preinit_array)
-                0x10001888                __preinit_array_end = .
-                0x10001888                __init_array_start = .
+                0x10001878                __preinit_array_end = .
+                0x10001878                __init_array_start = .
  *(SORT(.init_array.*))
  *(.init_array)
-                0x10001888                __init_array_end = .
+                0x10001878                __init_array_end = .
  *crtbegin.o(.ctors)
  *(EXCLUDE_FILE(*crtend.o) .ctors)
  *(SORT(.ctors.*))
  *crtend.o(.ctors)
  *(.fini)
-                0x10001888                __fini_array_start = .
+                0x10001878                __fini_array_start = .
  *(.fini_array)
  *(SORT(.fini_array.*))
-                0x10001888                __fini_array_end = .
+                0x10001878                __fini_array_end = .
  *crtbegin.o(.dtors)
  *(EXCLUDE_FILE(*crtend.o) .dtors)
  *(SORT(.dtors.*))
  *crtend.o(.dtors)
-                0x10001888                __extab_start = .
+                0x10001878                __extab_start = .
  *(.ARM.extab* .gnu.linkonce.armextab.*)
  .ARM.extab.Xmc1100.reset
-                0x10001888        0x0 Startup/startup_XMC1100.o
+                0x10001878        0x0 Startup/startup_XMC1100.o
  .ARM.extab.Xmc1100.postreset
-                0x10001888        0x0 Startup/startup_XMC1100.o
-                0x10001888                . = ALIGN (0x4)
-                0x10001888                __extab_end = ABSOLUTE (.)
+                0x10001878        0x0 Startup/startup_XMC1100.o
+                0x10001878                . = ALIGN (0x4)
+                0x10001878                __extab_end = ABSOLUTE (.)
 
-.iplt           0x10001888        0x0
+.iplt           0x10001878        0x0
  .iplt          0x00000000        0x0 Startup/startup_XMC1100.o
 
-.ARM.exidx      0x10001888       0x10
-                0x10001888                __exidx_start = .
+.ARM.exidx      0x10001878       0x10
+                0x10001878                __exidx_start = .
  *(.ARM.exidx* .gnu.linkonce.armexidx.*)
  .ARM.exidx.Xmc1100.reset
-                0x10001888        0x8 Startup/startup_XMC1100.o
+                0x10001878        0x8 Startup/startup_XMC1100.o
  .ARM.exidx.Xmc1100.postreset
-                0x10001890        0x8 Startup/startup_XMC1100.o
-                0x10001898                . = ALIGN (0x4)
-                0x10001898                __exidx_end = ABSOLUTE (.)
+                0x10001880        0x8 Startup/startup_XMC1100.o
+                0x10001888                . = ALIGN (0x4)
+                0x10001888                __exidx_end = ABSOLUTE (.)
 
-.rodata         0x10001898       0x6c
+.rodata         0x10001888       0x6c
  *(.rodata .rodata.*)
- .rodata        0x10001898        0x4 Dave/Generated/src/NVIC002/NVIC002_Conf.o
-                0x10001898                NVIC002_Handle0
- .rodata        0x1000189c       0x4c Dave/Generated/src/IO002/IO002_Conf.o
-                0x1000189c                IO002_Handle0
- .rodata        0x100018e8       0x10 Dave/Generated/src/ERU002/ERU002_Conf.o
-                0x100018e8                ERU002_Handle0
- .rodata        0x100018f8        0xc Dave/Generated/src/ERU001/ERU001_Conf.o
-                0x100018f8                ERU001_Handle0
+ .rodata        0x10001888        0x4 Dave/Generated/src/NVIC002/NVIC002_Conf.o
+                0x10001888                NVIC002_Handle0
+ .rodata        0x1000188c       0x4c Dave/Generated/src/IO002/IO002_Conf.o
+                0x1000188c                IO002_Handle0
+ .rodata        0x100018d8       0x10 Dave/Generated/src/ERU002/ERU002_Conf.o
+                0x100018d8                ERU002_Handle0
+ .rodata        0x100018e8        0xc Dave/Generated/src/ERU001/ERU001_Conf.o
+                0x100018e8                ERU001_Handle0
  *(.gnu.linkonce.r*)
-                0x10001910                . = ALIGN (0x10)
-                0x10001910                eROData = .
-                0x10001910                VeneerLoadAddr = ABSOLUTE (eROData)
+                0x10001900                . = ALIGN (0x10)
+                0x10001900                eROData = .
+                0x10001900                VeneerLoadAddr = ABSOLUTE (eROData)
 
-.VENEER_Code    0x2000000c      0x110 load address 0x10001910
+.VENEER_Code    0x2000000c      0x110 load address 0x10001900
                 0x2000000c                VeneerStart = .
  *(.XmcVeneerCode)
  .XmcVeneerCode
@@ -333,7 +333,7 @@ END GROUP
                 0x2000011c                VeneerEnd = .
                 0x00000110                VeneerSize = (ABSOLUTE (VeneerEnd) - ABSOLUTE (VeneerStart))
 
-.rel.dyn        0x2000011c        0x0 load address 0x10001a20
+.rel.dyn        0x2000011c        0x0 load address 0x10001a10
  .rel.iplt      0x00000000        0x0 Startup/startup_XMC1100.o
 
 .GUARD_Band     0x2000011c        0x4 load address 0x00000000
@@ -379,9 +379,9 @@ Stack           0x20000120      0x800 load address 0x00000000
  *(.gnu.linkonce.b*)
                 0x20000944                __Xmc1100_eBSS = ALIGN (0x4)
                 0x00000024                __Xmc1100_BSS_Size = (__Xmc1100_eBSS - __Xmc1100_sBSS)
-                0x10001a20                DataLoadAddr = (eROData + VeneerSize)
+                0x10001a10                DataLoadAddr = (eROData + VeneerSize)
 
-.data           0x20000950       0x10 load address 0x10001a20
+.data           0x20000950       0x10 load address 0x10001a10
                 0x20000950                __Xmc1100_sData = .
  *(.data)
  .data          0x20000950        0x0 Startup/startup_XMC1100.o
@@ -411,14 +411,14 @@ Stack           0x20000120      0x800 load address 0x00000000
                 0x20000960                __Xmc1100_eData = ALIGN (0x4)
                 0x00000010                __Xmc1100_Data_Size = (__Xmc1100_eData - __Xmc1100_sData)
 
-.igot.plt       0x20000960        0x0 load address 0x10001a30
+.igot.plt       0x20000960        0x0 load address 0x10001a20
  .igot.plt      0x00000000        0x0 Startup/startup_XMC1100.o
 
-.ram_code       0x20000960        0x0 load address 0x10001a30
+.ram_code       0x20000960        0x0 load address 0x10001a20
                 0x20000960                __ram_code_start = .
  *(.ram_code)
                 0x20000960                __ram_code_end = .
-                0x10001a30                __ram_code_load = LOADADDR (.ram_code)
+                0x10001a20                __ram_code_load = LOADADDR (.ram_code)
                 0x00000000                __ram_code_size = (__ram_code_end - __ram_code_start)
                 0x20000960                __Xmc1100_heap_start = ALIGN (0x8)
                 0x20004000                __Xmc1100_heap_end = (ORIGIN (SRAM) + 0x4000)
