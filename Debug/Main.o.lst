@@ -1480,11 +1480,11 @@
  147:../Main.c     **** 				trigger = TRUE;
  148:../Main.c     **** 				if (PIN_SW_HIGH())
  149:../Main.c     **** 				{
- 150:../Main.c     **** 					speedLowHigh =  speed>>1; // /2
+ 150:../Main.c     **** 					speedLowHigh =  (speed<<3)/10; // *16/10/2
  151:../Main.c     **** 				}
  152:../Main.c     **** 				else
  153:../Main.c     **** 				{
- 154:../Main.c     **** 					speedLowHigh =  (speed<<3)/10; // *16/10/2
+ 154:../Main.c     **** 					speedLowHigh =  speed>>1; // /2
  155:../Main.c     **** 				}
  156:../Main.c     **** 
  157:../Main.c     **** #ifdef DEBUG
@@ -1609,22 +1609,22 @@
  511 00b4 FFF7FEFF 		bl	P1_4_read
  512 00b8 031C     		mov	r3, r0
  513 00ba 002B     		cmp	r3, #0
- 514 00bc 03D0     		beq	.L37
- 150:../Main.c     **** 					speedLowHigh =  speed>>1; // /2
+ 514 00bc 08D0     		beq	.L37
+ 150:../Main.c     **** 					speedLowHigh =  (speed<<3)/10; // *16/10/2
  515              		.loc 2 150 0
  516 00be FB69     		ldr	r3, [r7, #28]
- 517 00c0 5B10     		asr	r3, r3, #1
- 518 00c2 7B61     		str	r3, [r7, #20]
- 519 00c4 07E0     		b	.L38
- 520              	.L37:
- 154:../Main.c     **** 					speedLowHigh =  (speed<<3)/10; // *16/10/2
- 521              		.loc 2 154 0
- 522 00c6 FB69     		ldr	r3, [r7, #28]
- 523 00c8 DB00     		lsl	r3, r3, #3
- 524 00ca 181C     		mov	r0, r3
- 525 00cc 0A21     		mov	r1, #10
- 526 00ce FFF7FEFF 		bl	__aeabi_idiv
- 527 00d2 031C     		mov	r3, r0
+ 517 00c0 DB00     		lsl	r3, r3, #3
+ 518 00c2 181C     		mov	r0, r3
+ 519 00c4 0A21     		mov	r1, #10
+ 520 00c6 FFF7FEFF 		bl	__aeabi_idiv
+ 521 00ca 031C     		mov	r3, r0
+ 522 00cc 7B61     		str	r3, [r7, #20]
+ 523 00ce 02E0     		b	.L38
+ 524              	.L37:
+ 154:../Main.c     **** 					speedLowHigh =  speed>>1; // /2
+ 525              		.loc 2 154 0
+ 526 00d0 FB69     		ldr	r3, [r7, #28]
+ 527 00d2 5B10     		asr	r3, r3, #1
  528 00d4 7B61     		str	r3, [r7, #20]
  529              	.L38:
  163:../Main.c     **** 				speed=0;
@@ -1820,42 +1820,42 @@
  681              		.file 5 "C:\\DAVE3_workspace\\ws3.1.10\\boschSpeedUp\\Dave\\Generated\\inc\\DAVESupport/../../inc/
 DEFINED SYMBOLS
                             *ABS*:00000000 Main.c
-C:\Users\Patrick\AppData\Local\Temp\cc9l3yql.s:18     .text.P0_5_set_mode:00000000 $t
-C:\Users\Patrick\AppData\Local\Temp\cc9l3yql.s:22     .text.P0_5_set_mode:00000000 P0_5_set_mode
-C:\Users\Patrick\AppData\Local\Temp\cc9l3yql.s:65     .text.P0_5_set_mode:00000030 $d
-C:\Users\Patrick\AppData\Local\Temp\cc9l3yql.s:71     .text.P0_5_set:00000000 $t
-C:\Users\Patrick\AppData\Local\Temp\cc9l3yql.s:75     .text.P0_5_set:00000000 P0_5_set
-C:\Users\Patrick\AppData\Local\Temp\cc9l3yql.s:98     .text.P0_5_set:00000010 $d
-C:\Users\Patrick\AppData\Local\Temp\cc9l3yql.s:103    .text.P0_5_toggle:00000000 $t
-C:\Users\Patrick\AppData\Local\Temp\cc9l3yql.s:107    .text.P0_5_toggle:00000000 P0_5_toggle
-C:\Users\Patrick\AppData\Local\Temp\cc9l3yql.s:130    .text.P0_5_toggle:00000010 $d
-C:\Users\Patrick\AppData\Local\Temp\cc9l3yql.s:136    .text.P0_6_set_mode:00000000 $t
-C:\Users\Patrick\AppData\Local\Temp\cc9l3yql.s:140    .text.P0_6_set_mode:00000000 P0_6_set_mode
-C:\Users\Patrick\AppData\Local\Temp\cc9l3yql.s:182    .text.P0_6_set_mode:00000030 $d
-C:\Users\Patrick\AppData\Local\Temp\cc9l3yql.s:188    .text.P0_6_set_large_hysteresis:00000000 $t
-C:\Users\Patrick\AppData\Local\Temp\cc9l3yql.s:192    .text.P0_6_set_large_hysteresis:00000000 P0_6_set_large_hysteresis
-C:\Users\Patrick\AppData\Local\Temp\cc9l3yql.s:219    .text.P0_6_set_large_hysteresis:00000018 $d
-C:\Users\Patrick\AppData\Local\Temp\cc9l3yql.s:224    .text.P0_6_read:00000000 $t
-C:\Users\Patrick\AppData\Local\Temp\cc9l3yql.s:228    .text.P0_6_read:00000000 P0_6_read
-C:\Users\Patrick\AppData\Local\Temp\cc9l3yql.s:253    .text.P0_6_read:00000014 $d
-C:\Users\Patrick\AppData\Local\Temp\cc9l3yql.s:258    .text.P1_4_set_mode:00000000 $t
-C:\Users\Patrick\AppData\Local\Temp\cc9l3yql.s:262    .text.P1_4_set_mode:00000000 P1_4_set_mode
-C:\Users\Patrick\AppData\Local\Temp\cc9l3yql.s:303    .text.P1_4_set_mode:0000002c $d
-C:\Users\Patrick\AppData\Local\Temp\cc9l3yql.s:308    .text.P1_4_set_large_hysteresis:00000000 $t
-C:\Users\Patrick\AppData\Local\Temp\cc9l3yql.s:312    .text.P1_4_set_large_hysteresis:00000000 P1_4_set_large_hysteresis
-C:\Users\Patrick\AppData\Local\Temp\cc9l3yql.s:339    .text.P1_4_set_large_hysteresis:00000018 $d
-C:\Users\Patrick\AppData\Local\Temp\cc9l3yql.s:344    .text.P1_4_read:00000000 $t
-C:\Users\Patrick\AppData\Local\Temp\cc9l3yql.s:348    .text.P1_4_read:00000000 P1_4_read
-C:\Users\Patrick\AppData\Local\Temp\cc9l3yql.s:373    .text.P1_4_read:00000014 $d
-C:\Users\Patrick\AppData\Local\Temp\cc9l3yql.s:379    .text.main:00000000 $t
-C:\Users\Patrick\AppData\Local\Temp\cc9l3yql.s:384    .text.main:00000000 main
-C:\Users\Patrick\AppData\Local\Temp\cc9l3yql.s:604    .text.IRQ_Hdlr_26:00000000 $t
-C:\Users\Patrick\AppData\Local\Temp\cc9l3yql.s:609    .text.IRQ_Hdlr_26:00000000 IRQ_Hdlr_26
-C:\Users\Patrick\AppData\Local\Temp\cc9l3yql.s:662    .text.IRQ_Hdlr_26:00000044 $d
-C:\Users\Patrick\AppData\Local\Temp\cc9l3yql.s:669    .bss:00000000 cycles.5739
-C:\Users\Patrick\AppData\Local\Temp\cc9l3yql.s:672    .bss:00000004 state.5738
-C:\Users\Patrick\AppData\Local\Temp\cc9l3yql.s:668    .bss:00000000 $d
-C:\Users\Patrick\AppData\Local\Temp\cc9l3yql.s:675    .bss:00000008 status.5740
+C:\Users\Patrick\AppData\Local\Temp\ccNa62x4.s:18     .text.P0_5_set_mode:00000000 $t
+C:\Users\Patrick\AppData\Local\Temp\ccNa62x4.s:22     .text.P0_5_set_mode:00000000 P0_5_set_mode
+C:\Users\Patrick\AppData\Local\Temp\ccNa62x4.s:65     .text.P0_5_set_mode:00000030 $d
+C:\Users\Patrick\AppData\Local\Temp\ccNa62x4.s:71     .text.P0_5_set:00000000 $t
+C:\Users\Patrick\AppData\Local\Temp\ccNa62x4.s:75     .text.P0_5_set:00000000 P0_5_set
+C:\Users\Patrick\AppData\Local\Temp\ccNa62x4.s:98     .text.P0_5_set:00000010 $d
+C:\Users\Patrick\AppData\Local\Temp\ccNa62x4.s:103    .text.P0_5_toggle:00000000 $t
+C:\Users\Patrick\AppData\Local\Temp\ccNa62x4.s:107    .text.P0_5_toggle:00000000 P0_5_toggle
+C:\Users\Patrick\AppData\Local\Temp\ccNa62x4.s:130    .text.P0_5_toggle:00000010 $d
+C:\Users\Patrick\AppData\Local\Temp\ccNa62x4.s:136    .text.P0_6_set_mode:00000000 $t
+C:\Users\Patrick\AppData\Local\Temp\ccNa62x4.s:140    .text.P0_6_set_mode:00000000 P0_6_set_mode
+C:\Users\Patrick\AppData\Local\Temp\ccNa62x4.s:182    .text.P0_6_set_mode:00000030 $d
+C:\Users\Patrick\AppData\Local\Temp\ccNa62x4.s:188    .text.P0_6_set_large_hysteresis:00000000 $t
+C:\Users\Patrick\AppData\Local\Temp\ccNa62x4.s:192    .text.P0_6_set_large_hysteresis:00000000 P0_6_set_large_hysteresis
+C:\Users\Patrick\AppData\Local\Temp\ccNa62x4.s:219    .text.P0_6_set_large_hysteresis:00000018 $d
+C:\Users\Patrick\AppData\Local\Temp\ccNa62x4.s:224    .text.P0_6_read:00000000 $t
+C:\Users\Patrick\AppData\Local\Temp\ccNa62x4.s:228    .text.P0_6_read:00000000 P0_6_read
+C:\Users\Patrick\AppData\Local\Temp\ccNa62x4.s:253    .text.P0_6_read:00000014 $d
+C:\Users\Patrick\AppData\Local\Temp\ccNa62x4.s:258    .text.P1_4_set_mode:00000000 $t
+C:\Users\Patrick\AppData\Local\Temp\ccNa62x4.s:262    .text.P1_4_set_mode:00000000 P1_4_set_mode
+C:\Users\Patrick\AppData\Local\Temp\ccNa62x4.s:303    .text.P1_4_set_mode:0000002c $d
+C:\Users\Patrick\AppData\Local\Temp\ccNa62x4.s:308    .text.P1_4_set_large_hysteresis:00000000 $t
+C:\Users\Patrick\AppData\Local\Temp\ccNa62x4.s:312    .text.P1_4_set_large_hysteresis:00000000 P1_4_set_large_hysteresis
+C:\Users\Patrick\AppData\Local\Temp\ccNa62x4.s:339    .text.P1_4_set_large_hysteresis:00000018 $d
+C:\Users\Patrick\AppData\Local\Temp\ccNa62x4.s:344    .text.P1_4_read:00000000 $t
+C:\Users\Patrick\AppData\Local\Temp\ccNa62x4.s:348    .text.P1_4_read:00000000 P1_4_read
+C:\Users\Patrick\AppData\Local\Temp\ccNa62x4.s:373    .text.P1_4_read:00000014 $d
+C:\Users\Patrick\AppData\Local\Temp\ccNa62x4.s:379    .text.main:00000000 $t
+C:\Users\Patrick\AppData\Local\Temp\ccNa62x4.s:384    .text.main:00000000 main
+C:\Users\Patrick\AppData\Local\Temp\ccNa62x4.s:604    .text.IRQ_Hdlr_26:00000000 $t
+C:\Users\Patrick\AppData\Local\Temp\ccNa62x4.s:609    .text.IRQ_Hdlr_26:00000000 IRQ_Hdlr_26
+C:\Users\Patrick\AppData\Local\Temp\ccNa62x4.s:662    .text.IRQ_Hdlr_26:00000044 $d
+C:\Users\Patrick\AppData\Local\Temp\ccNa62x4.s:669    .bss:00000000 cycles.5739
+C:\Users\Patrick\AppData\Local\Temp\ccNa62x4.s:672    .bss:00000004 state.5738
+C:\Users\Patrick\AppData\Local\Temp\ccNa62x4.s:668    .bss:00000000 $d
+C:\Users\Patrick\AppData\Local\Temp\ccNa62x4.s:675    .bss:00000008 status.5740
                      .debug_frame:00000010 $d
                            .group:00000000 wm4.1.63d3e0297d6e9004e0e37a0840833abd
                            .group:00000000 wm4.XMC1100.h.45.7a7cd799d7738130fcda8b83b0aa37d4

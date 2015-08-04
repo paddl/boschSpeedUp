@@ -918,23 +918,23 @@ int main(void)
 10001354:	f7ff ff98 	bl	10001288 <P1_4_read>
 10001358:	1c03      	adds	r3, r0, #0
 1000135a:	2b00      	cmp	r3, #0
-1000135c:	d003      	beq.n	10001366 <main+0xc6>
+1000135c:	d008      	beq.n	10001370 <main+0xd0>
 				{
-					speedLowHigh =  speed>>1; // /2
+					speedLowHigh =  (speed<<3)/10; // *16/10/2
 1000135e:	69fb      	ldr	r3, [r7, #28]
-10001360:	105b      	asrs	r3, r3, #1
-10001362:	617b      	str	r3, [r7, #20]
-10001364:	e007      	b.n	10001376 <main+0xd6>
+10001360:	00db      	lsls	r3, r3, #3
+10001362:	1c18      	adds	r0, r3, #0
+10001364:	210a      	movs	r1, #10
+10001366:	f000 fa61 	bl	1000182c <__aeabi_idiv>
+1000136a:	1c03      	adds	r3, r0, #0
+1000136c:	617b      	str	r3, [r7, #20]
+1000136e:	e002      	b.n	10001376 <main+0xd6>
 				}
 				else
 				{
-					speedLowHigh =  (speed<<3)/10; // *16/10/2
-10001366:	69fb      	ldr	r3, [r7, #28]
-10001368:	00db      	lsls	r3, r3, #3
-1000136a:	1c18      	adds	r0, r3, #0
-1000136c:	210a      	movs	r1, #10
-1000136e:	f000 fa5d 	bl	1000182c <__aeabi_idiv>
-10001372:	1c03      	adds	r3, r0, #0
+					speedLowHigh =  speed>>1; // /2
+10001370:	69fb      	ldr	r3, [r7, #28]
+10001372:	105b      	asrs	r3, r3, #1
 10001374:	617b      	str	r3, [r7, #20]
 				debugSpeedBuffer[debugCount%DEBUG_CNT_BUFFER_SIZE] = speed;
 				debugCount++;

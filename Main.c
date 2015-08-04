@@ -147,11 +147,11 @@ int main(void)
 				trigger = TRUE;
 				if (PIN_SW_HIGH())
 				{
-					speedLowHigh =  speed>>1; // /2
+					speedLowHigh =  (speed<<3)/10; // *16/10/2
 				}
 				else
 				{
-					speedLowHigh =  (speed<<3)/10; // *16/10/2
+					speedLowHigh =  speed>>1; // /2
 				}
 
 #ifdef DEBUG
